@@ -1,0 +1,15 @@
+[2024-09-26 12:58:58] {
+    "code": 400,
+    "message": "Invalid request format. 'payload' field is required."
+}
+
+[2024-09-26 13:00:57] {
+    "code": 400,
+    "message": "Invalid request format. 'payload' field is required."
+}
+
+[2024-09-26 13:02:59] {
+    "code": 400,
+    "message": "Invalid request format. 'payload' field is required."
+}
+

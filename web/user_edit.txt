@@ -1,0 +1,1 @@
+UPDATE userdata SET username='sam@mail.com',firstname='Doehhh',lastname='Joseph',mobile_phone='07062902972',sex='male',day_1='1',day_2='1',day_3='1',day_4='1',day_5='1',day_6='1',day_7='1',user_disabled='0',user_locked='0' WHERE  username='sam@mail.com' 

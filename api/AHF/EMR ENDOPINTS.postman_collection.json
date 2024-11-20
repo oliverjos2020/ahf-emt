@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "146379e1-21d4-43f8-a1ee-b15a828ba2a1",
+		"name": "EMR ENDOPINTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27513255",
+		"_collection_link": "https://red-shadow-240691.postman.co/workspace/AccessSolutions~eaf287a2-cfe3-4aeb-a343-b8eaea768930/collection/27513255-146379e1-21d4-43f8-a1ee-b15a828ba2a1?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Patient Actions",
+			"item": [
+				{
+					"name": "Add/Edit Patient",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept-encoding": true,
+							"connection": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": {\r\n        \"token\": \"{{loginToken}}\",\r\n        \"operation\": \"new\", \r\n        \"email\": \"peter@mail.com\",\r\n        \"fname\": \"Peter\",\r\n        \"lname\": \"Phillip\",\r\n        \"oname\": \"Bob\",\r\n        \"phone\": \"07046333564\",\r\n        \"dob\": \"1991-01-30\",\r\n        \"address\": \"Somewhere in abuja\",\r\n        \"sex\": \"M\",\r\n        \"maritalStatus\": \"Married\",\r\n        \"nextOfKin\": \"Jane Phillip\",\r\n        \"nextOfKinPhone\": \"09000000002\",\r\n        \"nextOfKinRel\": \"sister\"\r\n    }\r\n}\r\n\r\n// {\r\n//     \"payload\": {\r\n//         //Setup data\r\n//          \"token\": \"{{loginToken}}\",\r\n//         //USER DATA\r\n//         \"operation\": \"edit\", \r\n//         \"item_id\": \"1\", \r\n//         \"email\": \"mail@maik.com\",\r\n//         \"fname\": \"johnb\",\r\n//         \"lname\": \"Doe\",\r\n//         \"oname\": \"tar\",\r\n//         \"phone\": \"08000222983\",\r\n//         \"dob\":\"2000-03-30\",\r\n//         \"address\":\"Somewhere in abuja\",\r\n//         \"sex\":\"M\",\r\n//         \"maritalStatus\":\"single\",\r\n//         \"nextOfKin\":\"Jane Doe\",\r\n//         \"nextOfKinPhone\":\"09000000000\",\r\n//         \"nextOfKinRel\":\"sister\"\r\n//     }\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseEMR}}setupPatient"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Patient Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": {\r\n        //Setup data\r\n         \"token\": \"{{loginToken}}\",\r\n        //Request data\r\n        \"limit\":\"50\",\r\n        \"operation\": \"all\", //new or edit\r\n        \"startDate\": \"DATE\",\r\n        \"endDate\": \"DATE\",\r\n        \"searchBy\": \"\", //COLUMN SEARCH ///\r\n        \"searchByValue\":\"\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseEMR}}patientsData"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Visit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": {\r\n        \"token\": \"{{loginToken}}\",\r\n        \"patient_id\": \"0671318792\"\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseEMR}}newVisit"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Users",
+			"item": [
+				{
+					"name": "Facility Management",
+					"item": [
+						{
+							"name": "Setup Facility",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//ACTION NEW\r\n{\r\n    \"payload\": {\r\n        //Setup data\r\n        \"token\": \"{{loginToken}}\",\r\n        \"operation\": \"new\", //new OR edit\r\n        \"facilityName\": \"AHS Maitama 4s\",\r\n        \"faclilityAddress\": \"Abuja FCT Nigeria\", //web or desktop\r\n        \"contactNumber\": \"08038d00467\", ///facility code\r\n        \"contactOfficer\": \"Dr Frank N\",\r\n        \"webAccess\": \"0\", //1 or 0\r\n        \"source\":\"web\" //web or desktop\r\n        \r\n\r\n    }\r\n}\r\n\r\n//ACTION EDIT\r\n// {\r\n//     \"payload\": {\r\n//         //Setup data\r\n//         \"token\": \"{{loginToken}}\",\r\n//         \"item_id\":\"20\",\r\n//         \"operation\": \"edit\", //new OR edit\r\n//         \"UpdatefacilityCode\":\"08038d00467\", //FOR EDIT ONLY\r\n//         \"facilityName\": \"AHS Mabuchi\",\r\n//         \"faclilityAddress\": \"Abuja FCT Nigeria\", //web or desktop\r\n//         \"contactNumber\": \"08038d00467\", ///facility code\r\n//         \"contactOfficer\": \"Dr Frank N\",\r\n//         \"webAccess\": \"0\" , //1 or 0\r\n//         \"source\":\"web\" //web or desktop\r\n        \r\n\r\n//     }\r\n// }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseEMR}}setupFacility"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GenerateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Parse the response body to JSON\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"// Log the entire response for debugging\r",
+									"console.log(\"Response received:\", response);\r",
+									"\r",
+									"// Check if the status is 200 and the token exists in the response data\r",
+									"if (pm.response.code === 200 && response.data && response.data.token) {\r",
+									"    // Store the token globally in Postman\r",
+									"    pm.globals.set(\"loginToken\", response.data.token);\r",
+									"\r",
+									"    // Log a success message in the console\r",
+									"    console.log(\"Token saved globally:\", response.data.token);\r",
+									"} else {\r",
+									"    // Log an error message with status and available data\r",
+									"    console.log(\"Failed to store token. Response status:\", pm.response.code);\r",
+									"    console.log(\"Response data:\", response.data);\r",
+									"    console.log(\"Check response or login status.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": {\r\n        //Setup data\r\n        \"username\":\"steve@mail.com\",\r\n        \"source\":\"web\", //web or desktop\r\n        \"facilityCode\":\"454545\", ///facility code\r\n        \"password\":\"Welcome77.\"\r\n        \r\n\r\n    }\r\n}\r\n// event@accessng.com Solution Access",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseEMR}}userLogin"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

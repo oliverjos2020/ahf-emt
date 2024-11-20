@@ -1,0 +1,1472 @@
+[2024-10-28 12:10:15] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 12:10:34] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 12:12:44] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 12:18:34] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 12:20:32] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:20:40] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:21:18] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:21:21] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:21:40] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:22:12] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:22:41] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:23:33] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:25:42] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:25:55] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:26:05] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:26:08] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:26:28] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:27:21] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:27:59] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:28:16] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:28:41] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:28:52] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:30:05] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:31:07] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:31:54] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:35:18] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:36:02] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:36:24] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:38:23] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:38:31] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:38:39] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:39:07] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:39:11] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 12:39:16] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 13:58:58] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 13:59:01] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 14:44:14] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webx"
+}
+
+[2024-10-28 14:44:24] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "desktop"
+}
+
+[2024-10-28 14:47:46] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "desktop"
+}
+
+[2024-10-28 14:48:29] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "desktop"
+}
+
+[2024-10-28 14:48:57] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "desktop"
+}
+
+[2024-10-28 14:49:04] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 14:50:43] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 14:50:56] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 14:51:07] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-28 14:51:29] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "0",
+    "source": "web"
+}
+
+[2024-10-28 14:51:32] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4s",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "0",
+    "source": "web"
+}
+
+[2024-10-28 15:05:33] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4s",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "0",
+    "source": "web"
+}
+
+[2024-10-28 15:10:41] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "all",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:11:22] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "all",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:23:11] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:24:04] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:24:32] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:24:47] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:28:20] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:28:34] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "Column In DB"
+}
+
+[2024-10-28 15:29:05] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:29:13] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:29:18] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "0",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:29:25] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:29:40] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:30:08] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:33:19] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:33:48] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:34:56] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:35:01] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:37:10] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:37:21] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:37:31] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:40:25] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:41:39] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:43:31] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 15:43:46] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 15:43:50] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:49:57] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:50:12] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:50:26] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 15:52:17] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 15:52:21] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 15:52:24] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:52:36] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "facilityName": "AHS Maitama 4s",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "0",
+    "source": "web"
+}
+
+[2024-10-28 15:54:11] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "1",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:54:28] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:56:15] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 15:57:56] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:01:53] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:01:56] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:02:14] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:02:51] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:02:56] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:03:41] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:04:49] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:04:54] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:05:37] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:06:16] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:06:30] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:06:36] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "operation": "new",
+    "email": "maild@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:06:38] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:07:06] {
+    "token": "K1NBY1VKV3VBRnlVYloxZjdLeXlHV3ZoKzgzVWx4cW5TYXFsQnhsVDllMXFFa3kwRFA4Mjg5d0U0Tmo2b3VlUktBbFZBRS9UL25DRTZtRGZ2NVpGTFdFQ2tpdkoyRDQvUG9BR3huSkNrR3ZqWTB6V3IrTkN3UlZLejFnNHN5eUthMVFKVmwxTlk1azVvR3VMVHIvSzhCTWJJTkdicU5rSXQzeEl3OEV4eGVZPTo61+\/RSlajF9\/nh5pVuSq7rQ==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:07:25] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:07:48] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:08:58] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:11:00] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:11:16] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:11:52] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:14:43] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:15:56] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:16:05] {
+    "token": "RTYrcGgzS1IvL0krQ0UxandIeEFyTEhETW5EcVFqY0Jrc0NJTlBzMkNaQU1OWVRGUjFaY0w4bGVLVVF0aE9UUmZrYWEyR2toamRIdUNhN1FJSzRiTGN2RUZGRHBuZEo1ZEIwZFA3c2loRGU4ZThrU0lUQW1vRVhvb3RaQTZncm5PWFR6YlE4QjA5Q1F0Zm1leGRPQW1iWi8vcm5CMmMrYU1yQksvRWpESlQ5RkxqVjdoUGFsOWdma0dyTjNMaWxhOjohl0YExdKsxbIJZ0kZhgLE",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:16:59] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:17:02] {
+    "token": "ZzRhY2ZqZTM2SVlxc1R6OFVRQmV6VWVPREp2S05hM1NPNC9qb0FyY3I2UDY1Z0VPN2JoUEhyVTZwM1ZLSGhWS2R2bklyZG5FSUlzdXFXemY5eDJOWjl3RCtFeU55WFFuNEdtK3NweXp0bk4rWlh3RUh5ZXYydCs4Yi9qaHBJUWxGMHhFVEZJMTJaZGQ1V2U5UVVDZ3EzNGR1STBrWnpkYm1NSzExQm10b0QwcVBndU1GOFU0R3N3OCtsd3QvdmJROjqQGMgj\/qvVRdoAexVtB81G",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:18:27] {
+    "token": "ZzRhY2ZqZTM2SVlxc1R6OFVRQmV6VWVPREp2S05hM1NPNC9qb0FyY3I2UDY1Z0VPN2JoUEhyVTZwM1ZLSGhWS2R2bklyZG5FSUlzdXFXemY5eDJOWjl3RCtFeU55WFFuNEdtK3NweXp0bk4rWlh3RUh5ZXYydCs4Yi9qaHBJUWxGMHhFVEZJMTJaZGQ1V2U5UVVDZ3EzNGR1STBrWnpkYm1NSzExQm10b0QwcVBndU1GOFU0R3N3OCtsd3QvdmJROjqQGMgj\/qvVRdoAexVtB81G",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:18:32] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-28 16:18:37] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:18:52] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:19:47] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:19:58] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:21:28] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "operation": "new",
+    "email": "lucy@mail.com",
+    "fname": "Lucy",
+    "lname": "James",
+    "oname": "tar",
+    "phone": "08900222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:21:38] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": ""
+}
+
+[2024-10-28 16:26:45] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "",
+    "searchByValue": ""
+}
+
+[2024-10-28 16:26:56] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "sex",
+    "searchByValue": "F"
+}
+
+[2024-10-28 16:27:33] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "sex",
+    "searchByValue": "F"
+}
+
+[2024-10-28 16:27:39] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "",
+    "searchByValue": ""
+}
+
+[2024-10-28 16:31:43] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "",
+    "searchByValue": ""
+}
+
+[2024-10-28 16:34:31] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "operation": "new",
+    "email": "lucy@mail.com",
+    "fname": "Lucy",
+    "lname": "James",
+    "oname": "tar",
+    "phone": "08900222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:37:37] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "operation": "new",
+    "email": "lucy@mail.com",
+    "fname": "Lucy",
+    "lname": "James",
+    "oname": "tar",
+    "phone": "08900222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:37:47] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "operation": "new",
+    "email": "lucy@mail.com",
+    "fname": "Lucy",
+    "lname": "James",
+    "oname": "tar",
+    "phone": "08900222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:38:13] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "operation": "new",
+    "email": "lucy@mail.com",
+    "fname": "Lucy",
+    "lname": "James",
+    "oname": "tar",
+    "phone": "08900222980",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+
+[2024-10-28 16:39:46] {
+    "token": "ZkxGSGZ2K1czc2ovMEFSeW5NZGlMVnYzM1YvbWpLaHB1K2wxanN6ZFFOaEZ2ZEkwYzJ4WitmeC96cjR0dUs4aUZCckxHamRSQUZxakJzTVBuV2xvRmxCWGp2OW1kNWZmYmxRbjlSUGRPRm41VlcxUWJQallIejZKTTZjaDViRGpSMzdBZU5aZDJNT014dzJDUW5GVi8zd1VyTnJrK3VrN2U2MGR0MDRVYS80PTo6wJXbhLYKspt8IlQAD5yrJw==",
+    "limit": "50",
+    "operation": "all",
+    "startDate": "DATE",
+    "endDate": "DATE",
+    "searchBy": "",
+    "searchByValue": ""
+}
+

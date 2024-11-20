@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow access to api.php directly
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^api/api\.php$ - [L]
+
+    # Route all requests under /v1 to api.php
+    RewriteRule ^api/v1/(.*)$ api/api.php?request=$1 [QSA,NC,L]
+
+    # Deny access to all other files in the api directory
+    RewriteRule ^api/.*$ - [F]  # Forbidden access to everything else in api
+
+    # Set HTTP Authorization header if present
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>

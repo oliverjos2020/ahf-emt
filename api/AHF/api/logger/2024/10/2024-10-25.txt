@@ -1,0 +1,17 @@
+[2024-10-25 13:46:43] {
+    "token": "blVCelJxMk9mbGgzVXFLUGRnUmpYQ2duUVR0bEoxSU9jYVRGL1hSSUlBVU40ZjI5VWt4UUw3VFlZN3FhNTRYZERuQ01XTHN0bnhTNWhHaDNWajE2UW8xT2xNYmY1b29EMVhHK1kva1crUWY4OWp3dTBRa091dThvNE1VbkN0eDhQbGNidS9hY2U4UWx1SFgvdkdiYXN3Uzg4ci9SRG5yVGlienY1TDlaRmFnPTo6VV4rXvDKis7vTnn3b0Q2tg==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "oname": "tar",
+    "phone": "08000222983",
+    "dob": "2000-03-30",
+    "address": "Somewhere in abuja",
+    "sex": "M",
+    "maritalStatus": "single",
+    "nextOfKin": "Jane Doe",
+    "nextOfKinPhone": "09000000000",
+    "nextOfKinRel": "sister"
+}
+

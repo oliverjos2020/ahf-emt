@@ -1,0 +1,12 @@
+[2024-11-01 08:55:45] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-11-01 08:57:12] {
+    "token": "Q0FvQVlBeStYcUd6dUZzY01BMXBNS2k0Tk5FbWZ1S2hBV2F1UjArQWp6Ujk4MG9tTDF3SlI4cEZIc3o1eU9uL3gybTZVd1BHbzdaR0FMVHpPbjh3VjhXalNDZ1BDSmxFWG1jQ2kzcUh5d3BMMUZQMGxCU1Z2YUlUVlhIN2Mxd1FDbm4rQWZTdVpYd01rRHZSRkVoa0g3cG1yYXY3Yi80a0hLT2ZhZU9PajJrPTo6Y80i5AkLgW77\/ThfwSPpmw==",
+    "patient_id": "0671318792"
+}
+

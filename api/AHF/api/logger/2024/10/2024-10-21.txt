@@ -1,0 +1,405 @@
+[2024-10-21 09:55:36] {
+    "token": "VUdCQ0hhVzllcFNTZXVRaGRPUElhb3gyaFRWUktVOW9DZnY5WGJwekNSbU9raEpJWllJUHowWjliU0dzMHZhL0lWeU5LTHk1Q0ZkWnQ1NWJJOEY1WVh6YlE2NHlFb09BN2IxK0RrRi84K1FKd29vUElMdmZLYmM2SWNsam11d0dNdGovaFFqR2xwNVZubzdMdEtMQldNZkFtd1VJNlB4N1Jxc3U5R3dEaFo4PTo6Xgqu92Z\/oPcGLaYLN0W99g==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 09:56:13] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 09:56:17] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:27:29] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:28:32] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:28:46] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:29:27] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:30:23] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:30:39] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:31:05] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:31:20] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:31:56] {
+    "token": "K3FtSlhYVTVVeUVza3NsbzI1c2dpRWZHZzJ6ZjY4SDkzTHFCUkljTithTG83dXF1Rmx0Z0ZidmJlTEc4L2N5b01qNkEvSkJqUDUxODMwVzVXQ1V5MUw0QTZXbjdkOGlweTNNVVNMTksrZHcwV1JkRFFGTlBqS0hBVWozL2M5SkU4aVhKaXhQWHQ5dEoydnQzMk1xdjJkMjVEeGpJeWltaDB3RXc0a2NLNGJjPTo6aGuS4HbQK2vfE43LjhPYMw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:31:59] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 15:32:03] {
+    "token": "UGVmKzl2YXRRZVAzMlJyc1lJVHlsYXI2VzBmdXowSDhsRHJOK3lNOXFrNlJxQTNockVDa3UyQXdmaVdzdURGL1ZCd0RFSFpjQlNYSHh3bjh0RnZ4Y3JRVUZsMlNERVpmYXA0SVkrOHFtU0hjcU5Jd2tyU2s1NW55K2gybG80bWtvL0dkOEdlcG52ZWtiVWZ4cEFGdXF4cG5OL3ZPRHI5bWpqNDFFa0tabnNJPTo6HM4zrgsaLZvdkCOU2FFE4g==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:32:06] {
+    "token": "UGVmKzl2YXRRZVAzMlJyc1lJVHlsYXI2VzBmdXowSDhsRHJOK3lNOXFrNlJxQTNockVDa3UyQXdmaVdzdURGL1ZCd0RFSFpjQlNYSHh3bjh0RnZ4Y3JRVUZsMlNERVpmYXA0SVkrOHFtU0hjcU5Jd2tyU2s1NW55K2gybG80bWtvL0dkOEdlcG52ZWtiVWZ4cEFGdXF4cG5OL3ZPRHI5bWpqNDFFa0tabnNJPTo6HM4zrgsaLZvdkCOU2FFE4g==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:32:37] {
+    "token": "UGVmKzl2YXRRZVAzMlJyc1lJVHlsYXI2VzBmdXowSDhsRHJOK3lNOXFrNlJxQTNockVDa3UyQXdmaVdzdURGL1ZCd0RFSFpjQlNYSHh3bjh0RnZ4Y3JRVUZsMlNERVpmYXA0SVkrOHFtU0hjcU5Jd2tyU2s1NW55K2gybG80bWtvL0dkOEdlcG52ZWtiVWZ4cEFGdXF4cG5OL3ZPRHI5bWpqNDFFa0tabnNJPTo6HM4zrgsaLZvdkCOU2FFE4g==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 2",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:32:43] {
+    "token": "UGVmKzl2YXRRZVAzMlJyc1lJVHlsYXI2VzBmdXowSDhsRHJOK3lNOXFrNlJxQTNockVDa3UyQXdmaVdzdURGL1ZCd0RFSFpjQlNYSHh3bjh0RnZ4Y3JRVUZsMlNERVpmYXA0SVkrOHFtU0hjcU5Jd2tyU2s1NW55K2gybG80bWtvL0dkOEdlcG52ZWtiVWZ4cEFGdXF4cG5OL3ZPRHI5bWpqNDFFa0tabnNJPTo6HM4zrgsaLZvdkCOU2FFE4g==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1"
+}
+
+[2024-10-21 15:35:57] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 15:38:29] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webs"
+}
+
+[2024-10-21 15:39:25] {
+    "username": "steve@mail.com",
+    "source": "",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 15:39:33] {
+    "username": "steve@mail.com",
+    "source": "xxx",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 15:48:38] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webs"
+}
+
+[2024-10-21 15:49:28] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webs"
+}
+
+[2024-10-21 15:53:39] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webs"
+}
+
+[2024-10-21 15:57:54] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "webs"
+}
+
+[2024-10-21 15:58:03] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 15:58:27] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 15:59:07] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 15:59:20] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 16:01:06] {
+    "token": "UmlyUlBhUU9hZEx2S0xkVXowUmQ1TjM2OGU2c056Tno5RC9UbVpleDRsZUl0TmIybUlRNjRxczNSNjh1emZMTHFZc2toUkJnWFlDMkJkTGpoanJTNE1uMEZxSmRKNlVYc0lVdmY0ZG1IWnNmTDdlUHVQRm0wMXpHUkluQ3BjSGlYbEx2d2Z2WjZVOHd5ckw5T0hOendYa0ErbGJOMDZ5L2x4VTcrOGl6eS9rPTo64ADovQro6MIMsb9EIVYS9w==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 16:01:09] {
+    "username": "steve@mail.com",
+    "source": "xxx",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 16:01:18] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 17:03:01] {
+    "token": "L0NjRS9EVkNxQ2xCT1FMWFhyQitpemRIVXVpN3k1a2x4M2VJWVU4bjMrSVZyR2NackppNzhXMWdOdzI4VGt2d2htZHdjVEdEdnA4NCs5TW5wcnB5N3BmV0VEV1ZXQzF4WFhHL3VPWmZCamVZSkNublkwWERkaXpWelh2TG0vZ09iM0NyLzY1ajJ4eE5RZTR2cEtpWThPek5iM1dGekhGOTN3Yi9Jb0RjZEcwPTo6DFcu5+xNK19bhF6FyO5cRw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 17:03:26] {
+    "token": "L0NjRS9EVkNxQ2xCT1FMWFhyQitpemRIVXVpN3k1a2x4M2VJWVU4bjMrSVZyR2NackppNzhXMWdOdzI4VGt2d2htZHdjVEdEdnA4NCs5TW5wcnB5N3BmV0VEV1ZXQzF4WFhHL3VPWmZCamVZSkNublkwWERkaXpWelh2TG0vZ09iM0NyLzY1ajJ4eE5RZTR2cEtpWThPek5iM1dGekhGOTN3Yi9Jb0RjZEcwPTo6DFcu5+xNK19bhF6FyO5cRw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 17:06:52] {
+    "token": "L0NjRS9EVkNxQ2xCT1FMWFhyQitpemRIVXVpN3k1a2x4M2VJWVU4bjMrSVZyR2NackppNzhXMWdOdzI4VGt2d2htZHdjVEdEdnA4NCs5TW5wcnB5N3BmV0VEV1ZXQzF4WFhHL3VPWmZCamVZSkNublkwWERkaXpWelh2TG0vZ09iM0NyLzY1ajJ4eE5RZTR2cEtpWThPek5iM1dGekhGOTN3Yi9Jb0RjZEcwPTo6DFcu5+xNK19bhF6FyO5cRw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 17:06:59] {
+    "token": "L0NjRS9EVkNxQ2xCT1FMWFhyQitpemRIVXVpN3k1a2x4M2VJWVU4bjMrSVZyR2NackppNzhXMWdOdzI4VGt2d2htZHdjVEdEdnA4NCs5TW5wcnB5N3BmV0VEV1ZXQzF4WFhHL3VPWmZCamVZSkNublkwWERkaXpWelh2TG0vZ09iM0NyLzY1ajJ4eE5RZTR2cEtpWThPek5iM1dGekhGOTN3Yi9Jb0RjZEcwPTo6DFcu5+xNK19bhF6FyO5cRw==",
+    "operation": "new",
+    "facilityName": "AHS Mabuchi 4",
+    "faclilityAddress": "Abuja FCT Nigeria",
+    "contactNumber": "08038d00467",
+    "contactOfficer": "Dr Frank N",
+    "webAccess": "1",
+    "source": "web"
+}
+
+[2024-10-21 17:16:48] {
+    "token": "L0xsRC95MnBzaW1ZUjdRcEtEWmdneGtRa2lwckRGZ2JjS1NFS0R0KzRKVXhYRVZ2R2M2ZXlmdEVpU1U4WmVYV1JXR0NMT0g0dlJ2b1J3ZWFaK3hZWHYrZGlLZDFmWGtLNjFaU2tiTnJIc0NDRWR6TS9adG5mRVI0L1lIUURVcW12b0UrdnFLamVIRkplL2ZESi8zSzF3PT06OkdU+tNlaSKrSDO2JJeE\/Yw=",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "phone": "08000222983"
+}
+
+[2024-10-21 17:16:56] {
+    "token": "L0xsRC95MnBzaW1ZUjdRcEtEWmdneGtRa2lwckRGZ2JjS1NFS0R0KzRKVXhYRVZ2R2M2ZXlmdEVpU1U4WmVYV1JXR0NMT0g0dlJ2b1J3ZWFaK3hZWHYrZGlLZDFmWGtLNjFaU2tiTnJIc0NDRWR6TS9adG5mRVI0L1lIUURVcW12b0UrdnFLamVIRkplL2ZESi8zSzF3PT06OkdU+tNlaSKrSDO2JJeE\/Yw=",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "phone": "08000222983"
+}
+
+[2024-10-21 17:18:49] {
+    "token": "L0xsRC95MnBzaW1ZUjdRcEtEWmdneGtRa2lwckRGZ2JjS1NFS0R0KzRKVXhYRVZ2R2M2ZXlmdEVpU1U4WmVYV1JXR0NMT0g0dlJ2b1J3ZWFaK3hZWHYrZGlLZDFmWGtLNjFaU2tiTnJIc0NDRWR6TS9adG5mRVI0L1lIUURVcW12b0UrdnFLamVIRkplL2ZESi8zSzF3PT06OkdU+tNlaSKrSDO2JJeE\/Yw=",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "phone": "08000222983"
+}
+
+[2024-10-21 17:20:14] {
+    "token": "L0xsRC95MnBzaW1ZUjdRcEtEWmdneGtRa2lwckRGZ2JjS1NFS0R0KzRKVXhYRVZ2R2M2ZXlmdEVpU1U4WmVYV1JXR0NMT0g0dlJ2b1J3ZWFaK3hZWHYrZGlLZDFmWGtLNjFaU2tiTnJIc0NDRWR6TS9adG5mRVI0L1lIUURVcW12b0UrdnFLamVIRkplL2ZESi8zSzF3PT06OkdU+tNlaSKrSDO2JJeE\/Yw=",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "phone": "08000222983"
+}
+
+[2024-10-21 17:20:18] {
+    "username": "steve@mail.com",
+    "source": "web",
+    "facilityCode": "454545",
+    "password": "Welcome77."
+}
+
+[2024-10-21 17:20:51] {
+    "token": "V2pST3ZNTWs4TmtWQ2R1bFB4SjVsbUtRNkEwY0tiSlBIcWc1ZmU4d1E5aGVFcW80a3NyWExnaTRBVGxhTGhzM0JPSnV2M3BvN2VEYXVremJGKytBK2xITkpYQVlMS1UxNkRra1pJZlM0ZUNKaW0rYnZVbFEyU1cwaDUyVFZzNzVrUGpnK0t1dFlIdHNiZ0VCSEpHMTRBNUlFTjgwS2lONmJlNk5HbUpTQmVnPTo6wv7UTlGcT1XjPzwd37D6Pg==",
+    "operation": "new",
+    "email": "mail@maik.com",
+    "fname": "john",
+    "lname": "Doe",
+    "phone": "08000222983"
+}
+
