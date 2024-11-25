@@ -110,20 +110,15 @@
                         <img src="logo/logo_1.png" alt="Logo" width="250%" class="img-fluid">
                     </div>
                     <!-- Login Heading -->
-                    <h4 class="text-start">LOGIN</h4>
+                    <h4 class="text-center">Reset Password</h4>
                     <!-- Login Form -->
-                    <form id="form1" onsubmit="return false;">
-                    <input type="hidden" name="route" value="/login">
+                    <form>
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" placeholder="Username" name="username" id="username" required>
-
-                        <label for="password" class="form-label mt-3">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
+                        <input type="text" class="form-control" placeholder="Username" id="username" required>
                         <div class="forgot-password mt-2">  
-                            <a href="./forgot_password" class="text-primary ahf-text-primary">Forgot Password?</a>
+                            <a href="./" class="text-primary ahf-text-primary">I remember now Sign In!</a>
                         </div>
-                        <button id="LoginBtn" type="submit" class="btn btn-ahf w-100 mt-3">Login</button>
-                        <!-- <a href="./dashboard" class="btn btn-ahf w-100 mt-3">Login</a> -->
+                        <button type="submit" class="btn btn-ahf w-100 mt-3">Reset</button>
                     </form>
                 </div>
             </div>
@@ -132,49 +127,6 @@
     </div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> -->
-      <!-- JAVASCRIPT -->
-    <script src="assets/libs/jquery/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
-    <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="assets/js/toastr.min.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("LoginBtn").addEventListener("click", Login);
-        });
-
-        function Login() {
-            // alert('Login function is called'); // Confirm if function is called
-            $('#LoginBtn').text('Logging you in...');
-            $("#LoginBtn").attr("disabled", true);
-            var data = $("#form1").serialize();
-            $.ajax({
-                type: "post",
-                url: "controllers/gateway.php",
-                data: data,
-                dataType: "json",
-                success: function(data) {
-                    if (data.response_code === 200) {
-                        $("#LoginBtn").attr("disabled", true);
-                        toastr.success(data.response_message, 'Success', { timeOut: 1000 });
-                        setTimeout(function() {
-                            window.location.href = 'dashboard';
-                        }, 1000);
-                    } else {
-                        $("#LoginBtn").attr("disabled", false);
-                        $('#LoginBtn').text('Login');
-                        toastr.error(data.response_message, 'Error', { timeOut: 2000 });
-                    }
-                },
-                error: function() {
-                    toastr.error('Unable to process request at the moment!', 'Error', { timeOut: 2000 });
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>

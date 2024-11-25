@@ -1,8 +1,3 @@
-<?php
-include_once("../../libs/dbfunctions.php");
-$dbobject = new dbobject();
-
-?>
 
 <div class="row">
     <div class="col-12">
@@ -30,28 +25,28 @@ $dbobject = new dbobject();
                     function: <code>$().DataTable();</code>.
                 </p> -->
                 <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="card-title"><br><a class="btn btn-ahf btn-sm"
-                                onclick="myLoadModal('modules/facility/facility_setup','modal_div')"
-                                href="javascript:void(0)">Create Facility</a>
-                        </h4>
-                        <p>The report contains Menus that have been setup in the system.</p>
+                    <div class="col-md-8">
+                        <h3 class="fw-bold">
+                            Facility Management
+                        </h3>
+                        <p>Table showing the list of all available facilities.</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                    <a class="btn btn-ahf" onclick="myLoadModal('modules/facility/facility_setup','modal_div')"  href="javascript:void(0)"><i class="fa fa-plus"></i> Create Facility</a>
+                    <button href="" class="btn btn-ahf-secondary" onclick="myLoadModal('modules/user/user.php','modal_div')"><i class="fa fa-plus"></i> Create New User</button>
                     </div>
 
                 </div>
 
-                <table id="page_list" class="table table-bordered dt-responsive nowrap"
+                <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
-                            <th>SN</th>
-                            <th>Menu</th>
-                            <th>URL</th>
-                            <th>Parent</th>
-                            <th>Icon</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                            <th>Created</th>
+                            <th>Facility Name</th>
+                            <th>State</th>
+                            <th>L.G.A.</th>
+                            <th>Phone Number</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 

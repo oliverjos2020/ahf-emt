@@ -543,6 +543,35 @@ body[data-layout=horizontal] .footer {
     background: #991002 !important;
     color:#fff !important;
 }
+.btn-ahf-secondary{
+    background: #ff8686 !important;
+    color:#fff !important;
+}
+
+.ahf-text-primary{
+    color:#991002 !important;
+}
+.ahf-border{
+    border: 1px solid #ff86867d !important;
+    border-radius: 4px;
+}
+.ahf-text-14{
+    font-size: 14px !important;
+}
+.ahf-icon-pill{
+    background: #ff86862e;
+    text-align: center;
+    color: #991002;
+    border-radius: 50%;
+    max-width: 30px;
+    display: flex
+;
+    height: 30px;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    justify-content: center;
+}
 
 .mm-active .active i {
     color: var(--bs-sidebar-menu-item-active-color) !important

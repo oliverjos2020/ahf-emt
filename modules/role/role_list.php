@@ -56,7 +56,7 @@ include_once("../../libs/dbfunctions.php");
     <!-- end col -->
 </div>
 
-<div class="modal fade bs-example-modal-lg" id="defaultModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg" id="defaultModal" tabindex="-1" role="dialog" >
 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="modal_div">
@@ -68,32 +68,80 @@ include_once("../../libs/dbfunctions.php");
 <script>
   var table;
   var editor;
-  var op = "Role.role_list";
-  $(document).ready(function() {
-    table = $("#page_list").DataTable({
-      processing: true,
-      columnDefs: [{
-        orderable: false,
-        targets: 0
-      }],
-      serverSide: true,
-      paging: true,
-      oLanguage: {
-        sEmptyTable: "No record was found, please try another query"
-      },
-
-      ajax: {
-        url: "web/router.php",
-        type: "POST",
-        data: function(d, l) {
-          d.op = op;
-          d.li = Math.random();
-//          d.start_date = $("#start_date").val();
-//          d.end_date = $("#end_date").val();
-        }
-      }
+  var route = "/roleList";
+  $(document).ready(function () {
+    $.blockUI({
+      message:
+        '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
     });
-  });
+    table = $("#page_list").DataTable({
+        processing: true,
+        serverSide: true,
+        paging: true,
+        columnDefs: [
+            {
+                orderable: false,
+                targets: -1 // Disable ordering on the "Action" column
+            }
+        ],
+        oLanguage: {
+            sEmptyTable: "No record was found, please try another query"
+        },
+        ajax: {
+            url: "controllers/gateway.php",
+            type: "POST",
+            data: function (d) {
+                d.route = route;
+                d.li = Math.random();
+                d.list = "yes";
+            },
+            dataSrc: function (response) {
+                $.unblockUI();
+                // Check response and format data
+                if (response.draw) {
+                    // Map response data and add a Delete button as the last column
+                    return response.data.map(row => {
+                        const flattenedRow = row.flat(); // Flatten nested arrays
+                        flattenedRow.push(
+                            `<button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[0]}">Delete</button>`
+                        ); // Add delete button with ID from the first column
+                        return flattenedRow;
+                    });
+                } else {
+                    console.error("Invalid response:", response);
+                    return [];
+                }
+            }
+        },
+        columns: [
+            { title: "S/N", data: 0 },
+            { title: "Role ID", data: 1 },
+            { title: "Role Name", data: 2 },
+            { title: "Created", data: 3 },
+            { title: "Action", data: 4 } // The new "Action" column for buttons
+        ]
+    });
+
+    // Handle delete button click
+    $("#page_list").on("click", ".delete-btn", function () {
+        const id = $(this).data("id");
+        if (confirm("Are you sure you want to delete this role?")) {
+            $.ajax({
+                url: "controllers/gateway.php",
+                type: "POST",
+                data: { id: id },
+                success: function (response) {
+                    alert("Role deleted successfully.");
+                    table.ajax.reload(); // Reload the table data
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error deleting role:", error);
+                    alert("Failed to delete role.");
+                }
+            });
+        }
+    });
+});
 
   function do_filter() {
     table.draw();

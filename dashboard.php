@@ -1,18 +1,19 @@
 <?php
-session_start();
-require_once('libs/dbfunctions.php');
-// require_once('class/menu.php');
-require_once('controllers/menu.php');
-$dbobject = new dbobject();
-$menu = new Menu();
-if (!isset($_SESSION['username_sess'])) {
+require_once('controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
     header('location: web/logout.php');
 }
-$role =  $_SESSION['role_id_sess'];
-$getRoleID = $dbobject->getitemlabel('userdata', 'username', $_SESSION['username_sess'], 'role_id');
-$menu_list = $menu->generateMenu($getRoleID);
-$menu_list = $menu_list['data'];
-// print_r($menu_list['data']);
+
+$firstname = $details['firstname'] ?? '';
+$lastname = $details['lastname'] ?? '';
+$role_name = $details['role'] ?? '';
+$facility = $details['facilityName'] ?? '';
+// print_r($details['menu']);exit;
+$menu_list = $details['menu'];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,11 +35,79 @@ $menu_list = $menu_list['data'];
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <style>
+        .nav-link[aria-expanded="false"] {
+        color: #707D8A !important;
+    }
 
+    .nav-link[aria-expanded="false"] i {
+        color: #707D8A !important;
+    }
+
+    .loader-container {
+        display: none;
+        /* Hide the loader by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Dark background */
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto;
+        position: relative;
+        background: currentColor;
+        color: #FFF;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.3s linear infinite alternate;
+    }
+
+    .loader::after,
+    .loader::before {
+        content: '';
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.45s linear infinite alternate;
+    }
+
+    .loader::before {
+        left: -20px;
+        animation-delay: 0s;
+    }
+
+    @keyframes animloader {
+        0% {
+            height: 48px
+        }
+
+        100% {
+            height: 4px
+        }
+    }
+    </style>
 </head>
 
 <body data-layout="detached" data-topbar="colored">
-
+    <div class="loader-container">
+        <span class="loader"></span>
+    </div>
     <div class="container-fluid">
         <!-- Begin page -->
         <div id="layout-wrapper">
@@ -86,7 +155,7 @@ $menu_list = $menu_list['data'];
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
                                         alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">Patrick</span>
+                                    <span class="d-none d-xl-inline-block ms-1"><?php echo $firstname ?></span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -100,7 +169,7 @@ $menu_list = $menu_list['data'];
                                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i>
                                         Lock screen</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="web/logout.php"><i
+                                    <a class="dropdown-item text-danger" href="./web/logout.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> Logout</a>
                                 </div>
                             </div>
@@ -148,8 +217,8 @@ $menu_list = $menu_list['data'];
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-body fw-medium font-size-16">Patrick Becker</a>
-                            <p class="text-muted mt-1 mb-0 font-size-13">UI/UX Designer</p>
+                            <a href="#" class="text-body fw-medium font-size-16"><?php echo $firstname . ' ' . $lastname ?></a>
+                            <p class="text-muted mt-1 mb-0 font-size-13"><?php echo $role_name ?></p>
 
                         </div>
                     </div>
@@ -161,10 +230,11 @@ $menu_list = $menu_list['data'];
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="./dashboard" class="waves-effect active" style="color: #707d8a !important">
-                                    <i class="fas fa-th-large" style="color: #707d8a !important"></i>
+                                <a href="javascript:void(0)" onclick="location.reload();" class="waves-effect" style="color: #707d8a !important">
+                                    <i class="fas fa-th-large" style="color: #991002 !important"></i>
                                     <span>Dashboard</span>
                                 </a>
+
                             </li>
 
                             <?php
@@ -202,11 +272,68 @@ $menu_list = $menu_list['data'];
 
 
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fa fa-cog"></i>
+                                    <span>Administrative Tools</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/role/role_list', 'page', '006')" aria-expanded="false">Role</a></li>
 
+                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/menu/menu_list', 'page', '007')" aria-expanded="false">Menu</a></li>
+
+                                    <li class=""><a style="cursor:pointer;" onclick="loadNavPage('modules/user/user_list', 'page', '028')" aria-expanded="false">Users</a></li>
+                                </ul>
+                            </li>
+                            <!-- 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fa fa-users"></i>
+                                    <span>Patients</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/patient/add_patient', 'page', '006')" aria-expanded="false">Add Patient</a></li>
+
+                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/patient/patient_list', 'page', '007')" aria-expanded="false">Patient List</a></li>
+
+                                    <li class=""><a style="cursor:pointer;" onclick="loadNavPage('modules/patient/view_patient', 'page', '028')" aria-expanded="false">View Patient</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="">
+                                <a href="javascript: void(0);" class="waves-effect nav-link" aria-expanded="true" onclick="loadNavPage('modules/tracker/tracker_management', 'page', '006')">
+                                    <i class="dripicons-graph-line"></i>
+                                    <span>Tracker Management</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript: void(0);" class="waves-effect nav-link" aria-expanded="true" onclick="loadNavPage('modules/tracker/tracker_management_individual_tracker', 'page', '006')">
+                                    <i class="fas fa-user-md"></i>
+                                    <span>Individual Tracker</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript: void(0);" class="waves-effect nav-link" aria-expanded="true" onclick="loadNavPage('modules/tracker/missed_appointment', 'page', '006')">
+                                    <i class="dripicons-calendar"></i>
+                                    <span>Missed Appointment</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript: void(0);" class="waves-effect nav-link" aria-expanded="true" onclick="loadNavPage('modules/inventory/dispensory_log', 'page', '006')">
+                                    <i class="fas fa-pills"></i>
+                                    <span>Dispensory Log</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript: void(0);" class="waves-effect nav-link" aria-expanded="true" onclick="loadNavPage('modules/inventory/inventory_management', 'page', '006')">
+                                    <i class="fas fa-box-open"></i>
+                                    <span>Inventory</span>
+                                </a>
+                            </li> -->
                             <li class="menu-title">Components</li>
 
                             <li>
-                                <a href="web/logout.php" class="waves-effect">
+                                <a href="./web/logout.php" class="waves-effect">
                                     <i class="mdi mdi-file-tree"></i>
                                     <span>Logout</span>
                                 </a>
@@ -232,75 +359,299 @@ $menu_list = $menu_list['data'];
                             <div class="page-title-box d-flex align-items-center justify-content-between">
                                 <h4 class="page-title mb-0 font-size-18">Dashboard</h4>
 
-                                <div class="page-title-right">
+                                <!-- <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
                                         <li class="breadcrumb-item active">Dashboard</li>
                                     </ol>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="ahf-text-primary fw-bold">Facility: <?php echo $facility ?? '' ?></h3>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button class="btn btn-ahf btn-sm"><i class="fa fa-print"></i> Print Report</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="background: #fff; border-bottom: 1px solid #eee;">
+                            <div class="row p-3">
+                                <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                    <label for="start-date" style="margin: 0;">Start Date</label>
+                                    <input type="date" id="start-date" name="start_date" class="form-control">
+                                </div>
+                                <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                    <label for="end-date" style="margin: 0;">End Date</label>
+                                    <input type="date" id="end-date" name="end_date" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row p-2">
+                                <div class="col-md ahf-border p-3">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-0 p-2">
+                                <div class="col-md ahf-border p-3">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>5076</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="ahf-icon-pill">
+                                                <i class="fa fa-users"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold">Statistical Analysis</h5>
+                                    <canvas id="statistical-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold">Gender Distribution</h5>
+                                    <!-- <canvas id="gender-distribution"></canvas> -->
+                                    <div class="chart-container mt-3">
+                                        <canvas id="gender-distribution"></canvas>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">950</h3>
+                                            <p>Total Male Patient Enrolled</p>
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">2400</h3>
+                                            <p>Total Female Patient Enrolled</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card"> -->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold">% Active Patient</h5>
+                                    <div class="mt-4">
+                                        <canvas id="active-patient"></canvas>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">75</h3>
+                                            <p>In-Active Patients</p>
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">15</h3>
+                                            <p>Active Patient </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5 class="fw-bold">Viral Loads Level Chart</h5>
+                                        </div>
+                                        <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                            <label for="end-date" style="margin: 0;">Filter By</label>
+                                            <input type="date" id="viral_date" name="viral_date" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <canvas id="viral-load-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-md-7">
                             <div class="card">
                                 <div class="card-body">
-
-                                    <h4 class="card-title mb-4">Pie Chart</h4>
-
-                                    <div class="row text-center">
-                                        <div class="col-4">
-                                            <h5 class="mb-0">2536</h5>
-                                            <p class="text-muted text-truncate">Activated</p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5 class="fw-bold">CD4 Count Status Chart</h5>
                                         </div>
-                                        <div class="col-4">
-                                            <h5 class="mb-0">69421</h5>
-                                            <p class="text-muted text-truncate">Pending</p>
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="mb-0">89854</h5>
-                                            <p class="text-muted text-truncate">Deactivated</p>
+                                        <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                            <label for="end-date" style="margin: 0;">Filter By</label>
+                                            <input type="date" id="viral_date" name="viral_date" class="form-control">
                                         </div>
                                     </div>
-
-                                    <canvas id="pie" height="260"></canvas>
-
+                                    <h5 class="fw-bold">CD4 Count Status Chart</h5>
+                                    <canvas id="cd4-chart"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <!-- end col -->
-
-                        <div class="col-lg-6">
+                        <div class="col-md-5">
                             <div class="card">
                                 <div class="card-body">
-
-                                    <h4 class="card-title mb-4">Donut Chart</h4>
-
-                                    <div class="row text-center">
-                                        <div class="col-4">
-                                            <h5 class="mb-0">9595</h5>
-                                            <p class="text-muted text-truncate">Activated</p>
+                                    <h5 class="fw-bold">Gender Distribution</h5>
+                                    <!-- <canvas id="gender-distribution"></canvas> -->
+                                    <div class="chart-container mt-3">
+                                        <canvas id="gender-distribution"></canvas>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">950</h3>
+                                            <p>Total Male Patient Enrolled</p>
                                         </div>
-                                        <div class="col-4">
-                                            <h5 class="mb-0">36524</h5>
-                                            <p class="text-muted text-truncate">Pending</p>
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="mb-0">62541</h5>
-                                            <p class="text-muted text-truncate">Deactivated</p>
+                                        <div class="col-md-6 text-center">
+                                            <h3 class="fw-bold">2400</h3>
+                                            <p>Total Female Patient Enrolled</p>
                                         </div>
                                     </div>
-
-                                    <canvas id="doughnut" height="260"></canvas>
-
                                 </div>
                             </div>
                         </div>
-                        <!-- end col -->
                     </div>
+                    <!-- </div> -->
 
                 </div>
                 <!-- End Page-content -->
@@ -311,7 +662,7 @@ $menu_list = $menu_list['data'];
                             <div class="col-sm-6">
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> © AHF.
+                                </script> © AHF NIGERIA
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-end d-none d-sm-block">
@@ -328,63 +679,6 @@ $menu_list = $menu_list['data'];
         <!-- END layout-wrapper -->
 
     </div>
-    <!-- end container-fluid -->
-
-    <!-- Right Sidebar -->
-
-    <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-body rightbar">
-            <div class="right-bar">
-                <div data-simplebar class="h-100">
-                    <div class="rightbar-title px-3 py-4">
-                        <a href="javascript:void(0);" class="right-bar-toggle float-end" data-bs-dismiss="offcanvas" aria-label="Close">
-                            <i class="mdi mdi-close noti-icon"></i>
-                        </a>
-                        <h5 class="m-0">Settings</h5>
-                    </div>
-
-                    <!-- Settings -->
-                    <hr class="mt-0" />
-                    <h6 class="text-center mb-0">Choose Layouts</h6>
-
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-                        </div>
-
-                        <div class="form-check form-switch mb-3">
-                            <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
-                            <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                        </div>
-
-                        <div class="mb-2">
-                            <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-                        </div>
-
-                        <div class="form-check form-switch mb-3">
-                            <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch" />
-                            <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                        </div>
-
-                        <div class="mb-2">
-                            <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-                        </div>
-                        <div class="form-check form-switch mb-5">
-                            <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
-                            <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- end slimscroll-menu-->
-            </div>
-        </div>
-
-    </div>
-
-
-    <!-- /Right-bar -->
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
@@ -397,9 +691,10 @@ $menu_list = $menu_list['data'];
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
     <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="assets/js/main.js" integrity="<?php echo $dbobject->CORS('assets/js/main.js') ?>"></script>
-    <script src="assets/js/jquery.blockUI.js" integrity="<?php echo $dbobject->CORS('assets/js/jquery.blockUI.js') ?>"></script>
+
 
     <!-- Required datatable js -->
     <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -422,10 +717,120 @@ $menu_list = $menu_list['data'];
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
     <script src="assets/libs/chart.js/Chart.bundle.min.js"></script>
-    <script src="assets/js/pages/chartjs.init.js"></script>
+    <!-- <script src="assets/js/pages/chartjs.init.js"></script> -->
     <!-- App js -->
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>
+        const ctx = document.getElementById('statistical-chart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [5, 10, 19, 12],
+                    backgroundColor: [
+                        '#f57878', // Red
+                        '#991002', // Blue
+                        '#CC8780', // Yellow
+                        '#ced4da', // Green
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        const ctxViralLoad = document.getElementById('viral-load-chart');
+        new Chart(ctxViralLoad, {
+            type: 'line',
+            data: {
+                labels: ['0', '<=20', '21 - 999', '>=1000'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [0, 500, 999, 800],
+                    backgroundColor: [
+                        '#f5787852',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        const ctxCD4Chart = document.getElementById('cd4-chart');
+        new Chart(ctxCD4Chart, {
+            type: 'line',
+            data: {
+                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [5, 10, 19, 12],
+                    backgroundColor: [
+                        '#f5787852',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctxGenderDistribution = document.getElementById('gender-distribution');
+        new Chart(ctxGenderDistribution, {
+            type: 'doughnut',
+            data: {
+                labels: ['Male', 'Female'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [2400, 950],
+                    backgroundColor: [
+                        '#CC8780', // Yellow
+                        '#ced4da', // Green
+                    ],
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        const ctxActivePatient = document.getElementById('active-patient');
+        new Chart(ctxActivePatient, {
+            type: 'pie',
+            data: {
+                labels: ['In-Active Patients', 'Active Patient'],
+                datasets: [{
+                    label: 'Active PatientS',
+                    data: [75, 15],
+                    backgroundColor: [
+                        '#991002', // Yellow
+                        '#DDAFAB', // Green
+                    ],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+
+
 
 </body>
 

@@ -1,7 +1,4 @@
 <?php
-include_once("../../libs/dbfunctions.php");
-include_once("../../controllers/menu.php");
-$dbobject = new dbobject();
 
 $id = "";
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
@@ -23,7 +20,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-sm-6">
                 <div class="form-group">
 
-                    <input type="hidden" name="op" value="role.saveRole">
+                    <input type="hidden" name="route" value="/saveRole">
                     <input type="hidden" name="operation" value="<?php echo $operation; ?>">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <label class="form-label">Role Name</label>
@@ -52,10 +49,10 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     function saveRecord() {
         $("#save_facility").text("Loading......");
         var dd = $("#form1").serialize();
-        $.post("web/router.php", dd, function(re) {
+        $.post("controllers/gateway.php", dd, function(re) {
             $("#save_facility").text("Save");
             console.log(re);
-            if (re.response_code == 0) {
+            if (re.response_code == 200) {
 
                 // $("#err").css('color', 'green')
                 // $("#err").html(re.response_message)
@@ -76,7 +73,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 
 
             } else {
-                regenerateCORS();
+                // regenerateCORS();
                 toastr.error(re.response_message, 'Error', {
                     closeButton: true,
                     progressBar: true,
@@ -89,9 +86,5 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             }
 
         }, 'json')
-    }
-
-    function display_icon(ee) {
-        $("#icon-display").html(`<i class="${ee}"></i>`);
     }
 </script>

@@ -1,0 +1,169 @@
+Logged @ 2024-11-21 18:18:40 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:20:09 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:22:02 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:23:06 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:23:32 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:23:59 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:34:17 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:34:50 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "dzd2MkJtSkJ1bllnY3B5azk0bGV6Q20wclJmdlB3UDZSdUp0N1I1Z1BrdnoyWmRPV0dSTStoSzIxWWxtMlJ1ZFl6ayttYlBmYlEyUWh4aS94bXJFeUx6M0JReEJxSmpNbkpXTGNDekM3aVYzclR4c1JwZWJDNUxIb1pGMGl6VmZwZFpzd2I5RWpmQjBDT2NlakRCcGNxRGphRjJtR2NKWnZiVHo5eEt1S0RBPTo6S1c631EHuy+w17tpoQ5FTw==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 18:41:29 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "U3Z6N3JvOUVsTi9kNDc0VFo3T1ZyclBXM0xPaTBGSXRDVkxiV1R1QVNTc0RJUGp0dVFZbjJpcUk5TVdtTitWZU1ITWNEbGt0UDNyaC9YeWxzZmx6NXBHYW04MzZGcFNPMFlBL0JGYld5TzNSL1RtaHYzQWJZMGkxR0IrL2p3Q1lDTzZwbUFoLzNUUExMbENVSGM0c0w5eHRCdFpDNUhQR0tOU1U3SExLNkpjPTo6f10epXam8bUyrlEPIoCvMQ==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 18:42:12 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "VnIvVllrcktuMndrdWFobkFTckZVWkdIeHFpK2dqb1dVaCsvMmQ0Z0tEdC9Uakg1L3BscjdSQnN2TGtad2hPVmRCMDNzUGNxNUw2aHlpMzk2TXQ3d1pVeC9zMnVpOWl0STU4c3BydTVtL29VNmxUeGc3QndrTXk5SFBxbE9UVEFMZ3pDZk5TVXBNZzJ3emtNQ0NBMkFYZjBXODFDWmgyTTVQTnRNZ0dpTFBjPTo6Lh+s3duOg4NvQ\/EJKHs7cA==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 18:46:20 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 18:46:42 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "K2p5U1NnUWJ4VVF4K3NlSldBMmkxRndQVFQrWDMzbjdNRUZFQkFOOTlnNmhnS1ZWNzF6NW9XaEpKYWRVNzhVWExWZk1aQllkdVFaVkNrQnZ0QXlnQ3Vndkd5NUppeUdSdC9samRwb0ZXNnBFZUpjWUlLRzA4VzczUEJkdkM1a2xvbXBsOWRzMStSL0F3WEtNZlpiTWo2RVdTcVFUbzUxS2kwZTl5VllFMU5FPTo61dB1I0xE08RH51CwR0P1HA==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 18:56:21 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "OXl5Q05QbUlxZWtRU1dZcWpXRnZHRFc5TE9GZlo3cjluRnYwRUtvaHRqWkJvUEV3aS9vK1JDSlJLTmdUSVNoSkRZUWtPSWNnN0VmbytpL0FaL2M5dWVRWmFJRlJ6SWM0RHJPVkFJV1dOTzlFQ1MzY1RzTUd1K045RS9SUGw0VlprbmYyU2dQT1kzZExBTE9mcUZyOGc5cUhDRFgzdFdxamZNYWhuNkNQRzZVPTo6LcdfhcOYiwvANWanWJyFhw==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 19:01:11 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 19:01:26 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 19:01:57 Data=>{
+    "response_code": 400,
+    "response_message": "Error: Unable to fetch facility information",
+    "data": ""
+}
+Logged @ 2024-11-21 19:02:35 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "ZGhHZXM2ZFFueTBOeVdGTFI3WktXaUluVVlJbzg1dDRVcllVTFBrenpiQXZSejBMUVZvK0JtZ0hBek1WNjhLaXVnaWsvbFloTi9wcDVZWjFjMHRBWGVZK3VwSWFUU2hrbjg3dUxJcTFCSTJJM2tVVU5ncXZON1BGZkpDNUVpcHlrOVI0Yy9VTFE3amxvTmVIVVVxSjRWaUFIdWxiK2RUZ214b1JJT0RDbjJFPTo6Xrpr5VrVBT9fs1cz9Pu1fA==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 19:10:08 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "T1I4RnZTRWRwMHNPbTlpbGZ5dnVaVjZoOUtYcUUrMXgwQzZUcFVVQTlHQVZaRk5KT0hpY2JjTUtHbVdESHhFY29ZbGJmWHArU1Y5eVp6VU9QUUhaOWRSczFySTRQWmwremJ4RTY2czhQUzl3T1VEMEQ1dWFIa2NNR3lNVWFubHVpY2VNVEJlYzd2eVZrVWJ0dzhTZjBaOUMrbi82NzAzbVM1OTJIWk04N2hFPTo6T71a4Br\/T+1O\/jqfhmVw9Q==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 19:38:11 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "VjdCQnB3MEVPVlBCbUtoYThxWHNiRXFsU211QkRQamxMUEZoNlI4Ykx1T0xtc1ByREQySVdKK0krbjJjV0dNNCtIQVZ2dTU2ZWE4TWZnZ2EvQzljUmtXVFJMNTRERDlFN1V0Q05oSkhQUW1xWUVRYXV5WDVxTzZzR1FTUm5qRDF3aC9aaVJuUFN0NDFNeHR0c0lEYnZXZE5GcGVqM2FVaTEyUS9KNU8ySW5nPTo673xAGyKrYlCnEBkC3oXWCg==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545"
+    }
+}
+Logged @ 2024-11-21 23:16:39 Data=>null
+Logged @ 2024-11-21 23:42:14 Data=>null

@@ -1,0 +1,5447 @@
+Logged @ 2024-11-24 23:55:15 Data=>{
+    "response_code": 200,
+    "response_message": "Login Successful",
+    "data": {
+        "token": "NFNESVpvNFRVZThRMHErYUptemlaOVpneUxqakdtaXdqTU16bUFjK01Nb3ZsTVkwRHN0ZlVmUjVqZG1sbU83aVE5TzBjb1N3N05MVE9VQVVmZGpmcmE3WTQyYTl2cS94ZHgrS3QzZ0Z5TU1CaU44UjNnV05WTjR0N1QzODhYME5McjgyT1AvNmNmVTJWQThrdWNIY0hXaS9IU3pmYWloMEpoZ3E0QzlMZzB3PTo6vQMGU8kKG3eiQHCzS05X2Q==",
+        "role_name": "Administrator",
+        "role_id_sess": "001",
+        "username_sess": "steve@mail.com",
+        "firstname": "Steve",
+        "lastname": "Obasi",
+        "facilityName": "AHF Abuja",
+        "facilityId": "454545",
+        "menuenu": [
+            {
+                "menu_id": "004",
+                "menu_name": "Adminstrative Tools",
+                "parent_id": "#",
+                "menu_level": "0",
+                "icon": "",
+                "has_sub_menu": true,
+                "sub_menu": [
+                    {
+                        "menu_id": "004",
+                        "menu_url": "#",
+                        "name": "Adminstrative Tools"
+                    },
+                    {
+                        "menu_id": "008",
+                        "menu_url": "#",
+                        "name": "Setups"
+                    },
+                    {
+                        "menu_id": "29",
+                        "menu_url": "modules\/patient\/add_patient",
+                        "name": "Patients"
+                    },
+                    {
+                        "menu_id": "30",
+                        "menu_url": "modules\/facility\/facility_list",
+                        "name": "Facility Setup"
+                    }
+                ],
+                "menu_url": "#"
+            },
+            {
+                "menu_id": "008",
+                "menu_name": "Setups",
+                "parent_id": "#",
+                "menu_level": "0",
+                "icon": "fa fa-cogs",
+                "has_sub_menu": true,
+                "sub_menu": [
+                    {
+                        "menu_id": "004",
+                        "menu_url": "#",
+                        "name": "Adminstrative Tools"
+                    },
+                    {
+                        "menu_id": "008",
+                        "menu_url": "#",
+                        "name": "Setups"
+                    },
+                    {
+                        "menu_id": "29",
+                        "menu_url": "modules\/patient\/add_patient",
+                        "name": "Patients"
+                    },
+                    {
+                        "menu_id": "30",
+                        "menu_url": "modules\/facility\/facility_list",
+                        "name": "Facility Setup"
+                    }
+                ],
+                "menu_url": "#"
+            },
+            {
+                "menu_id": "29",
+                "menu_name": "Patients",
+                "parent_id": "#",
+                "menu_level": "0",
+                "icon": null,
+                "has_sub_menu": true,
+                "sub_menu": [
+                    {
+                        "menu_id": "004",
+                        "menu_url": "#",
+                        "name": "Adminstrative Tools"
+                    },
+                    {
+                        "menu_id": "008",
+                        "menu_url": "#",
+                        "name": "Setups"
+                    },
+                    {
+                        "menu_id": "29",
+                        "menu_url": "modules\/patient\/add_patient",
+                        "name": "Patients"
+                    },
+                    {
+                        "menu_id": "30",
+                        "menu_url": "modules\/facility\/facility_list",
+                        "name": "Facility Setup"
+                    }
+                ],
+                "menu_url": "modules\/patient\/add_patient"
+            },
+            {
+                "menu_id": "30",
+                "menu_name": "Facility Setup",
+                "parent_id": "#",
+                "menu_level": "0",
+                "icon": null,
+                "has_sub_menu": true,
+                "sub_menu": [
+                    {
+                        "menu_id": "004",
+                        "menu_url": "#",
+                        "name": "Adminstrative Tools"
+                    },
+                    {
+                        "menu_id": "008",
+                        "menu_url": "#",
+                        "name": "Setups"
+                    },
+                    {
+                        "menu_id": "29",
+                        "menu_url": "modules\/patient\/add_patient",
+                        "name": "Patients"
+                    },
+                    {
+                        "menu_id": "30",
+                        "menu_url": "modules\/facility\/facility_list",
+                        "name": "Facility Setup"
+                    }
+                ],
+                "menu_url": "modules\/facility\/facility_list"
+            }
+        ],
+        "metaData": {
+            "role_list": [
+                {
+                    "role_id": "002",
+                    "role_name": "Facility Admin",
+                    "role_enabled": "1",
+                    "created": "2024-11-13 01:20:56"
+                },
+                {
+                    "role_id": "004",
+                    "role_name": "Doctor",
+                    "role_enabled": "1",
+                    "created": "2024-11-18 12:08:22"
+                },
+                {
+                    "role_id": "005",
+                    "role_name": "Parmacist",
+                    "role_enabled": "1",
+                    "created": "2024-11-18 12:08:30"
+                },
+                {
+                    "role_id": "006",
+                    "role_name": "Clinician I ",
+                    "role_enabled": "1",
+                    "created": "2024-11-21 10:44:14"
+                }
+            ],
+            "drug_category": [
+                {
+                    "id": "44",
+                    "category_name": "Analgesics",
+                    "description": "Drugs that relieve pain"
+                },
+                {
+                    "id": "45",
+                    "category_name": "Antibiotics",
+                    "description": "Drugs used to treat bacterial infections"
+                },
+                {
+                    "id": "46",
+                    "category_name": "Antivirals",
+                    "description": "Drugs used to treat viral infections"
+                },
+                {
+                    "id": "47",
+                    "category_name": "Antifungals",
+                    "description": "Drugs that treat fungal infections"
+                },
+                {
+                    "id": "48",
+                    "category_name": "Antiparasitics",
+                    "description": "Drugs that treat parasitic infections"
+                },
+                {
+                    "id": "49",
+                    "category_name": "Anti-inflammatory",
+                    "description": "Drugs that reduce inflammation"
+                },
+                {
+                    "id": "50",
+                    "category_name": "Antipyretics",
+                    "description": "Drugs that reduce fever"
+                },
+                {
+                    "id": "51",
+                    "category_name": "Antihistamines",
+                    "description": "Drugs that treat allergic reactions"
+                },
+                {
+                    "id": "52",
+                    "category_name": "Anticoagulants",
+                    "description": "Drugs that prevent blood clotting"
+                },
+                {
+                    "id": "53",
+                    "category_name": "Antidepressants",
+                    "description": "Drugs that treat depression"
+                },
+                {
+                    "id": "54",
+                    "category_name": "Antipsychotics",
+                    "description": "Drugs used for mental health conditions like schizophrenia"
+                },
+                {
+                    "id": "55",
+                    "category_name": "Anticonvulsants",
+                    "description": "Drugs that prevent or reduce seizures"
+                },
+                {
+                    "id": "56",
+                    "category_name": "Bronchodilators",
+                    "description": "Drugs that help open airways in respiratory conditions like asthma"
+                },
+                {
+                    "id": "57",
+                    "category_name": "Diuretics",
+                    "description": "Drugs that help reduce excess water in the body"
+                },
+                {
+                    "id": "58",
+                    "category_name": "Sedatives",
+                    "description": "Drugs that promote calm or sleep"
+                },
+                {
+                    "id": "59",
+                    "category_name": "Hypnotics",
+                    "description": "Drugs used to induce and maintain sleep"
+                },
+                {
+                    "id": "60",
+                    "category_name": "Muscle Relaxants",
+                    "description": "Drugs that relieve muscle spasms"
+                },
+                {
+                    "id": "61",
+                    "category_name": "Vasodilators",
+                    "description": "Drugs that widen blood vessels to improve blood flow"
+                },
+                {
+                    "id": "62",
+                    "category_name": "Antiemetics",
+                    "description": "Drugs that prevent or reduce nausea and vomiting"
+                },
+                {
+                    "id": "63",
+                    "category_name": "Antidiarrheals",
+                    "description": "Drugs used to reduce diarrhea"
+                },
+                {
+                    "id": "64",
+                    "category_name": "Antacids",
+                    "description": "Drugs that neutralize stomach acid"
+                },
+                {
+                    "id": "65",
+                    "category_name": "Laxatives",
+                    "description": "Drugs that relieve constipation"
+                },
+                {
+                    "id": "66",
+                    "category_name": "Corticosteroids",
+                    "description": "Drugs that reduce inflammation and suppress the immune system"
+                },
+                {
+                    "id": "67",
+                    "category_name": "Vaccines",
+                    "description": "Drugs used to stimulate the immune system to prevent diseases"
+                },
+                {
+                    "id": "68",
+                    "category_name": "Hormones",
+                    "description": "Drugs that regulate or replace hormones in the body"
+                },
+                {
+                    "id": "69",
+                    "category_name": "Antihypertensives",
+                    "description": "Drugs used to manage high blood pressure"
+                },
+                {
+                    "id": "70",
+                    "category_name": "Antidiabetics",
+                    "description": "Drugs used to control blood sugar levels"
+                },
+                {
+                    "id": "71",
+                    "category_name": "Lipid-lowering Agents",
+                    "description": "Drugs that reduce cholesterol levels"
+                },
+                {
+                    "id": "72",
+                    "category_name": "Contraceptives",
+                    "description": "Drugs used to prevent pregnancy"
+                },
+                {
+                    "id": "73",
+                    "category_name": "Ophthalmic Agents",
+                    "description": "Drugs used for eye conditions"
+                },
+                {
+                    "id": "74",
+                    "category_name": "Topical Agents",
+                    "description": "Drugs applied directly to the skin"
+                },
+                {
+                    "id": "75",
+                    "category_name": "Immunosuppressants",
+                    "description": "Drugs that suppress the immune system"
+                },
+                {
+                    "id": "76",
+                    "category_name": "Chemotherapeutic Agents",
+                    "description": "Drugs used to treat cancer"
+                },
+                {
+                    "id": "77",
+                    "category_name": "Nucleoside Reverse Transcriptase Inhibitors (NRTIs)",
+                    "description": "HIV drugs that block reverse transcriptase"
+                },
+                {
+                    "id": "78",
+                    "category_name": "Non-Nucleoside Reverse Transcriptase Inhibitors (NNRTIs)",
+                    "description": "HIV drugs that bind to reverse transcriptase and inhibit its action"
+                },
+                {
+                    "id": "79",
+                    "category_name": "Protease Inhibitors (PIs)",
+                    "description": "HIV drugs that inhibit protease, preventing viral replication"
+                },
+                {
+                    "id": "80",
+                    "category_name": "Integrase Strand Transfer Inhibitors (INSTIs)",
+                    "description": "HIV drugs that block HIV integrase"
+                },
+                {
+                    "id": "81",
+                    "category_name": "CCR5 Antagonists (Entry Inhibitors)",
+                    "description": "HIV drugs that block the CCR5 receptor on the host cell"
+                },
+                {
+                    "id": "82",
+                    "category_name": "Fusion Inhibitors",
+                    "description": "HIV drugs that prevent the virus from fusing with the host cell"
+                },
+                {
+                    "id": "83",
+                    "category_name": "Pharmacokinetic Enhancers (Boosters)",
+                    "description": "Drugs that boost the effectiveness of other ARVs"
+                },
+                {
+                    "id": "84",
+                    "category_name": "Post-Attachment Inhibitors",
+                    "description": "HIV drugs that prevent the virus from attaching to the host cell"
+                },
+                {
+                    "id": "85",
+                    "category_name": "Monoclonal Antibodies",
+                    "description": "Antibodies designed to target HIV"
+                },
+                {
+                    "id": "86",
+                    "category_name": "Combination ARV Therapy (cART)",
+                    "description": "ARV drugs combining two or more antiretrovirals in one pill"
+                }
+            ],
+            "lga_State": [
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Asaritoru",
+                    "Lgaid": "2"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Aboh mbaise",
+                    "Lgaid": "3"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Oluyole",
+                    "Lgaid": "5"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Bekwara",
+                    "Lgaid": "6"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Abeokuta east",
+                    "Lgaid": "7"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Yemoji",
+                    "Lgaid": "8"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Etsakor",
+                    "Lgaid": "9"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ethiope west",
+                    "Lgaid": "10"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Idemili",
+                    "Lgaid": "11"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ijumu iyara",
+                    "Lgaid": "12"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Mopa-muro",
+                    "Lgaid": "13"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Aba north",
+                    "Lgaid": "14"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Aba south",
+                    "Lgaid": "15"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Arochukwu",
+                    "Lgaid": "16"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Bende",
+                    "Lgaid": "17"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ikwuano",
+                    "Lgaid": "18"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Isiala-ngwa north",
+                    "Lgaid": "19"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Isiala-ngwa south",
+                    "Lgaid": "20"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Isukwuato",
+                    "Lgaid": "21"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Obiomangwa",
+                    "Lgaid": "22"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ohafia",
+                    "Lgaid": "23"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Osisioma ngwa",
+                    "Lgaid": "24"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ugwunagbo",
+                    "Lgaid": "25"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ukwa east",
+                    "Lgaid": "26"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ukwa west",
+                    "Lgaid": "27"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Umuahia north",
+                    "Lgaid": "28"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Umuahia south",
+                    "Lgaid": "29"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Umu-nneochi",
+                    "Lgaid": "30"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Demsa",
+                    "Lgaid": "31"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Fufore",
+                    "Lgaid": "32"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Ganye",
+                    "Lgaid": "33"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Girei",
+                    "Lgaid": "34"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Gombi",
+                    "Lgaid": "35"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Guyuk",
+                    "Lgaid": "36"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Hong",
+                    "Lgaid": "37"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Jada",
+                    "Lgaid": "38"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Lamurde",
+                    "Lgaid": "39"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Madagali",
+                    "Lgaid": "40"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Maiha",
+                    "Lgaid": "41"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Mayo-belwa",
+                    "Lgaid": "42"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Michika",
+                    "Lgaid": "43"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Mubi north",
+                    "Lgaid": "44"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Mubi south",
+                    "Lgaid": "45"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Numan",
+                    "Lgaid": "46"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Shelleng",
+                    "Lgaid": "47"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Song",
+                    "Lgaid": "48"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Toungo",
+                    "Lgaid": "49"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Yola north",
+                    "Lgaid": "50"
+                },
+                {
+                    "stateid": "002",
+                    "State": "ADAMAWA",
+                    "Lga": "Yola south",
+                    "Lgaid": "51"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Abak",
+                    "Lgaid": "52"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Eastern obolo",
+                    "Lgaid": "53"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Eket",
+                    "Lgaid": "54"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Esit eket",
+                    "Lgaid": "55"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Essien udim",
+                    "Lgaid": "56"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Etim ekpo",
+                    "Lgaid": "57"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Etinan",
+                    "Lgaid": "58"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ibeno",
+                    "Lgaid": "59"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ibesikpo asutan",
+                    "Lgaid": "60"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ibiono ibom",
+                    "Lgaid": "61"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ika",
+                    "Lgaid": "62"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ikono",
+                    "Lgaid": "63"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ikot abasi",
+                    "Lgaid": "64"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ikot ekpene",
+                    "Lgaid": "65"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Ini",
+                    "Lgaid": "66"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Itu",
+                    "Lgaid": "67"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Mbo",
+                    "Lgaid": "68"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Mkpat enin",
+                    "Lgaid": "69"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Nsit atai",
+                    "Lgaid": "70"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Nsit ibom",
+                    "Lgaid": "71"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Nsit ubium",
+                    "Lgaid": "72"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Uruan",
+                    "Lgaid": "73"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Urue-offong\/oruko",
+                    "Lgaid": "74"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Uyo",
+                    "Lgaid": "75"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Aguata",
+                    "Lgaid": "76"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Anambra east",
+                    "Lgaid": "77"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Anambra west",
+                    "Lgaid": "78"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Anaocha",
+                    "Lgaid": "79"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Awka north",
+                    "Lgaid": "80"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Awka south",
+                    "Lgaid": "81"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Ayamelum",
+                    "Lgaid": "82"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Dunukofia",
+                    "Lgaid": "83"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Ekwusigo",
+                    "Lgaid": "84"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Idemili north",
+                    "Lgaid": "85"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Idemili south",
+                    "Lgaid": "86"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Ihiala",
+                    "Lgaid": "87"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Njikoka",
+                    "Lgaid": "88"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Nnewi north",
+                    "Lgaid": "89"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Obanliku",
+                    "Lgaid": "90"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Obubra",
+                    "Lgaid": "91"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Obudu",
+                    "Lgaid": "92"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Odukpani",
+                    "Lgaid": "93"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Ogoja",
+                    "Lgaid": "94"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Yakurr",
+                    "Lgaid": "95"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Yala",
+                    "Lgaid": "96"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Aniocha north",
+                    "Lgaid": "97"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Aniocha south",
+                    "Lgaid": "98"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Bomadi",
+                    "Lgaid": "99"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Burutu",
+                    "Lgaid": "100"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ethiope east",
+                    "Lgaid": "101"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ethiope west",
+                    "Lgaid": "102"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ika north",
+                    "Lgaid": "103"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ika south",
+                    "Lgaid": "104"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Isoko north",
+                    "Lgaid": "105"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Isoko south",
+                    "Lgaid": "106"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ndokwa east",
+                    "Lgaid": "107"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ndokwa west",
+                    "Lgaid": "108"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Okpe",
+                    "Lgaid": "109"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Oshimili north",
+                    "Lgaid": "110"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Oshimili south",
+                    "Lgaid": "111"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Patani",
+                    "Lgaid": "112"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Sapele",
+                    "Lgaid": "113"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Udu",
+                    "Lgaid": "114"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ughelli north",
+                    "Lgaid": "115"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ughelli south",
+                    "Lgaid": "116"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Ukwuani",
+                    "Lgaid": "117"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Uvwie",
+                    "Lgaid": "118"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Warri north",
+                    "Lgaid": "119"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Warri south",
+                    "Lgaid": "120"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Warri south west",
+                    "Lgaid": "121"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Abakaliki",
+                    "Lgaid": "122"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Afikpo north",
+                    "Lgaid": "123"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Afikpo south",
+                    "Lgaid": "124"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ebonyi",
+                    "Lgaid": "125"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ezza north",
+                    "Lgaid": "126"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ezza south",
+                    "Lgaid": "127"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ikwo",
+                    "Lgaid": "128"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ishielu",
+                    "Lgaid": "129"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ivo",
+                    "Lgaid": "130"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Izzi",
+                    "Lgaid": "131"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ohaozara",
+                    "Lgaid": "132"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Ohaukwu",
+                    "Lgaid": "133"
+                },
+                {
+                    "stateid": "011",
+                    "State": "EBONYI",
+                    "Lga": "Onicha",
+                    "Lgaid": "134"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Akoko-edo",
+                    "Lgaid": "135"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Egor",
+                    "Lgaid": "136"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Esan central",
+                    "Lgaid": "137"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Esan north east",
+                    "Lgaid": "138"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Esan south east",
+                    "Lgaid": "139"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Esan west",
+                    "Lgaid": "140"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Etsako central",
+                    "Lgaid": "141"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Etsako east",
+                    "Lgaid": "142"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Etsako west",
+                    "Lgaid": "143"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Igueben",
+                    "Lgaid": "144"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Ikpoba-okha",
+                    "Lgaid": "145"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Oredo",
+                    "Lgaid": "146"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Orhionmwon",
+                    "Lgaid": "147"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Ovia north east",
+                    "Lgaid": "148"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Ovia south west",
+                    "Lgaid": "149"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Owan east",
+                    "Lgaid": "150"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Owan west",
+                    "Lgaid": "151"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Uhunmwonde",
+                    "Lgaid": "152"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "ADK",
+                    "Lgaid": "153"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "DEA",
+                    "Lgaid": "154"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "EFY",
+                    "Lgaid": "155"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "MUE",
+                    "Lgaid": "156"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "LAW",
+                    "Lgaid": "157"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "AMK",
+                    "Lgaid": "158"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "EMR",
+                    "Lgaid": "159"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "DEK",
+                    "Lgaid": "160"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "JER",
+                    "Lgaid": "161"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "KER",
+                    "Lgaid": "162"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "KLE",
+                    "Lgaid": "163"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "YEK",
+                    "Lgaid": "164"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "GED",
+                    "Lgaid": "165"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "SSE",
+                    "Lgaid": "166"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "TUN",
+                    "Lgaid": "167"
+                },
+                {
+                    "stateid": "013",
+                    "State": "EKITI",
+                    "Lga": "YEE",
+                    "Lgaid": "168"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Aninri",
+                    "Lgaid": "169"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Awgu",
+                    "Lgaid": "170"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Enugu east",
+                    "Lgaid": "171"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Enugu north",
+                    "Lgaid": "172"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Enugu south",
+                    "Lgaid": "173"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Ezeagu",
+                    "Lgaid": "174"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Enugu",
+                    "Lgaid": "175"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Igbo-etit",
+                    "Lgaid": "176"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Igbo-eze north",
+                    "Lgaid": "177"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Igho-eze south",
+                    "Lgaid": "178"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Isi-uzo",
+                    "Lgaid": "179"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Nkanu east",
+                    "Lgaid": "180"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Nkanu west",
+                    "Lgaid": "181"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Nnewi south",
+                    "Lgaid": "182"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Ogbaru",
+                    "Lgaid": "183"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Onitsha north",
+                    "Lgaid": "184"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Onitsha south",
+                    "Lgaid": "185"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Orumba north",
+                    "Lgaid": "186"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Orumba south",
+                    "Lgaid": "187"
+                },
+                {
+                    "stateid": "004",
+                    "State": "ANAMBRA",
+                    "Lga": "Oyi",
+                    "Lgaid": "188"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Alkaleri",
+                    "Lgaid": "189"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Bauchi",
+                    "Lgaid": "190"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Bogoro",
+                    "Lgaid": "191"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Damban",
+                    "Lgaid": "192"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Darazo",
+                    "Lgaid": "193"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Dass",
+                    "Lgaid": "194"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Gamawa",
+                    "Lgaid": "195"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Ganjuwa",
+                    "Lgaid": "196"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Giade",
+                    "Lgaid": "197"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Itas\/gadau",
+                    "Lgaid": "198"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Jama'are",
+                    "Lgaid": "199"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Katagun",
+                    "Lgaid": "200"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Gusau",
+                    "Lgaid": "201"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Kirfi",
+                    "Lgaid": "202"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Misau",
+                    "Lgaid": "203"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Ningi",
+                    "Lgaid": "204"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Shira",
+                    "Lgaid": "205"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Tafawa-balewa",
+                    "Lgaid": "206"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Toro",
+                    "Lgaid": "207"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Warji",
+                    "Lgaid": "208"
+                },
+                {
+                    "stateid": "005",
+                    "State": "BAUCHI",
+                    "Lga": "Zaki",
+                    "Lgaid": "209"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Brass",
+                    "Lgaid": "210"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Ekeremor",
+                    "Lgaid": "211"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Kolokuma\/opokuma",
+                    "Lgaid": "212"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Nembe",
+                    "Lgaid": "213"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Ogbia",
+                    "Lgaid": "214"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Sagbama",
+                    "Lgaid": "215"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Southern ijaw",
+                    "Lgaid": "216"
+                },
+                {
+                    "stateid": "006",
+                    "State": "BAYELSA",
+                    "Lga": "Yenegoa",
+                    "Lgaid": "217"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ado",
+                    "Lgaid": "218"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Agatu",
+                    "Lgaid": "219"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Apa",
+                    "Lgaid": "220"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Buruku",
+                    "Lgaid": "221"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Gboko",
+                    "Lgaid": "222"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Guma",
+                    "Lgaid": "223"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Gwer east",
+                    "Lgaid": "224"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Gwer west",
+                    "Lgaid": "225"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Katsina-ala",
+                    "Lgaid": "226"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Konshisha",
+                    "Lgaid": "227"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Kwande",
+                    "Lgaid": "228"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Logo",
+                    "Lgaid": "229"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Makurdi",
+                    "Lgaid": "230"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Obi",
+                    "Lgaid": "231"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ogbadibo",
+                    "Lgaid": "232"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Oju",
+                    "Lgaid": "233"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Okpokwu",
+                    "Lgaid": "234"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ohimini",
+                    "Lgaid": "235"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Oturkpo",
+                    "Lgaid": "236"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Tarka",
+                    "Lgaid": "237"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ukum",
+                    "Lgaid": "238"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ushongo",
+                    "Lgaid": "239"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Vandeikya",
+                    "Lgaid": "240"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Abadam",
+                    "Lgaid": "241"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Askira\/uba",
+                    "Lgaid": "242"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Bama",
+                    "Lgaid": "243"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Bayo",
+                    "Lgaid": "244"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Biu",
+                    "Lgaid": "245"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Chibok",
+                    "Lgaid": "246"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Damboa",
+                    "Lgaid": "247"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Dikwa",
+                    "Lgaid": "248"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Gubio",
+                    "Lgaid": "249"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Guzamala",
+                    "Lgaid": "250"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Gwoza",
+                    "Lgaid": "251"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Hawul",
+                    "Lgaid": "252"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Jere",
+                    "Lgaid": "253"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Kaga",
+                    "Lgaid": "254"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Kala\/balge",
+                    "Lgaid": "255"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Konduga",
+                    "Lgaid": "256"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Kukawa",
+                    "Lgaid": "257"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Kwaya kusar",
+                    "Lgaid": "258"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Mafa",
+                    "Lgaid": "259"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Magumeri",
+                    "Lgaid": "260"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Maiduguri",
+                    "Lgaid": "261"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Marte",
+                    "Lgaid": "262"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Mobbar",
+                    "Lgaid": "263"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Monguno",
+                    "Lgaid": "264"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Ngala",
+                    "Lgaid": "265"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Nganzai",
+                    "Lgaid": "266"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Shani",
+                    "Lgaid": "267"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Abi",
+                    "Lgaid": "268"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Akamkpa",
+                    "Lgaid": "269"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Akpabuyo",
+                    "Lgaid": "270"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Bakassi",
+                    "Lgaid": "271"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Bekwara",
+                    "Lgaid": "272"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Biase",
+                    "Lgaid": "273"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Boki",
+                    "Lgaid": "274"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Calabar-municipal",
+                    "Lgaid": "275"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Calabar south",
+                    "Lgaid": "276"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Etung",
+                    "Lgaid": "277"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Ikom",
+                    "Lgaid": "278"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Nsukka",
+                    "Lgaid": "279"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Oji-river",
+                    "Lgaid": "280"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Udenu",
+                    "Lgaid": "281"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Udi",
+                    "Lgaid": "282"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Uzo-uwani",
+                    "Lgaid": "283"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Akko",
+                    "Lgaid": "284"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Balanga",
+                    "Lgaid": "285"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Billiri",
+                    "Lgaid": "286"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Dukku",
+                    "Lgaid": "287"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Funakaye",
+                    "Lgaid": "288"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Gombe",
+                    "Lgaid": "289"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Kaltungo",
+                    "Lgaid": "290"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Kwami",
+                    "Lgaid": "291"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Nafada",
+                    "Lgaid": "292"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Shomgom",
+                    "Lgaid": "293"
+                },
+                {
+                    "stateid": "016",
+                    "State": "GOMBE",
+                    "Lga": "Yamaltu\/deba",
+                    "Lgaid": "294"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ahiazu-mbaise",
+                    "Lgaid": "295"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ehime-mbano",
+                    "Lgaid": "296"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ezinihitte",
+                    "Lgaid": "297"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ideato north",
+                    "Lgaid": "298"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ideato south",
+                    "Lgaid": "299"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ihitte-uboma",
+                    "Lgaid": "300"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ikeduru",
+                    "Lgaid": "301"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Isiala mbano",
+                    "Lgaid": "302"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Isu",
+                    "Lgaid": "303"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Mbaitoli",
+                    "Lgaid": "304"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ngor-okpala",
+                    "Lgaid": "305"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Njaba",
+                    "Lgaid": "306"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Nwangele",
+                    "Lgaid": "307"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Nkwerre",
+                    "Lgaid": "308"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Obowo",
+                    "Lgaid": "309"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Oguta",
+                    "Lgaid": "310"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ohaji\/egbema",
+                    "Lgaid": "311"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Okigwe",
+                    "Lgaid": "312"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Orlu",
+                    "Lgaid": "313"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Orsu",
+                    "Lgaid": "314"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Oru east",
+                    "Lgaid": "315"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Oru west",
+                    "Lgaid": "316"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Owerri muni.",
+                    "Lgaid": "317"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Owerri north",
+                    "Lgaid": "318"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Owerri west",
+                    "Lgaid": "319"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Onuimo",
+                    "Lgaid": "320"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Auyo",
+                    "Lgaid": "321"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Babura",
+                    "Lgaid": "322"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Birnin kudu",
+                    "Lgaid": "323"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Biriniwa",
+                    "Lgaid": "324"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Buji",
+                    "Lgaid": "325"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Dutse",
+                    "Lgaid": "326"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Gagarawa",
+                    "Lgaid": "327"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Garki",
+                    "Lgaid": "328"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Gumel",
+                    "Lgaid": "329"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Guri",
+                    "Lgaid": "330"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Gwaram",
+                    "Lgaid": "331"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Gwiwa",
+                    "Lgaid": "332"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Hadejia",
+                    "Lgaid": "333"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Jahun",
+                    "Lgaid": "334"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Kafin",
+                    "Lgaid": "335"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Hausa",
+                    "Lgaid": "336"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Kaugama",
+                    "Lgaid": "337"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Kazaure",
+                    "Lgaid": "338"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Kiri kasamma",
+                    "Lgaid": "339"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Kiyawa",
+                    "Lgaid": "340"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Maigatari",
+                    "Lgaid": "341"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Malam madori",
+                    "Lgaid": "342"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Miga",
+                    "Lgaid": "343"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Ringim",
+                    "Lgaid": "344"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Roni",
+                    "Lgaid": "345"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Sule-tankarkar",
+                    "Lgaid": "346"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Taura",
+                    "Lgaid": "347"
+                },
+                {
+                    "stateid": "018",
+                    "State": "JIGAWA",
+                    "Lga": "Yankwashi",
+                    "Lgaid": "348"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Birnin-gwari",
+                    "Lgaid": "349"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Chikun",
+                    "Lgaid": "350"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Giwa",
+                    "Lgaid": "351"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Igabi",
+                    "Lgaid": "352"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Ikara",
+                    "Lgaid": "353"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Jaba",
+                    "Lgaid": "354"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Jema'a",
+                    "Lgaid": "355"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kachia",
+                    "Lgaid": "356"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kaduna north",
+                    "Lgaid": "357"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kaduna south",
+                    "Lgaid": "358"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kagarko",
+                    "Lgaid": "359"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kajuru",
+                    "Lgaid": "360"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kaura",
+                    "Lgaid": "361"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kubau",
+                    "Lgaid": "362"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Kudan",
+                    "Lgaid": "363"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Lere",
+                    "Lgaid": "364"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Makarfi",
+                    "Lgaid": "365"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Sabon-gari",
+                    "Lgaid": "366"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Sanga",
+                    "Lgaid": "367"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Soba",
+                    "Lgaid": "368"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Zangon-kataf",
+                    "Lgaid": "369"
+                },
+                {
+                    "stateid": "019",
+                    "State": "KADUNA",
+                    "Lga": "Zaria",
+                    "Lgaid": "370"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Ajingi",
+                    "Lgaid": "371"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Albasu",
+                    "Lgaid": "372"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Bagwai",
+                    "Lgaid": "373"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Bebeji",
+                    "Lgaid": "374"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Bichi",
+                    "Lgaid": "375"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Bunkure",
+                    "Lgaid": "376"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Dala",
+                    "Lgaid": "377"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Dambatta",
+                    "Lgaid": "378"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Dawakin kudu",
+                    "Lgaid": "379"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Dawakin tofa",
+                    "Lgaid": "380"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Doguwa",
+                    "Lgaid": "381"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Fagge",
+                    "Lgaid": "382"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Gabasawa",
+                    "Lgaid": "383"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Garko",
+                    "Lgaid": "384"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Garum mallarn",
+                    "Lgaid": "385"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Gaya",
+                    "Lgaid": "386"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Gezawa",
+                    "Lgaid": "387"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Gwale",
+                    "Lgaid": "388"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Gwarzo",
+                    "Lgaid": "389"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kabo",
+                    "Lgaid": "390"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kano municipal",
+                    "Lgaid": "391"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Karaye",
+                    "Lgaid": "392"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kibiya",
+                    "Lgaid": "393"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kiru",
+                    "Lgaid": "394"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kumbotso",
+                    "Lgaid": "395"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kunchi",
+                    "Lgaid": "396"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Kura",
+                    "Lgaid": "397"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Madobi",
+                    "Lgaid": "398"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Makoda",
+                    "Lgaid": "399"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Minjibir",
+                    "Lgaid": "400"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Nasarawa",
+                    "Lgaid": "401"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Rano",
+                    "Lgaid": "402"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Rimin gado",
+                    "Lgaid": "403"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Rogo",
+                    "Lgaid": "404"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Shanono",
+                    "Lgaid": "405"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Sumaila",
+                    "Lgaid": "406"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Takai",
+                    "Lgaid": "407"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Tarauni",
+                    "Lgaid": "408"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Tofa",
+                    "Lgaid": "409"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Tsanyawa",
+                    "Lgaid": "410"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Tudun wada",
+                    "Lgaid": "411"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Ungogo",
+                    "Lgaid": "412"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Warawa",
+                    "Lgaid": "413"
+                },
+                {
+                    "stateid": "020",
+                    "State": "KANO",
+                    "Lga": "Wudil",
+                    "Lgaid": "414"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Bakori",
+                    "Lgaid": "415"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Batagarawa",
+                    "Lgaid": "416"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Batsari",
+                    "Lgaid": "417"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Baure",
+                    "Lgaid": "418"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Bindawa",
+                    "Lgaid": "419"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Charanchi",
+                    "Lgaid": "420"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Dandume",
+                    "Lgaid": "421"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Danja",
+                    "Lgaid": "422"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Dan musa",
+                    "Lgaid": "423"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Daura",
+                    "Lgaid": "424"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Dutsi",
+                    "Lgaid": "425"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Dutsin-ma",
+                    "Lgaid": "426"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Faskari",
+                    "Lgaid": "427"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Funtua",
+                    "Lgaid": "428"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Ingawa",
+                    "Lgaid": "429"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Jibia",
+                    "Lgaid": "430"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kafur",
+                    "Lgaid": "431"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kaita",
+                    "Lgaid": "432"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kankara",
+                    "Lgaid": "433"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kankia",
+                    "Lgaid": "434"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Katsina",
+                    "Lgaid": "435"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kurfi",
+                    "Lgaid": "436"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Kusada",
+                    "Lgaid": "437"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Mai'adua",
+                    "Lgaid": "438"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Malumfashi",
+                    "Lgaid": "439"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Mani",
+                    "Lgaid": "440"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Mashi",
+                    "Lgaid": "441"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Matazu",
+                    "Lgaid": "442"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Musawa",
+                    "Lgaid": "443"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Rimi",
+                    "Lgaid": "444"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Sabuwa",
+                    "Lgaid": "445"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Safana",
+                    "Lgaid": "446"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Sandamu",
+                    "Lgaid": "447"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Zongo",
+                    "Lgaid": "448"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Aleiro",
+                    "Lgaid": "449"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Arewa-dandi",
+                    "Lgaid": "450"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Argungu",
+                    "Lgaid": "451"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Augie",
+                    "Lgaid": "452"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Bagudo",
+                    "Lgaid": "453"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Birnin kebbi",
+                    "Lgaid": "454"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Bunza",
+                    "Lgaid": "455"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Dandi",
+                    "Lgaid": "456"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Fakai",
+                    "Lgaid": "457"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Gwandu",
+                    "Lgaid": "458"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Jega",
+                    "Lgaid": "459"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Kalgo",
+                    "Lgaid": "460"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Koko\/besse",
+                    "Lgaid": "461"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Maiyama",
+                    "Lgaid": "462"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Ngaski",
+                    "Lgaid": "463"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Sakaba",
+                    "Lgaid": "464"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Shanga",
+                    "Lgaid": "465"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Suru",
+                    "Lgaid": "466"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Wasagu\/danko",
+                    "Lgaid": "467"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Yauri",
+                    "Lgaid": "468"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Zuru",
+                    "Lgaid": "469"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Adavi",
+                    "Lgaid": "470"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ajaojuta",
+                    "Lgaid": "471"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ankpa",
+                    "Lgaid": "472"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Bassa",
+                    "Lgaid": "473"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Dekina",
+                    "Lgaid": "474"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ibaji",
+                    "Lgaid": "475"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Igalamela-odolu",
+                    "Lgaid": "476"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ijumu",
+                    "Lgaid": "477"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ijumu",
+                    "Lgaid": "478"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Kabba\/bunu",
+                    "Lgaid": "479"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Kogi",
+                    "Lgaid": "480"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Lokoja",
+                    "Lgaid": "481"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Mopa-muro",
+                    "Lgaid": "482"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ofu",
+                    "Lgaid": "483"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Ogori\/megongo",
+                    "Lgaid": "484"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Okehi",
+                    "Lgaid": "485"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Olamabolo",
+                    "Lgaid": "486"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Omala",
+                    "Lgaid": "487"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Yagba east",
+                    "Lgaid": "488"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Yagba west",
+                    "Lgaid": "489"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Asa",
+                    "Lgaid": "490"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Baruten",
+                    "Lgaid": "491"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Edu",
+                    "Lgaid": "492"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Ekiti",
+                    "Lgaid": "493"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Ifelodun",
+                    "Lgaid": "494"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Ilorin south",
+                    "Lgaid": "495"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Ilorin west",
+                    "Lgaid": "496"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Irepodun",
+                    "Lgaid": "497"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Isin",
+                    "Lgaid": "498"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Kaiama",
+                    "Lgaid": "499"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Moro",
+                    "Lgaid": "500"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Offa",
+                    "Lgaid": "501"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Oke-ero",
+                    "Lgaid": "502"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Oyun",
+                    "Lgaid": "503"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Pategi",
+                    "Lgaid": "504"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Agege",
+                    "Lgaid": "505"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ajeromi-ifelodun",
+                    "Lgaid": "506"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Alimosho",
+                    "Lgaid": "507"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Amuwo-odofin",
+                    "Lgaid": "508"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Apapa",
+                    "Lgaid": "509"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Badagry",
+                    "Lgaid": "510"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Epe",
+                    "Lgaid": "511"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Eti-osa",
+                    "Lgaid": "512"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ibeju\/lekki",
+                    "Lgaid": "513"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ifako-ijaye",
+                    "Lgaid": "514"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ikeja",
+                    "Lgaid": "515"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ikorodu",
+                    "Lgaid": "516"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Kosofe",
+                    "Lgaid": "517"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Lagos island",
+                    "Lgaid": "518"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Lagos mainland",
+                    "Lgaid": "519"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Mushin",
+                    "Lgaid": "520"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Ojo",
+                    "Lgaid": "521"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Oshodi-isolo",
+                    "Lgaid": "522"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Shomolu",
+                    "Lgaid": "523"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Surulere",
+                    "Lgaid": "524"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Akwanga",
+                    "Lgaid": "525"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Awe",
+                    "Lgaid": "526"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Doma",
+                    "Lgaid": "527"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Karu",
+                    "Lgaid": "528"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Keana",
+                    "Lgaid": "529"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Keffi",
+                    "Lgaid": "530"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Kokona",
+                    "Lgaid": "531"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Lafia",
+                    "Lgaid": "532"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Nasarawa",
+                    "Lgaid": "533"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Nasarawa-eggon",
+                    "Lgaid": "534"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Obi",
+                    "Lgaid": "535"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Toto",
+                    "Lgaid": "536"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Wamba",
+                    "Lgaid": "537"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Agaie",
+                    "Lgaid": "538"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Agwara",
+                    "Lgaid": "539"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Bida",
+                    "Lgaid": "540"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Borgu",
+                    "Lgaid": "541"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Bosso",
+                    "Lgaid": "542"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Chanchaga",
+                    "Lgaid": "543"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Edati",
+                    "Lgaid": "544"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Gbako",
+                    "Lgaid": "545"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Gurara",
+                    "Lgaid": "546"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Katcha",
+                    "Lgaid": "547"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Kontagora",
+                    "Lgaid": "548"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Lapai",
+                    "Lgaid": "549"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Lavun",
+                    "Lgaid": "550"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Magama",
+                    "Lgaid": "551"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Mariga",
+                    "Lgaid": "552"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Mashegu",
+                    "Lgaid": "553"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Mokwa",
+                    "Lgaid": "554"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Muya",
+                    "Lgaid": "555"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Paikoro",
+                    "Lgaid": "556"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Rafi",
+                    "Lgaid": "557"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Rajau",
+                    "Lgaid": "558"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Shiroro",
+                    "Lgaid": "559"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Suleja",
+                    "Lgaid": "560"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Tafa",
+                    "Lgaid": "561"
+                },
+                {
+                    "stateid": "027",
+                    "State": "NIGER",
+                    "Lga": "Wushishi",
+                    "Lgaid": "562"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Abeokuta north",
+                    "Lgaid": "563"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Abeokuta south",
+                    "Lgaid": "564"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ado-odo\/ota",
+                    "Lgaid": "565"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Egbado north",
+                    "Lgaid": "566"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Egbado south",
+                    "Lgaid": "567"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ekwekoro",
+                    "Lgaid": "568"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ifo",
+                    "Lgaid": "569"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ijebu east",
+                    "Lgaid": "570"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ijebu north",
+                    "Lgaid": "571"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ijebu north east",
+                    "Lgaid": "572"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ijebu-ode",
+                    "Lgaid": "573"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ikenne",
+                    "Lgaid": "574"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Imeko-afon",
+                    "Lgaid": "575"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ipokia",
+                    "Lgaid": "576"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Obafemi-owode",
+                    "Lgaid": "577"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ogun waterside",
+                    "Lgaid": "578"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Odeda",
+                    "Lgaid": "579"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Odogbolu",
+                    "Lgaid": "580"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Remo north",
+                    "Lgaid": "581"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Shagamu",
+                    "Lgaid": "582"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akoko north east",
+                    "Lgaid": "583"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akoko north west",
+                    "Lgaid": "584"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akoko south east",
+                    "Lgaid": "585"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akoko south west",
+                    "Lgaid": "586"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akure north",
+                    "Lgaid": "587"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akuresouth",
+                    "Lgaid": "588"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ese-odo",
+                    "Lgaid": "589"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Idanre",
+                    "Lgaid": "590"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ifedore",
+                    "Lgaid": "591"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ilaje",
+                    "Lgaid": "592"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ile-oluji-okeigbo",
+                    "Lgaid": "593"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Irele",
+                    "Lgaid": "594"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Odigbo",
+                    "Lgaid": "595"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Okitipupa",
+                    "Lgaid": "596"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ondo east",
+                    "Lgaid": "597"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ondo west",
+                    "Lgaid": "598"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ose-owo",
+                    "Lgaid": "599"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Aiyedade",
+                    "Lgaid": "600"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Aiyedire",
+                    "Lgaid": "601"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Atakumosa east",
+                    "Lgaid": "602"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Atakumose-west",
+                    "Lgaid": "603"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Boluwaduro",
+                    "Lgaid": "604"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Boripe",
+                    "Lgaid": "605"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ede north",
+                    "Lgaid": "606"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ede south",
+                    "Lgaid": "607"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Egbedore",
+                    "Lgaid": "608"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ejigbo",
+                    "Lgaid": "609"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ife central",
+                    "Lgaid": "610"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ife east",
+                    "Lgaid": "611"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ife north",
+                    "Lgaid": "612"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ife south",
+                    "Lgaid": "613"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ifedayo",
+                    "Lgaid": "614"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ifelodun",
+                    "Lgaid": "615"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ila",
+                    "Lgaid": "616"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ilasha east",
+                    "Lgaid": "617"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ilesha west",
+                    "Lgaid": "618"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Irepodun",
+                    "Lgaid": "619"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Irewole",
+                    "Lgaid": "620"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Isokan",
+                    "Lgaid": "621"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Iwo",
+                    "Lgaid": "622"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Obokun",
+                    "Lgaid": "623"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Odo-otin",
+                    "Lgaid": "624"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Ola-oluwa",
+                    "Lgaid": "625"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Olorunda",
+                    "Lgaid": "626"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Oriade",
+                    "Lgaid": "627"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Orolu",
+                    "Lgaid": "628"
+                },
+                {
+                    "stateid": "030",
+                    "State": "OSUN",
+                    "Lga": "Osogbo",
+                    "Lgaid": "629"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Afijio",
+                    "Lgaid": "630"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Akinyele",
+                    "Lgaid": "631"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Atiba",
+                    "Lgaid": "632"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Atigbo",
+                    "Lgaid": "633"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Egbeda",
+                    "Lgaid": "634"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibadan central",
+                    "Lgaid": "635"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibadan north",
+                    "Lgaid": "636"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibadan north west",
+                    "Lgaid": "637"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibadan south west",
+                    "Lgaid": "638"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibadan south east",
+                    "Lgaid": "639"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibarapa central",
+                    "Lgaid": "640"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibarapa east",
+                    "Lgaid": "641"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ibarapa north",
+                    "Lgaid": "642"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ido",
+                    "Lgaid": "643"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Irepo",
+                    "Lgaid": "644"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Iseyin",
+                    "Lgaid": "645"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Itesiwaju",
+                    "Lgaid": "646"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Iwajowa",
+                    "Lgaid": "647"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Kajola",
+                    "Lgaid": "648"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Lagelu",
+                    "Lgaid": "649"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ogbomoso north",
+                    "Lgaid": "650"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ogbomoso south",
+                    "Lgaid": "651"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ogo oluwa",
+                    "Lgaid": "652"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Olorunsogo",
+                    "Lgaid": "653"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Oluyole",
+                    "Lgaid": "654"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ona-ara",
+                    "Lgaid": "655"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Orelope",
+                    "Lgaid": "656"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ori ire",
+                    "Lgaid": "657"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Oyo east",
+                    "Lgaid": "658"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Oyo west",
+                    "Lgaid": "659"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Saki east",
+                    "Lgaid": "660"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Saki west",
+                    "Lgaid": "661"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Surelere",
+                    "Lgaid": "662"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Barikin ladi",
+                    "Lgaid": "663"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Bassa",
+                    "Lgaid": "664"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Bokkos",
+                    "Lgaid": "665"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Jos east",
+                    "Lgaid": "666"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Jos north",
+                    "Lgaid": "667"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Jos south",
+                    "Lgaid": "668"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Kanam",
+                    "Lgaid": "669"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Kanke",
+                    "Lgaid": "670"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Langtang north",
+                    "Lgaid": "671"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Langtang south",
+                    "Lgaid": "672"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Mangu",
+                    "Lgaid": "673"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Mikang",
+                    "Lgaid": "674"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Pankshin",
+                    "Lgaid": "675"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Qua'an pan",
+                    "Lgaid": "676"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Riyom",
+                    "Lgaid": "677"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Shendam",
+                    "Lgaid": "678"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Wase",
+                    "Lgaid": "679"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Abua\/odual",
+                    "Lgaid": "680"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ahoada east",
+                    "Lgaid": "681"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ahoada west",
+                    "Lgaid": "682"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Akuku toru",
+                    "Lgaid": "683"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Andoni",
+                    "Lgaid": "684"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Asari-toru",
+                    "Lgaid": "685"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Bonny",
+                    "Lgaid": "686"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Degema",
+                    "Lgaid": "687"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Emohua",
+                    "Lgaid": "688"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Eleme",
+                    "Lgaid": "689"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Etche",
+                    "Lgaid": "690"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Gokana",
+                    "Lgaid": "691"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ikwerre",
+                    "Lgaid": "692"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Khana",
+                    "Lgaid": "693"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Obia\/akpor",
+                    "Lgaid": "694"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ogba\/egbema\/ndoni",
+                    "Lgaid": "695"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ogu\/bolo",
+                    "Lgaid": "696"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Okrika",
+                    "Lgaid": "697"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Omumma",
+                    "Lgaid": "698"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Opobo\/nkoro",
+                    "Lgaid": "699"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Oyigbo",
+                    "Lgaid": "700"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Port harcourt",
+                    "Lgaid": "701"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Tai",
+                    "Lgaid": "702"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Binji",
+                    "Lgaid": "703"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Bodinga",
+                    "Lgaid": "704"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Dange-shuni",
+                    "Lgaid": "705"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Gada",
+                    "Lgaid": "706"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Goronyo",
+                    "Lgaid": "707"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Gudu",
+                    "Lgaid": "708"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Gwadabawa",
+                    "Lgaid": "709"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Illela",
+                    "Lgaid": "710"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Isa",
+                    "Lgaid": "711"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Kware",
+                    "Lgaid": "712"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Kebbe",
+                    "Lgaid": "713"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Rabah",
+                    "Lgaid": "714"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Sabon birni",
+                    "Lgaid": "715"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Shagari",
+                    "Lgaid": "716"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Silame",
+                    "Lgaid": "717"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Sokoto north",
+                    "Lgaid": "718"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Sokoto south",
+                    "Lgaid": "719"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Tambuwal",
+                    "Lgaid": "720"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Tangaza",
+                    "Lgaid": "721"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Tureta",
+                    "Lgaid": "722"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Wamakko",
+                    "Lgaid": "723"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Wurno",
+                    "Lgaid": "724"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Yabo",
+                    "Lgaid": "725"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Ardo-kola",
+                    "Lgaid": "726"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Bali",
+                    "Lgaid": "727"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Donga",
+                    "Lgaid": "728"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Gashaka",
+                    "Lgaid": "729"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Gassol",
+                    "Lgaid": "730"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Ibi",
+                    "Lgaid": "731"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Jalingo",
+                    "Lgaid": "732"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Karim-lamido",
+                    "Lgaid": "733"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Kurmi",
+                    "Lgaid": "734"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Lau",
+                    "Lgaid": "735"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Sarduana",
+                    "Lgaid": "736"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Takum",
+                    "Lgaid": "737"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Ussa",
+                    "Lgaid": "738"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Wukari",
+                    "Lgaid": "739"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Yorro",
+                    "Lgaid": "740"
+                },
+                {
+                    "stateid": "035",
+                    "State": "TARABA",
+                    "Lga": "Zing",
+                    "Lgaid": "741"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Bade",
+                    "Lgaid": "742"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Bursari",
+                    "Lgaid": "743"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Damaturu",
+                    "Lgaid": "744"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Fika",
+                    "Lgaid": "745"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Fune",
+                    "Lgaid": "746"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Geidam",
+                    "Lgaid": "747"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Gujba",
+                    "Lgaid": "748"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Gulani",
+                    "Lgaid": "749"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Jakusko",
+                    "Lgaid": "750"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Karasuwa",
+                    "Lgaid": "751"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Machina",
+                    "Lgaid": "752"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Nangere",
+                    "Lgaid": "753"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Nguru",
+                    "Lgaid": "754"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Potiskum",
+                    "Lgaid": "755"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Tarmua",
+                    "Lgaid": "756"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Yunusari",
+                    "Lgaid": "757"
+                },
+                {
+                    "stateid": "036",
+                    "State": "YOBE",
+                    "Lga": "Yusufari",
+                    "Lgaid": "758"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Anka",
+                    "Lgaid": "759"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Bakurna",
+                    "Lgaid": "760"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Birnin magaji",
+                    "Lgaid": "761"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Bukkuyum",
+                    "Lgaid": "762"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Bungudu",
+                    "Lgaid": "763"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Gummi",
+                    "Lgaid": "764"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Kaura namoda",
+                    "Lgaid": "765"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Maradun",
+                    "Lgaid": "766"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Maru",
+                    "Lgaid": "767"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Shinkafi",
+                    "Lgaid": "768"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Talata",
+                    "Lgaid": "769"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Mafara",
+                    "Lgaid": "770"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Tsafe",
+                    "Lgaid": "771"
+                },
+                {
+                    "stateid": "037",
+                    "State": "ZAMFARA",
+                    "Lga": "Zumi",
+                    "Lgaid": "772"
+                },
+                {
+                    "stateid": "026",
+                    "State": "NASARAWA",
+                    "Lga": "Eggon",
+                    "Lgaid": "773"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ile oluji",
+                    "Lgaid": "774"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Sagamu",
+                    "Lgaid": "775"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Opeji",
+                    "Lgaid": "776"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ijebu ode",
+                    "Lgaid": "777"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Ishan",
+                    "Lgaid": "778"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ondo central",
+                    "Lgaid": "779"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Otukpo",
+                    "Lgaid": "780"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Abaji",
+                    "Lgaid": "781"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Abuja Municipal",
+                    "Lgaid": "782"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Bwari",
+                    "Lgaid": "783"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Gwagwalada",
+                    "Lgaid": "784"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Kuje",
+                    "Lgaid": "785"
+                },
+                {
+                    "stateid": "015",
+                    "State": "FCT",
+                    "Lga": "Kwali",
+                    "Lgaid": "786"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ehime mbano",
+                    "Lgaid": "787"
+                },
+                {
+                    "stateid": "014",
+                    "State": "ENUGU",
+                    "Lga": "Oji river",
+                    "Lgaid": "788"
+                },
+                {
+                    "stateid": "031",
+                    "State": "OYO",
+                    "Lga": "Ogbomosho",
+                    "Lgaid": "789"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akure south",
+                    "Lgaid": "790"
+                },
+                {
+                    "stateid": "009",
+                    "State": "CROSS RIVERS",
+                    "Lga": "Odupani",
+                    "Lgaid": "791"
+                },
+                {
+                    "stateid": "017",
+                    "State": "IMO",
+                    "Lga": "Ngor okpala",
+                    "Lgaid": "792"
+                },
+                {
+                    "stateid": "007",
+                    "State": "BENUE",
+                    "Lga": "Ador",
+                    "Lgaid": "793"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Okobo",
+                    "Lgaid": "794"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Idah",
+                    "Lgaid": "795"
+                },
+                {
+                    "stateid": "001",
+                    "State": "ABIA",
+                    "Lga": "Ugwunagbor",
+                    "Lgaid": "796"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Ogba\/Egbem\/Noom",
+                    "Lgaid": "797"
+                },
+                {
+                    "stateid": "023",
+                    "State": "KOGI",
+                    "Lga": "Okene",
+                    "Lgaid": "798"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Akoko",
+                    "Lgaid": "799"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Owo",
+                    "Lgaid": "800"
+                },
+                {
+                    "stateid": "022",
+                    "State": "KEBBI",
+                    "Lga": "Kamba",
+                    "Lgaid": "801"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Water side",
+                    "Lgaid": "802"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Egado South",
+                    "Lgaid": "803"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Imeko Afon",
+                    "Lgaid": "804"
+                },
+                {
+                    "stateid": "032",
+                    "State": "PLATEAU",
+                    "Lga": "Panilshin",
+                    "Lgaid": "805"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ikalo",
+                    "Lgaid": "806"
+                },
+                {
+                    "stateid": "025",
+                    "State": "LAGOS",
+                    "Lga": "Eredo",
+                    "Lgaid": "807"
+                },
+                {
+                    "stateid": "021",
+                    "State": "KATSINA",
+                    "Lga": "Manufanoti",
+                    "Lgaid": "808"
+                },
+                {
+                    "stateid": "034",
+                    "State": "SOKOTO",
+                    "Lga": "Kofa atiku",
+                    "Lgaid": "809"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Onna",
+                    "Lgaid": "811"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Udium",
+                    "Lgaid": "812"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Ake",
+                    "Lgaid": "813"
+                },
+                {
+                    "stateid": "012",
+                    "State": "EDO",
+                    "Lga": "Uromi",
+                    "Lgaid": "814"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Oron",
+                    "Lgaid": "815"
+                },
+                {
+                    "stateid": "003",
+                    "State": "AKWA IBOM",
+                    "Lga": "Oruk",
+                    "Lgaid": "816"
+                },
+                {
+                    "stateid": "010",
+                    "State": "DELTA",
+                    "Lga": "Aniocha",
+                    "Lgaid": "817"
+                },
+                {
+                    "stateid": "029",
+                    "State": "ONDO",
+                    "Lga": "Ose",
+                    "Lgaid": "818"
+                },
+                {
+                    "stateid": "024",
+                    "State": "KWARA",
+                    "Lga": "Oro",
+                    "Lgaid": "819"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Yewa",
+                    "Lgaid": "820"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Yewa South",
+                    "Lgaid": "821"
+                },
+                {
+                    "stateid": "028",
+                    "State": "OGUN",
+                    "Lga": "Yewa North",
+                    "Lgaid": "822"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Opobo\/Nkoro",
+                    "Lgaid": "823"
+                },
+                {
+                    "stateid": "033",
+                    "State": "RIVERS",
+                    "Lga": "Onelga",
+                    "Lgaid": "824"
+                },
+                {
+                    "stateid": "008",
+                    "State": "BORNO",
+                    "Lga": "Maiduguri .M.C",
+                    "Lgaid": "826"
+                }
+            ],
+            "o_infections": [
+                {
+                    "id": "9",
+                    "problems": "Herpes Zoster"
+                },
+                {
+                    "id": "10",
+                    "problems": "Pneumonia"
+                },
+                {
+                    "id": "11",
+                    "problems": "Dementia\/Encephalitis"
+                },
+                {
+                    "id": "12",
+                    "problems": "Thrush: oro-pharyngeal\/escophageal"
+                },
+                {
+                    "id": "13",
+                    "problems": "Pyrexia of unknown origin"
+                },
+                {
+                    "id": "14",
+                    "problems": "Cytomegalovirus"
+                },
+                {
+                    "id": "15",
+                    "problems": "Histoplasmosis"
+                },
+                {
+                    "id": "16",
+                    "problems": "Severe bacterial infection"
+                }
+            ],
+            "patient_care_entry": [
+                {
+                    "id": "8",
+                    "point": "OPD-1"
+                },
+                {
+                    "id": "9",
+                    "point": "In patients-2"
+                },
+                {
+                    "id": "10",
+                    "point": "HTS-3"
+                },
+                {
+                    "id": "11",
+                    "point": "TB DOTS-4"
+                },
+                {
+                    "id": "12",
+                    "point": "STI clinic-5"
+                },
+                {
+                    "id": "13",
+                    "point": "ANC\/PMTCT-6"
+                },
+                {
+                    "id": "14",
+                    "point": "transfer-in-7"
+                }
+            ],
+            "patient_prior_art": [
+                {
+                    "id": "5",
+                    "prior_art": "Transfer in with records"
+                },
+                {
+                    "id": "6",
+                    "prior_art": "Transfer in without records"
+                },
+                {
+                    "id": "7",
+                    "prior_art": "PMTCT only"
+                },
+                {
+                    "id": "8",
+                    "prior_art": "PEP"
+                }
+            ],
+            "patient_side_effects": [
+                {
+                    "id": "12",
+                    "side_effects": "Nausea\/Vomiting"
+                },
+                {
+                    "id": "13",
+                    "side_effects": "Headache"
+                },
+                {
+                    "id": "14",
+                    "side_effects": "Insomnia\/bad dreams"
+                },
+                {
+                    "id": "15",
+                    "side_effects": "Fatigue\/weakness"
+                },
+                {
+                    "id": "16",
+                    "side_effects": "PV bleeding\/discharge"
+                },
+                {
+                    "id": "17",
+                    "side_effects": "Rash"
+                },
+                {
+                    "id": "18",
+                    "side_effects": "FAT Changes"
+                },
+                {
+                    "id": "19",
+                    "side_effects": "Anemia"
+                },
+                {
+                    "id": "20",
+                    "side_effects": "Drainage of Liquor"
+                },
+                {
+                    "id": "21",
+                    "side_effects": "Stevens Johnson Syndrome"
+                },
+                {
+                    "id": "22",
+                    "side_effects": "Hyperglycemia"
+                }
+            ]
+        }
+    }
+}

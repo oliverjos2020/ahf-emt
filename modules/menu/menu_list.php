@@ -43,7 +43,7 @@ $dbobject = new dbobject();
 
                 </div>
 
-                <table id="page_list" class="table table-bordered dt-responsive nowrap"
+                <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>

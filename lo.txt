@@ -1,1 +1,1 @@
-select parameter_value from parameter where parameter_name='site_live_url'
+select * from menu where parent_id = '30' and menu_id in (select menu_id from menugroup where role_id ='001') order by menu_order
