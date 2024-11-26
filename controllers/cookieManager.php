@@ -15,8 +15,8 @@ Class cookieManager{
         ];
         $cookieValue = json_encode($arr);
         // Set the cookie (valid for 1 hour)
-        setcookie('userRecord', $cookieValue, time() + 3600, '/'); // Basic cookie
-        setcookie('token', $data['token'], time() + 3600, '/', '', true); // Secure and HttpOnly
+        setcookie('userRecord', $cookieValue, time() + (3 * 3600), '/'); // Basic cookie
+        setcookie('token', $data['token'], time() + (3 * 3600), '/', '', true); // Secure and HttpOnly
     
         if (isset($_COOKIE['userRecord'])) {
             return true;

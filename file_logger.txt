@@ -1,3 +1,6 @@
 logout.php
 dashboard.php
 facility_list.php
+forgot_password.php
+cookieManager.php
+change_password.php

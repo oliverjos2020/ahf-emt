@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login | AHF</title>
+    <title>Reset Password | AHF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="AHF" name="description" />
     <meta content="Themesbrand" name="AH" />
@@ -112,21 +112,62 @@
                     <!-- Login Heading -->
                     <h4 class="text-center">Reset Password</h4>
                     <!-- Login Form -->
-                    <form>
+                    <!-- <form> -->
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" placeholder="Username" id="username" required>
                         <div class="forgot-password mt-2">  
                             <a href="./" class="text-primary ahf-text-primary">I remember now Sign In!</a>
                         </div>
-                        <button type="submit" class="btn btn-ahf w-100 mt-3">Reset</button>
-                    </form>
+                        <button type="submit" id="resetBtn" onclick="resetPassword()" class="btn btn-ahf w-100 mt-3">Reset</button>
+                    <!-- </form> -->
                 </div>
             </div>
 
         </div>
     </div>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/js/toastr.min.js"></script>
+    <script>
+        function resetPassword()
+        {
+            $('#resetBtn').text('Processing...');
+            $("#resetBtn").attr("disabled", true);
+            // var data = $("#form1").serialize();
+            var username  = $("#username").val();
+            if(username == "")
+            {
+                toastr.error('Username field is required', 'Error', { timeOut: 2000 });
+                $("#resetBtn").attr("disabled", false);
+                $('#resetBtn').text('Reset');
+            }else{
+                $.ajax({
+                    type: "post",
+                    url: "controllers/gateway.php",
+                    data: {
+                        username,
+                        'route': '/resetPassword'
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.response_code === 200) {
+                            $("#LoginBtn").attr("disabled", true);
+                            toastr.success(data.response_message, 'Success', { timeOut: 1000 });
+                            setTimeout(function() {
+                                window.location.href = 'dashboard';
+                            }, 1000);
+                        } else {
+                            $("#resetBtn").attr("disabled", false);
+                            $('#resetBtn').text('Reset');
+                            toastr.error(data.response_message, 'Error', { timeOut: 2000 });
+                        }
+                    },
+                    error: function() {
+                        toastr.error('Unable to process request at the moment!', 'Error', { timeOut: 2000 });
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 
 </html>

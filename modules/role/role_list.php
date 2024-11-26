@@ -24,7 +24,7 @@ include_once("../../libs/dbfunctions.php");
                 <div class="row">
                     <div class="col-md-12">
                         <h4 class="card-title"><br>
-                        <a class="btn btn-ahf btn-sm"
+                            <a class="btn btn-ahf btn-sm"
                                 onclick="myLoadModal('modules/role/role_setup.php','modal_div')"
                                 href="javascript:void(0)">Create Role</a>
                         </h4>
@@ -56,7 +56,7 @@ include_once("../../libs/dbfunctions.php");
     <!-- end col -->
 </div>
 
-<div class="modal fade bs-example-modal-lg" id="defaultModal" tabindex="-1" role="dialog" >
+<div class="modal fade bs-example-modal-lg" id="defaultModal" tabindex="-1" role="dialog">
 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="modal_div">
@@ -64,38 +64,35 @@ include_once("../../libs/dbfunctions.php");
         </div>
     </div>
 </div>
-   
+
 <script>
-  var table;
-  var editor;
-  var route = "/roleList";
-  $(document).ready(function () {
+var table;
+var editor;
+var route = "/roleList";
+$(document).ready(function() {
     $.blockUI({
-      message:
-        '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
+        message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
     });
     table = $("#page_list").DataTable({
         processing: true,
         serverSide: true,
         paging: true,
-        columnDefs: [
-            {
-                orderable: false,
-                targets: -1 // Disable ordering on the "Action" column
-            }
-        ],
+        columnDefs: [{
+            orderable: false,
+            targets: -1 // Disable ordering on the "Action" column
+        }],
         oLanguage: {
             sEmptyTable: "No record was found, please try another query"
         },
         ajax: {
             url: "controllers/gateway.php",
             type: "POST",
-            data: function (d) {
+            data: function(d) {
                 d.route = route;
                 d.li = Math.random();
                 d.list = "yes";
             },
-            dataSrc: function (response) {
+            dataSrc: function(response) {
                 $.unblockUI();
                 // Check response and format data
                 if (response.draw) {
@@ -113,28 +110,54 @@ include_once("../../libs/dbfunctions.php");
                 }
             }
         },
-        columns: [
-            { title: "S/N", data: 0 },
-            { title: "Role ID", data: 1 },
-            { title: "Role Name", data: 2 },
-            { title: "Created", data: 3 },
-            { title: "Action", data: 4 } // The new "Action" column for buttons
+        columns: [{
+                title: "S/N",
+                data: 0
+            },
+            {
+                title: "Role ID",
+                data: 1
+            },
+            {
+                title: "Role Name",
+                data: 2
+            },
+            {
+                title: "Created",
+                data: 3
+            },
+            {
+                title: "Action",
+                data: 4
+            } // The new "Action" column for buttons
         ]
     });
 
     // Handle delete button click
-    $("#page_list").on("click", ".delete-btn", function () {
+    $("#page_list").on("click", ".delete-btn", function() {
         const id = $(this).data("id");
         if (confirm("Are you sure you want to delete this role?")) {
             $.ajax({
                 url: "controllers/gateway.php",
                 type: "POST",
-                data: { id: id },
-                success: function (response) {
-                    alert("Role deleted successfully.");
-                    table.ajax.reload(); // Reload the table data
+                data: {
+                    id: id,
+                    'route': '/deleteRole'
                 },
-                error: function (xhr, status, error) {
+                dataType: "json",
+                success: function(data) {
+                    if (data.response_code === 200) {
+                        toastr.success(data.response_message, 'Success', {
+                            timeOut: 3000
+                        });
+                        table.ajax.reload(); // Reload the table data
+                    } else {
+                        toastr.error(data.response_message, 'Error', {
+                            timeOut: 3000
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
                     console.error("Error deleting role:", error);
                     alert("Failed to delete role.");
                 }
@@ -143,25 +166,24 @@ include_once("../../libs/dbfunctions.php");
     });
 });
 
-  function do_filter() {
+function do_filter() {
     table.draw();
-  }
-    
-  function closeModal() {
+}
+
+function closeModal() {
     $("#defaultModal").modal("hide");
 }
-    
-    function getModal(url,div)
-    {
-//        alert('dfd');
-        $('#'+div).html("<h2>Loading....</h2>");
-//        $('#'+div).block({ message: null });
-        $.post(url,{},function(re){
-            $('#'+div).html(re);
-        })
-    }
 
-    function deleteRole(id) {
+function getModal(url, div) {
+    //        alert('dfd');
+    $('#' + div).html("<h2>Loading....</h2>");
+    //        $('#'+div).block({ message: null });
+    $.post(url, {}, function(re) {
+        $('#' + div).html(re);
+    })
+}
+
+function deleteRole(id) {
     let cnf = confirm("Are you sure you want to delete Role?");
     if (cnf == true) {
         $.blockUI();
@@ -176,27 +198,27 @@ include_once("../../libs/dbfunctions.php");
             success: function(re) {
                 $.unblockUI();
                 toastr.success(re.response_message, 'Success', {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: 'toast-top-right',
-                        timeOut: 3000, // Time in milliseconds
-                        extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                        escapeHtml: true,
-                        tapToDismiss: false, // Prevent dismissing on click
+                    closeButton: true,
+                    progressBar: true,
+                    positionClass: 'toast-top-right',
+                    timeOut: 3000, // Time in milliseconds
+                    extendedTimeOut: 3000, // Additional time for the progress bar to complete
+                    escapeHtml: true,
+                    tapToDismiss: false, // Prevent dismissing on click
                 });
                 getpage('modules/role/role_list.php', "page");
             },
             error: function(re) {
                 $.unblockUI();
                 toastr.error("Request could not be processed at the moment!", 'Error', {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: 'toast-top-right',
-                        timeOut: 3000, // Time in milliseconds
-                        extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                        escapeHtml: true,
-                        tapToDismiss: false, // Prevent dismissing on click
-                    });
+                    closeButton: true,
+                    progressBar: true,
+                    positionClass: 'toast-top-right',
+                    timeOut: 3000, // Time in milliseconds
+                    extendedTimeOut: 3000, // Additional time for the progress bar to complete
+                    escapeHtml: true,
+                    tapToDismiss: false, // Prevent dismissing on click
+                });
             }
         });
     }

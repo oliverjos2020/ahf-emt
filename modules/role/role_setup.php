@@ -19,7 +19,6 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-
                     <input type="hidden" name="route" value="/saveRole">
                     <input type="hidden" name="operation" value="<?php echo $operation; ?>">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -69,8 +68,6 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 $("#defaultModal").modal("hide");
                 $('.modal-backdrop').remove();
                 $('body').css('overflow', 'auto');
-
-
 
             } else {
                 // regenerateCORS();

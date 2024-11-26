@@ -1,19 +1,4 @@
-<?php
-include_once("../../libs/dbfunctions.php");
-include_once("../../controllers/menu.php");
-$dbobject = new dbobject();
-$menu = "";
-if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
-    $operation = 'edit';
-    $menu_id = $_REQUEST['menu_id'];
-    $sql_menu = "SELECT * FROM menu WHERE menu_id = '$menu_id' LIMIT 1";
-    $menu = $dbobject->db_query($sql_menu);
-} else {
-    $operation = 'new';
-    $sql_menu = "SELECT * FROM menu";
-    $menu = $dbobject->db_query($sql_menu);
-}
-?>
+
 
 <div class="modal-header">
     <h4 class="modal-title" style="font-weight:bold">Menu Setup</h4>

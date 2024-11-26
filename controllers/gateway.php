@@ -27,6 +27,7 @@ class gateway
         $file_content1 = 'Logged @ ' . date('Y-m-d H:i:s') . ' Data=>' . json_encode($body, JSON_PRETTY_PRINT) . PHP_EOL;
         $filename2 = $filename . '/Data_sent_' . date('d') . '.txt';
         file_put_contents($filename2, $file_content1, FILE_APPEND . PHP_EOL);
+        // print_r($bodyEnc);exit;
 
         // cURL Request
         $send = curl_init();

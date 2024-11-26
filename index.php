@@ -130,7 +130,7 @@
 
         </div>
     </div>
-
+  
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script> -->
       <!-- JAVASCRIPT -->
     <script src="assets/libs/jquery/jquery.min.js"></script>
@@ -159,18 +159,18 @@
                 success: function(data) {
                     if (data.response_code === 200) {
                         $("#LoginBtn").attr("disabled", true);
-                        toastr.success(data.response_message, 'Success', { timeOut: 1000 });
+                        toastr.success(data.response_message, 'Success', { timeOut: 3000 });
                         setTimeout(function() {
                             window.location.href = 'dashboard';
                         }, 1000);
                     } else {
                         $("#LoginBtn").attr("disabled", false);
                         $('#LoginBtn').text('Login');
-                        toastr.error(data.response_message, 'Error', { timeOut: 2000 });
+                        toastr.error(data.response_message, 'Error', { timeOut: 3000 });
                     }
                 },
                 error: function() {
-                    toastr.error('Unable to process request at the moment!', 'Error', { timeOut: 2000 });
+                    toastr.error('Unable to process request at the moment!', 'Error', { timeOut: 3000 });
                 }
             });
         }

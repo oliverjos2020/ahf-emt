@@ -828,6 +828,11 @@ $menu_list = $details['menu'];
                 }]
             }
         });
+
+        function openModal(id)
+        {
+            $("#"+id+"").modal("show");
+        }
     </script>
 
 
