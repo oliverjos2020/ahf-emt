@@ -11,7 +11,7 @@ Class cookieManager{
             "lastname" => $data['lastname'],
             "facilityName" => $data['facilityName'],
             "facilityId" => $data['facilityId'],
-            "menu" => $data['menuenu'],
+            "menu" => $data['menu'],
         ];
         $cookieValue = json_encode($arr);
         // Set the cookie (valid for 1 hour)

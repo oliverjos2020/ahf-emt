@@ -1,1 +1,1 @@
-SELECT * FROM menu WHERE parent_id = '#'
+SELECT * FROM role order by role_name

@@ -100,7 +100,7 @@ $(document).ready(function() {
                     return response.data.map(row => {
                         const flattenedRow = row.flat(); // Flatten nested arrays
                         flattenedRow.push(
-                            `<button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[0]}">Delete</button>`
+                            `<button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[1]}">Delete</button>`
                         ); // Add delete button with ID from the first column
                         return flattenedRow;
                     });
@@ -151,6 +151,7 @@ $(document).ready(function() {
                             timeOut: 3000
                         });
                         table.ajax.reload(); // Reload the table data
+                        getpage('modules/role/role_list.php', "page");
                     } else {
                         toastr.error(data.response_message, 'Error', {
                             timeOut: 3000

@@ -1,9 +1,3 @@
-<?php
-include_once("../../libs/dbfunctions.php");
-$dbobject = new dbobject();
-
-?>
-
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
@@ -35,10 +29,12 @@ $dbobject = new dbobject();
                             <br>
                             <a class="btn btn-ahf btn-sm" href="javascript:void(0)"
                                 onclick="openModal('createMenuModal')">Create Menu</a>
+                            <a class="btn btn-ahf btn-sm" href="javascript:void(0)"
+                                onclick="openModal('editMenuGroup')">Create Group</a>
 
-                            <a class="btn btn-ahf text-right btn-sm"
+                            <!-- <a class="btn btn-ahf text-right btn-sm"
                                 onclick="myLoadModal('modules/menu/menu_group','modal_div')"
-                                href="javascript:void(0)">Create Group</a>
+                                href="javascript:void(0)">Create Group</a> -->
                         </h4>
                         <p>The report contains Menus that have been setup in the system.</p>
                     </div>
@@ -96,15 +92,13 @@ $dbobject = new dbobject();
                     </div>
                     <div class="form-group mt-2">
                         <label for="menuParent">Parent Menu</label>
-                        <select name="parent_id" class="form-control">
-                            <option value="#">This is a Parent Menu</option>
-                        </select>
+                        <div id="menuContainer"></div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveMenuButton">Save Menu</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-ahf" id="saveMenuButton">Save Menu</button>
             </div>
         </div>
     </div>
@@ -120,29 +114,82 @@ $dbobject = new dbobject();
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="editMenuForm">
                     <div class="form-group">
                         <label for="modalMenuName">Menu Name</label>
-                        <input type="text" class="form-control" id="modalMenuName" placeholder="Enter menu name">
+                        <input type="hidden" name="id" id="modalMenuID">
+                        <input type="hidden" name="operation" value="edit" id="operation">
+                        <input type="hidden" name="route" value="/saveMenu">
+                        <input type="text" class="form-control" name="menu_name" id="modalMenuName" placeholder="Enter menu name">
                     </div>
                     <div class="form-group mt-2">
                         <label for="modalMenuURL">Menu URL</label>
-                        <input type="text" class="form-control" id="modalMenuURL" placeholder="Enter menu URL">
+                        <input type="text" class="form-control" name="menu_url" id="modalMenuURL" placeholder="Enter menu URL">
                     </div>
                     <div class="form-group mt-2">
-                        <label for="modalMenuParent">Parent Menu</label>
-                        <input type="text" class="form-control" id="modalMenuParent" placeholder="Enter parent menu">
+                        <label for="menuParent">Parent Menu</label>
+                        <div id="menuContainer2"></div>
                     </div>
-                    <div class="form-group mt-2">
-                        <label for="modalMenuIcon">Icon</label>
-                        <input type="text" class="form-control" id="modalMenuIcon" placeholder="Enter icon">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-ahf" id="saveEditMenuButton">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade bs-example-modal-lg" id="editMenuGroup" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Menu Group</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editMenuForm">
+                    <!-- <div class="form-group">
+                        <label for="modalMenuName">Menu Name</label>
+                        <input type="hidden" name="id" id="modalMenuID">
+                        <input type="hidden" name="operation" value="edit" id="operation">
+                        <input type="hidden" name="route" value="/saveMenu">
+                        <input type="text" class="form-control" name="menu_name" id="modalMenuName" placeholder="Enter menu name">
+                    </div> -->
+                    <div class="form-group">
+                        <!-- <select name="roles" id="role_id" onchange="loadMenus(this.value)" class="form-control">
+                            <option value="">:: SELECT ROLE ::</option>
+                           
+                        </select> -->
+                        <div id="roleList"></div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <label for="visible-menu">Visible Menu</label>
+                            <form id="form1" style="width:100%">
+                                <div id="div1" class="form-group" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <!-- Visible menus will be dynamically populated here -->
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="invisible-menu">Invisible Menu</label>
+                            <form style="width:100%">
+                                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <!-- Invisible menus will be dynamically populated here -->
+                                </div>
+                            </form>
+                        </div>
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-ahf" id="saveEditMenuButton">Save changes</button>
             </div>
         </div>
     </div>
@@ -152,190 +199,375 @@ $dbobject = new dbobject();
 <!--<script src="../js/jquery.blockUI.js"></script>-->
 
 <script>
-var table;
-var route = "/getMenuList";
+    getParentMenu();
+    getParentMenu2();
+    getRoles();
+    // getInvisibleMenus();
+    function loadMenus(el) {
+        // Use AJAX to fetch menus based on role_id
+        $.post('controllers/gateway.php', {
+            route: '/loadmenus',
+            role_id: el
+        }, function(res) {
+            if (res.response_code === 200) {
+                // Populate visible and invisible menus
+                const visibleMenus = res.data.visible;
+                const invisibleMenus = res.data.invisible;
 
-$(document).ready(function() {
-    // Display loading indicator
-    $.blockUI({
-        message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;Loading, please wait...',
-    });
+                // Generate HTML for visible menus
+                const visibleHtml = visibleMenus.map(menu =>
+                    `<div id="${menu.menu_id}" class="menu-item" draggable="true" ondragstart="drag(event)">
+                    ${menu.menu_name}
+                </div>`
+                ).join('');
 
-    // Initialize DataTable
-    table = $("#page_list").DataTable({
-        processing: true,
-        serverSide: true,
-        paging: true,
-        columnDefs: [{
-            orderable: false,
-            targets: -1 // Disable ordering on the "Actions" column
-        }],
-        oLanguage: {
-            sEmptyTable: "No record was found, please try another query"
-        },
-        ajax: {
-            url: "controllers/gateway.php",
-            type: "POST",
-            data: function(d) {
-                d.route = route;
-                d.li = Math.random();
-                d.list = "yes";
-            },
-        },
-        dataSrc: function(response) {
-            $.unblockUI();
-            return response.data;
-        },
-        columns: [{
-                title: "S/N",
-                data: row => row[0][0]
-            }, // Nested structure for S/N
-            {
-                title: "Menu",
-                data: row => row[1][0]
-            }, // Nested structure for Menu
-            {
-                title: "URL",
-                data: row => row[2][0]
-            }, // Nested structure for URL
-            {
-                title: "Parent",
-                data: row => row[3][0]
-            }, // Nested structure for Parent
-            {
-                title: "Icon",
-                data: row => row[4][0]
-            }, // Nested structure for Icon
-            {
-                title: "Actions",
-                data: null,
-                render: function(data, type, row) {
-                    const rowData = JSON.stringify({
-                        id: row[0][0],
-                        menu: row[1][0],
-                        url: row[2][0],
-                        parent: row[3][0],
-                        icon: row[4][0],
-                        created: row[7][0]
-                    }).replace(/"/g, "&quot;"); // Escape double quotes for HTML
+                // Generate HTML for invisible menus
+                const invisibleHtml = invisibleMenus.map(menu =>
+                    `<div id="${menu.menu_id}" class="menu-item" draggable="true" ondragstart="drag(event)">
+                    ${menu.menu_name}
+                </div>`
+                ).join('');
 
-                    return `
-                        <button class="btn btn-success btn-sm edit-button" data-row="${rowData}">
-                            <i class="mdi mdi-account-lock"></i> Edit
-                        </button>`;
-                }
-            },
-            {
-                title: "Actions",
-                data: row => row[0][0], // Use data[1] for unique identifier
-                render: function(data) {
-                    return `
-                        <button class="btn btn-danger btn-sm delete-btn" data-id="${data}">
-                            <i class="fa fa-trash"></i> Delete
-                        </button>`;
-                }
-            },
-            {
-                title: "Created",
-                data: row => row[7][0]
-            } // Nested structure for Created
-        ]
-    });
+                // Populate div1 and div2 with respective menus
+                $('#div1').html(visibleHtml || '<p>No visible menus available</p>');
+                $('#div2').html(invisibleHtml || '<p>No invisible menus available</p>');
+            } else {
+                alert(res.response_message || 'Unable to load menus');
+            }
+        }, 'json');
+    }
 
-    // Unblock UI after data is fetched
-    table.on('xhr', function() {
-        $.unblockUI();
-    });
 
-    $("#page_list").on("click", ".delete-btn", function() {
-        const id = $(this).data("id");
-        if (confirm("Are you sure you want to delete this Menu?")) {
-            $.ajax({
-                url: "controllers/gateway.php",
-                type: "POST",
-                data: {
-                    menu_id: id,
-                    'route': '/deleteMenu'
-                },
-                dataType: "json",
-                success: function(data) {
-                    if (data.response_code === 200) {
-                        toastr.success(data.response_message, 'Success', {
-                            timeOut: 3000
-                        });
-                        table.ajax.reload(); // Reload the table data
-                    } else {
-                        toastr.error(data.response_message, 'Error', {
-                            timeOut: 3000
-                        });
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error deleting role:", error);
-                    alert("Failed to delete role.");
-                }
-            });
-        }
-    });
-
-    // Handle "Edit" button click
-    $(document).on("click", ".edit-button", function() {
-        // Get row data from the data-row attribute
-        const rowData = JSON.parse($(this).attr("data-row"));
-
-        // Populate the modal fields with row data
-        $("#modalMenuName").val(rowData.menu);
-        $("#modalMenuURL").val(rowData.url);
-        $("#modalMenuParent").val(rowData.parent);
-        $("#modalMenuIcon").text(rowData.icon);
-
-        // Show the modal
-        $("#editModal").modal("show");
-    });
-    $("#saveMenuButton").click(function() {
-        var data = $("#createMenuForm").serialize();
+    function getParentMenu() {
+        var data = {
+            'route': '/parentMenulist'
+        };
         $.ajax({
             type: "post",
             url: "controllers/gateway.php",
             data: data,
             dataType: "json",
-            success: function(data) {
-                if (data.response_code === 200) {
-                    toastr.success(data.response_message, 'Success', {
-                        timeOut: 1000
-                    });
-                    $("#createMenuModal").modal("hide");
-                    getpage('modules/menu/menu_list.php', "page");
-                } else {
-                    toastr.error(data.response_message, 'Error', {
-                        timeOut: 2000
-                    });
-                }
+            success: function(response) {
+                let selectHtml = `<select id="menuSelect" name="parent_id" class="form-control">`;
+
+                // Add a placeholder option
+                selectHtml += `<option value="#">This is a parent menu</option>`;
+
+                // Loop through the 'data' array and create <option> elements
+                response.data.forEach(menu => {
+                    selectHtml += `<option value="${menu.menu_id}">${menu.menu_name}</option>`;
+                });
+
+                selectHtml += `</select>`;
+
+                // Inject the HTML into your target container
+                $('#menuContainer').html(selectHtml);
             },
             error: function() {
-                toastr.error('Unable to process request at the moment!', 'Error', {
-                    timeOut: 2000
+                // toastr.error('Unable to process request at the moment!', 'Error', {
+                //     timeOut: 2000
+                // });
+            }
+        });
+    }
+
+
+    function getParentMenu2() {
+        var data = {
+            'route': '/parentMenulist'
+        };
+        $.ajax({
+            type: "post",
+            url: "controllers/gateway.php",
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                let selectHtml = `<select id="menuSelect" name="parent_id" class="form-control">`;
+
+                // Add a placeholder option
+                selectHtml += `<option value="#">This is a parent menu</option>`;
+
+                // Loop through the 'data' array and create <option> elements
+                response.data.forEach(menu => {
+                    selectHtml += `<option value="${menu.menu_id}">${menu.menu_name}</option>`;
+                });
+
+                selectHtml += `</select>`;
+
+                // Inject the HTML into your target container
+                $('#menuContainer2').html(selectHtml);
+            },
+            error: function() {
+                // toastr.error('Unable to process request at the moment!', 'Error', {
+                //     timeOut: 2000
+                // });
+            }
+        });
+    }
+
+    function getRoles() {
+        var data = {
+            'route': '/roleList_simple'
+        };
+        $.ajax({
+            type: "post",
+            url: "controllers/gateway.php",
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                let selectHtml = `<select onclick="loadMenus(this.value)" id="menuSelect" name="parent_id" class="form-control">`;
+
+                // Add a placeholder option
+                selectHtml += `<option value="#">Select Role</option>`;
+
+                // Loop through the 'data' array and create <option> elements
+                response.data.forEach(role => {
+                    selectHtml += `<option value="${role.role_id}">${role.role_name}</option>`;
+                });
+
+                selectHtml += `</select>`;
+
+                // Inject the HTML into your target container
+                $('#roleList').html(selectHtml);
+            },
+            error: function() {
+                // toastr.error('Unable to process request at the moment!', 'Error', {
+                //     timeOut: 2000
+                // });
+            }
+        });
+    }
+    var table;
+    var route = "/getMenuList";
+
+    $(document).ready(function() {
+        // Display loading indicator
+        $.blockUI({
+            message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;Loading, please wait...',
+        });
+
+        // Initialize DataTable
+        table = $("#page_list").DataTable({
+            processing: true,
+            serverSide: true,
+            paging: true,
+            columnDefs: [{
+                orderable: false,
+                targets: -1 // Disable ordering on the "Actions" column
+            }],
+            oLanguage: {
+                sEmptyTable: "No record was found, please try another query"
+            },
+            ajax: {
+                url: "controllers/gateway.php",
+                type: "POST",
+                data: function(d) {
+                    d.route = route;
+                    d.li = Math.random();
+                    d.list = "yes";
+                },
+            },
+            dataSrc: function(response) {
+                $.unblockUI();
+                return response.data;
+            },
+            columns: [{
+                    title: "S/N",
+                    data: row => row[0][0]
+                }, // Nested structure for S/N
+                {
+                    title: "Menu",
+                    data: row => row[1][0]
+                }, // Nested structure for Menu
+                {
+                    title: "Menu",
+                    data: row => row[2][0]
+                }, // Nested structure for URL
+                {
+                    title: "URL",
+                    data: row => row[3][0]
+                }, // Nested structure for Parent
+                {
+                    title: "Parent",
+                    data: row => row[4][0]
+                }, // Nested structure for Icon
+                {
+                    title: "Actions",
+                    data: null,
+                    render: function(data, type, row) {
+                        const rowData = JSON.stringify({
+                            id: row[0][0],
+                            menu: row[1][0],
+                            url: row[2][0],
+                            parent: row[3][0],
+                            icon: row[4][0],
+                            created: row[7][0]
+                        }).replace(/"/g, "&quot;"); // Escape double quotes for HTML
+
+                        return `
+                        <button class="btn btn-success btn-sm edit-button" data-row="${rowData}">
+                            <i class="mdi mdi-account-lock"></i> Edit
+                        </button>`;
+                    }
+                },
+                {
+                    title: "Actions",
+                    data: row => row[0][0], // Use data[1] for unique identifier
+                    render: function(data) {
+                        return `
+                        <button class="btn btn-danger btn-sm delete-btn" data-id="${data}">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>`;
+                    }
+                },
+                {
+                    title: "Created",
+                    data: row => row[7][0]
+                } // Nested structure for Created
+            ]
+        });
+
+        // Unblock UI after data is fetched
+        table.on('xhr', function() {
+            $.unblockUI();
+        });
+
+        $("#page_list").on("click", ".delete-btn", function() {
+            const id = $(this).data("id");
+            if (confirm("Are you sure you want to delete this Menu?")) {
+                $.ajax({
+                    url: "controllers/gateway.php",
+                    type: "POST",
+                    data: {
+                        menu_id: id,
+                        'route': '/deleteMenu'
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.response_code === 200) {
+                            toastr.success(data.response_message, 'Success', {
+                                timeOut: 3000
+                            });
+                            table.ajax.reload(); // Reload the table data
+                        } else {
+                            toastr.error(data.response_message, 'Error', {
+                                timeOut: 3000
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error deleting role:", error);
+                        alert("Failed to delete role.");
+                    }
                 });
             }
         });
+
+        // Handle "Edit" button click
+        $(document).on("click", ".edit-button", function() {
+            // Get row data from the data-row attribute
+            const rowData = JSON.parse($(this).attr("data-row"));
+
+            // Populate the modal fields with row data
+            $("#modalMenuName").val(rowData.menu);
+            $("#modalMenuURL").val(rowData.url);
+            $("#modalMenuParent").val(rowData.parent);
+            // $("#modalMenuIcon").text(rowData.icon);
+            $("#modalMenuID").val(rowData.id);
+
+            // Show the modal
+            $("#editModal").modal("show");
+        });
+
+        $("#saveMenuButton").click(function() {
+            var data = $("#createMenuForm").serialize();
+            $.ajax({
+                type: "post",
+                url: "controllers/gateway.php",
+                data: data,
+                dataType: "json",
+                success: function(data) {
+                    if (data.response_code === 200) {
+                        toastr.success(data.response_message, 'Success', {
+                            timeOut: 1000
+                        });
+                        $("#createMenuModal").modal("hide");
+                        getpage('modules/menu/menu_list.php', "page");
+                    } else {
+                        toastr.error(data.response_message, 'Error', {
+                            timeOut: 2000
+                        });
+                    }
+                },
+                error: function() {
+                    toastr.error('Unable to process request at the moment!', 'Error', {
+                        timeOut: 2000
+                    });
+                }
+            });
+        });
+
+        $("#saveEditMenuButton").click(function() {
+            var data = $("#editMenuForm").serialize();
+            $.ajax({
+                type: "post",
+                url: "controllers/gateway.php",
+                data: data,
+                dataType: "json",
+                success: function(data) {
+                    if (data.response_code === 200) {
+                        toastr.success(data.response_message, 'Success', {
+                            timeOut: 1000
+                        });
+                        $("#editModal").modal("hide");
+                        getpage('modules/menu/menu_list.php', "page");
+                    } else {
+                        toastr.error(data.response_message, 'Error', {
+                            timeOut: 2000
+                        });
+                    }
+                },
+                error: function() {
+                    toastr.error('Unable to process request at the moment!', 'Error', {
+                        timeOut: 2000
+                    });
+                }
+            });
+        });
     });
-});
 
 
-function do_filter() {
-    table.draw();
-}
+    function do_filter() {
+        table.draw();
+    }
 
-function closeModal() {
-    $("#defaultModal").modal("hide");
-}
+    function closeModal() {
+        $("#defaultModal").modal("hide");
+    }
 
-function getModal(url, div) {
-    //        alert('dfd');
-    $('#' + div).html("<h2>Loading....</h2>");
-    //        $('#'+div).block({ message: null });
-    $.post(url, {}, function(re) {
-        $('#' + div).html(re);
-    })
-}
+    function getModal(url, div) {
+        //        alert('dfd');
+        $('#' + div).html("<h2>Loading....</h2>");
+        //        $('#'+div).block({ message: null });
+        $.post(url, {}, function(re) {
+            $('#' + div).html(re);
+        })
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const menuId = event.dataTransfer.getData("text");
+        const draggedElement = document.getElementById(menuId);
+
+        // Append the dragged element to the target container
+        event.target.appendChild(draggedElement);
+    }
 </script>

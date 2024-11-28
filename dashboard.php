@@ -37,71 +37,93 @@ $menu_list = $details['menu'];
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <style>
         .nav-link[aria-expanded="false"] {
-        color: #707D8A !important;
-    }
-
-    .nav-link[aria-expanded="false"] i {
-        color: #707D8A !important;
-    }
-
-    .loader-container {
-        display: none;
-        /* Hide the loader by default */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        /* Dark background */
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .loader {
-        width: 8px;
-        height: 40px;
-        border-radius: 4px;
-        display: block;
-        margin: 20px auto;
-        position: relative;
-        background: currentColor;
-        color: #FFF;
-        box-sizing: border-box;
-        animation: animloader 0.3s 0.3s linear infinite alternate;
-    }
-
-    .loader::after,
-    .loader::before {
-        content: '';
-        width: 8px;
-        height: 40px;
-        border-radius: 4px;
-        background: currentColor;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 20px;
-        box-sizing: border-box;
-        animation: animloader 0.3s 0.45s linear infinite alternate;
-    }
-
-    .loader::before {
-        left: -20px;
-        animation-delay: 0s;
-    }
-
-    @keyframes animloader {
-        0% {
-            height: 48px
+            color: #707D8A !important;
         }
 
-        100% {
-            height: 4px
+        .nav-link[aria-expanded="false"] i {
+            color: #707D8A !important;
         }
-    }
+
+        .loader-container {
+            display: none;
+            /* Hide the loader by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark background */
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 8px;
+            height: 40px;
+            border-radius: 4px;
+            display: block;
+            margin: 20px auto;
+            position: relative;
+            background: currentColor;
+            color: #FFF;
+            box-sizing: border-box;
+            animation: animloader 0.3s 0.3s linear infinite alternate;
+        }
+
+        .loader::after,
+        .loader::before {
+            content: '';
+            width: 8px;
+            height: 40px;
+            border-radius: 4px;
+            background: currentColor;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            box-sizing: border-box;
+            animation: animloader 0.3s 0.45s linear infinite alternate;
+        }
+
+        .loader::before {
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        @keyframes animloader {
+            0% {
+                height: 48px
+            }
+
+            100% {
+                height: 4px
+            }
+        }
+
+
+        .menu-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            cursor: grab;
+        }
+
+        .menu-item:hover {
+            background-color: #e9ecef;
+        }
+
+        #div1,
+        #div2 {
+            border: 1px dashed #ccc;
+            min-height: 200px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
     </style>
+
 </head>
 
 <body data-layout="detached" data-topbar="colored">
@@ -829,9 +851,8 @@ $menu_list = $details['menu'];
             }
         });
 
-        function openModal(id)
-        {
-            $("#"+id+"").modal("show");
+        function openModal(id) {
+            $("#" + id + "").modal("show");
         }
     </script>
 
