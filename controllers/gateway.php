@@ -24,7 +24,7 @@ class gateway
         $body = ['payload' => $payload];
         $bodyEnc = json_encode($body);
 
-        // print_r($token); exit;
+        // print_r($bodyEnc); exit;
     
         $file_content1 = 'Logged @ ' . date('Y-m-d H:i:s') . ' Data=>' . json_encode($body, JSON_PRETTY_PRINT) . PHP_EOL;
         $filename2 = $filename . '/Data_sent_' . date('d') . '.txt';

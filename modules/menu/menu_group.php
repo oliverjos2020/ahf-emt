@@ -65,6 +65,8 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 
 <div class="modal-footer">
     <button id="save_facility" onclick="saveRecord()" class="btn btn-primary">Save</button>
+    
+
 </div>
 
 
