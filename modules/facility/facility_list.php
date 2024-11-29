@@ -1,4 +1,18 @@
+<style>
+    #page_list_x {
+        border-collapse: collapse; /* Ensure proper cell collapse */
+        border-spacing: 0;
+    }
 
+    #page_list_x th,
+    #page_list_x td {
+        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
+    }
+
+    #page_list_x thead th {
+        background-color: #f8f9fa; /* Light header background */
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
@@ -32,29 +46,27 @@
                         <p>Table showing the list of all available facilities.</p>
                     </div>
                     <div class="col-md-4 text-end">
-                    <a class="btn btn-ahf" onclick="myLoadModal('modules/facility/facility_setup','modal_div')"  href="javascript:void(0)"><i class="fa fa-plus"></i> Create Facility</a>
-                    <button href="" class="btn btn-ahf-secondary" onclick="myLoadModal('modules/user/user.php','modal_div')"><i class="fa fa-plus"></i> Create New User</button>
+                        <a class="btn btn-ahf" onclick="myLoadModal('modules/facility/facility_setup','modal_div')" href="javascript:void(0)"><i class="fa fa-plus"></i> Create Facility</a>
+                        <button href="" class="btn btn-ahf-secondary" onclick="myLoadModal('modules/user/user.php','modal_div')"><i class="fa fa-plus"></i> Create New User</button>
                     </div>
 
                 </div>
 
-                <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
-                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Facility Name</th>
-                            <th>State</th>
-                            <th>L.G.A.</th>
-                            <th>Phone Number</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+                <table id="page_list_x" class="table table-bordered table-hover dt-responsive nowrap"
+       style="border-collapse: collapse; border-spacing: 0; width: 100%; border: 1px solid #000;">
+    <thead class="thead-light">
+        <tr>
+            <th>Facility Name</th>
+            <th>State</th>
+            <th>L.G.A.</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
-                    <tbody>
-
-
-                    </tbody>
-                </table>
 
             </div>
         </div>
@@ -76,87 +88,92 @@
 <script>
     var table;
     var editor;
-    var op = "Menu.menuList";
+    var route = "/fetchCodesDataTable";
     $(document).ready(function() {
-        table = $("#page_list").DataTable({
+        // $.blockUI({
+        //     message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
+        // });
+        table = $("#page_list_x").DataTable({
             processing: true,
-            columnDefs: [{
-                orderable: false,
-                targets: 0
-            }],
             serverSide: true,
             paging: true,
+            columnDefs: [{
+                orderable: false,
+                targets: -1 // Disable ordering on the "Action" column
+            }],
             oLanguage: {
                 sEmptyTable: "No record was found, please try another query"
             },
-
             ajax: {
-                url: "web/router.php",
+                url: "controllers/gateway.php",
                 type: "POST",
-                data: function(d, l) {
-                    d.op = op;
+                data: function(d) {
+                    d.route = route;
                     d.li = Math.random();
-                    //          d.start_date = $("#start_date").val();
-                    //          d.end_date = $("#end_date").val();
-                }
-            }
+                    d.list = "yes";
+                    // d.op = "Patients.fetchPatients"
+                },
+                beforeSend: function() {
+                    // Show the loader before the request starts
+                    showLoader();
+                },
+                complete: function() {
+                    // Hide the loader after the request completes
+                    hideLoader();
+                },
+
+            },
+            columns: [{
+                    title: "Facility Name",
+                    data: 2
+                },
+                {
+                    title: "State",
+                    data: 14
+                },
+                {
+                    title: "LGA",
+                    data: 15
+                },
+                {
+                    title: "Phone Number",
+                    data: 19
+                },
+                {
+                    title: "Action",
+                    data: 1,
+                    render: function(data, type, row) {
+                        return `
+                              <button class="btn btn-sm" title="Edit" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" 
+                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[1]}&facility_code=${row[2]}&phone=${row[4]}&address=${row[2]}', 'modal_div')">
+                                <i class="bx bx-edit"></i>
+                            </button>
+                            <button class="btn btn-sm" title="Delete" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #EF7370;" onclick="deleteFacility(${data})">
+                                <i class="bx bx-trash"></i>
+                            </button>
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewFacility(${data})">
+                                <i class="bx bx-show"></i>
+                            </button>`;
+                    }
+                },
+
+
+            ],
+            initComplete: function () {
+            $("#page_list_x").addClass("table-bordered"); // Add the bordered class dynamically
+        }
         });
     });
+
+    function disableUser(data) {
+        alert("The data is: " + data);
+    }
 
     function do_filter() {
         table.draw();
     }
 
-    function closeModal() {
-        $("#defaultModal").modal("hide");
-    }
-
-    function deleteMenu(id) {
-        let cnf = confirm("Are you sure you want to delete menu?");
-        if (cnf == true) {
-            $.blockUI();
-            $.ajax({
-                url: "web/router.php",
-                data: {
-                    op: "Menu.deleteMenu",
-                    menu_id: id
-                },
-                type: "post",
-                dataType: "json",
-                success: function(re) {
-                    $.unblockUI();
-                    // alert(re.response_message);
-                    toastr.success(re.response_message, 'Success', {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: 'toast-top-right',
-                        timeOut: 3000, // Time in milliseconds
-                        extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                        escapeHtml: true,
-                        tapToDismiss: false, // Prevent dismissing on click
-                    });
-                    getpage('modules/menu/menu_list.php', "page");
-                },
-                error: function(re) {
-                    $.unblockUI();
-                    // alert("Request could not be processed at the moment!");
-                    toastr.error("Request could not be processed at the moment!", 'Error', {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: 'toast-top-right',
-                        timeOut: 3000, // Time in milliseconds
-                        extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                        escapeHtml: true,
-                        tapToDismiss: false, // Prevent dismissing on click
-                    });
-                }
-            });
-        }
-
-    }
-
     function getModal(url, div) {
-        //        alert('dfd');
         $('#' + div).html("<h2>Loading....</h2>");
         //        $('#'+div).block({ message: null });
         $.post(url, {}, function(re) {

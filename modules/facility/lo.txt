@@ -1,1 +1,1 @@
-SELECT * FROM menu
+SELECT state FROM states

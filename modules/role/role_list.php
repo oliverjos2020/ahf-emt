@@ -70,9 +70,7 @@ var table;
 var editor;
 var route = "/roleList";
 $(document).ready(function() {
-    $.blockUI({
-        message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
-    });
+ showLoader();
     table = $("#page_list").DataTable({
         processing: true,
         serverSide: true,
@@ -93,7 +91,7 @@ $(document).ready(function() {
                 d.list = "yes";
             },
             dataSrc: function(response) {
-                $.unblockUI();
+                hideLoader();
                 // Check response and format data
                 if (response.draw) {
                     // Map response data and add a Delete button as the last column

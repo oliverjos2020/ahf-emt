@@ -1,1 +1,1 @@
-SELECT * FROM role WHERE role_id 
+SELECT * FROM role WHERE role_id <> '001' 

@@ -1,4 +1,3 @@
-
 <style>
     label {
         font-weight: bold;
@@ -10,6 +9,20 @@
     .form-select {
         min-width: 200px;
         /* Ensures a consistent width for inputs */
+    }
+
+    #page_list_x {
+        border-collapse: collapse; /* Ensure proper cell collapse */
+        border-spacing: 0;
+    }
+
+    #page_list_x th,
+    #page_list_x td {
+        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
+    }
+
+    #page_list_x thead th {
+        background-color: #f8f9fa; /* Light header background */
     }
 </style>
 <div class="row">
@@ -52,70 +65,70 @@
                 <hr>
 
                 <div class="container">
-    <div class="row align-items-center mb-3">
-        <!-- Start Date -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="s_date" class="me-2">Start Date:</label>
-                <input type="date" class="form-control flex-grow-1" name="s_date" id="s_date">
-            </div>
-        </div>
-        <!-- End Date -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="e_date" class="me-2">End Date:</label>
-                <input type="date" class="form-control flex-grow-1" name="e_date" id="e_date">
-            </div>
-        </div>
-        <!-- Missed Appointment -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="missed_appointment" class="me-2">Missed Appointment:</label>
-                <select name="missed_appointment" class="form-select flex-grow-1" id="missed_appointment">
-                    <option value="" selected disabled>Select</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-        </div>
-    </div>
+                    <div class="row align-items-center mb-3">
+                        <!-- Start Date -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="s_date" class="me-2">Start Date:</label>
+                                <input type="date" class="form-control flex-grow-1" name="s_date" id="s_date">
+                            </div>
+                        </div>
+                        <!-- End Date -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="e_date" class="me-2">End Date:</label>
+                                <input type="date" class="form-control flex-grow-1" name="e_date" id="e_date">
+                            </div>
+                        </div>
+                        <!-- Missed Appointment -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="missed_appointment" class="me-2">Missed Appointment:</label>
+                                <select name="missed_appointment" class="form-select flex-grow-1" id="missed_appointment">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="row align-items-center">
-        <!-- Entry Point Type -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="entry_date" class="me-2">Entry Point Type:</label>
-                <select name="entry_date" class="form-select flex-grow-1" id="entry_date">
-                    <option value="" selected disabled>Select</option>
-                    <option value="intra_transfer">Transferred Intra</option>
-                    <option value="inter_transfer">Transferred Inter</option>
-                </select>
-            </div>
-        </div>
-        <!-- Gender -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="gender" class="me-2">Gender:</label>
-                <select name="gender" class="form-select flex-grow-1" id="gender">
-                    <option value="" selected disabled>Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-        </div>
-        <!-- Age Range -->
-        <div class="col-md-6 col-lg-4 mb-3">
-            <div class="d-flex align-items-center">
-                <label for="age" class="me-2">Age Range:</label>
-                <select name="age" class="form-select flex-grow-1" id="age">
-                    <option value="" selected disabled>Select Age Range</option>
-                    <option value="above_35">Above 35 Years</option>
-                    <option value="below_35">Below 35 Years</option>
-                </select>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="row align-items-center">
+                        <!-- Entry Point Type -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="entry_date" class="me-2">Entry Point Type:</label>
+                                <select name="entry_date" class="form-select flex-grow-1" id="entry_date">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="intra_transfer">Transferred Intra</option>
+                                    <option value="inter_transfer">Transferred Inter</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Gender -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="gender" class="me-2">Gender:</label>
+                                <select name="gender" class="form-select flex-grow-1" id="gender">
+                                    <option value="" selected disabled>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Age Range -->
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="d-flex align-items-center">
+                                <label for="age" class="me-2">Age Range:</label>
+                                <select name="age" class="form-select flex-grow-1" id="age">
+                                    <option value="" selected disabled>Select Age Range</option>
+                                    <option value="above_35">Above 35 Years</option>
+                                    <option value="below_35">Below 35 Years</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <hr>
@@ -161,9 +174,161 @@
             </div>
         </div>
     </div>
-
-
     <script>
+    var table;
+    var editor;
+    var route = "/patientsData";
+    $(document).ready(function() {
+        // $.blockUI({
+        //     message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
+        // });
+        table = $("#page_list_x").DataTable({
+            processing: true,
+            serverSide: true,
+            paging: true,
+            columnDefs: [{
+                orderable: false,
+                targets: -1 // Disable ordering on the "Action" column
+            }],
+            oLanguage: {
+                sEmptyTable: "No record was found, please try another query"
+            },
+            ajax: {
+                url: "controllers/gateway.php",
+                type: "POST",
+                data: function(d) {
+                    d.route = route;
+                    d.li = Math.random();
+                    d.list = "yes";
+                    d.op = "Patients.fetchPatients"
+                },
+                beforeSend: function() {
+                    // Show the loader before the request starts
+                    showLoader();
+                },
+                complete: function() {
+                    // Hide the loader after the request completes
+                    hideLoader();
+                },
+
+            },
+            columns: [{
+                    title: "ART ID",
+                    data: 1
+                },
+                {
+                    title: "First Name",
+                    data: 2
+                },
+                {
+                    title: "Last Name",
+                    data: 4
+                },
+                {
+                    title: "Viral Load",
+                    data: 47
+                },
+                {
+                    title: "Appointment Date",
+                    data: 4
+                },
+                {
+                    title: "Date",
+                    data: 6
+                },
+                {
+                    title: "Action",
+                    data: 47
+                },
+               
+            ]
+        });
+    });
+
+    function disableUser(data) {
+        alert("The data is: " + data);
+    }
+
+    function do_filter() {
+        table.draw();
+    }
+
+    function trigUser(user, status) {
+        var r_status = (status == 1) ? "Unlock this user" : "Lock this user";
+        var cnf = confirm("Are you sure you want to " + r_status + " this user ?");
+        if (cnf) {
+            $.blockUI();
+            $.post('web/router.php', {
+                op: 'Users.changeUserStatus',
+                current_status: status,
+                username: user
+            }, function(resp) {
+                $.unblockUI();
+                if (resp.response_code == 0) {
+                    //                           alert(resp.response_message);
+                    getpage('modules/user/user_list.php', 'page');
+                }
+
+            }, 'json')
+        }
+    }
+
+    function sackUser(username_1, status_1) {
+        let tt = confirm("Are you sure you want to perform this action");
+        if (tt) {
+            $.post("web/router.php", {
+                op: "Users.sackUser",
+                username: username_1,
+                status: status_1
+            }, function(rr) {
+                alert(rr.response_message);
+                getpage('modules/user/user_list.php', 'page');
+            }, 'json');
+        }
+    }
+
+    function getModal(url, div) {
+        $('#' + div).html("<h2>Loading....</h2>");
+        //        $('#'+div).block({ message: null });
+        $.post(url, {}, function(re) {
+            $('#' + div).html(re);
+        })
+    }
+
+    function disableUser(user) {
+        // let tt = confirm("Are you sure you want to perform this action");
+        Swal.fire({
+            title: 'Disable User?',
+            text: "Are you sure you want to disable this user?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, proceed!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Action when confirmed
+                Swal.fire(
+                    'Confirmed!',
+                    'Your action has been confirmed.',
+                    'success'
+                );
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                // Action when cancelled
+                Swal.fire(
+                    'Cancelled',
+                    'Your action has been cancelled.',
+                    'error'
+                );
+            }
+        });
+
+    }
+</script>
+
+    <!-- <script>
+        
         var table;
         var editor;
         var op = "Patients.patientList";
@@ -259,4 +424,4 @@
                 $('#' + div).html(re);
             })
         }
-    </script>
+    </script> -->

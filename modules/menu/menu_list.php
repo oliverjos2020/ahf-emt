@@ -345,9 +345,7 @@
 
     $(document).ready(function() {
         // Display loading indicator
-        $.blockUI({
-            message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;Loading, please wait...',
-        });
+        showLoader();
 
         // Initialize DataTable
         table = $("#page_list").DataTable({
@@ -371,7 +369,7 @@
                 },
             },
             dataSrc: function(response) {
-                $.unblockUI();
+               
                 return response.data;
             },
             columns: [{
@@ -426,7 +424,7 @@
 
         // Unblock UI after data is fetched
         table.on('xhr', function() {
-            $.unblockUI();
+            hideLoader();
         });
 
         $("#page_list").on("click", ".delete-btn", function() {

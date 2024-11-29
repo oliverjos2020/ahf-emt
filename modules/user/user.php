@@ -1,26 +1,10 @@
 <?php
-include_once("../../libs/dbfunctions.php");
-$dbobject = new dbobject();
-// $user_role = $_SESSION['role_id_sess'];
-$user_role = "001";
-$where = "";
-if ($user_role == '029') {
-    $where = "  AND role_id IN ('0011','012')";
-}
-
-$sql_role = "SELECT * FROM role WHERE role_id <> '001' $where";
-$role = $dbobject->db_query($sql_role);
-
-
-$get_role_name = $dbobject->getitemlabel('role', 'role_id', $user_role, 'role_name');
-
-$roles = $dbobject->db_query($sql_role);
 
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $username  = $_REQUEST['username'];
-    $get_merchant = $dbobject->db_query("SELECT * FROM userdata WHERE username='$username'");
-
-    $user      = $dbobject->db_query("SELECT * FROM userdata WHERE username='$username'");
+    $firstname  = $_REQUEST['firstname'];
+    $lastname  = $_REQUEST['lastname'];
+    $phone  = $_REQUEST['phone'];
     $operation = 'edit';
 } else {
     $operation = 'new';
@@ -51,6 +35,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <!-- <input type="hidden" name="token" value="WWtOVURsQWl0QlcwNzlYeEZoeVk4a2JPcUphVXdPVDVObUV6ckNYZ3FuZEJoYXM3dU95RjJSUG56WGFKYmtOU0Q1N2ZSZnRIME9FUjhSWERvV3VqaFUxYnFkVm5DVDlub0NReE5aa0d2NzVqNkYvQUxENi9RdTgwRTR3VGxvSll4ZGJGZmFpOVJjMzY4S0pnZWVzTm5meU5tL2VmQUNKVXNVUUtLczhpSDU0PTo6xLYp7JuA"> -->
         <input type="hidden" name="reg_status" value="1">
         <input type="hidden" name="reg_type" value="0">
+        <input type="hidden" name="route" value="<?php echo $operation === 'new' ? '/registerUser' : '/userEdit'; ?>">
         <input type="hidden" name="operation" value="<?php echo $operation; ?>">
         <div class="row" style="<?php echo ($operation == "edit") ? "display:none" : ""; ?>">
             <div class="col-sm-6 mt-2">
@@ -94,7 +79,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">First Name<span class="asterik">*</span></label>
                     <input type="text" name="firstname"
-                        value="<?php echo ($operation == "edit") ? $user[0]['firstname'] : "" ?>" class="form-control"
+                        value="<?php echo ($operation == "edit") ? $firstname : "" ?>" class="form-control"
                         autocomplete="off">
                 </div>
             </div>
@@ -102,7 +87,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">Last Name<span class="asterik">*</span></label>
                     <input type="text" name="lastname"
-                        value="<?php echo ($operation == "edit") ? $user[0]['lastname'] : "" ?>" class="form-control"
+                        value="<?php echo ($operation == "edit") ? $lastname : "" ?>" class="form-control"
                         autocomplete="off">
                 </div>
             </div>
@@ -112,7 +97,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">Phone Number<span class="asterik">*</span></label>
                     <input type="number" name="mobile_phone"
-                        value="<?php echo ($operation == "edit") ? $user[0]['mobile_phone'] : "" ?>"
+                        value="<?php echo ($operation == "edit") ? $phone : "" ?>"
                         class="form-control" autocomplete="off">
                 </div>
             </div>
@@ -120,11 +105,9 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">Gender<span class="asterik">*</span></label>
                     <select class="form-control" name="sex" id="sex">
-                        <option value="male"
-                            <?php echo ($operation == "edit") ? (($user[0]['sex'] == "male") ? "selected" : "") : ""; ?>>
+                        <option value="male">
                             Male</option>
-                        <option value="female"
-                            <?php echo ($operation == "edit") ? (($user[0]['sex'] == "female") ? "selected" : "") : ""; ?>>
+                        <option value="female">
                             Female</option>
                     </select>
                 </div>
@@ -135,9 +118,8 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
                     <label class="form-label">Role<span class="asterik">*</span></label>
-                    <select class="form-control" onchange="checkRole(this.value)" name="role_id">
+                    <select class="form-control" name="role_id" id="role_id">
                         <option value="">Select Role</option>
-                        <option value="002">Facility Admin</option>
                     </select>
                     <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up"
                         autocomplete="off">
@@ -146,10 +128,8 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
                     <label class="form-label">Facility<span class="asterik">*</span></label>
-                    <select class="form-control" name="facility_code">
+                    <select class="form-control" name="facility_code" id="facility_code">
                         <option value="">Select Facility</option>
-                        <option value="454545">Access Solution Branch</option>
-                        
                     </select>
                     <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up"
                         autocomplete="off">
@@ -209,13 +189,9 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="form-group">
-                    <label class="form-label" id="day1"><input type="checkbox"
-                            value="<?php echo isset($user[0]['user_locked']) ? $user[0]['user_locked'] : '0'; ?>"
-                            <?php echo (isset($user[0]['user_locked'])) ? ($user[0]['user_locked'] == 0) ? "" : "checked" : ""; ?>
-                            name="user_locked" id="day1"> Lock User</label>
+                    <label class="form-label" id="day1">
+                        <input type="checkbox" value="" name="user_locked" id="day1"> Lock User</label>
                     <!-- <label class="form-label" id="day1"><input type="checkbox" value="<?php echo isset($user[0]['passchg_logon']) ? $user[0]['passchg_logon'] : '1'; ?><?php echo isset($user[0]['passchg_logon']) ? $user[0]['passchg_logon'] : '1'; ?>" name="passchg_logon" <?php echo (isset($user[0]['passchg_logon'])) ? ($user[0]['passchg_logon'] == 0) ? "" : "checked" : "checked"; ?> id="passchg_logon"> Change password on first login</label> -->
-
-
                 </div>
             </div>
 
@@ -232,7 +208,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     function saveRecord() {
         $("#save_facility").text("Loading......");
         var dd = $("#form1").serialize();
-        $.post("web/router.php", dd, function(re) {
+        $.post("controllers/gateway.php", dd, function(re) {
             console.log(re);
             $("#save_facility").text("Save");
             if (re.response_code == 200) {
@@ -266,11 +242,72 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 
         }, 'json');
     }
-    if ($("#sh_display").is(':checked')) {
 
+    function getRoles() {
+
+        var route = "/roleList_simple";
+        var data = {
+            route
+        };
+
+        $.post("controllers/gateway.php", data, function(re) {
+            console.log(re); // Debug: Log the API response
+
+            // Ensure re is an array
+            if (re.response_code == 200) {
+                const $select = $('#role_id');
+                $select.empty(); // Clear existing options
+                $select.append($('<option>', {
+                    value: '',
+                    text: 'Select Role'
+                })); // Default option
+
+                // Populate the dropdown
+                $.each(re.data, function(index, role) {
+                    $select.append($('<option>', {
+                        value: role.role_id, // Set role_id as the value
+                        text: role.role_name // Set role_name as the display text
+                    }));
+                });
+            } else {
+
+            }
+
+        }, 'json')
     }
 
+    function getFacility() {
 
+var route = "/fetchCodes";
+var data = {
+    route
+};
+
+$.post("controllers/gateway.php", data, function(re) {
+    console.log(re); // Debug: Log the API response
+
+    // Ensure re is an array
+    
+        const $select = $('#facility_code');
+        $select.empty(); // Clear existing options
+        $select.append($('<option>', {
+            value: '',
+            text: 'Select Facility'
+        })); // Default option
+
+        // Populate the dropdown
+        $.each(re, function(index, role) {
+            $select.append($('<option>', {
+                value: role.facility_code, // Set role_id as the value
+                text: role.hospital_name // Set role_name as the display text
+            }));
+        });
+
+}, 'json')
+}
+    
+    getRoles();
+    getFacility();
 
     $("#show").click(function() {
         var password = $("#password").attr('type');
@@ -300,4 +337,5 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         }
         // alert(value);
     }
+    
 </script>

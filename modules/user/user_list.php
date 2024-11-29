@@ -1,6 +1,21 @@
-<?php
-include_once("../../libs/dbfunctions.php");
-?>
+<style>
+    #page_list {
+        border-collapse: collapse;
+        /* Ensure proper cell collapse */
+        border-spacing: 0;
+    }
+
+    #page_list th,
+    #page_list td {
+        border: 1px solid #dee2e6 !important;
+        /* Visible border for all cells */
+    }
+
+    #page_list thead th {
+        background-color: #f8f9fa;
+        /* Light header background */
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
@@ -54,7 +69,7 @@ include_once("../../libs/dbfunctions.php");
 
                     </tbody>
                 </table>
-
+                <!-- <input type="hidden" id="route" value="modules/user/user.php"> -->
             </div>
         </div>
     </div>
@@ -98,6 +113,14 @@ include_once("../../libs/dbfunctions.php");
                     d.li = Math.random();
                     d.list = "yes";
                 },
+                beforeSend: function() {
+                    // Show the loader before the request starts
+                    showLoader();
+                },
+                complete: function() {
+                    // Hide the loader after the request completes
+                    hideLoader();
+                },
 
             },
             columns: [{
@@ -105,11 +128,11 @@ include_once("../../libs/dbfunctions.php");
                     data: 0
                 },
                 {
-                    title: "Firstname",
+                    title: "First Name",
                     data: 1
                 },
                 {
-                    title: "LastName",
+                    title: "Last Name",
                     data: 2
                 },
                 {
@@ -131,151 +154,42 @@ include_once("../../libs/dbfunctions.php");
                 {
                     title: "Created",
                     data: 10
-                },{
-                    title: "Actions",
-                    data: 1,
+                }, {
+                    title: "Edit",
+                    data: 3,
                     render: function(data, type, row) {
-                    return '<button class="btn btn-success btn-sm deactivate" data-userdeactivate-id="' + data + '"><i class="mdi mdi-account-lock"></i> Edit</button>';
+                        return '<button class="btn btn-success btn-sm deactivate" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" title="Edit User" data-userdeactivate-id="' + data +
+                            '" onclick="myLoadModal(\'modules/user/user.php?op=edit&username=' + data +
+                            '&firstname=' + row[1] +
+                            '&lastname=' + row[2] +
+                            '&phone=' + row[4] +
+                            '\', \'modal_div\')"><i class="fas fa-pencil-alt"></i></button>';
                     }
-              },
+                },
                 {
-                    title: "Actions",
-                    data: 1,
+                    title: "Disable",
+                    data: 3,
                     render: function(data, type, row) {
-                    return '<button class="btn btn-danger btn-sm deactivate" data-userdeactivate-id="' + data + '"><i class="mdi mdi-account-lock"></i> Disable</button>';
+                        // Assuming row[7] is the Login Status column (enabled/disabled)
+                        if (row[7] == "Enabled") {
+                            // Show Disable User button
+                            return '<button class="btn btn-danger btn-sm deactivate" title="Disable User" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #EF7370;" onclick="disableUser(\'' + data + '\')" data-userdeactivate-id="' + data + '"><i class="fas fa-ban"></i></button>';
+                        } else {
+                            // Show Enable User button
+                            return '<button class="btn btn-success btn-sm activate" title="Enable User" style="background-color: #FFF2F0; border-color: #FFF2F0; color: green;" onclick="enableUser(\'' + data + '\')" data-useractivate-id="' + data + '"><i class="fas fa-check"></i></button>';
+                        }
                     }
-              }
-            ]
+                }
+
+            ],
+            initComplete: function() {
+                $("#page_list").addClass("table-bordered"); // Add the bordered class dynamically
+            }
         });
     });
-    // var table;
-    // var editor;
-    // var op = "gateway.userlist";
-    // $(document).ready(function() {
-    //             table = $("#page_list").DataTable({
-    //                 processing: true,
-    //                 columnDefs: [{
-    //                         orderable: false,
-    //                         targets: -1
-    //                     },
-    //                     {
-    //                         width: "3100",
-    //                         targets: "3"
-    //                     }
-    //                 ],
-    //                 serverSide: true,
-    //                 paging: true,
-    //                 oLanguage: {
-    //                     sEmptyTable: "No record was found, please try another query"
-    //                 },
-
-    //                 ajax: {
-    //                     url: "controllers/gateway.php",
-    //                     type: "POST",
-    //                     data: function(d, l) {
-    //                         d.op = op;
-    //                         d.route = '/usersList';
-    //                         d.li = Math.random();
-    //                         d.list = 'yes';
-
-    //                     },
-    //                     dataSrc: function(response) {
-    //                         $.unblockUI();
-    //                         // Check response and format data
-    //                         if (response.draw) {
-    //                             return response.data.map(row => {
-    //                                 // Manually flatten the nested arrays
-    //                                 const flattenedRow = [].concat(...row); // Flatten the nested arrays
-
-    //                                 // Add Edit and Delete buttons with respective data attributes
-    //                                 flattenedRow.push(`
-    //                                 <button class="btn btn-primary btn-sm edit-btn" data-id="${flattenedRow[0]}">Edit</button>
-    //                                 <button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[0]}">Delete</button>`);
-    //                                 return flattenedRow;
-    //                             });
-    //                         } else {
-    //                             console.error("Invalid response:", response);
-    //                             return [];
-    //                         }
-    //                     }
-
-    //                 },
-    // columns: [{
-    //         title: "S/N",
-    //         data: 0
-    //     },
-    //     {
-    //         title: "Firstname",
-    //         data: 1
-    //     },
-    //     {
-    //         title: "LastName",
-    //         data: 2
-    //     },
-    //     {
-    //         title: "Phone",
-    //         data: 3
-    //     },
-    //     {
-    //         title: "Role",
-    //         data: 4
-    //     },
-    //     {
-    //         title: "Email",
-    //         data: 5
-    //     },
-    //     {
-    //         title: "Login Status",
-    //         data: 6
-    //     },
-    //     {
-    //         title: "Created",
-    //         data: 7
-    //     },
-    //     {
-    //         title: "Actions",
-    //         data: 8
-    //     } 
-    // ]
-    //             });
-    //             });
 
     function do_filter() {
         table.draw();
-    }
-
-    function trigUser(user, status) {
-        var r_status = (status == 1) ? "Unlock this user" : "Lock this user";
-        var cnf = confirm("Are you sure you want to " + r_status + " this user ?");
-        if (cnf) {
-            $.blockUI();
-            $.post('web/router.php', {
-                op: 'Users.changeUserStatus',
-                current_status: status,
-                username: user
-            }, function(resp) {
-                $.unblockUI();
-                if (resp.response_code == 0) {
-                    //                           alert(resp.response_message);
-                    getpage('modules/user/user_list.php', 'page');
-                }
-
-            }, 'json')
-        }
-    }
-
-    function sackUser(username_1, status_1) {
-        let tt = confirm("Are you sure you want to perform this action");
-        if (tt) {
-            $.post("web/router.php", {
-                op: "Users.sackUser",
-                username: username_1,
-                status: status_1
-            }, function(rr) {
-                alert(rr.response_message);
-                getpage('modules/user/user_list.php', 'page');
-            }, 'json');
-        }
     }
 
     function getModal(url, div) {
@@ -284,5 +198,121 @@ include_once("../../libs/dbfunctions.php");
         $.post(url, {}, function(re) {
             $('#' + div).html(re);
         })
+    }
+
+    function disableUser(user) {
+        // let tt = confirm("Are you sure you want to perform this action");
+        Swal.fire({
+            title: "Disable User?",
+            text: "Note that user will not be able to log into the system",
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonColor: "#34c38f",
+            cancelButtonColor: "#f46a6a",
+            confirmButtonText: "Yes, disable!"
+        }).then(function(t) {
+            if (t.value) {
+
+                showLoader();
+                // Replace these values with dynamic ones as needed
+                const username = user; // Replace with actual username variable
+                const user_locked = 1;
+                const route = "/lockAccess" // Replace with actual user_locked value
+                var data = {
+                    route: route,
+                    username: username,
+                    user_locked: user_locked,
+                    operation: "edit"
+
+                };
+                $.post("controllers/gateway.php", data, function(response) {
+                    hideLoader();
+                    // Handle the response
+                    if (response.response_code === 200) {
+                        toastr.success(response.response_message, "Success", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000, // 5 seconds (time in milliseconds)
+                            extendedTimeOut: 0,
+                            onHidden: function() {
+                                // Notification hidden, no need to wait for this to execute getpage
+                            }
+                        });
+
+                        // Call getpage immediately after success
+                        getpage('modules/user/user_list.php', 'page');
+                    } else {
+                        toastr.error(response.response_message || "An error occurred", "Error", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000
+                        });
+                    }
+                }, 'json').fail(function() {
+                    hideLoader();
+                    Swal.fire("Error", "Failed to communicate with the server.", "error");
+                });
+            }
+        })
+
+    }
+
+    function enableUser(user) {
+        // let tt = confirm("Are you sure you want to perform this action");
+        Swal.fire({
+            title: "Enable User?",
+            text: "Are you sure you want to enable this user",
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonColor: "#34c38f",
+            cancelButtonColor: "#f46a6a",
+            confirmButtonText: "Yes, Enable!"
+        }).then(function(t) {
+            if (t.value) {
+
+                showLoader();
+                // Replace these values with dynamic ones as needed
+                const username = user; // Replace with actual username variable
+                const user_locked = 0;
+                const route = "/lockAccess" // Replace with actual user_locked value
+                var data = {
+                    route: route,
+                    username: username,
+                    user_locked: user_locked,
+                    operation: "edit"
+
+                };
+                $.post("controllers/gateway.php", data, function(response) {
+                    hideLoader();
+                    // Handle the response
+                    if (response.response_code === 200) {
+
+                        toastr.success(response.response_message, "Success", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000, // 5 seconds (time in milliseconds)
+                            extendedTimeOut: 0,
+                            onHidden: function() {
+                                // Notification hidden, no need to wait for this to execute getpage
+                            }
+                        });
+
+                        // Call getpage immediately after success
+                        getpage('modules/user/user_list.php', 'page');
+
+                    } else {
+                        toastr.error(response.response_message || "An error occurred", "Error", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000
+                        });
+                    }
+                }, 'json').fail(function() {
+                    hideLoader();
+                    Swal.fire("Error", "Failed to communicate with the server.", "error");
+                });
+            }
+        })
+
     }
 </script>

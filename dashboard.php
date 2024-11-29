@@ -35,95 +35,89 @@ $menu_list = $details['menu'];
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Sweet Alert-->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <style>
         .nav-link[aria-expanded="false"] {
-            color: #707D8A !important;
+        color: #707D8A !important;
+    }
+
+    .nav-link[aria-expanded="false"] i {
+        color: #707D8A !important;
+    }
+
+    .loader-container {
+        display: none;
+        /* Hide the loader by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Dark background */
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto;
+        position: relative;
+        background: currentColor;
+        color: #FFF;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.3s linear infinite alternate;
+    }
+
+    .loader::after,
+    .loader::before {
+        content: '';
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.45s linear infinite alternate;
+    }
+
+    .loader::before {
+        left: -20px;
+        animation-delay: 0s;
+    }
+
+    @keyframes animloader {
+        0% {
+            height: 48px
         }
 
-        .nav-link[aria-expanded="false"] i {
-            color: #707D8A !important;
+        100% {
+            height: 4px
         }
+    }
 
-        .loader-container {
-            display: none;
-            /* Hide the loader by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            /* Dark background */
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
+    #page_list_x {
+        border-collapse: collapse; /* Ensure proper cell collapse */
+        border-spacing: 0;
+    }
 
-        .loader {
-            width: 8px;
-            height: 40px;
-            border-radius: 4px;
-            display: block;
-            margin: 20px auto;
-            position: relative;
-            background: currentColor;
-            color: #FFF;
-            box-sizing: border-box;
-            animation: animloader 0.3s 0.3s linear infinite alternate;
-        }
+    #page_list_x th,
+    #page_list_x td {
+        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
+    }
 
-        .loader::after,
-        .loader::before {
-            content: '';
-            width: 8px;
-            height: 40px;
-            border-radius: 4px;
-            background: currentColor;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 20px;
-            box-sizing: border-box;
-            animation: animloader 0.3s 0.45s linear infinite alternate;
-        }
-
-        .loader::before {
-            left: -20px;
-            animation-delay: 0s;
-        }
-
-        @keyframes animloader {
-            0% {
-                height: 48px
-            }
-
-            100% {
-                height: 4px
-            }
-        }
-
-
-        .menu-item {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            cursor: grab;
-        }
-
-        .menu-item:hover {
-            background-color: #e9ecef;
-        }
-
-        #div1,
-        #div2 {
-            border: 1px dashed #ccc;
-            min-height: 200px;
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
+    #page_list_x thead th {
+        background-color: #f8f9fa; /* Light header background */
+    }
     </style>
-
 </head>
 
 <body data-layout="detached" data-topbar="colored">
@@ -258,7 +252,6 @@ $menu_list = $details['menu'];
                                 </a>
 
                             </li>
-
                             <?php
                             foreach ($menu_list as $value) {
                                 if ($value['has_sub_menu'] == false) {
@@ -291,22 +284,6 @@ $menu_list = $details['menu'];
                                 }
                             }
                             ?>
-
-
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="fa fa-cog"></i>
-                                    <span>Administrative Tools</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/role/role_list', 'page', '006')" aria-expanded="false">Role</a></li>
-
-                                    <li><a style="cursor:pointer;" onclick="loadNavPage('modules/menu/menu_list', 'page', '007')" aria-expanded="false">Menu</a></li>
-
-                                    <li class=""><a style="cursor:pointer;" onclick="loadNavPage('modules/user/user_list', 'page', '028')" aria-expanded="false">Users</a></li>
-                                </ul>
-                            </li>
                             <!-- 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -717,7 +694,11 @@ $menu_list = $details['menu'];
     <script src="assets/js/jquery.blockUI.js"></script>
     <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
+    <!-- Sweet Alerts js -->
+    <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
+    <!-- Sweet alert init js-->
+    <script src="assets/js/pages/sweet-alerts.init.js"></script>
     <!-- Required datatable js -->
     <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -850,10 +831,6 @@ $menu_list = $details['menu'];
                 }]
             }
         });
-
-        function openModal(id) {
-            $("#" + id + "").modal("show");
-        }
     </script>
 
 

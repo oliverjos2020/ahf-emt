@@ -1,20 +1,9 @@
 <?php
-include_once("../../libs/dbfunctions.php");
-include_once("../../controllers/menu.php");
-$dbobject = new dbobject();
-$menu = "";
-$sql = "SELECT state FROM states";
-$states = $dbobject->db_query($sql);
-
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $operation = 'edit';
     $menu_id = $_REQUEST['menu_id'];
-    $sql_menu = "SELECT * FROM menu WHERE menu_id = '$menu_id' LIMIT 1";
-    $menu = $dbobject->db_query($sql_menu);
 } else {
     $operation = 'new';
-    $sql_menu = "SELECT * FROM menu";
-    $menu = $dbobject->db_query($sql_menu);
 }
 ?>
 
@@ -25,22 +14,30 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 </div>
 <div class="modal-body m-3">
     <form id="form1" onsubmit="return false" autocomplete="off">
-        <input type="hidden" name="op" value="Menu.saveMenu">
+        <!-- <input type="hidden" name="op" value="Menu.saveMenu"> -->
         <input type="hidden" name="operation" value="<?php echo $operation; ?>">
-        <input type="hidden" name="id" value="<?php echo ($operation == 'edit') ? $menu_id : ""; ?>">
+
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label class="form-label">Facility Name</label>
                     <input type="text" autocomplete="off" name="facility_name"
-                        value="<?php echo ($operation == 'edit') ? $menu[0]['menu_name'] : ""; ?>" class="form-control"
+                        value="<?php echo ($operation == 'edit') ? $facility_name : ""; ?>" class="form-control"
+                        autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-label">Facility Code</label>
+                    <input type="text" autocomplete="off" name="facility_code"
+                        value="<?php echo ($operation == 'edit') ? $facility_code : ""; ?>" class="form-control"
                         autocomplete="off" />
                 </div>
             </div>
             <div class="col-md-12 mt-2">
                 <div class="form-group">
                     <label class="form-label">State</label>
-                    <select name="" id="" class="form-control" onchange="getLGA(this.value)">
+                    <select name="state" id="state" class="form-control" onchange="getLGA(this.value)">
                         <option value="">Select State</option>
                         <?php
                             foreach($states as $state):
@@ -53,14 +50,14 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-md-12 mt-2">
                 <div class="form-group">
                     <label class="form-label">L.G.A</label>
-                    <select name="" id="" class="form-control">
+                    <select name="lga" id="lga" class="form-control">
                         <option value="">Select LGA</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-12 mt-2">
                 <label class="form-label">Facility Phone Number</label>
-                <input type="number" name="" id="" class="form-control">
+                <input type="number" name="contactNumber" id="contactNumber" class="form-control">
             </div>
             <div class="col-md-12 mt-2">
                 <label class="form-label">GPS Coordinates/Map</label>
@@ -72,7 +69,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             </div>
             <div class="col-md-12 mt-2">
                 <label class="form-label">Address</label>
-                <textarea name="" id="" class="form-control"></textarea>
+                <textarea name="faclilityAddress" id="faclilityAddress" class="form-control"></textarea>
             </div>
         </div>
 
@@ -131,7 +128,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                         escapeHtml: true,
                         tapToDismiss: false, // Prevent dismissing on click
                     });
-                    getpage('modules/menu/menu_list.php', 'page');
+                    getpage('modules/facility/facility_setup.php', 'page');
                     $("#defaultModal").modal("hide");
                     $('.modal-backdrop').remove();
                     $('body').css('overflow', 'auto');
