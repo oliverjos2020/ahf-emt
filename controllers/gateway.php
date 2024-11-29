@@ -1,13 +1,14 @@
 <?php
+include 'cookieManager.php';
 define('TECHHOSTURL', 'https://ahf.accessng.com/api/v1/');
-class gateway
+class gateway extends cookieManager
 {
 
     public function callAPI($payload)
     {
-        include 'cookieManager.php';
-        $cookieManager = new CookieManager();
-    
+        // include 'cookieManager.php';
+        // $cookieManager = new CookieManager();
+
         $route = $payload['route'];
         $list = $payload['list'] ?? '';
         $filename = '../Logs/' . date('Y') . '/' . date('M') . '/';
@@ -16,20 +17,20 @@ class gateway
         }
         unset($payload['route']);
         unset($payload['list']);
-    
-        $token = $cookieManager->pickCookieToken(); // Get the token from CookieManager
+
+        $token = $this->pickCookieToken(); // Get the token from CookieManager
         $payload['token'] = "";
         $payload['webFlag'] = 1;
-    
+
         $body = ['payload' => $payload];
         $bodyEnc = json_encode($body);
 
-        // print_r($bodyEnc); exit;
-    
+        // print_r($token); exit;
+
         $file_content1 = 'Logged @ ' . date('Y-m-d H:i:s') . ' Data=>' . json_encode($body, JSON_PRETTY_PRINT) . PHP_EOL;
         $filename2 = $filename . '/Data_sent_' . date('d') . '.txt';
         file_put_contents($filename2, $file_content1, FILE_APPEND . PHP_EOL);
-    
+
         // cURL Request
         $send = curl_init();
         curl_setopt($send, CURLOPT_URL, TECHHOSTURL . $route);
@@ -40,24 +41,25 @@ class gateway
         curl_setopt($send, CURLOPT_POSTREDIR, 3);
         curl_setopt($send, CURLOPT_POST, true);
         curl_setopt($send, CURLOPT_POSTFIELDS, $bodyEnc);
-    
+
         // Add headers with Bearer token
         $headers = [
             'Authorization: Bearer ' . $token,
             'Content-Type: application/json'
         ];
         curl_setopt($send, CURLOPT_HTTPHEADER, $headers);
-    
+
         $response = curl_exec($send);
         $resp = json_decode($response, true);
         $file_content3 = 'Logged @ ' . date('Y-m-d H:i:s') . ' Data=>' . json_encode($resp, JSON_PRETTY_PRINT) . PHP_EOL;
         $filename3 = $filename . '/Data_recieved_' . date('d') . '.txt';
         file_put_contents($filename3, $file_content3, FILE_APPEND . PHP_EOL);
         curl_close($send);
-    
+
         if (isset($resp['data']['token'])) {
-            $cookieManager->dropCookie($resp['data']); // Drop cookie with the data
+            $this->dropCookie($resp['data']); // Drop cookie with the data
         }
+
         if ($list == 'yes') {
             echo json_encode($resp['data']);
         } else {
@@ -65,10 +67,49 @@ class gateway
         }
     }
 
+    public function regenerateToken()
+    {
+        
+        $regenerateToken = $this->regenToken();
+        $payload = ['payload' => ["regenerateToken" => $regenerateToken]];
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => TECHHOSTURL.'/generateToken',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => json_encode($payload),
+            CURLOPT_HTTPHEADER => [],
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $resp = json_decode($response, true);
+        $token = $resp['data'];
+        $currentTime = date('Y-m-d H:i:s');
+        $TenMinBeforeExp = date('Y-m-d H:i:s', strtotime($currentTime . ' + 10 minutes'));
+        setcookie('token', $token, time() + (6 * 3600), '/', '', true);
+        setcookie('cookieTimer', $TenMinBeforeExp, time() + (24 * 3600), '/', '', true);
+        return true;
+    }
 
 
     public function checkRoute($data)
     {
+        // include 'cookieManager.php';
+        $currentTime = date('Y-m-d H:i:s');
+        $timer = $this->pickCookieTimer();
+        if ($currentTime > $timer) {
+            //call endpoint to regenerate token
+            $this->regenerateToken();
+        }
+
         // Check if 'route' key exists in the data
         if (!array_key_exists('route', $data)) {
             return json_encode([
