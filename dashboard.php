@@ -37,9 +37,10 @@ $menu_list = $details['menu'];
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <!-- Sweet Alert-->
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap"
+        rel="stylesheet">
     <style>
-        .nav-link[aria-expanded="false"] {
+    .nav-link[aria-expanded="false"] {
         color: #707D8A !important;
     }
 
@@ -48,19 +49,21 @@ $menu_list = $details['menu'];
     }
 
     .loader-container {
-    display: flex; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: rgba(255, 255, 255, 0.8); */
-    background: #991002;
-    backdrop-filter: blur(5px); /* Apply blur effect to the background */
-    z-index: 9999; /* Ensure it is above all other content */
-    justify-content: center;
-    align-items: center;
-}
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: rgba(255, 255, 255, 0.8); */
+        background: #991002;
+        backdrop-filter: blur(5px);
+        /* Apply blur effect to the background */
+        z-index: 9999;
+        /* Ensure it is above all other content */
+        justify-content: center;
+        align-items: center;
+    }
 
 
     .loader {
@@ -107,70 +110,84 @@ $menu_list = $details['menu'];
     }
 
     #page_list_x {
-        border-collapse: collapse; /* Ensure proper cell collapse */
+        border-collapse: collapse;
+        /* Ensure proper cell collapse */
         border-spacing: 0;
     }
 
     #page_list_x th,
     #page_list_x td {
-        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
+        border: 1px solid #dee2e6 !important;
+        /* Visible border for all cells */
     }
 
     #page_list_x thead th {
-        background-color: #f8f9fa; /* Light header background */
+        background-color: #f8f9fa;
+        /* Light header background */
     }
 
     /* Body font (Proxima Nova alternative) */
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #000 !important; /* Override any other body text color */
-    line-height: 1.5;
-}
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        color: #000 !important;
+        /* Override any other body text color */
+        line-height: 1.5;
+    }
 
-/* Headings font (Bebas Neue alternative) */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    /* color: #000 !important; */
- } 
+    /* Headings font (Bebas Neue alternative) */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        /* color: #000 !important; */
+    }
 
-/* Split Screen Styles */
-#split-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9998;
-}
+    /* Split Screen Styles */
+    #split-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+    }
 
-#split-top, #split-bottom {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: #991002; /* Adjust to your desired color */
-    transform-origin: center center;
-    transition: transform 0.8s ease-in-out;
-}
+    #split-top,
+    #split-bottom {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #991002;
+        /* Adjust to your desired color */
+        transform-origin: center center;
+        transition: transform 0.8s ease-in-out;
+    }
 
-#split-top {
-    top: 0;
-    transform: translateY(0); /* Initially at its default position */
-}
+    #split-top {
+        top: 0;
+        transform: translateY(0);
+        /* Initially at its default position */
+    }
 
-#split-bottom {
-    bottom: 0;
-    transform: translateY(0); /* Initially at its default position */
-}
+    #split-bottom {
+        bottom: 0;
+        transform: translateY(0);
+        /* Initially at its default position */
+    }
 
-#container-fluid {
-    display: none; /* Hidden initially */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
+    #container-fluid {
+        display: none;
+        /* Hidden initially */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
     </style>
 </head>
 
@@ -181,9 +198,9 @@ h1, h2, h3, h4, h5, h6 {
 
     <!-- Split Screen Animation -->
     <div id="split-wrapper">
-    <div id="split-top"></div>
-    <div id="split-bottom"></div>
-</div>
+        <div id="split-top"></div>
+        <div id="split-bottom"></div>
+    </div>
 
     <div class="container-fluid">
         <!-- Begin page -->
@@ -221,33 +238,40 @@ h1, h2, h3, h4, h5, h6 {
 
 
                             <div class="dropdown d-none d-lg-inline-block ms-1">
-                                <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                                <button type="button" class="btn header-item noti-icon waves-effect"
+                                    data-toggle="fullscreen">
                                     <i class="mdi mdi-fullscreen"></i>
                                 </button>
                             </div>
 
 
                             <div class="dropdown d-inline-block">
-                                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-2.jpg"
-                                        alt="Header Avatar">
+                                <button type="button" class="btn header-item waves-effect"
+                                    id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <img class="rounded-circle header-profile-user"
+                                        src="assets/images/users/avatar-2.jpg" alt="Header Avatar">
                                     <span class="d-none d-xl-inline-block ms-1"><?php echo $firstname ?></span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <!-- item-->
-                                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="bx bx-user font-size-16 align-middle me-1"></i>
                                         Profile</a>
-                                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> My
+                                    <a class="dropdown-item" href="#"><i
+                                            class="bx bx-wallet font-size-16 align-middle me-1"></i> My
                                         Wallet</a>
-                                    <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i
+                                    <a class="dropdown-item d-block" href="#"><span
+                                            class="badge bg-success float-end">11</span><i
                                             class="bx bx-wrench font-size-16 align-middle me-1"></i> Settings</a>
-                                    <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i>
+                                    <a class="dropdown-item" href="#"><i
+                                            class="bx bx-lock-open font-size-16 align-middle me-1"></i>
                                         Lock screen</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-danger" href="./web/logout.php"><i
-                                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> Logout</a>
+                                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
+                                        Logout</a>
                                 </div>
                             </div>
 
@@ -274,7 +298,8 @@ h1, h2, h3, h4, h5, h6 {
                                 </a>
                             </div>
 
-                            <button type="button" class="btn btn-sm px-3 font-size-16 header-item toggle-btn waves-effect"
+                            <button type="button"
+                                class="btn btn-sm px-3 font-size-16 header-item toggle-btn waves-effect"
                                 id="vertical-menu-btn">
                                 <i class="fa fa-fw fa-bars"></i>
                             </button>
@@ -294,7 +319,8 @@ h1, h2, h3, h4, h5, h6 {
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-body fw-medium font-size-16"><?php echo $firstname . ' ' . $lastname ?></a>
+                            <a href="#"
+                                class="text-body fw-medium font-size-16"><?php echo $firstname . ' ' . $lastname ?></a>
                             <p class="text-muted mt-1 mb-0 font-size-13"><?php echo $role_name ?></p>
 
                         </div>
@@ -307,7 +333,8 @@ h1, h2, h3, h4, h5, h6 {
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="javascript:void(0)" onclick="location.reload();" class="waves-effect" style="color: #707d8a !important">
+                                <a href="javascript:void(0)" onclick="location.reload();" class="waves-effect"
+                                    style="color: #707d8a !important">
                                     <i class="fas fa-th-large" style="color: #991002 !important"></i>
                                     <span>Dashboard</span>
                                 </a>
@@ -440,11 +467,13 @@ h1, h2, h3, h4, h5, h6 {
                     <div class="card">
                         <div class="card-header" style="background: #fff; border-bottom: 1px solid #eee;">
                             <div class="row p-3">
-                                <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                <div class="col-md-6"
+                                    style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
                                     <label for="start-date" style="margin: 0;">Start Date</label>
                                     <input type="date" id="start-date" name="start_date" class="form-control">
                                 </div>
-                                <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                <div class="col-md-6"
+                                    style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
                                     <label for="end-date" style="margin: 0;">End Date</label>
                                     <input type="date" id="end-date" name="end_date" class="form-control">
                                 </div>
@@ -659,7 +688,8 @@ h1, h2, h3, h4, h5, h6 {
                                         <div class="col-md-6">
                                             <h5 class="fw-bold">Viral Loads Level Chart</h5>
                                         </div>
-                                        <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                        <div class="col-md-6"
+                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
                                             <label for="end-date" style="margin: 0;">Filter By</label>
                                             <input type="date" id="viral_date" name="viral_date" class="form-control">
                                         </div>
@@ -679,7 +709,8 @@ h1, h2, h3, h4, h5, h6 {
                                         <div class="col-md-6">
                                             <h5 class="fw-bold">CD4 Count Status Chart</h5>
                                         </div>
-                                        <div class="col-md-6" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                        <div class="col-md-6"
+                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
                                             <label for="end-date" style="margin: 0;">Filter By</label>
                                             <input type="date" id="viral_date" name="viral_date" class="form-control">
                                         </div>
@@ -721,7 +752,7 @@ h1, h2, h3, h4, h5, h6 {
                         <div class="row">
                             <div class="col-sm-6">
                                 <script>
-                                    document.write(new Date().getFullYear())
+                                document.write(new Date().getFullYear())
                                 </script> © AHF NIGERIA
                             </div>
                             <div class="col-sm-6">
@@ -786,135 +817,139 @@ h1, h2, h3, h4, h5, h6 {
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
-        const ctx = document.getElementById('statistical-chart');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [5, 10, 19, 12],
-                    backgroundColor: [
-                        '#f57878', // Red
-                        '#991002', // Blue
-                        '#CC8780', // Yellow
-                        '#ced4da', // Green
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
+         function openModal(id)
+        {
+            $("#"+id+"").modal("show");
+        }
+        
+    const ctx = document.getElementById('statistical-chart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+            datasets: [{
+                label: '# of Votes',
+                data: [5, 10, 19, 12],
+                backgroundColor: [
+                    '#f57878', // Red
+                    '#991002', // Blue
+                    '#CC8780', // Yellow
+                    '#ced4da', // Green
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
 
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
-        const ctxViralLoad = document.getElementById('viral-load-chart');
-        new Chart(ctxViralLoad, {
-            type: 'line',
-            data: {
-                labels: ['0', '<=20', '21 - 999', '>=1000'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [0, 500, 999, 800],
-                    backgroundColor: [
-                        '#f5787852',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
+        }
+    });
+    const ctxViralLoad = document.getElementById('viral-load-chart');
+    new Chart(ctxViralLoad, {
+        type: 'line',
+        data: {
+            labels: ['0', '<=20', '21 - 999', '>=1000'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 500, 999, 800],
+                backgroundColor: [
+                    '#f5787852',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
 
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
-        const ctxCD4Chart = document.getElementById('cd4-chart');
-        new Chart(ctxCD4Chart, {
-            type: 'line',
-            data: {
-                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [5, 10, 19, 12],
-                    backgroundColor: [
-                        '#f5787852',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
+        }
+    });
+    const ctxCD4Chart = document.getElementById('cd4-chart');
+    new Chart(ctxCD4Chart, {
+        type: 'line',
+        data: {
+            labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+            datasets: [{
+                label: '# of Votes',
+                data: [5, 10, 19, 12],
+                backgroundColor: [
+                    '#f5787852',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
 
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        }
+    });
 
-        const ctxGenderDistribution = document.getElementById('gender-distribution');
-        new Chart(ctxGenderDistribution, {
-            type: 'doughnut',
-            data: {
-                labels: ['Male', 'Female'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [2400, 950],
-                    backgroundColor: [
-                        '#CC8780', // Yellow
-                        '#ced4da', // Green
-                    ],
-                    borderWidth: 1
-                }]
-            }
-        });
+    const ctxGenderDistribution = document.getElementById('gender-distribution');
+    new Chart(ctxGenderDistribution, {
+        type: 'doughnut',
+        data: {
+            labels: ['Male', 'Female'],
+            datasets: [{
+                label: '# of Votes',
+                data: [2400, 950],
+                backgroundColor: [
+                    '#CC8780', // Yellow
+                    '#ced4da', // Green
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
 
-        const ctxActivePatient = document.getElementById('active-patient');
-        new Chart(ctxActivePatient, {
-            type: 'pie',
-            data: {
-                labels: ['In-Active Patients', 'Active Patient'],
-                datasets: [{
-                    label: 'Active PatientS',
-                    data: [75, 15],
-                    backgroundColor: [
-                        '#991002', // Yellow
-                        '#DDAFAB', // Green
-                    ],
-                    borderWidth: 1
-                }]
-            }
-        });
+    const ctxActivePatient = document.getElementById('active-patient');
+    new Chart(ctxActivePatient, {
+        type: 'pie',
+        data: {
+            labels: ['In-Active Patients', 'Active Patient'],
+            datasets: [{
+                label: 'Active PatientS',
+                data: [75, 15],
+                backgroundColor: [
+                    '#991002', // Yellow
+                    '#DDAFAB', // Green
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
 
 
-        $(document).ready(function () {
-    // The loader is already visible due to default CSS.
-hideLoader();
-    // Simulate a delay for loader (e.g., fetching data)
-    setTimeout(function () {
-        // Start the split animation
-        $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
-        $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
+    $(document).ready(function() {
+        // The loader is already visible due to default CSS.
+        hideLoader();
+        // Simulate a delay for loader (e.g., fetching data)
+        setTimeout(function() {
+            // Start the split animation
+            $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
+            $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
 
-        // After the split animation is done
-        setTimeout(function () {
-            $('#split-wrapper').fadeOut('slow', function () {
-                
+            // After the split animation is done
+            setTimeout(function() {
+                $('#split-wrapper').fadeOut('slow', function() {
+
                     // Show the container-fluid content with fade-in
                     $('#container-fluid').fadeIn('slow').css('opacity', 1);
-    
-            });
-        }, 800); // Match this timeout to the CSS transition duration (0.8s)
-    }, 2000); // Simulated loader delay (2 seconds)
-});
 
+                });
+            }, 800); // Match this timeout to the CSS transition duration (0.8s)
+        }, 2000); // Simulated loader delay (2 seconds)
+    });
     </script>
 
 
