@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'cookieManager.php';
 define('TECHHOSTURL', 'https://ahf.accessng.com/api/v1/');
 class gateway extends cookieManager
@@ -69,13 +73,13 @@ class gateway extends cookieManager
 
     public function regenerateToken()
     {
-        
+
         $regenerateToken = $this->regenToken();
         $payload = ['payload' => ["regenerateToken" => $regenerateToken]];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => TECHHOSTURL.'/generateToken',
+            CURLOPT_URL => TECHHOSTURL . '/generateToken',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -92,32 +96,45 @@ class gateway extends cookieManager
         curl_close($curl);
         $resp = json_decode($response, true);
         $token = $resp['data'];
+        
         $currentTime = date('Y-m-d H:i:s');
         $TenMinBeforeExp = date('Y-m-d H:i:s', strtotime($currentTime . ' + 10 minutes'));
+        
         setcookie('token', $token, time() + (6 * 3600), '/', '', true);
         setcookie('cookieTimer', $TenMinBeforeExp, time() + (24 * 3600), '/', '', true);
+        // print_r($TenMinBeforeExp);
+        // exit;
         return true;
     }
 
 
     public function checkRoute($data)
     {
-        // include 'cookieManager.php';
-        $currentTime = date('Y-m-d H:i:s');
+        $currentTime = time(); // Unix timestamp
         $timer = $this->pickCookieTimer();
-        if ($currentTime > $timer) {
-            //call endpoint to regenerate token
-            $this->regenerateToken();
+
+        if (!$timer) {
+            // throw new Exception("Token timer cookie is missing or invalid.");
         }
 
-        // Check if 'route' key exists in the data
+        $timerTimestamp = strtotime($timer);
+        if ($currentTime > $timerTimestamp) {
+            // die("Time has expired: $currentTime");
+            // Call endpoint to regenerate token
+            $this->regenerateToken();
+            // die();
+        }else{
+            // die("Time is remaining: $timerTimestamp");
+        }
+
         if (!array_key_exists('route', $data)) {
             return json_encode([
                 'response_code' => 204,
                 'response_message' => 'Route Field is required.'
             ]);
         }
-        return null;  // Return null if the route is present
+
+        return null; // Return null if everything is fine
     }
 }
 // Usage Example

@@ -117,6 +117,41 @@ $menu_list = $details['menu'];
     #page_list_x thead th {
         background-color: #f8f9fa; /* Light header background */
     }
+
+    #page_list {
+        border-collapse: collapse;
+        /* Ensure proper cell collapse */
+        border-spacing: 0;
+    }
+
+    #page_list th,
+    #page_list td {
+        border: 1px solid #dee2e6 !important;
+        /* Visible border for all cells */
+    }
+
+    #page_list thead th {
+        background-color: #f8f9fa;
+        /* Light header background */
+    }
+    .menu-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    cursor: grab;
+}
+
+.menu-item:hover {
+    background-color: #e9ecef;
+}
+
+#div1, #div2 {
+    border: 1px dashed #ccc;
+    min-height: 200px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
     </style>
 </head>
 
@@ -176,14 +211,14 @@ $menu_list = $details['menu'];
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <!-- item-->
-                                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                    <!-- <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                                         Profile</a>
                                     <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> My
                                         Wallet</a>
                                     <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i
                                             class="bx bx-wrench font-size-16 align-middle me-1"></i> Settings</a>
                                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i>
-                                        Lock screen</a>
+                                        Lock screen</a> -->
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-danger" href="./web/logout.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> Logout</a>
@@ -392,7 +427,7 @@ $menu_list = $details['menu'];
                         </div>
                         <div class="card-body p-4">
                             <div class="row p-2">
-                                <div class="col-md ahf-border p-3">
+                                <div class="col-md ahf-border p-3 mx-2">
                                     <p class="ahf-text-14">Total Patient Enrolled</p>
                                     <div class="row">
                                         <div class="col-md-9">
@@ -464,7 +499,7 @@ $menu_list = $details['menu'];
                                 </div>
                             </div>
                             <div class="row mt-0 p-2">
-                                <div class="col-md ahf-border p-3">
+                                <div class="col-md ahf-border p-3 mx-2">
                                     <p class="ahf-text-14">Total Patient Enrolled</p>
                                     <div class="row">
                                         <div class="col-md-9">
@@ -725,6 +760,10 @@ $menu_list = $details['menu'];
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
+          function openModal(id)
+        {
+            $("#"+id+"").modal("show");
+        }
         const ctx = document.getElementById('statistical-chart');
         new Chart(ctx, {
             type: 'bar',

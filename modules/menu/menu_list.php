@@ -192,7 +192,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-ahf" id="saveEditMenuButton">Save changes</button>
+                <button type="button" class="btn btn-ahf" onclick="saveVisibleMenus()">Save changes</button>
             </div>
         </div>
     </div>
@@ -318,7 +318,7 @@
             data: data,
             dataType: "json",
             success: function(response) {
-                let selectHtml = `<select onchange="loadMenus(this.value)" id="menuSelect" name="parent_id" class="form-control">`;
+                let selectHtml = `<select onchange="loadMenus(this.value)" id="roleSelect" name="parent_id" class="form-control">`;
 
                 // Add a placeholder option
                 selectHtml += `<option value="#">Select Role</option>`;
@@ -556,6 +556,45 @@
     function drag(event) {
         event.dataTransfer.setData("text", event.target.id);
     }
+
+    function saveVisibleMenus() {
+    const visibleMenus = [];
+
+    // Iterate through all elements inside #div1 and collect their IDs
+    $('#div1 .menu-item').each(function() {
+        visibleMenus.push($(this).attr('id'));
+    });
+    var role_id = $('#roleSelect').val();
+
+    // Structure the data for saving
+    const payload = {
+        menus: visibleMenus
+    };
+
+    // Make an AJAX POST request to save the data
+    $.ajax({
+        url: 'controllers/gateway.php', // Your API endpoint
+        type: 'POST',
+        data: {
+            route: '/saveMenuGroup',
+            menus: visibleMenus,
+            role_id
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.response_code === 200) {
+                alert('Menus saved successfully!');
+                $("#editMenuGroup").modal("hide");
+            } else {
+                alert('Failed to save menus: ' + response.response_message);
+            }
+        },
+        error: function() {
+            alert('An error occurred while saving the menus.');
+        }
+    });
+}
+
 
     function drop(event) {
         event.preventDefault();
