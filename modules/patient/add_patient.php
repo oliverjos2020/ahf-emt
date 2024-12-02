@@ -28,6 +28,18 @@
 .accordion-button:not(.collapsed)::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
+
+.loader-wrapper {
+    display: inline-block;
+    width: 4px; /* Resize the loader specifically for the button */
+    height: 4px;
+    vertical-align: middle; /* Center-align the loader within the button */
+}
+
+.loader-wrapper .loader {
+    width: 100%; /* Maintain proportional resizing */
+    height: 100%;
+}
 </style>
 
 <div class="row">
@@ -52,6 +64,12 @@
     </div>
 </div>
 <div class="col-12">
+    
+    <form id="form1" onsubmit="return false" autocomplete="off">
+        <input type="hidden" name="route" value="/setupPatient">
+        <input type="hidden" name="operation" value="new">
+        <input type="hidden" name="address" value="my address">
+        <input type="hidden" name="ts_phone" value="09088888888">
     <div class="card" style="border-radius: 16px 19px !important;">
         <div class="position-relative">
             <div class="text-danger px-3 py-1 position-absolute" style="background-color: #fcecec; top: -10px; left: 15px; z-index: 1;">
@@ -97,7 +115,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label>Enrollment Date:</label>
-                                    <input type="date" name="record_date" id="record_date" class="form-control">
+                                    <input type="date" name="enrolmentDate" id="enrolmentDate" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -132,7 +150,7 @@
                                 </div>
                                 <div class="col-md">
                                     <label>Middlename:</label>
-                                    <input type="text" name="middlename" id="middlename" class="form-control">
+                                    <input type="text" name="oname" id="oname" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Firstname:</label>
@@ -159,7 +177,7 @@
                             <div class="row mt-2">
                                 <div class="col-md">
                                     <label>Occupation:</label>
-                                    <input type="text" name="occupation" id="occupation" class="form-control">
+                                    <input type="text" name="occupation" id="occupation" class="form-control" required>
                                 </div>
                                 <div class="col-md">
                                     <label>Education:</label>
@@ -167,7 +185,7 @@
                                 </div>
                                 <div class="col-md">
                                     <label>Drug Allergies:</label>
-                                    <input type="text" name="drug_allergies" id="drug_allergies" class="form-control">
+                                    <input type="text" name="" id="" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Date of Birth:</label>
@@ -185,7 +203,7 @@
                                 </div>
                                 <div class="col-md">
                                     <label>Phone Number II:</label>
-                                    <input type="text" name="phone_2" id="phone_2" class="form-control">
+                                    <input type="text" name="phoneTwo" id="phoneTwo" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>State:</label>
@@ -203,11 +221,11 @@
                             <div class="row mt-2">
                                 <div class="col-md">
                                     <label>Street Name:</label>
-                                    <input type="text" name="street" id="street" class="form-control">
+                                    <input type="text" name="street_name" id="street_name" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Description:</label>
-                                    <input type="text" name="description" id="description" class="form-control">
+                                    <input type="text" name="homeDescription" id="homeDescription" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Email Address:</label>
@@ -215,7 +233,7 @@
                                 </div>
                                 <div class="col-md">
                                     <label>Mother Unique (If Infant): </label>
-                                    <input type="text" name="mother_unique" id="mother_unique" class="form-control">
+                                    <input type="text" name="mothersId" id="mothersId" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Patient Classification:</label>
@@ -247,7 +265,7 @@
                             <div class="row mt-2">
                                 <div class="col-md">
                                     <label>Surname:</label>
-                                    <input type="text" name="nok_surname" id="nok_surname" class="form-control">
+                                    <input type="text" name="nextOfKin" id="nextOfKin" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Middlename:</label>
@@ -255,11 +273,11 @@
                                 </div>
                                 <div class="col-md">
                                     <label>Firstname:</label>
-                                    <input type="email" name="nok_firstname" id="nok_firstname" class="form-control">
+                                    <input type="text" name="nok_firstname" id="nok_firstname" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Relationship: </label>
-                                    <input type="text" name="relationship" id="relationship" class="form-control">
+                                    <input type="text" name="nextOfKinRel" id="nextOfKinRel" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Phone Number I:</label>
@@ -291,34 +309,21 @@
                         <div class="accordion-body">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label>Transferred In:</label>
-                                    <select name="transferredIn" id="transferredIn" class="form-control">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
+                                    <label>Surname:</label>
+                                    <input type="text" name="ts_name" id="ts_name" class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Entry point option:</label>
-                                    <select name="careentry" id="careentry" class="form-control">
-                                        <option value="OPD">OPD</option>
-                                        <option value="in-patient">In-Patient</option>
-                                        <option value="HTS">HTS</option>
-                                        <option value="TB DOTS">TB DOTS</option>
-                                        <option value="STI Clinic">STI Clinic</option>
-                                        <option value="ANC/PMTCT">ANC/PMTCT</option>
-                                        <option value="Outreach">Outreach</option>
-                                    </select>
+                                    <label>Middlename:</label>
+                                    <input type="text" name="" id="" class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Prior ART:</label>
-                                    <select name="priorArt" id="priorArt" class="form-control">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
+                                    <label>Firstname:</label>
+                                    <input type="text" name="" id="" class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <label>Enrollment Date:</label>
-                                    <input type="date" name="record_date" id="record_date" class="form-control">
+                                    <label>Relationship:</label>
+                                    <input type="text" name="ts_relationship" id="ts_relationship" class="form-control">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -347,23 +352,43 @@
                             <div class="row mt-2">
                                 <div class="col-md">
                                     <label>Adherence Plan Started:</label>
-                                    <input type="date" name="adherence_plan_started" id="adherence_plan_started" class="form-control">
+                                    <input type="date" name="Ad_Plan_start" id="Ad_Plan_start" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Education of ART Essentials:</label>
-                                    <input type="text" name="ed_art_essential" id="ed_art_essential" class="form-control">
+                                    <input type="text" name="Ad_edu_Ess" id="Ad_edu_Ess" class="form-control">
                                 </div>
                                 <div class="col-md">
                                     <label>Complete Adherence Needed:</label>
-                                    <input type="email" name="com_ad_needed" id="com_ad_needed" class="form-control">
+                                    <input type="text" name="Ad_complete_needed" id="Ad_complete_needed" class="form-control">
                                 </div>
                                 <div class="col-md">
-                                    <label>Relationship: </label>
-                                    <input type="text" name="relationship" id="relationship" class="form-control">
+                                    <label>Dosage Detailed Explanation: </label>
+                                    <input type="text" name="Dosage_det" id="Dosage_det" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md">
+                                    <label>Side Effect Strategies:</label>
+                                    <input type="text" name="Side_effect" id="Side_effect" class="form-control">
                                 </div>
                                 <div class="col-md">
-                                    <label>Phone Number I:</label>
-                                    <input type="number" name="nextOfKinPhone" id="nextOfKinPhone" class="form-control">
+                                    <label>Adherence Plan:</label>
+                                    <input type="text" name="Ad_Plan" id="Ad_Plan" class="form-control">
+                                </div>
+                                <div class="col-md">
+                                    <label>Treatment Supporter Provided:</label>
+                                    <input type="text" name="Treatment_Support" id="Treatment_Support" class="form-control">
+                                </div>
+                                <div class="col-md">
+                                    <label>Indicate Patient ART Start Date: </label>
+                                    <input type="date" name="Art_start" id="Art_start" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-3">
+                                    <label>Adherence Plan Completion: </label>
+                                    <input type="date" name="Art_end" id="Art_end" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -394,26 +419,25 @@
                                    <p> Would you like to receive notifications? </p>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="checkbox" name="yes" id="yes"> Yes
+                                    <input type="checkbox" name="notifyMe" id="yes" value="yes"> <label for="yes">Yes</label>
 
                                 </div>
                                 <div class="col-md-4">
-                                <input type="checkbox" name="no" id="no"> No
-
+                                <input type="checkbox" name="notifyMe" id="no" value="no"> <label for="yes">No</label>
                                 </div>
                               
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                <input type="checkbox" name="email" id="email"> Email
+                                <input type="checkbox" name="" id=""> Email
                                    
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="checkbox" name="sms" id="sms"> SMS
+                                    <input type="checkbox" name="" id=""> SMS
 
                                 </div>
                                 <div class="col-md-4">
-                                <input type="checkbox" name="both_e_and_s" id="both_e_and_s"> Both Email and SMS notifications
+                                <input type="checkbox" name="" id=""> Both Email and SMS notifications
 
                                 </div>
                               
@@ -431,11 +455,11 @@
         <button class="btn bg-soft-danger text-white">Back to Main Page</button>
     </div>
     <div class="col-auto">
-        <button class="btn  text-white" style="background:#991002 !important;">Submit Data</button>
+        <button class="btn  text-white" style="background:#991002 !important;" id="submitPatient" onclick="saveRecord()">Submit Data</button>
     </div>
 </div>
 
-
+</form>
 </div>
 
 <div class="modal fade bs-example-modal-lg" id="defaultModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -447,76 +471,41 @@
     </div>
 </div>
 
-<!--<script src="../js/sweet_alerts.js"></script>-->
-<!--<script src="../js/jquery.blockUI.js"></script>-->
 <script>
-    var table;
-    var editor;
-    var op = "Menu.menuList";
-    $(document).ready(function() {
-        table = $("#page_list").DataTable({
-            processing: true,
-            columnDefs: [{
-                orderable: false,
-                targets: 0
-            }],
-            serverSide: true,
-            paging: true,
-            oLanguage: {
-                sEmptyTable: "No record was found, please try another query"
-            },
+        function saveRecord() {
+            // Replace button text with loader
+            $('#submitPatient').html('<span class="loader-wrapper"><span class="loader"></span></span>'); 
+            
+            // Optionally, you can disable the button to prevent multiple submissions
+            $('#submitPatient').prop('disabled', true);
 
-            ajax: {
-                url: "web/router.php",
-                type: "POST",
-                data: function(d, l) {
-                    d.op = op;
-                    d.li = Math.random();
-                    //          d.start_date = $("#start_date").val();
-                    //          d.end_date = $("#end_date").val();
-                }
-            }
-        });
-    });
+            var dd = $("#form1").serialize();
+            $.post("controllers/gateway.php", dd, function(re) {
+                $("#save_facility").text("Save");
+                console.log(re);
+                if (re.response_code == 200) {
 
-    function do_filter() {
-        table.draw();
-    }
-
-    function closeModal() {
-        $("#defaultModal").modal("hide");
-    }
-
-    function deleteMenu(id) {
-        let cnf = confirm("Are you sure you want to delete menu?");
-        if (cnf == true) {
-            $.blockUI();
-            $.ajax({
-                url: "web/router.php",
-                data: {
-                    op: "Menu.deleteMenu",
-                    menu_id: id
-                },
-                type: "post",
-                dataType: "json",
-                success: function(re) {
-                    $.unblockUI();
-                    // alert(re.response_message);
+                    $("#submitPatient").html('Submit'); // Reset button text
+                    $("#submitPatient").prop('disabled', false); // Re-enable button
                     toastr.success(re.response_message, 'Success', {
                         closeButton: true,
                         progressBar: true,
                         positionClass: 'toast-top-right',
-                        timeOut: 3000, // Time in milliseconds
+                        timeOut: 5000, // Time in milliseconds
                         extendedTimeOut: 3000, // Additional time for the progress bar to complete
                         escapeHtml: true,
                         tapToDismiss: false, // Prevent dismissing on click
                     });
-                    getpage('modules/menu/menu_list.php', "page");
-                },
-                error: function(re) {
-                    $.unblockUI();
-                    // alert("Request could not be processed at the moment!");
-                    toastr.error("Request could not be processed at the moment!", 'Error', {
+                    getpage('modules/patient/patient_list.php', 'page');
+                    $("#defaultModal").modal("hide");
+                    $('.modal-backdrop').remove();
+                    $('body').css('overflow', 'auto');
+
+                } else {
+                    $("#submitPatient").html('Submit'); // Reset button text
+                    $("#submitPatient").prop('disabled', false); // Re-enable button
+                   
+                    toastr.error(re.response_message, 'Error', {
                         closeButton: true,
                         progressBar: true,
                         positionClass: 'toast-top-right',
@@ -526,17 +515,8 @@
                         tapToDismiss: false, // Prevent dismissing on click
                     });
                 }
-            });
+
+            }, 'json')
         }
-
-    }
-
-    function getModal(url, div) {
-        //        alert('dfd');
-        $('#' + div).html("<h2>Loading....</h2>");
-        //        $('#'+div).block({ message: null });
-        $.post(url, {}, function(re) {
-            $('#' + div).html(re);
-        })
-    }
+  
 </script>

@@ -37,6 +37,7 @@ $menu_list = $details['menu'];
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <!-- Sweet Alert-->
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap" rel="stylesheet">
     <style>
         .nav-link[aria-expanded="false"] {
         color: #707D8A !important;
@@ -47,19 +48,20 @@ $menu_list = $details['menu'];
     }
 
     .loader-container {
-        display: none;
-        /* Hide the loader by default */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        /* Dark background */
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(255, 255, 255, 0.8); */
+    background: #991002;
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    z-index: 9999; /* Ensure it is above all other content */
+    justify-content: center;
+    align-items: center;
+}
+
 
     .loader {
         width: 8px;
@@ -69,7 +71,7 @@ $menu_list = $details['menu'];
         margin: 20px auto;
         position: relative;
         background: currentColor;
-        color: #FFF;
+        color: white;
         box-sizing: border-box;
         animation: animloader 0.3s 0.3s linear infinite alternate;
     }
@@ -118,39 +120,56 @@ $menu_list = $details['menu'];
         background-color: #f8f9fa; /* Light header background */
     }
 
-    #page_list {
-        border-collapse: collapse;
-        /* Ensure proper cell collapse */
-        border-spacing: 0;
-    }
-
-    #page_list th,
-    #page_list td {
-        border: 1px solid #dee2e6 !important;
-        /* Visible border for all cells */
-    }
-
-    #page_list thead th {
-        background-color: #f8f9fa;
-        /* Light header background */
-    }
-    .menu-item {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    cursor: grab;
+    /* Body font (Proxima Nova alternative) */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #000 !important; /* Override any other body text color */
+    line-height: 1.5;
 }
 
-.menu-item:hover {
-    background-color: #e9ecef;
+/* Headings font (Bebas Neue alternative) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /* color: #000 !important; */
+ } 
+
+/* Split Screen Styles */
+#split-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
 }
 
-#div1, #div2 {
-    border: 1px dashed #ccc;
-    min-height: 200px;
-    padding: 10px;
-    background-color: #f9f9f9;
+#split-top, #split-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #991002; /* Adjust to your desired color */
+    transform-origin: center center;
+    transition: transform 0.8s ease-in-out;
+}
+
+#split-top {
+    top: 0;
+    transform: translateY(0); /* Initially at its default position */
+}
+
+#split-bottom {
+    bottom: 0;
+    transform: translateY(0); /* Initially at its default position */
+}
+
+#container-fluid {
+    display: none; /* Hidden initially */
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
     </style>
 </head>
@@ -159,6 +178,13 @@ $menu_list = $details['menu'];
     <div class="loader-container">
         <span class="loader"></span>
     </div>
+
+    <!-- Split Screen Animation -->
+    <div id="split-wrapper">
+    <div id="split-top"></div>
+    <div id="split-bottom"></div>
+</div>
+
     <div class="container-fluid">
         <!-- Begin page -->
         <div id="layout-wrapper">
@@ -211,14 +237,14 @@ $menu_list = $details['menu'];
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <!-- item-->
-                                    <!-- <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i>
                                         Profile</a>
                                     <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> My
                                         Wallet</a>
                                     <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end">11</span><i
                                             class="bx bx-wrench font-size-16 align-middle me-1"></i> Settings</a>
                                     <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i>
-                                        Lock screen</a> -->
+                                        Lock screen</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-danger" href="./web/logout.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> Logout</a>
@@ -427,7 +453,7 @@ $menu_list = $details['menu'];
                         </div>
                         <div class="card-body p-4">
                             <div class="row p-2">
-                                <div class="col-md ahf-border p-3 mx-2">
+                                <div class="col-md ahf-border p-3">
                                     <p class="ahf-text-14">Total Patient Enrolled</p>
                                     <div class="row">
                                         <div class="col-md-9">
@@ -499,7 +525,7 @@ $menu_list = $details['menu'];
                                 </div>
                             </div>
                             <div class="row mt-0 p-2">
-                                <div class="col-md ahf-border p-3 mx-2">
+                                <div class="col-md ahf-border p-3">
                                     <p class="ahf-text-14">Total Patient Enrolled</p>
                                     <div class="row">
                                         <div class="col-md-9">
@@ -760,10 +786,6 @@ $menu_list = $details['menu'];
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
-          function openModal(id)
-        {
-            $("#"+id+"").modal("show");
-        }
         const ctx = document.getElementById('statistical-chart');
         new Chart(ctx, {
             type: 'bar',
@@ -870,6 +892,29 @@ $menu_list = $details['menu'];
                 }]
             }
         });
+
+
+        $(document).ready(function () {
+    // The loader is already visible due to default CSS.
+hideLoader();
+    // Simulate a delay for loader (e.g., fetching data)
+    setTimeout(function () {
+        // Start the split animation
+        $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
+        $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
+
+        // After the split animation is done
+        setTimeout(function () {
+            $('#split-wrapper').fadeOut('slow', function () {
+                
+                    // Show the container-fluid content with fade-in
+                    $('#container-fluid').fadeIn('slow').css('opacity', 1);
+    
+            });
+        }, 800); // Match this timeout to the CSS transition duration (0.8s)
+    }, 2000); // Simulated loader delay (2 seconds)
+});
+
     </script>
 
 

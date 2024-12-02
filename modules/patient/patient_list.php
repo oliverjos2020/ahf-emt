@@ -238,7 +238,17 @@
                 },
                 {
                     title: "Action",
-                    data: 47
+                    data: 1,
+                    render: function(data, type, row) {
+                        return `
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewPatient(${data})">
+                                <i class="bx bx-show"></i> View
+                            </button>
+                            <button class="btn btn-sm" title="Create Visit" style="background-color: #CDFFE7; border-color: #FFF2F0; color: #02A055;" 
+                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[1]}&facility_code=${row[2]}&phone=${row[4]}&address=${row[2]}', 'modal_div')">
+                                <i class="bx bx-plus"></i> Create Visit
+                            </button>`;
+                    }
                 },
                
             ]
