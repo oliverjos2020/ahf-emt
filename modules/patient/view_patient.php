@@ -1,7 +1,6 @@
 <?php
-include_once("../../libs/dbfunctions.php");
-$dbobject = new dbobject();
-
+// print_r($_REQUEST);
+$id = $_REQUEST['id'];
 ?>
 <style>
     .nav-tabs .nav-link.active {
@@ -69,63 +68,63 @@ $dbobject = new dbobject();
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Name:</div>
-                                <div class="col-6 text-muted">Rhoda Doe Salako</div>
+                                <div class="col-6 text-muted" id="name"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Gender:</div>
-                                <div class="col-6 text-muted">Female</div>
+                                <div class="col-6 text-muted" id="gender"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Marital status:</div>
-                                <div class="col-6 text-muted">Single</div>
+                                <div class="col-6 text-muted" id="maritalStatus"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Occupation:</div>
-                                <div class="col-6 text-muted">Teacher</div>
+                                <div class="col-6 text-muted" id="occupation"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Education:</div>
-                                <div class="col-6 text-muted">Primary</div>
+                                <div class="col-6 text-muted" id="education"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Date of Birth:</div>
-                                <div class="col-6 text-muted">10-03-1994</div>
+                                <div class="col-6 text-muted" id="dob">10-03-1994</div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Age:</div>
-                                <div class="col-6 text-muted">38 years</div>
+                                <div class="col-6 text-muted" id="age"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Email Address:</div>
-                                <div class="col-6 text-muted">rhodasalk@gmail.com</div>
+                                <div class="col-6 text-muted" id="email"></div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Patient ID:</div>
-                                <div class="col-6 text-muted">AHF00012</div>
+                                <div class="col-6 text-muted" id="patient_id"></div>
                             </div>
                         </div>
 
@@ -135,7 +134,7 @@ $dbobject = new dbobject();
                                 <div class="col-6 text-muted">12 months</div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <!--<div class="col-12">
                             <div class="row">
                                 <div class="col-6 fw-bolder">Entry Mode:</div>
                                 <div class="col-6 text-muted">OPD</div>
@@ -189,12 +188,12 @@ $dbobject = new dbobject();
                                 <div class="col-6 fw-bolder">Last Visit:</div>
                                 <div class="col-6 text-muted">10th Oct, 2024</div>
                             </div>
-                        </div>
-                        <div class="col-12">
+                        </div> -->
+                        <!-- <div class="col-12">
                             <button type="submit" style="background:#991002; border: none; margin-left:95px;" class="btn btn-danger">
                                 Update Bio
                             </button>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -2198,5 +2197,44 @@ $dbobject = new dbobject();
 </div>
 
 <script>
-
+    viewPatient();
+        function viewPatient(){
+            $.ajax({
+                url: 'controllers/gateway.php', // Your API endpoint
+                type: 'POST',
+                data: {
+                    route: '/patientsDataSingle',
+                    id: '<?= $id ?>'
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.response_code === 200) {
+                        var data = response.data;
+                        var fname = data.patientData[0].fname;
+                        var lname = data.patientData[0].lname;
+                        var othern = data.patientData[0].othern;
+                        
+                        var fullname = fname+" "+lname+" "+othern;
+                        var gender = data.patientData[0].sex;
+                        var maritalStatus = data.patientData[0].maritalStatus;
+                        var occupation = data.patientData[0].occupation;
+                        var education = data.patientData[0].education;
+                        var dob = data.patientData[0].dob;
+                        var age = data.patientData[0].age;
+                        var email = data.patientData[0].email;
+                        var patient_id = data.patientData[0].patient_id;
+                        $("#name").html(fullname);
+                        $("#gender").html(gender);
+                        $("#maritalStatus").html(maritalStatus);
+                        $("#occupation").html(occupation);
+                        $("#education").html(education);
+                        $("#dob").html(dob);
+                        $("#age").html(age);
+                        $("#email").html(email);
+                        $("#patient_id").html(patient_id);
+                        // alert(fullname);
+                    }
+                }
+            });
+        }
 </script>

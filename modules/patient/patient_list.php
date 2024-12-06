@@ -1,25 +1,27 @@
 <style>
-    label {
-        font-weight: bold;
-        white-space: nowrap;
-        /* Ensures labels remain on one line */
-    }
+label {
+    font-weight: bold;
+    white-space: nowrap;
+    /* Ensures labels remain on one line */
+}
 
-    input[type="date"],
-    .form-select {
-        min-width: 200px;
-        /* Ensures a consistent width for inputs */
-    }
+input[type="date"],
+.form-select {
+    min-width: 200px;
+    /* Ensures a consistent width for inputs */
+}
 
-    #page_list_x {
-        border-collapse: collapse; /* Ensure proper cell collapse */
-        border-spacing: 0;
-    }
+#page_list_x {
+    border-collapse: collapse;
+    /* Ensure proper cell collapse */
+    border-spacing: 0;
+}
 
-    #page_list_x th,
-    #page_list_x td {
-        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
-    }
+#page_list_x th,
+#page_list_x td {
+    border: 1px solid #dee2e6 !important;
+    /* Visible border for all cells */
+}
 
     #page_list_x thead th {
         background-color: #f8f9fa; /* Light header background */
@@ -65,11 +67,16 @@
                                 aria-label="Search">
                         </div>
                     </div>
+                    <div class="input-group" id="datepicker2">
+                        <input type="text" class="form-control" placeholder="mm/dd/yyyy"
+                            data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
+                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                    </div>
                 </div>
                 <hr>
 
-                <div class="container">
-                    <div class="row align-items-center mb-3">
+                <div class="container-x">
+                    <div class="row align-items-center-x mb-3">
                         <!-- Start Date -->
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
@@ -88,7 +95,8 @@
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
                                 <label for="missed_appointment" class="me-2">Missed Appointment:</label>
-                                <select name="missed_appointment" class="form-select flex-grow-1" id="missed_appointment">
+                                <select name="missed_appointment" class="form-select flex-grow-1"
+                                    id="missed_appointment">
                                     <option value="" selected disabled>Select</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -97,7 +105,7 @@
                         </div>
                     </div>
 
-                    <div class="row align-items-center">
+                    <div class="row align-items-center-x">
                         <!-- Entry Point Type -->
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
@@ -249,7 +257,7 @@
                             </button>`;
                     }
                 },
-               
+
             ]
         });
     });

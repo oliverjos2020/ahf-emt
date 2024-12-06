@@ -8,6 +8,93 @@ define('TECHHOSTURL', 'https://ahf.accessng.com/api/v1/');
 class gateway extends cookieManager
 {
 
+    // public function callAPI($payload)
+    // {
+    //     try {
+    //         $route = $payload['route'] ?? throw new Exception('Route is required');
+    //         $list = $payload['list'] ?? '';
+    //         $filename = '../Logs/' . date('Y') . '/' . date('M') . '/';
+            
+    //         // Create log directory with proper permissions
+    //         if (!file_exists($filename)) {
+    //             mkdir($filename, 0755, true);
+    //         }
+
+    //         unset($payload['route'], $payload['list']);
+
+    //         $token = $this->pickCookieToken(); // Get the token from CookieManager
+    //         $body = ['payload' => $payload];
+    //         $bodyEnc = json_encode($body);
+
+    //         // Log sent data
+    //         $this->logData($filename . '/Data_sent_' . date('d') . '.txt', $body);
+
+    //         // Improved cURL configuration
+    //         $send = curl_init();
+    //         curl_setopt_array($send, [
+    //             CURLOPT_URL => TECHHOSTURL . $route,
+    //             CURLOPT_SSL_VERIFYPEER => false,  // Enable SSL verification
+    //             CURLOPT_SSL_VERIFYHOST => 2,     // Strict host verification
+    //             CURLOPT_FOLLOWLOCATION => true,
+    //             CURLOPT_RETURNTRANSFER => true,
+    //             CURLOPT_POSTREDIR => 3,
+    //             CURLOPT_POST => true,
+    //             CURLOPT_POSTFIELDS => $bodyEnc,
+    //             CURLOPT_HTTPHEADER => [
+    //                 'Authorization: Bearer ' . $token,
+    //                 'Content-Type: application/json'
+    //             ],
+    //             CURLOPT_TIMEOUT => 30,  // 30-second timeout
+    //             CURLOPT_CONNECTTIMEOUT => 10  // 10-second connection timeout
+    //         ]);
+
+    //         $response = curl_exec($send);
+    //         $curlError = curl_error($send);
+    //         $httpCode = curl_getinfo($send, CURLINFO_HTTP_CODE);
+
+    //         curl_close($send);
+
+    //         // Handle potential errors
+    //         if ($curlError) {
+    //             throw new Exception('cURL Error: ' . $curlError);
+    //         }
+
+    //         // Check for empty response
+    //         if (empty($response)) {
+    //             $errorResponse = json_encode([
+    //                 'status' => 'error',
+    //                 'message' => 'No response received from server. Please try again.',
+    //                 'http_code' => $httpCode
+    //             ]);
+                
+    //             $this->logData($filename . '/Error_' . date('d') . '.txt', ['error' => $errorResponse]);
+    //             echo $errorResponse;
+    //             return;
+    //         }
+
+    //         $resp = json_decode($response, true);
+
+    //         // Log received data
+    //         $this->logData($filename . '/Data_received_' . date('d') . '.txt', $resp);
+
+    //         // Handle token regeneration
+    //         if (isset($resp['data']['token'])) {
+    //             $this->dropCookie($resp['data']);
+    //         }
+
+    //         // Return results based on list flag
+    //         echo ($list == 'yes') ? json_encode($resp['data']) : $response;
+
+    //     } catch (Exception $e) {
+    //         $errorResponse = json_encode([
+    //             'status' => 'error',
+    //             'message' => $e->getMessage()
+    //         ]);
+    //         echo $errorResponse;
+    //     }
+    // }
+
+
     public function callAPI($payload)
     {
         // include 'cookieManager.php';
@@ -23,8 +110,8 @@ class gateway extends cookieManager
         unset($payload['list']);
 
         $token = $this->pickCookieToken(); // Get the token from CookieManager
-        $payload['token'] = "";
-        $payload['webFlag'] = 1;
+        // $payload['token'] = "";
+        // $payload['webFlag'] = 0;
 
         $body = ['payload' => $payload];
         $bodyEnc = json_encode($body);
@@ -108,15 +195,20 @@ class gateway extends cookieManager
     }
 
 
+
+
     public function checkRoute($data)
     {
         $currentTime = time(); // Unix timestamp
         $timer = $this->pickCookieTimer();
-
-        if (!$timer) {
-            // throw new Exception("Token timer cookie is missing or invalid.");
+        if(empty($timer))
+        {
             $timer = date('Y-m-d H:i:s');
         }
+
+        // if (!$timer) {
+        //     // throw new Exception("Token timer cookie is missing or invalid.");
+        // }
 
         $timerTimestamp = strtotime($timer);
         if ($currentTime > $timerTimestamp) {
@@ -137,6 +229,7 @@ class gateway extends cookieManager
 
         return null; // Return null if everything is fine
     }
+
 }
 // Usage Example
 $gateway = new Gateway();
