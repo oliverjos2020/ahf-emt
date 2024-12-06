@@ -248,7 +248,7 @@ input[type="date"],
                     data: 1,
                     render: function(data, type, row) {
                         return `
-                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="modules/patient/view_patient.php?id=${row[1]}">
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="getpage('modules/patient/view_patient.php?id=${row[1]}','page')">
                                 <i class="bx bx-show"></i> View
                             </button>
                             <button class="btn btn-sm" title="Create Visit" style="background-color: #CDFFE7; border-color: #FFF2F0; color: #02A055;" 
