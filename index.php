@@ -12,8 +12,18 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/toastr.min.css" rel="stylesheet" type="text/css" />
+    <!-- Preloading Bebas Neue Pro Bold -->
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-    <style>
+    <!-- Preloading Bebas Neue Pro Book -->
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Preloading Proxima Nova Bold -->
+    <link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Preloading Proxima Nova Regular -->
+    <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <style>
         body {
             background-color: #ffffff; /* Set background color to white */
             margin: 0; /* Remove default margin */
@@ -92,6 +102,32 @@
                 max-width: 90%; /* Adjust width for smaller screens */
             }
         }
+
+        
+    @font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Proxima Nova', sans-serif;
+    color: #000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue Pro', sans-serif;
+    font-weight: bold;
+
+}
 
     </style>
 </head>

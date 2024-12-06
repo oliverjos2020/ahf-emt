@@ -37,10 +37,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="card-title"><br><a class="btn btn-ahf btn-sm"
+                        <p class="card-title"><br><a class="btn btn-ahf btn-sm"
                                 onclick="myLoadModal('modules/user/user.php','modal_div')"
-                                href="javascript:void(0)">Create User</a>
-                        </h4>
+                                href="javascript:void(0)"><i class="fa fa-plus"></i> Create User</a>
+                        </p>
                     </div>
 
                 </div>
@@ -103,7 +103,8 @@
                 targets: -1 // Disable ordering on the "Action" column
             }],
             oLanguage: {
-                sEmptyTable: "No record was found, please try another query"
+                sEmptyTable: "No record was found, please try another query",
+                sProcessing: "<div class='table-loader'></div>"
             },
             ajax: {
                 url: "controllers/gateway.php",
@@ -113,14 +114,14 @@
                     d.li = Math.random();
                     d.list = "yes";
                 },
-                beforeSend: function() {
-                    // Show the loader before the request starts
-                    showLoader();
-                },
-                complete: function() {
-                    // Hide the loader after the request completes
-                    hideLoader();
-                },
+                // beforeSend: function() {
+                //     // Show the loader before the request starts
+                //     showLoader();
+                // },
+                // complete: function() {
+                //     // Hide the loader after the request completes
+                //     hideLoader();
+                // },
 
             },
             columns: [{

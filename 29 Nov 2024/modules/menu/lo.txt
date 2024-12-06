@@ -1,1 +1,0 @@
-SELECT * FROM role order by role_name

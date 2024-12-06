@@ -1,16 +1,17 @@
 <?php
+
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $operation = 'edit';
-    $menu_id = $_REQUEST['menu_id'];
 } else {
     $operation = 'new';
 }
+
 ?>
 <style>
 
 </style>
 <div class="modal-header">
-    <h4 class="modal-title" style="font-weight:bold">Facility Setup</h4>
+    <h4 class="modal-title" style="font-weight:bold"><?php echo ($operation == 'edit') ? "Edit " : ""; ?>Facility Setup</h4>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
 </div>
@@ -21,22 +22,22 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <input type="hidden" name="route" value="/setupFacility">
         <input type="hidden" name="source" value="web">
         <input type="hidden" name="country" value="Nigeria">
-        <input type="hidden" name="webAccess" value="0">
+        <input type="hidden" name="webAccess" value="1">
         <input type="hidden" name="country_code" value="234">
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label class="form-label">Facility Name</label>
                     <input type="text" autocomplete="off" name="facilityName"
-                        value="<?php echo ($operation == 'edit') ? $facility_name : ""; ?>" class="form-control"
+                        value="<?php echo ($operation == 'edit') ? $_REQUEST['facility_name'] : ""; ?>" class="form-control"
                         autocomplete="off" />
                 </div>
             </div>
-            <div class="col-md-12 mt-2">
+            <div class="col-md-12 mt-2" hidden>
                 <div class="form-group">
                     <label class="form-label">Facility Code</label>
-                    <input type="text" autocomplete="off" name="facility_code"
-                        value="<?php echo ($operation == 'edit') ? $facility_code : ""; ?>" class="form-control"
+                    <input type="text" autocomplete="off" name="UpdatefacilityCode"
+                        value="<?php echo ($operation == 'edit') ? $_REQUEST['facility_code'] : ""; ?>" class="form-control"
                         autocomplete="off" />
                 </div>
             </div>
@@ -44,6 +45,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">State</label>
                     <select name="state" id="state" class="form-control">
+                        <!-- <?php echo ($operation == 'edit') ? "<option value='" . $_REQUEST['state'] . "' selected>" . $_REQUEST['state'] . "</option>" : ""; ?> -->
                         <option value="">Select State</option>
                     </select>
                 </div>
@@ -52,19 +54,20 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <label class="form-label">L.G.A</label>
                     <select name="lga" id="lga" class="form-control">
+                        <!-- <?php echo ($operation == 'edit') ? "<option value='" . $_REQUEST['lga'] . "' selected>" . $_REQUEST['lga'] . "</option>" : ""; ?> -->
                         <option value="">Select LGA</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-12 mt-2">
                 <label class="form-label">Contact Officer</label>
-                <input type="text" name="contactOfficer" id="contactOfficer" class="form-control">
+                <input type="text" name="contactOfficer" id="contactOfficer" class="form-control" value="<?php echo ($operation == 'edit') ? $_REQUEST['officer'] : ""; ?>">
             </div>
             <div class="col-md-12 mt-2">
                 <label class="form-label">Facility Phone Number</label>
-                <input type="number" name="contactNumber" id="contactNumber" class="form-control">
+                <input type="number" name="contactNumber" id="contactNumber" class="form-control" value="<?php echo ($operation == 'edit') ? $_REQUEST['phone'] : ""; ?>">
             </div>
-            <div class="col-md-12 mt-2">
+            <!-- <div class="col-md-12 mt-2">
                 <label class="form-label">GPS Coordinates/Map</label>
                 <div class="input-group">
         <input type="text" id="gps-coordinates" class="form-control" placeholder="Enter or select coordinates">
@@ -76,10 +79,10 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-md-12 mt-2">
                 <label class="form-label">Satelite Site Connected</label>
                 <input type="text" name="" id="" class="form-control">
-            </div>
+            </div> -->
             <div class="col-md-12 mt-2">
                 <label class="form-label">Address</label>
-                <textarea name="faclilityAddress" id="faclilityAddress" class="form-control"></textarea>
+                <textarea name="faclilityAddress" id="faclilityAddress" class="form-control"><?php echo ($operation == 'edit') ? htmlspecialchars($_REQUEST['address']) : ""; ?></textarea>
             </div>
         </div>
 
@@ -165,9 +168,6 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 console.log(re);
                 if (re.response_code == 200) {
 
-                    // $("#err").css('color', 'green')
-                    // $("#err").html(re.response_message)
-                    // alert(re.response_message);
                     toastr.success(re.response_message, 'Success', {
                         closeButton: true,
                         progressBar: true,

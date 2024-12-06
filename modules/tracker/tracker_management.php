@@ -310,4 +310,84 @@
         d.ChartManager = new ChartManager();
         d.ChartManager.init();
     })(window.jQuery);
+
+    var table;
+    var editor;
+    var route = "/trackerList";
+    $(document).ready(function() {
+        // $.blockUI({
+        //     message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
+        // });
+        table = $("#page_list_x").DataTable({
+            processing: true,
+            serverSide: true,
+            paging: true,
+            columnDefs: [{
+                orderable: false,
+                targets: -1 // Disable ordering on the "Action" column
+            }],
+            oLanguage: {
+                sEmptyTable: "No record was found, please try another query"
+            },
+            ajax: {
+                url: "controllers/gateway.php",
+                type: "POST",
+                data: function(d) {
+                    d.route = route;
+                    d.li = Math.random();
+                    d.list = "yes";
+                    // d.op = "Patients.fetchPatients"
+                },
+                beforeSend: function() {
+                    // Show the loader before the request starts
+                    showLoader();
+                },
+                complete: function() {
+                    // Hide the loader after the request completes
+                    hideLoader();
+                },
+
+            },
+            columns: [{
+                    title: "Facility Name",
+                    data: 2
+                },
+                {
+                    title: "State",
+                    data: 14
+                },
+                {
+                    title: "LGA",
+                    data: 15
+                },
+                {
+                    title: "Phone Number",
+                    data: 19
+                },
+                {
+                    title: "Action",
+                    data: 1,
+                    render: function(data, type, row) {
+                        return `
+                              <button class="btn btn-sm" title="Edit" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" 
+                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[1]}&facility_code=${row[2]}&phone=${row[4]}&address=${row[2]}', 'modal_div')">
+                                <i class="bx bx-edit"></i>
+                            </button>
+                            <button class="btn btn-sm" title="Delete" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #EF7370;" onclick="deleteFacility(${data})">
+                                <i class="bx bx-trash"></i>
+                            </button>
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewFacility(${data})">
+                                <i class="bx bx-show"></i>
+                            </button>`;
+                    }
+                },
+
+
+            ],
+            initComplete: function () {
+            $("#page_list_x").addClass("table-bordered"); // Add the bordered class dynamically
+        }
+        });
+    });
+
 </script>

@@ -81,7 +81,7 @@
     --bs-body-font-size: 0.875rem;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
-    --bs-body-color: #8687a7;
+    --bs-body-color: #000;
     --bs-body-color-rgb: 134, 135, 167;
     --bs-body-bg: #f3f5f7;
     --bs-body-bg-rgb: 243, 245, 247;
@@ -152,7 +152,7 @@
     --bs-danger-text-emphasis: #ffaa9d;
     --bs-light-text-emphasis: #f8f9fa;
     --bs-dark-text-emphasis: #f6f6f6;
-    --bs-primary-bg-subtle: #18255c;
+    --bs-primary-bg-subtle:--bs-heading-color #18255c;
     --bs-secondary-bg-subtle: #363643;
     --bs-success-bg-subtle: #1c5135;
     --bs-info-bg-subtle: #054458;
@@ -475,7 +475,7 @@ tfoot,
 th,
 thead,
 tr {
-    border-color: inherit;
+    border-color: #000;
     border-style: solid;
     border-width: 0
 }
@@ -500,7 +500,8 @@ textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
-    line-height: inherit
+    line-height: inherit;
+   
 }
 
 button,
@@ -2689,7 +2690,7 @@ progress {
     background-color: var(--bs-input-bg);
     background-clip: padding-box;
     /* border: var(--bs-border-width) solid var(--bs-border-color); */
-    border: 1px solid #ced4da;
+    border: 1px solid #000;
     border-radius: var(--bs-border-radius);
     -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -2941,7 +2942,7 @@ textarea.form-control-lg {
     background-repeat: no-repeat;
     background-position: right .75rem center;
     background-size: 16px 12px;
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border: var(--bs-border-width) solid #000;
     border-radius: var(--bs-border-radius);
     -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -3494,7 +3495,7 @@ textarea.form-control-lg {
     text-align: center;
     white-space: nowrap;
     background-color: var(--bs-tertiary-bg);
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border: var(--bs-border-width) solid #000;
     border-radius: var(--bs-border-radius)
 }
 
@@ -15826,7 +15827,7 @@ button {
 
 .dataTable td,
 .dataTable th {
-    border: var(--bs-border-width) solid var(--bs-border-color) !important
+    border: var(--bs-border-width) solid #000 !important
 }
 
 .table>:not(caption)>*>* {

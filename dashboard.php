@@ -37,8 +37,19 @@ $menu_list = $details['menu'];
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <!-- Sweet Alert-->
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap"
-        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap" rel="stylesheet"> -->
+    <!-- Preloading Bebas Neue Pro Bold -->
+<link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preloading Bebas Neue Pro Book -->
+<link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preloading Proxima Nova Bold -->
+<link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preloading Proxima Nova Regular -->
+<link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
     <style>
     .nav-link[aria-expanded="false"] {
         color: #707D8A !important;
@@ -117,37 +128,32 @@ $menu_list = $details['menu'];
 
     #page_list_x th,
     #page_list_x td {
-        border: 1px solid #dee2e6 !important;
+        border: 1px solid #000 !important;
         /* Visible border for all cells */
     }
 
     #page_list_x thead th {
         background-color: #f8f9fa;
+        font-size: large;
         /* Light header background */
     }
-
-    /* Body font (Proxima Nova alternative) */
-    body {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
-        color: #000 !important;
-        /* Override any other body text color */
-        line-height: 1.5;
+    #page_list {
+        border-collapse: collapse;
+        /* Ensure proper cell collapse */
+        border-spacing: 0;
     }
 
-    /* Headings font (Bebas Neue alternative) */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: 'Barlow', sans-serif;
-        font-weight: 700;
-        letter-spacing: 1px;
-        /* color: #000 !important; */
+    #page_list th,
+    #page_list td {
+        border: 1px solid #000 !important;
+        /* Visible border for all cells */
     }
 
+    #page_list thead th {
+        background-color: #f8f9fa;
+        font-size: large;
+        /* Light header background */
+    }
     /* Split Screen Styles */
     #split-wrapper {
         position: fixed;
@@ -188,6 +194,78 @@ $menu_list = $details['menu'];
         opacity: 0;
         transition: opacity 0.5s ease;
     }
+
+    @font-face {
+    font-family: 'Bebas Neue Pro';
+    src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Proxima Nova', sans-serif;
+    color: #000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue Pro', sans-serif;
+    font-weight: bold;
+
+}
+
+/* Style the processing loader */
+div.dataTables_processing {
+    position: absolute;
+    top: calc(100px); /* Adjust this value to push it below the headers */
+    left: 50%;
+    transform: translateX(-50%);
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    color: transparent; /* Hide default text */
+    z-index: 2; /* Ensure it appears above the table content */
+}
+
+/* Loader spinner */
+.table-loader {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #991002;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+.table-loader-btn {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #991002;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
     </style>
 </head>
 
@@ -337,6 +415,14 @@ $menu_list = $details['menu'];
                                     style="color: #707d8a !important">
                                     <i class="fas fa-th-large" style="color: #991002 !important"></i>
                                     <span>Dashboard</span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" onclick="getpage('modules/tracker/tracker_management.php', 'page')";" class="waves-effect"
+                                    style="color: #707d8a !important">
+                                    <i class="fas fa-th-large" style="color: #991002 !important"></i>
+                                    <span>Tracker Management</span>
                                 </a>
 
                             </li>

@@ -115,6 +115,7 @@ class gateway extends cookieManager
 
         if (!$timer) {
             // throw new Exception("Token timer cookie is missing or invalid.");
+            $timer = date('Y-m-d H:i:s');
         }
 
         $timerTimestamp = strtotime($timer);

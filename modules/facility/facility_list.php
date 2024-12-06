@@ -102,7 +102,8 @@
                 targets: -1 // Disable ordering on the "Action" column
             }],
             oLanguage: {
-                sEmptyTable: "No record was found, please try another query"
+                sEmptyTable: "No record was found, please try another query",
+                sProcessing: "<div class='table-loader'></div>"
             },
             ajax: {
                 url: "controllers/gateway.php",
@@ -113,14 +114,14 @@
                     d.list = "yes";
                     // d.op = "Patients.fetchPatients"
                 },
-                beforeSend: function() {
-                    // Show the loader before the request starts
-                    showLoader();
-                },
-                complete: function() {
-                    // Hide the loader after the request completes
-                    hideLoader();
-                },
+                // beforeSend: function() {
+                //     // Show the loader before the request starts
+                //     showLoader();
+                // },
+                // complete: function() {
+                //     // Hide the loader after the request completes
+                //     hideLoader();
+                // },
 
             },
             columns: [{
@@ -145,13 +146,13 @@
                     render: function(data, type, row) {
                         return `
                               <button class="btn btn-sm" title="Edit" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" 
-                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[1]}&facility_code=${row[2]}&phone=${row[4]}&address=${row[2]}', 'modal_div')">
+                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[2]}&facility_code=${row[1]}&phone=${row[19]}&address=${row[4]}&officer=${row[3]}&state=${row[14]}&lga=${row[15]}', 'modal_div')">
                                 <i class="bx bx-edit"></i>
                             </button>
-                            <button class="btn btn-sm" title="Delete" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #EF7370;" onclick="deleteFacility(${data})">
+                            <button class="btn btn-sm" title="Delete" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #EF7370;" onclick="deleteFacility('${encodeURIComponent(row[1])}', '${row[2]}')">
                                 <i class="bx bx-trash"></i>
                             </button>
-                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewFacility(${data})">
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewFacility(${row})">
                                 <i class="bx bx-show"></i>
                             </button>`;
                     }
@@ -165,19 +166,64 @@
         });
     });
 
-    function disableUser(data) {
-        alert("The data is: " + data);
+    function deleteFacility(id, facility) {
+        
+        Swal.fire({
+            title: "Delete Facility?",
+            text: "Are you sure you want to delete " + facility,
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonColor: "#34c38f",
+            cancelButtonColor: "#f46a6a",
+            confirmButtonText: "Yes, delete!"
+        }).then(function(t) {
+            if (t.value) {
+
+                showLoader();
+                // Replace these values with dynamic ones as needed
+                const route = "/deleteFacility" // Replace with actual user_locked value
+                var data = {
+                    route: route,
+                    id: id
+
+                };
+                $.post("controllers/gateway.php", data, function(response) {
+                    hideLoader();
+                    // Handle the response
+                    if (response.response_code === 200) {
+                        toastr.success(response.response_message, "Success", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000, // 5 seconds (time in milliseconds)
+                            extendedTimeOut: 0,
+                            onHidden: function() {
+                                // Notification hidden, no need to wait for this to execute getpage
+                            }
+                        });
+
+                        // Call getpage immediately after success
+                        getpage('modules/facility/facility_list.php', 'page');
+                    } else {
+                        toastr.error(response.response_message || "An error occurred", "Error", {
+                            closeButton: true,
+                            progressBar: true,
+                            timeOut: 5000
+                        });
+                    }
+                }, 'json').fail(function() {
+                    hideLoader();
+                    Swal.fire("Error", "Failed to communicate with the server.", "error");
+                });
+            }
+        })
+
     }
 
     function do_filter() {
         table.draw();
     }
 
-    function getModal(url, div) {
-        $('#' + div).html("<h2>Loading....</h2>");
-        //        $('#'+div).block({ message: null });
-        $.post(url, {}, function(re) {
-            $('#' + div).html(re);
-        })
-    }
+  function viewFacility(data){
+    console.log(data);
+  }
 </script>

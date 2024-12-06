@@ -24,6 +24,10 @@
     #page_list_x thead th {
         background-color: #f8f9fa; /* Light header background */
     }
+
+    div.dataTables_filter {
+    display: none;
+}
 </style>
 <div class="row">
     <div class="col-12">
@@ -51,13 +55,13 @@
                     <div class="col d-flex justify-content-end">
                         <div class="input-group" style="width: 300px;">
                             <span class="input-group-text">
-                                <i class="bi bi-search"></i>
+                                <i class="fas fa-search"></i>
                             </span>
                             <input
                                 type="text"
                                 id="customSearchInput"
                                 class="form-control"
-                                placeholder="Search by ART, ID, or Name"
+                                placeholder="Search by ID or Name"
                                 aria-label="Search">
                         </div>
                     </div>
@@ -136,7 +140,7 @@
                     <div class="col-auto">
                         <a class="btn  text-white" style="background:#991002 !important;"
                             onclick="getpage('modules/patient/add_patient.php','page')"
-                            href="javascript:void(0)"> <i class="bi bi-plus"></i> Add New Patient</a>
+                            href="javascript:void(0)"> <i class="fa fa-plus"></i> Add New Patient</a>
                     </div>
 
                     <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
@@ -148,7 +152,7 @@
                                 <th>Lastname</th>
                                 <th>Viral Load</th>
                                 <th>Appointment Date</th>
-                                <th>Date</th>
+                                <th>Enrollment Date</th>
                                 <th>Action</th>
 
                             </tr>
@@ -191,7 +195,8 @@
                 targets: -1 // Disable ordering on the "Action" column
             }],
             oLanguage: {
-                sEmptyTable: "No record was found, please try another query"
+                sEmptyTable: "No record was found, please try another query",
+                sProcessing: "<div class='table-loader'></div>"
             },
             ajax: {
                 url: "controllers/gateway.php",
@@ -202,14 +207,7 @@
                     d.list = "yes";
                     d.op = "Patients.fetchPatients"
                 },
-                beforeSend: function() {
-                    // Show the loader before the request starts
-                    showLoader();
-                },
-                complete: function() {
-                    // Hide the loader after the request completes
-                    hideLoader();
-                },
+            
 
             },
             columns: [{
@@ -230,7 +228,8 @@
                 },
                 {
                     title: "Appointment Date",
-                    data: 4
+                    // data: 6
+                    data: 48
                 },
                 {
                     title: "Date",
@@ -241,7 +240,7 @@
                     data: 1,
                     render: function(data, type, row) {
                         return `
-                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewPatient(${data})">
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="modules/patient/view_patient.php?id=${row[1]}">
                                 <i class="bx bx-show"></i> View
                             </button>
                             <button class="btn btn-sm" title="Create Visit" style="background-color: #CDFFE7; border-color: #FFF2F0; color: #02A055;" 
@@ -335,103 +334,8 @@
         });
 
     }
+
+    $('#customSearchInput').on('keyup', function () {
+        table.search(this.value).draw(); // Use the value of the custom input for searching
+    });
 </script>
-
-    <!-- <script>
-        
-        var table;
-        var editor;
-        var op = "Patients.patientList";
-        $(document).ready(function() {
-            table = $("#page_list").DataTable({
-                processing: true,
-                columnDefs: [{
-                    orderable: false,
-                    targets: 0
-                }],
-                dom: 'lrtip',
-                serverSide: true,
-                paging: true,
-                oLanguage: {
-                    sEmptyTable: "No record was found, please try another query"
-                },
-
-                ajax: {
-                    url: "web/router.php",
-                    type: "POST",
-                    data: function(d, l) {
-                        d.op = op;
-                        d.li = Math.random();
-                        //          d.start_date = $("#start_date").val();
-                        //          d.end_date = $("#end_date").val();
-                    }
-                }
-            });
-        });
-
-        // Custom search input functionality
-        $('#page_list').on('keyup', function() {
-            table.search(this.value).draw();
-        });
-
-        function do_filter() {
-            table.draw();
-        }
-
-        function closeModal() {
-            $("#defaultModal").modal("hide");
-        }
-
-        function deleteMenu(id) {
-            let cnf = confirm("Are you sure you want to delete menu?");
-            if (cnf == true) {
-                $.blockUI();
-                $.ajax({
-                    url: "web/router.php",
-                    data: {
-                        op: "Menu.deleteMenu",
-                        menu_id: id
-                    },
-                    type: "post",
-                    dataType: "json",
-                    success: function(re) {
-                        $.unblockUI();
-                        // alert(re.response_message);
-                        toastr.success(re.response_message, 'Success', {
-                            closeButton: true,
-                            progressBar: true,
-                            positionClass: 'toast-top-right',
-                            timeOut: 3000, // Time in milliseconds
-                            extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                            escapeHtml: true,
-                            tapToDismiss: false, // Prevent dismissing on click
-                        });
-                        getpage('modules/menu/menu_list.php', "page");
-                    },
-                    error: function(re) {
-                        $.unblockUI();
-                        // alert("Request could not be processed at the moment!");
-                        toastr.error("Request could not be processed at the moment!", 'Error', {
-                            closeButton: true,
-                            progressBar: true,
-                            positionClass: 'toast-top-right',
-                            timeOut: 3000, // Time in milliseconds
-                            extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                            escapeHtml: true,
-                            tapToDismiss: false, // Prevent dismissing on click
-                        });
-                    }
-                });
-            }
-
-        }
-
-        function getModal(url, div) {
-            //        alert('dfd');
-            $('#' + div).html("<h2>Loading....</h2>");
-            //        $('#'+div).block({ message: null });
-            $.post(url, {}, function(re) {
-                $('#' + div).html(re);
-            })
-        }
-    </script> -->

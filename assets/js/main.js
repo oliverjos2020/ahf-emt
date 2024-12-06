@@ -1068,12 +1068,23 @@ function getpage(str, divid) {
   } // end if
 }
 
-function showLoader() {
+let loaderTimeout; // Global variable for the timeout
+
+function showLoader(timeout = 120000) { // Default timeout is 10 seconds
   $('.loader-container').css('display', 'flex'); // Show loader
+
+  // Set a timeout to hide the loader and display an error
+  loaderTimeout = setTimeout(() => {
+    hideLoader(); // Hide the loader
+    Swal.fire("", "Your request is taking too long, it may be your internet connection, kindly refresh the page and try again", "warning");
+  }, timeout);
 }
 
 function hideLoader() {
   $('.loader-container').css('display', 'none'); // Hide loader
+  
+  // Clear the timeout to prevent unintended hiding
+  clearTimeout(loaderTimeout);
 }
 function export_excel(sql, headers) {
   window.location = "generate_excel.php?sql=" + sql + "&headers=" + headers;
