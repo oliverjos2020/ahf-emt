@@ -21,7 +21,10 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div class="form-group">
                     <input type="hidden" name="route" value="/saveRole">
                     <input type="hidden" name="operation" value="<?php echo $operation; ?>">
+                    <?php
+                    if($operation == 'edit'){ ?>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <?php } ?>
                     <label class="form-label">Role Name</label>
                     <input type="text" autocomplete="off" name="role_name" id="role_name" value="" class="form-control"
                         autocomplete="off" />

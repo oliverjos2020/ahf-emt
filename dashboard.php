@@ -40,154 +40,188 @@ $menu_list = $details['menu'];
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap"
         rel="stylesheet">
     <style>
-    .nav-link[aria-expanded="false"] {
-        color: #707D8A !important;
-    }
-
-    .nav-link[aria-expanded="false"] i {
-        color: #707D8A !important;
-    }
-
-    .loader-container {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* background: rgba(255, 255, 255, 0.8); */
-        background: #991002;
-        backdrop-filter: blur(5px);
-        /* Apply blur effect to the background */
-        z-index: 9999;
-        /* Ensure it is above all other content */
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    .loader {
-        width: 8px;
-        height: 40px;
-        border-radius: 4px;
-        display: block;
-        margin: 20px auto;
-        position: relative;
-        background: currentColor;
-        color: white;
-        box-sizing: border-box;
-        animation: animloader 0.3s 0.3s linear infinite alternate;
-    }
-
-    .loader::after,
-    .loader::before {
-        content: '';
-        width: 8px;
-        height: 40px;
-        border-radius: 4px;
-        background: currentColor;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 20px;
-        box-sizing: border-box;
-        animation: animloader 0.3s 0.45s linear infinite alternate;
-    }
-
-    .loader::before {
-        left: -20px;
-        animation-delay: 0s;
-    }
-
-    @keyframes animloader {
-        0% {
-            height: 48px
+        .nav-link[aria-expanded="false"] {
+            color: #707D8A !important;
         }
 
-        100% {
-            height: 4px
+        .nav-link[aria-expanded="false"] i {
+            color: #707D8A !important;
         }
-    }
 
-    #page_list_x {
-        border-collapse: collapse;
-        /* Ensure proper cell collapse */
-        border-spacing: 0;
-    }
+        .loader-container {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(255, 255, 255, 0.8); */
+            background: #991002;
+            backdrop-filter: blur(5px);
+            /* Apply blur effect to the background */
+            z-index: 9999;
+            /* Ensure it is above all other content */
+            justify-content: center;
+            align-items: center;
+        }
 
-    #page_list_x th,
-    #page_list_x td {
-        border: 1px solid #dee2e6 !important;
-        /* Visible border for all cells */
-    }
 
-    #page_list_x thead th {
-        background-color: #f8f9fa;
-        /* Light header background */
-    }
+        .loader {
+            width: 8px;
+            height: 40px;
+            border-radius: 4px;
+            display: block;
+            margin: 20px auto;
+            position: relative;
+            background: currentColor;
+            color: white;
+            box-sizing: border-box;
+            animation: animloader 0.3s 0.3s linear infinite alternate;
+        }
 
-    /* Body font (Proxima Nova alternative) */
-    body {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
-        color: #000 !important;
-        /* Override any other body text color */
-        line-height: 1.5;
-    }
+        .loader::after,
+        .loader::before {
+            content: '';
+            width: 8px;
+            height: 40px;
+            border-radius: 4px;
+            background: currentColor;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            box-sizing: border-box;
+            animation: animloader 0.3s 0.45s linear infinite alternate;
+        }
 
-    /* Headings font (Bebas Neue alternative) */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: 'Barlow', sans-serif;
-        font-weight: 700;
-        letter-spacing: 1px;
-        /* color: #000 !important; */
-    }
+        .loader::before {
+            left: -20px;
+            animation-delay: 0s;
+        }
 
-    /* Split Screen Styles */
-    #split-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9998;
-    }
+        @keyframes animloader {
+            0% {
+                height: 48px
+            }
 
-    #split-top,
-    #split-bottom {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-color: #991002;
-        /* Adjust to your desired color */
-        transform-origin: center center;
-        transition: transform 0.8s ease-in-out;
-    }
+            100% {
+                height: 4px
+            }
+        }
 
-    #split-top {
-        top: 0;
-        transform: translateY(0);
-        /* Initially at its default position */
-    }
+        #page_list_x {
+            border-collapse: collapse;
+            /* Ensure proper cell collapse */
+            border-spacing: 0;
+        }
 
-    #split-bottom {
-        bottom: 0;
-        transform: translateY(0);
-        /* Initially at its default position */
-    }
+        #page_list_x th,
+        #page_list_x td {
+            border: 1px solid #dee2e6 !important;
+            /* Visible border for all cells */
+        }
 
-    #container-fluid {
-        display: none;
-        /* Hidden initially */
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
+        #page_list_x thead th {
+            background-color: #f8f9fa;
+            /* Light header background */
+        }
+
+        /* Body font (Proxima Nova alternative) */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #000 !important;
+            /* Override any other body text color */
+            line-height: 1.5;
+        }
+
+        /* Headings font (Bebas Neue alternative) */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            /* color: #000 !important; */
+        }
+
+        /* Split Screen Styles */
+        #split-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9998;
+        }
+
+        #split-top,
+        #split-bottom {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #991002;
+            /* Adjust to your desired color */
+            transform-origin: center center;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        #split-top {
+            top: 0;
+            transform: translateY(0);
+            /* Initially at its default position */
+        }
+
+        #split-bottom {
+            bottom: 0;
+            transform: translateY(0);
+            /* Initially at its default position */
+        }
+
+        #container-fluid {
+            display: none;
+            /* Hidden initially */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .menu-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            cursor: grab;
+        }
+
+        .menu-item:hover {
+            background-color: #e9ecef;
+        }
+
+        #div1,
+        #div2 {
+            border: 1px dashed #ccc;
+            min-height: 200px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .mm-active a::before {
+            content: '';
+            /* Empty content to create the visual element */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            /* Width of the stripe */
+            height: 100%;
+            /* Full height of the list item */
+            background-color: #007bff;
+            /* Your desired color */
+        }
     </style>
 </head>
 
@@ -256,7 +290,7 @@ $menu_list = $details['menu'];
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <!-- item-->
-                                    <a class="dropdown-item" href="#"><i
+                                    <!-- <a class="dropdown-item" href="#"><i
                                             class="bx bx-user font-size-16 align-middle me-1"></i>
                                         Profile</a>
                                     <a class="dropdown-item" href="#"><i
@@ -268,7 +302,7 @@ $menu_list = $details['menu'];
                                     <a class="dropdown-item" href="#"><i
                                             class="bx bx-lock-open font-size-16 align-middle me-1"></i>
                                         Lock screen</a>
-                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-divider"></div> -->
                                     <a class="dropdown-item text-danger" href="./web/logout.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
                                         Logout</a>
@@ -482,11 +516,11 @@ $menu_list = $details['menu'];
                         </div>
                         <div class="card-body p-4">
                             <div class="row p-2">
-                                <div class="col-md ahf-border p-3">
+                                <div class="col-md ahf-border p-3 mx-2">
                                     <p class="ahf-text-14">Total Patient Enrolled</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="totalPatientsEnrolled">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -497,10 +531,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Total Active Patient</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="totalActivePatients">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -511,10 +545,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Missed Appointment</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="missedAppointments">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -525,10 +559,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Missed Returned</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="missedReturned">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -539,10 +573,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Lost to Follow Up</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="lostToFollowup">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -552,13 +586,14 @@ $menu_list = $details['menu'];
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row mt-0 p-2">
-                                <div class="col-md ahf-border p-3">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                <div class="col-md ahf-border p-3 mx-2">
+                                    <p class="ahf-text-14">LTFU Returned</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="ltfuReturned">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -569,10 +604,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">New Enrollment</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="newEnrollment">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -583,10 +618,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Transfer In</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="transferedIn">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -597,10 +632,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Transfer Out</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4>2300</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -611,10 +646,10 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                                 <div class="col-md ahf-border p-3 mx-2">
-                                    <p class="ahf-text-14">Total Patient Enrolled</p>
+                                    <p class="ahf-text-14">Deceased Patient</p>
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>5076</h4>
+                                            <h4 id="deceased">0</h4>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="ahf-icon-pill">
@@ -624,6 +659,7 @@ $menu_list = $details['menu'];
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -679,7 +715,6 @@ $menu_list = $details['menu'];
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-md-7">
                             <div class="card">
@@ -715,7 +750,7 @@ $menu_list = $details['menu'];
                                             <input type="date" id="viral_date" name="viral_date" class="form-control">
                                         </div>
                                     </div>
-                                    <h5 class="fw-bold">CD4 Count Status Chart</h5>
+                                    <!-- <h5 class="fw-bold">CD4 Count Status Chart</h5> -->
                                     <canvas id="cd4-chart"></canvas>
                                 </div>
                             </div>
@@ -723,25 +758,79 @@ $menu_list = $details['menu'];
                         <div class="col-md-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="fw-bold">Gender Distribution</h5>
+                                    <h5 class="fw-bold">Patient Demographics by Age Group</h5>
                                     <!-- <canvas id="gender-distribution"></canvas> -->
                                     <div class="chart-container mt-3">
-                                        <canvas id="gender-distribution"></canvas>
+                                        <canvas id="patient-demographics"></canvas>
                                     </div>
-                                    <div class="row mt-4">
-                                        <div class="col-md-6 text-center">
-                                            <h3 class="fw-bold">950</h3>
-                                            <p>Total Male Patient Enrolled</p>
+                                    <div class="row mt-3">
+                                        <div class="col-md-3 text-center">
+                                            <h3 class="fw-bold" id="demographic1">0</h3>
+                                            <p style="font-size: 11px;">Total number of Paediatric Patient</p>
                                         </div>
-                                        <div class="col-md-6 text-center">
-                                            <h3 class="fw-bold">2400</h3>
-                                            <p>Total Female Patient Enrolled</p>
+                                        <div class="col-md-3 text-center">
+                                            <h3 class="fw-bold" id="demographic2">0</h3>
+                                            <p style="font-size: 11px;">Total number of Men Patient</p>
+                                        </div>
+                                        <div class="col-md-3 text-center">
+                                            <h3 class="fw-bold" id="demographic3">0</h3>
+                                            <p style="font-size: 11px;">Total number of Women Patient</p>
+                                        </div>
+                                        <div class="col-md-3 text-center">
+                                            <h3 class="fw-bold" id="demographic4">0</h3>
+                                            <p style="font-size: 11px;">Total number of Pregnant Patient</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="fw-bold">% of Patient Appointment</h5>
+                                    <div class="mt-4">
+                                        <canvas id="patient-appointment"></canvas>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-md-4 text-center">
+                                            <h3 class="fw-bold" id="patientAppointment1">0</h3>
+                                            <p style="font-size:11px">Percentage of Appointment Scheduled</p>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <h3 class="fw-bold" id="patientAppointment2">0</h3>
+                                            <p style="font-size:11px">Percentage of Appointment Attended</p>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <h3 class="fw-bold" id="patientAppointment3">0</h3>
+                                            <p style="font-size:11px">Percentage of Appointment Missed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5 class="fw-bold">Treatment Regimen Distribution</h5>
+                                        </div>
+                                        <div class="col-md-6"
+                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                            <label for="end-date" style="margin: 0;">Filter By</label>
+                                            <input type="date" id="viral_date" name="viral_date" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <canvas id="regimen-dist"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- </div> -->
 
                 </div>
@@ -752,7 +841,7 @@ $menu_list = $details['menu'];
                         <div class="row">
                             <div class="col-sm-6">
                                 <script>
-                                document.write(new Date().getFullYear())
+                                    document.write(new Date().getFullYear())
                                 </script> © AHF NIGERIA
                             </div>
                             <div class="col-sm-6">
@@ -817,139 +906,295 @@ $menu_list = $details['menu'];
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
-         function openModal(id)
-        {
-            $("#"+id+"").modal("show");
+        function openModal(id) {
+            $("#" + id + "").modal("show");
         }
-        
-    const ctx = document.getElementById('statistical-chart');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
-            datasets: [{
-                label: '# of Votes',
-                data: [5, 10, 19, 12],
-                backgroundColor: [
-                    '#f57878', // Red
-                    '#991002', // Blue
-                    '#CC8780', // Yellow
-                    '#ced4da', // Green
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
+        loadStats();
 
-            scales: {
-                y: {
-                    beginAtZero: true
+        function loadStats() {
+            $.ajax({
+                url: 'controllers/gateway.php', // Your API endpoint
+                type: 'POST',
+                data: {
+                    route: '/dashStats'
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.response_code === 200) {
+                        var data = response.data;
+
+                        //Counts
+                        $("#totalPatientsEnrolled").html(data.totalPatientsEnrolled);
+                        $("#totalActivePatients").html(data.totalActivePatients);
+                        $("#missedAppointments").html(data.missedAppointments);
+                        $("#missedReturned").html(data.missedReturned);
+                        $("#lostToFollowup").html(data.lostToFollowup);
+                        $("#ltfuReturned").html(data.ltfuReturned);
+                        $("#newEnrollment").html(data.newEnrollment);
+                        $("#transferedIn").html(data.transferedIn);
+                        $("#deceased").html(data.deceased);
+
+                        //Demographics
+                        $("#demographic1").html(data.demograpics.paediatric);
+                        $("#demographic2").html(data.demograpics.men);
+                        $("#demographic3").html(data.demograpics.women);
+                        $("#demographic4").html(data.demograpics.pregnantWomen);
+
+                        const patientDemographics = document.getElementById('patient-demographics');
+                        new Chart(patientDemographics, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Pediatric', 'Men', 'Women', 'Pregnant Women'],
+                                datasets: [{
+                                    label: 'Pediatric Demography by Age Group',
+                                    data: [data.demograpics.paediatric, data.demograpics.men, data.demograpics.women, data.demograpics.pregnantWomen],
+                                    backgroundColor: [
+                                        '#FF8686',
+                                        '#991002',
+                                        '#DDAFAB',
+                                        '#ced4da'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            }
+                        });
+
+                        //Patient Appointment
+                        $("#patientAppointment1").html(data.appointments.totalAppointmentScheduled);
+                        $("#patientAppointment2").html(data.appointments.totalAppointmentsAttended);
+                        $("#patientAppointment3").html(data.appointments.totalAppointmentsMissed);
+                        const patientAppointment = document.getElementById('patient-appointment');
+                        new Chart(patientAppointment, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Total Appointment Scheduled', 'Total Appointment Attended', 'Total Appointment Missed'],
+                                datasets: [{
+                                    label: 'Appointments of Patients',
+                                    data: [data.appointments.totalAppointmentScheduled, data.appointments.totalAppointmentsAttended, data.appointments.totalAppointmentsMissed],
+                                    backgroundColor: [
+                                        '#FF8686',
+                                        '#991002',
+                                        '#DDAFAB',
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            }
+                        });
+
+                        //CD4 Chart
+                        const ctxCD4Chart = document.getElementById('cd4-chart');
+                        new Chart(ctxCD4Chart, {
+                            type: 'bar',
+                            data: {
+                                labels: ['<200 cells/ul', '>=200 cells/ul'],
+                                datasets: [{
+                                    label: 'CD4 Count',
+                                    data: [data.cd4.cd4Lower200, data.cd4.cd4EqualAndAbove200],
+                                    backgroundColor: [
+                                        '#f57878', // Red
+                                        '#991002' // Blue
+                                    ],
+                                    borderWidth: 1,
+                                    barThickness: 70
+                                }]
+                            },
+                            options: {
+
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+
+                    } else if (response.response_code === 400) {
+                        window.location = 'index.php';
+                    } else {
+                        // alert('Failed to save menus: ' + response.response_message);
+                    }
+                },
+                error: function() {
+                    // alert('An error occurred while saving the menus.');
+
+                }
+            });
+        }
+
+        const ctx = document.getElementById('statistical-chart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+                datasets: [{
+                    label: 'Statistical Analysis',
+                    data: [5, 10, 19, 12],
+                    backgroundColor: [
+                        '#f57878', // Red
+                        '#991002', // Blue
+                        '#CC8780',
+                        '#ced4da',
+                    ],
+                    borderWidth: 1,
+                    barThickness: 50 // Set a fixed bar width (reduce value for thinner bars)
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-    const ctxViralLoad = document.getElementById('viral-load-chart');
-    new Chart(ctxViralLoad, {
-        type: 'line',
-        data: {
-            labels: ['0', '<=20', '21 - 999', '>=1000'],
-            datasets: [{
-                label: '# of Votes',
-                data: [0, 500, 999, 800],
-                backgroundColor: [
-                    '#f5787852',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
+        });
 
-            scales: {
-                y: {
-                    beginAtZero: true
+
+        const ctxViralLoad = document.getElementById('viral-load-chart');
+        new Chart(ctxViralLoad, {
+            type: 'line',
+            data: {
+                labels: ['0', '<=20', '21 - 999', '>=1000'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [0, 500, 999, 800],
+                    backgroundColor: [
+                        '#f5787852',
+                    ],
+                    borderColor: '#991002', // Solid border color
+                    borderWidth: 3,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-    const ctxCD4Chart = document.getElementById('cd4-chart');
-    new Chart(ctxCD4Chart, {
-        type: 'line',
-        data: {
-            labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
-            datasets: [{
-                label: '# of Votes',
-                data: [5, 10, 19, 12],
-                backgroundColor: [
-                    '#f5787852',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
+        });
 
-            scales: {
-                y: {
-                    beginAtZero: true
+
+        const regimenDist = document.getElementById('regimen-dist');
+        new Chart(regimenDist, {
+            type: 'line',
+            data: {
+                labels: ['0', '<=20', '21 - 999', '>=1000'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [0, 500, 999, 800],
+                    backgroundColor: [
+                        '#f5787852',
+                    ],
+                    borderColor: '#991002', // Solid border color
+                    borderWidth: 3,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
 
-    const ctxGenderDistribution = document.getElementById('gender-distribution');
-    new Chart(ctxGenderDistribution, {
-        type: 'doughnut',
-        data: {
-            labels: ['Male', 'Female'],
-            datasets: [{
-                label: '# of Votes',
-                data: [2400, 950],
-                backgroundColor: [
-                    '#CC8780', // Yellow
-                    '#ced4da', // Green
-                ],
-                borderWidth: 1
-            }]
-        }
-    });
-
-    const ctxActivePatient = document.getElementById('active-patient');
-    new Chart(ctxActivePatient, {
-        type: 'pie',
-        data: {
-            labels: ['In-Active Patients', 'Active Patient'],
-            datasets: [{
-                label: 'Active PatientS',
-                data: [75, 15],
-                backgroundColor: [
-                    '#991002', // Yellow
-                    '#DDAFAB', // Green
-                ],
-                borderWidth: 1
-            }]
-        }
-    });
+        const ctxGenderDistribution = document.getElementById('gender-distribution');
+        new Chart(ctxGenderDistribution, {
+            type: 'doughnut',
+            data: {
+                labels: ['Male', 'Female'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [2400, 950],
+                    backgroundColor: [
+                        '#F57878',
+                        '#D6D2C4',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true // Adjust legend visibility as needed
+                    }
+                },
+                elements: {
+                    arc: {
+                        borderWidth: 1, // Thickness of the border
+                        radius: 50, // Outer radius
+                        cutout: '50%', // Inner radius (adjust this value to reduce width)
+                    }
+                },
+                responsive: true
+            }
+        });
 
 
-    $(document).ready(function() {
-        // The loader is already visible due to default CSS.
-        hideLoader();
-        // Simulate a delay for loader (e.g., fetching data)
-        setTimeout(function() {
-            // Start the split animation
-            $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
-            $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
 
-            // After the split animation is done
+        const ctxActivePatient = document.getElementById('active-patient');
+        new Chart(ctxActivePatient, {
+            type: 'pie',
+            data: {
+                labels: ['In-Active Patients', 'Active Patient'],
+                datasets: [{
+                    label: 'Active Patients',
+                    data: [75, 15],
+                    backgroundColor: [
+                        '#991002',
+                        '#DDAFAB',
+                    ],
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        // const patientAppointment = document.getElementById('patient-appointment');
+        // new Chart(patientAppointment, {
+        //     type: 'pie',
+        //     data: {
+        //         labels: ['Total Appointment Scheduled', 'Total Appointment Attended', 'Total Appointment Missed'],
+        //         datasets: [{
+        //             label: '% of Patients Appointments',
+        //             data: [48, 45, 7],
+        //             backgroundColor: [
+        //                 '#FF8686',
+        //                 '#DDAFAB',
+        //                 '#991002',
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     }
+        // });
+
+
+
+
+        $(document).ready(function() {
+            // The loader is already visible due to default CSS.
+            hideLoader();
+            // Simulate a delay for loader (e.g., fetching data)
             setTimeout(function() {
-                $('#split-wrapper').fadeOut('slow', function() {
+                // Start the split animation
+                $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
+                $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
 
-                    // Show the container-fluid content with fade-in
-                    $('#container-fluid').fadeIn('slow').css('opacity', 1);
+                // After the split animation is done
+                setTimeout(function() {
+                    $('#split-wrapper').fadeOut('slow', function() {
 
-                });
-            }, 800); // Match this timeout to the CSS transition duration (0.8s)
-        }, 2000); // Simulated loader delay (2 seconds)
-    });
+                        // Show the container-fluid content with fade-in
+                        $('#container-fluid').fadeIn('slow').css('opacity', 1);
+
+                    });
+                }, 800); // Match this timeout to the CSS transition duration (0.8s)
+            }, 2000); // Simulated loader delay (2 seconds)
+        });
     </script>
 
 

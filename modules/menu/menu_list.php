@@ -1,7 +1,3 @@
-
-
-
-
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
@@ -92,6 +88,11 @@
                         <label for="menuURL">Menu URL</label>
                         <input type="text" class="form-control" name="menu_url" id="menuURL"
                             placeholder="Enter menu URL">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="icon">Icon</label>
+                        <input type="text" class="form-control" name="icon" id="icon"
+                            placeholder="Icon">
                     </div>
                     <div class="form-group mt-2">
                         <label for="menuParent">Parent Menu</label>
@@ -318,6 +319,7 @@
             data: data,
             dataType: "json",
             success: function(response) {
+                // let selectHtml = `<select onchange="loadMenus(this.value)" id="menuSelect" name="parent_id" class="form-control">`;
                 let selectHtml = `<select onchange="loadMenus(this.value)" id="roleSelect" name="parent_id" class="form-control">`;
 
                 // Add a placeholder option
@@ -369,7 +371,7 @@
                 },
             },
             dataSrc: function(response) {
-               
+
                 return response.data;
             },
             columns: [{
@@ -557,45 +559,6 @@
         event.dataTransfer.setData("text", event.target.id);
     }
 
-    function saveVisibleMenus() {
-    const visibleMenus = [];
-
-    // Iterate through all elements inside #div1 and collect their IDs
-    $('#div1 .menu-item').each(function() {
-        visibleMenus.push($(this).attr('id'));
-    });
-    var role_id = $('#roleSelect').val();
-
-    // Structure the data for saving
-    const payload = {
-        menus: visibleMenus
-    };
-
-    // Make an AJAX POST request to save the data
-    $.ajax({
-        url: 'controllers/gateway.php', // Your API endpoint
-        type: 'POST',
-        data: {
-            route: '/saveMenuGroup',
-            menus: visibleMenus,
-            role_id
-        },
-        dataType: 'json',
-        success: function(response) {
-            if (response.response_code === 200) {
-                alert('Menus saved successfully!');
-                $("#editMenuGroup").modal("hide");
-            } else {
-                alert('Failed to save menus: ' + response.response_message);
-            }
-        },
-        error: function() {
-            alert('An error occurred while saving the menus.');
-        }
-    });
-}
-
-
     function drop(event) {
         event.preventDefault();
         const menuId = event.dataTransfer.getData("text");
@@ -603,5 +566,40 @@
 
         // Append the dragged element to the target container
         event.target.appendChild(draggedElement);
+    }
+
+    function saveVisibleMenus() {
+        const visibleMenus = [];
+        // Iterate through all elements inside #div1 and collect their IDs
+        $('#div1 .menu-item').each(function() {
+            visibleMenus.push($(this).attr('id'));
+        });
+        var role_id = $('#roleSelect').val();
+        // Structure the data for saving
+        const payload = {
+            menus: visibleMenus
+        };
+        // Make an AJAX POST request to save the data
+        $.ajax({
+            url: 'controllers/gateway.php', // Your API endpoint
+            type: 'POST',
+            data: {
+                route: '/saveMenuGroup',
+                menus: visibleMenus,
+                role_id
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.response_code === 200) {
+                    alert('Menus saved successfully!');
+                    $("#editMenuGroup").modal("hide");
+                } else {
+                    alert('Failed to save menus: ' + response.response_message);
+                }
+            },
+            error: function() {
+                alert('An error occurred while saving the menus.');
+            }
+        });
     }
 </script>

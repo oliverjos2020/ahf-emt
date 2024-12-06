@@ -1,29 +1,32 @@
 <style>
-    label {
-        font-weight: bold;
-        white-space: nowrap;
-        /* Ensures labels remain on one line */
-    }
+label {
+    font-weight: bold;
+    white-space: nowrap;
+    /* Ensures labels remain on one line */
+}
 
-    input[type="date"],
-    .form-select {
-        min-width: 200px;
-        /* Ensures a consistent width for inputs */
-    }
+input[type="date"],
+.form-select {
+    min-width: 200px;
+    /* Ensures a consistent width for inputs */
+}
 
-    #page_list_x {
-        border-collapse: collapse; /* Ensure proper cell collapse */
-        border-spacing: 0;
-    }
+#page_list_x {
+    border-collapse: collapse;
+    /* Ensure proper cell collapse */
+    border-spacing: 0;
+}
 
-    #page_list_x th,
-    #page_list_x td {
-        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
-    }
+#page_list_x th,
+#page_list_x td {
+    border: 1px solid #dee2e6 !important;
+    /* Visible border for all cells */
+}
 
-    #page_list_x thead th {
-        background-color: #f8f9fa; /* Light header background */
-    }
+#page_list_x thead th {
+    background-color: #f8f9fa;
+    /* Light header background */
+}
 </style>
 <div class="row">
     <div class="col-12">
@@ -53,19 +56,20 @@
                             <span class="input-group-text">
                                 <i class="bi bi-search"></i>
                             </span>
-                            <input
-                                type="text"
-                                id="customSearchInput"
-                                class="form-control"
-                                placeholder="Search by ART, ID, or Name"
-                                aria-label="Search">
+                            <input type="text" id="customSearchInput" class="form-control"
+                                placeholder="Search by ID or Name" aria-label="Search">
                         </div>
+                    </div>
+                    <div class="input-group" id="datepicker2">
+                        <input type="text" class="form-control" placeholder="mm/dd/yyyy"
+                            data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
+                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                     </div>
                 </div>
                 <hr>
 
-                <div class="container">
-                    <div class="row align-items-center mb-3">
+                <div class="container-x">
+                    <div class="row align-items-center-x mb-3">
                         <!-- Start Date -->
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
@@ -84,7 +88,8 @@
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
                                 <label for="missed_appointment" class="me-2">Missed Appointment:</label>
-                                <select name="missed_appointment" class="form-select flex-grow-1" id="missed_appointment">
+                                <select name="missed_appointment" class="form-select flex-grow-1"
+                                    id="missed_appointment">
                                     <option value="" selected disabled>Select</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -93,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="row align-items-center">
+                    <div class="row align-items-center-x">
                         <!-- Entry Point Type -->
                         <div class="col-md-6 col-lg-4 mb-3">
                             <div class="d-flex align-items-center">
@@ -135,8 +140,8 @@
                 <div class="row justify-content-end">
                     <div class="col-auto">
                         <a class="btn  text-white" style="background:#991002 !important;"
-                            onclick="getpage('modules/patient/add_patient.php','page')"
-                            href="javascript:void(0)"> <i class="bi bi-plus"></i> Add New Patient</a>
+                            onclick="getpage('modules/patient/add_patient.php','page')" href="javascript:void(0)"> <i
+                                class="fa fa-plus"></i> Add New Patient</a>
                     </div>
 
                     <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
@@ -241,7 +246,7 @@
                     data: 1,
                     render: function(data, type, row) {
                         return `
-                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="viewPatient(${data})">
+                            <button class="btn btn-sm" title="View" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #991002;" onclick="getpage('modules/patient/view_patient.php?id=${row[1]}', 'page')">
                                 <i class="bx bx-show"></i> View
                             </button>
                             <button class="btn btn-sm" title="Create Visit" style="background-color: #CDFFE7; border-color: #FFF2F0; color: #02A055;" 
@@ -250,7 +255,7 @@
                             </button>`;
                     }
                 },
-               
+
             ]
         });
     });
@@ -335,7 +340,7 @@
         });
 
     }
-</script>
+    </script>
 
     <!-- <script>
         
