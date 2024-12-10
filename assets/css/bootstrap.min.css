@@ -15234,7 +15234,7 @@ fieldset:disabled .btn {
     --bs-sidebar-menu-item-hover-color: #383c40;
     --bs-sidebar-menu-item-active-color: #fff;
     --bs-sidebar-menu-hover-bg: #f5f5f5;
-    --bs-sidebar-width: 290px;
+    --bs-sidebar-width: 390px;
     --bs-sidebar-collapsed-width: 70px;
     --bs-sidebar-width-sm: 180px;
     --bs-sidebar-menu-item-active-bg-color: #f7f9fd;
@@ -15827,7 +15827,7 @@ button {
 
 .dataTable td,
 .dataTable th {
-    border: var(--bs-border-width) solid #000 !important
+    border: var(--bs-border-width) solid #eee !important
 }
 
 .table>:not(caption)>*>* {

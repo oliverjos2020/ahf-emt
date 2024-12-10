@@ -27,9 +27,9 @@ input[type="date"],
         background-color: #f8f9fa; /* Light header background */
     }
 
-    div.dataTables_filter {
+    /* div.dataTables_filter {
     display: none;
-}
+} */
 </style>
 <div class="row">
     <div class="col-12">
@@ -55,7 +55,73 @@ input[type="date"],
                         <h4 class="fs-2" style="font-weight: bold;">Patients List</h4>
                     </div>
                     <div class="col d-flex justify-content-end">
-                        <div class="input-group" style="width: 300px;">
+                    <a class="btn  text-white" style="background:#991002 !important;"
+                            onclick="getpage('modules/patient/add_patient.php','page')"
+                            href="javascript:void(0)"> <i class="fa fa-plus"></i> Add New Patient</a>
+                       
+                    </div>
+                </div>
+                <hr>
+
+                <div class="container">
+    <div class="row mb-3">
+        <!-- Start Date -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="s_date" class="form-label">Start Date:</label>
+            <input type="date" class="form-control" name="s_date" id="s_date">
+        </div>
+        <!-- End Date -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="e_date" class="form-label">End Date:</label>
+            <input type="date" class="form-control" name="e_date" id="e_date">
+        </div>
+        <!-- Missed Appointment -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="missed_appointment" class="form-label">Missed Appointment:</label>
+            <select name="missed_appointment" class="form-select" id="missed_appointment">
+                <option value="" selected disabled>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Entry Point Type -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="entry_date" class="form-label">Entry Point Type:</label>
+            <select name="entry_date" class="form-select" id="entry_date">
+                <option value="" selected disabled>Select</option>
+                <option value="intra_transfer">Transferred Intra</option>
+                <option value="inter_transfer">Transferred Inter</option>
+            </select>
+        </div>
+        <!-- Gender -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="gender" class="form-label">Gender:</label>
+            <select name="gender" class="form-select" id="gender">
+                <option value="" selected disabled>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <!-- Age Range -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <label for="age" class="form-label">Age Range:</label>
+            <select name="age" class="form-select" id="age">
+                <option value="" selected disabled>Select Age Range</option>
+                <option value="above_35">Above 35 Years</option>
+                <option value="below_35">Below 35 Years</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+
+                <hr>
+                <div class="row justify-content-end">
+                    <!-- <div class="input-group" style="width: 300px;">
                             <span class="input-group-text">
                                 <i class="fas fa-search"></i>
                             </span>
@@ -65,91 +131,7 @@ input[type="date"],
                                 class="form-control"
                                 placeholder="Search by ID or Name"
                                 aria-label="Search">
-                        </div>
-                    </div>
-                    <div class="input-group" id="datepicker2">
-                        <input type="text" class="form-control" placeholder="mm/dd/yyyy"
-                            data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
-                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="container-x">
-                    <div class="row align-items-center-x mb-3">
-                        <!-- Start Date -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="s_date" class="me-2">Start Date:</label>
-                                <input type="date" class="form-control flex-grow-1" name="s_date" id="s_date">
-                            </div>
-                        </div>
-                        <!-- End Date -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="e_date" class="me-2">End Date:</label>
-                                <input type="date" class="form-control flex-grow-1" name="e_date" id="e_date">
-                            </div>
-                        </div>
-                        <!-- Missed Appointment -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="missed_appointment" class="me-2">Missed Appointment:</label>
-                                <select name="missed_appointment" class="form-select flex-grow-1"
-                                    id="missed_appointment">
-                                    <option value="" selected disabled>Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row align-items-center-x">
-                        <!-- Entry Point Type -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="entry_date" class="me-2">Entry Point Type:</label>
-                                <select name="entry_date" class="form-select flex-grow-1" id="entry_date">
-                                    <option value="" selected disabled>Select</option>
-                                    <option value="intra_transfer">Transferred Intra</option>
-                                    <option value="inter_transfer">Transferred Inter</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Gender -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="gender" class="me-2">Gender:</label>
-                                <select name="gender" class="form-select flex-grow-1" id="gender">
-                                    <option value="" selected disabled>Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Age Range -->
-                        <div class="col-md-6 col-lg-4 mb-3">
-                            <div class="d-flex align-items-center">
-                                <label for="age" class="me-2">Age Range:</label>
-                                <select name="age" class="form-select flex-grow-1" id="age">
-                                    <option value="" selected disabled>Select Age Range</option>
-                                    <option value="above_35">Above 35 Years</option>
-                                    <option value="below_35">Below 35 Years</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <hr>
-                <div class="row justify-content-end">
-                    <div class="col-auto">
-                        <a class="btn  text-white" style="background:#991002 !important;"
-                            onclick="getpage('modules/patient/add_patient.php','page')"
-                            href="javascript:void(0)"> <i class="fa fa-plus"></i> Add New Patient</a>
-                    </div>
+                        </div> -->
 
                     <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -191,12 +173,11 @@ input[type="date"],
     var editor;
     var route = "/patientsData";
     $(document).ready(function() {
-        // $.blockUI({
-        //     message: '<img src="loading.gif" alt=""/>&nbsp;&nbsp;loading please wait . . .',
-        // });
+       
         table = $("#page_list_x").DataTable({
             processing: true,
             serverSide: true,
+            searching: true,
             paging: true,
             columnDefs: [{
                 orderable: false,

@@ -35,7 +35,23 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="row">
+            <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="fw-bold">
+                            User Management
+                        </h3>
+                        <p>Table showing the list of all available users.</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                    <p class=""><br><a class="btn btn-ahf btn-sm"
+                                onclick="myLoadModal('modules/user/user.php','modal_div')"
+                                href="javascript:void(0)"><i class="fa fa-plus"></i> Create User</a>
+                        </p>
+                    </div>
+
+                </div>
+                <hr>
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <p class="card-title"><br><a class="btn btn-ahf btn-sm"
                                 onclick="myLoadModal('modules/user/user.php','modal_div')"
@@ -43,7 +59,7 @@
                         </p>
                     </div>
 
-                </div>
+                </div> -->
 
                 <table id="page_list" class="table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">

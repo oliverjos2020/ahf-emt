@@ -39,16 +39,16 @@ $menu_list = $details['menu'];
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap" rel="stylesheet"> -->
     <!-- Preloading Bebas Neue Pro Bold -->
-<link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-<!-- Preloading Bebas Neue Pro Book -->
-<link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preloading Bebas Neue Pro Book -->
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-<!-- Preloading Proxima Nova Bold -->
-<link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preloading Proxima Nova Bold -->
+    <link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-<!-- Preloading Proxima Nova Regular -->
-<link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preloading Proxima Nova Regular -->
+    <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
     <style>
         .nav-link[aria-expanded="false"] {
@@ -132,37 +132,39 @@ $menu_list = $details['menu'];
             /* Visible border for all cells */
         }
 
-    #page_list_x thead th {
-        background-color: #f8f9fa;
-        font-size: large;
-        /* Light header background */
-    }
-    #page_list {
-        border-collapse: collapse;
-        /* Ensure proper cell collapse */
-        border-spacing: 0;
-    }
+        #page_list_x thead th {
+            background-color: #f8f9fa;
+            font-size: large;
+            /* Light header background */
+        }
 
-    #page_list th,
-    #page_list td {
-        border: 1px solid #000 !important;
-        /* Visible border for all cells */
-    }
+        #page_list {
+            border-collapse: collapse;
+            /* Ensure proper cell collapse */
+            border-spacing: 0;
+        }
 
-    #page_list thead th {
-        background-color: #f8f9fa;
-        font-size: large;
-        /* Light header background */
-    }
-    /* Split Screen Styles */
-    #split-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9998;
-    }
+        #page_list th,
+        #page_list td {
+            border: 1px solid #000 !important;
+            /* Visible border for all cells */
+        }
+
+        #page_list thead th {
+            background-color: #f8f9fa;
+            font-size: large;
+            /* Light header background */
+        }
+
+        /* Split Screen Styles */
+        #split-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9998;
+        }
 
         #split-top,
         #split-bottom {
@@ -195,73 +197,86 @@ $menu_list = $details['menu'];
             transition: opacity 0.5s ease;
         }
 
-    @font-face {
-    font-family: 'Bebas Neue Pro';
-    src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
+        @font-face {
+            font-family: 'Bebas Neue Pro';
+            src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
 
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
+        @font-face {
+            font-family: 'Proxima Nova';
+            src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-body {
-    font-family: 'Proxima Nova', sans-serif;
-    color: #000 !important;
-}
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+            color: #000 !important;
+        }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue Pro', sans-serif;
-    font-weight: bold;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Bebas Neue Pro', sans-serif;
+            font-weight: bold;
 
-}
+        }
 
-/* Style the processing loader */
-div.dataTables_processing {
-    position: absolute;
-    top: calc(100px); /* Adjust this value to push it below the headers */
-    left: 50%;
-    transform: translateX(-50%);
-    background: none; /* Remove default background */
-    border: none; /* Remove default border */
-    color: transparent; /* Hide default text */
-    z-index: 2; /* Ensure it appears above the table content */
-}
+        /* Style the processing loader */
+        div.dataTables_processing {
+            position: absolute;
+            top: calc(100px);
+            /* Adjust this value to push it below the headers */
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+            /* Remove default background */
+            border: none;
+            /* Remove default border */
+            color: transparent;
+            /* Hide default text */
+            z-index: 2;
+            /* Ensure it appears above the table content */
+        }
 
-/* Loader spinner */
-.table-loader {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #991002;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
-.table-loader-btn {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #991002;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
-/* Spinner animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        /* Loader spinner */
+        .table-loader {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #991002;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        .table-loader-btn {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #991002;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
 
 
@@ -287,19 +302,7 @@ div.dataTables_processing {
             background-color: #f9f9f9;
         }
 
-        .mm-active a::before {
-            content: '';
-            /* Empty content to create the visual element */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            /* Width of the stripe */
-            height: 100%;
-            /* Full height of the list item */
-            background-color: #007bff;
-            /* Your desired color */
-        }
+        
     </style>
 </head>
 
@@ -442,7 +445,9 @@ div.dataTables_processing {
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title">Menu</li>
+                            <li class="menu-title">
+                                <h4>Menu</h4>
+                            </li>
 
                             <li>
                                 <a href="javascript:void(0)" onclick="location.reload();" class="waves-effect"
@@ -452,20 +457,12 @@ div.dataTables_processing {
                                 </a>
 
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" onclick="getpage('modules/tracker/tracker_management.php', 'page')";" class="waves-effect"
-                                    style="color: #707d8a !important">
-                                    <i class="fas fa-th-large" style="color: #991002 !important"></i>
-                                    <span>Tracker Management</span>
-                                </a>
-
-                            </li>
                             <?php
                             foreach ($menu_list as $value) {
                                 if ($value['has_sub_menu'] == false) {
                                     echo '
-                                <li>
-                                    <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="waves-effect">
+                                <li class="parent-menu mt-2">
+                                    <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="">
                                         <i class="fas fa-th-large"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
@@ -473,8 +470,8 @@ div.dataTables_processing {
                             ';
                                 } else if ($value['has_sub_menu'] == true) {
                                     echo '
-                                <li>
-                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <li class="parent-menu mt-2">
+                                    <a href="javascript: void(0);" class="has-arrow">
                                         <i class="fas fa-th-large"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
@@ -482,7 +479,7 @@ div.dataTables_processing {
                                 ';
                                     foreach ($value['sub_menu'] as $value_1) {
                                         echo '
-                                            <li><a style="cursor:pointer;" onclick="loadNavPage(\'' . $value_1['menu_url'] . '\', \'page\', \'' . $value_1['menu_id'] . '\')">' . ucfirst($value_1['name']) . '</a></li>
+                                            <li class="mt-2"><a style="cursor:pointer;" onclick="loadNavPage(\'' . $value_1['menu_url'] . '\', \'page\', \'' . $value_1['menu_id'] . '\')">' . ucfirst($value_1['name']) . '</a></li>
                                         ';
                                     }
 
@@ -537,11 +534,10 @@ div.dataTables_processing {
                                     <span>Inventory</span>
                                 </a>
                             </li> -->
-                            <li class="menu-title">Components</li>
 
                             <li>
-                                <a href="./web/logout.php" class="waves-effect">
-                                    <i class="mdi mdi-file-tree"></i>
+                                <a href="./web/logout.php" class="waves-effect logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
                                     <span>Logout</span>
                                 </a>
                             </li>
