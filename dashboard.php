@@ -427,24 +427,32 @@ div.dataTables_processing {
                             </li>
                             <?php
                             foreach ($menu_list as $value) {
+                                $icon = "";
+                                if($value['menu_name'] == 'Adminstrative Tools'){
+                                    $icon = 'mdi mdi-checkbox-multiple-blank-outline';
+                                }else{
+                                    $icon = $value['icon'];
+                                }
+
                                 if ($value['has_sub_menu'] == false) {
-                                    echo '
-                                <li class="parent-menu mt-2">
-                                    <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="">
-                                        <i class="'.$value['icon'].'"></i>
-                                        <span>' . ucfirst($value['menu_name']) . '</span>
-                                    </a>
-                                </li>
-                            ';
+                                    echo'
+                                            <li class="parent-menu mt-2">
+                                                <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="">
+                                                    <i class="'.$icon.'"></i>
+                                                    <span>' . ucfirst($value['menu_name']) . '</span>
+                                                </a>
+                                            </li>
+                                        ';
                                 } else if ($value['has_sub_menu'] == true) {
+                                
                                     echo '
-                                <li class="parent-menu mt-2">
-                                    <a href="javascript: void(0);" class="has-arrow ">
-                                        <i class="'.$value['icon'].'"></i>
-                                        <span>' . ucfirst($value['menu_name']) . '</span>
-                                    </a>
-                                    <ul class="sub-menu" aria-expanded="false">
-                                ';
+                                            <li class="parent-menu mt-2">
+                                                <a href="javascript: void(0);" class="has-arrow ">
+                                                    <i class="'.$icon.'"></i>
+                                                    <span>' . ucfirst($value['menu_name']) . '</span>
+                                                </a>
+                                                <ul class="sub-menu" aria-expanded="false">
+                                            ';
                                     foreach ($value['sub_menu'] as $value_1) {
                                         echo '
                                             <li class="mt-2"><a style="cursor:pointer;" onclick="loadNavPage(\'' . $value_1['menu_url'] . '\', \'page\', \'' . $value_1['menu_id'] . '\')">' . ucfirst($value_1['name']) . '</a></li>
