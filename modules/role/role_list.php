@@ -21,18 +21,20 @@ include_once("../../libs/dbfunctions.php");
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="card-title"><br>
-                            <a class="btn btn-ahf btn-sm"
-                                onclick="myLoadModal('modules/role/role_setup.php','modal_div')"
-                                href="javascript:void(0)">Create Role</a>
-                        </h4>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h4 class="fs-2" style="font-weight: bold;">Role List</h4>
+                        <p>Table showing the list of all available roles.</p>
                     </div>
-
+                    <div class="col-md-6">
+                        <a class="btn btn-ahf btn-block" style="float:right"
+                            onclick="myLoadModal('modules/role/role_setup.php','modal_div')"
+                            href="javascript:void(0)"><i class="fa fa-plus"></i> Create Role</a>
+                    </div>
                 </div>
 
-                <table id="page_list" class="table table-bordered dt-responsive nowrap"
+
+                <table id="page_list" class="mt-4 table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
@@ -70,7 +72,7 @@ var table;
 var editor;
 var route = "/roleList";
 $(document).ready(function() {
- showLoader();
+    //  showLoader();
     table = $("#page_list").DataTable({
         processing: true,
         serverSide: true,
@@ -91,14 +93,14 @@ $(document).ready(function() {
                 d.list = "yes";
             },
             dataSrc: function(response) {
-                hideLoader();
+                // hideLoader();
                 // Check response and format data
                 if (response.draw) {
                     // Map response data and add a Delete button as the last column
                     return response.data.map(row => {
                         const flattenedRow = row.flat(); // Flatten nested arrays
                         flattenedRow.push(
-                            `<button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[1]}">Delete</button>`
+                            `<button class="btn btn-danger btn-sm delete-btn" data-id="${flattenedRow[1]}"><i class="fa fa-trash"> </i> Delete</button>`
                         ); // Add delete button with ID from the first column
                         return flattenedRow;
                     });
@@ -144,7 +146,7 @@ $(document).ready(function() {
                 },
                 dataType: "json",
                 success: function(data) {
-                    if (data.response_code === 200) {
+                    if (data.response_code === 200 || data.response_code === 401) {
                         toastr.success(data.response_message, 'Success', {
                             timeOut: 3000
                         });

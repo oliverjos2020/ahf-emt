@@ -2690,7 +2690,7 @@ progress {
     background-color: var(--bs-input-bg);
     background-clip: padding-box;
     /* border: var(--bs-border-width) solid var(--bs-border-color); */
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     border-radius: var(--bs-border-radius);
     -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -2942,7 +2942,8 @@ textarea.form-control-lg {
     background-repeat: no-repeat;
     background-position: right .75rem center;
     background-size: 16px 12px;
-    border: var(--bs-border-width) solid #000;
+    /* border: .5 solid #808080 !important; */
+    border: 1px solid #ccc;
     border-radius: var(--bs-border-radius);
     -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -5963,8 +5964,8 @@ fieldset:disabled .btn {
 .page-link.active {
     z-index: 3;
     color: var(--bs-pagination-active-color);
-    background-color: var(--bs-pagination-active-bg);
-    border-color: var(--bs-pagination-active-border-color)
+    background-color:#991002;
+    border-color:#991002;
 }
 
 .disabled>.page-link,
@@ -15827,7 +15828,11 @@ button {
 
 .dataTable td,
 .dataTable th {
-    border: var(--bs-border-width) solid #000 !important
+    border: var(--bs-border-width) solid #eee !important
+}
+.dataTable thead th{
+    font-weight:bold;
+    color:#000;
 }
 
 .table>:not(caption)>*>* {

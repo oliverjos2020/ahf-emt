@@ -35,125 +35,106 @@ $menu_list = $details['menu'];
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/toastr.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="codebase/codebase/dhtmlxcalendar.css" />
     <!-- Sweet Alert-->
     <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Anton&display=swap" rel="stylesheet"> -->
     <!-- Preloading Bebas Neue Pro Bold -->
-<link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
-<!-- Preloading Bebas Neue Pro Book -->
-<link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <!-- DataTables -->
+    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" /> 
 
-<!-- Preloading Proxima Nova Bold -->
-<link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Responsive datatable examples -->
+    <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Preloading Bebas Neue Pro Book -->
+    <link rel="preload" href="assets/fonts/bebas-neue-pro-book-webfont.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
-<!-- Preloading Proxima Nova Regular -->
-<link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preloading Proxima Nova Bold -->
+    <link rel="preload" href="assets/fonts/proxima-nova-bold-webfont.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+
+    <!-- Preloading Proxima Nova Regular -->
+    <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
     <style>
-        .nav-link[aria-expanded="false"] {
-            color: #707D8A !important;
-        }
-
-        .nav-link[aria-expanded="false"] i {
-            color: #707D8A !important;
-        }
-
-        .loader-container {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* background: rgba(255, 255, 255, 0.8); */
-            background: #991002;
-            backdrop-filter: blur(5px);
-            /* Apply blur effect to the background */
-            z-index: 9999;
-            /* Ensure it is above all other content */
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        .loader {
-            width: 8px;
-            height: 40px;
-            border-radius: 4px;
-            display: block;
-            margin: 20px auto;
-            position: relative;
-            background: currentColor;
-            color: white;
-            box-sizing: border-box;
-            animation: animloader 0.3s 0.3s linear infinite alternate;
-        }
-
-        .loader::after,
-        .loader::before {
-            content: '';
-            width: 8px;
-            height: 40px;
-            border-radius: 4px;
-            background: currentColor;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 20px;
-            box-sizing: border-box;
-            animation: animloader 0.3s 0.45s linear infinite alternate;
-        }
-
-        .loader::before {
-            left: -20px;
-            animation-delay: 0s;
-        }
-
-        @keyframes animloader {
-            0% {
-                height: 48px
-            }
-
-            100% {
-                height: 4px
-            }
-        }
-
-        #page_list_x {
-            border-collapse: collapse;
-            /* Ensure proper cell collapse */
-            border-spacing: 0;
-        }
-
-        #page_list_x th,
-        #page_list_x td {
-            border: 1px solid #000 !important;
-            /* Visible border for all cells */
-        }
-
-    #page_list_x thead th {
-        background-color: #f8f9fa;
-        font-size: large;
-        /* Light header background */
-    }
-    #page_list {
-        border-collapse: collapse;
-        /* Ensure proper cell collapse */
-        border-spacing: 0;
+    .nav-link[aria-expanded="false"] {
+        color: #707D8A !important;
     }
 
-    #page_list th,
-    #page_list td {
-        border: 1px solid #000 !important;
-        /* Visible border for all cells */
+    .nav-link[aria-expanded="false"] i {
+        color: #707D8A !important;
     }
 
-    #page_list thead th {
-        background-color: #f8f9fa;
-        font-size: large;
-        /* Light header background */
+    .loader-container {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: rgba(255, 255, 255, 0.8); */
+        background: #991002;
+        backdrop-filter: blur(5px);
+        /* Apply blur effect to the background */
+        z-index: 9999;
+        /* Ensure it is above all other content */
+        justify-content: center;
+        align-items: center;
     }
+
+
+    .loader {
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto;
+        position: relative;
+        background: currentColor;
+        color: white;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.3s linear infinite alternate;
+    }
+
+    .loader::after,
+    .loader::before {
+        content: '';
+        width: 8px;
+        height: 40px;
+        border-radius: 4px;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        box-sizing: border-box;
+        animation: animloader 0.3s 0.45s linear infinite alternate;
+    }
+
+    .loader::before {
+        left: -20px;
+        animation-delay: 0s;
+    }
+
+    @keyframes animloader {
+        0% {
+            height: 48px
+        }
+
+        100% {
+            height: 4px
+        }
+    }
+
+  
+
     /* Split Screen Styles */
     #split-wrapper {
         position: fixed;
@@ -164,142 +145,155 @@ $menu_list = $details['menu'];
         z-index: 9998;
     }
 
-        #split-top,
-        #split-bottom {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-color: #991002;
-            /* Adjust to your desired color */
-            transform-origin: center center;
-            transition: transform 0.8s ease-in-out;
-        }
+    #split-top,
+    #split-bottom {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #991002;
+        /* Adjust to your desired color */
+        transform-origin: center center;
+        transition: transform 0.8s ease-in-out;
+    }
 
-        #split-top {
-            top: 0;
-            transform: translateY(0);
-            /* Initially at its default position */
-        }
+    #split-top {
+        top: 0;
+        transform: translateY(0);
+        /* Initially at its default position */
+    }
 
-        #split-bottom {
-            bottom: 0;
-            transform: translateY(0);
-            /* Initially at its default position */
-        }
+    #split-bottom {
+        bottom: 0;
+        transform: translateY(0);
+        /* Initially at its default position */
+    }
 
-        #container-fluid {
-            display: none;
-            /* Hidden initially */
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+    #container-fluid {
+        display: none;
+        /* Hidden initially */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
 
     @font-face {
-    font-family: 'Bebas Neue Pro';
-    src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Proxima Nova', sans-serif;
-    color: #000 !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue Pro', sans-serif;
-    font-weight: bold;
-
-}
-
-/* Style the processing loader */
-div.dataTables_processing {
-    position: absolute;
-    top: calc(100px); /* Adjust this value to push it below the headers */
-    left: 50%;
-    transform: translateX(-50%);
-    background: none; /* Remove default background */
-    border: none; /* Remove default border */
-    color: transparent; /* Hide default text */
-    z-index: 2; /* Ensure it appears above the table content */
-}
-
-/* Loader spinner */
-.table-loader {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #991002;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
-.table-loader-btn {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #991002;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: auto;
-}
-/* Spinner animation */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
+        font-family: 'Bebas Neue Pro';
+        src: url('assets/fonts/bebas-neue-pro-bold-webfont.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
     }
-    100% {
-        transform: rotate(360deg);
+
+    @font-face {
+        font-family: 'Proxima Nova';
+        src: url('assets/fonts/proxima-nova-webfont.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
     }
-}
 
+    body {
+        font-family: 'Proxima Nova', sans-serif;
+        color: #000 !important;
+    }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Bebas Neue Pro', sans-serif;
+        font-weight: bold;
 
+    }
 
+    /* Style the processing loader */
+    div.dataTables_processing {
+        position: absolute;
+        top: calc(100px);
+        /* Adjust this value to push it below the headers */
+        left: 50%;
+        transform: translateX(-50%);
+        background: none;
+        /* Remove default background */
+        border: none;
+        /* Remove default border */
+        color: transparent;
+        /* Hide default text */
+        z-index: 2;
+        /* Ensure it appears above the table content */
+    }
 
-        .menu-item {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            cursor: grab;
+    /* Loader spinner */
+    .table-loader {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #991002;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    }
+
+    .table-loader-btn {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #991002;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    }
+
+    /* Spinner animation */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
         }
 
-        .menu-item:hover {
-            background-color: #e9ecef;
+        100% {
+            transform: rotate(360deg);
         }
+    }
 
-        #div1,
-        #div2 {
-            border: 1px dashed #ccc;
-            min-height: 200px;
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
 
-        .mm-active a::before {
-            content: '';
-            /* Empty content to create the visual element */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            /* Width of the stripe */
-            height: 100%;
-            /* Full height of the list item */
-            background-color: #007bff;
-            /* Your desired color */
-        }
+
+
+
+    .menu-item {
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+        cursor: grab;
+    }
+
+    .menu-item:hover {
+        background-color: #e9ecef;
+    }
+
+    #div1,
+    #div2 {
+        border: 1px dashed #ccc;
+        min-height: 200px;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .mm-active a::before {
+        content: '';
+        /* Empty content to create the visual element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        /* Width of the stripe */
+        height: 100%;
+        /* Full height of the list item */
+        background-color: #007bff;
+        /* Your desired color */
+    }
     </style>
 </head>
 
@@ -452,21 +446,13 @@ div.dataTables_processing {
                                 </a>
 
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" onclick="getpage('modules/tracker/tracker_management.php', 'page')";" class="waves-effect"
-                                    style="color: #707d8a !important">
-                                    <i class="fas fa-th-large" style="color: #991002 !important"></i>
-                                    <span>Tracker Management</span>
-                                </a>
-
-                            </li>
                             <?php
                             foreach ($menu_list as $value) {
                                 if ($value['has_sub_menu'] == false) {
                                     echo '
                                 <li>
                                     <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="waves-effect">
-                                        <i class="fas fa-th-large"></i>
+                                        <i class="'.$value['icon'].'"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
                                 </li>
@@ -475,7 +461,7 @@ div.dataTables_processing {
                                     echo '
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                        <i class="fas fa-th-large"></i>
+                                        <i class="'.$value['icon'].'"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
@@ -492,6 +478,12 @@ div.dataTables_processing {
                                 }
                             }
                             ?>
+                            <li>
+                                <a href="./web/logout.php" class="waves-effect">
+                                    <i class="mdi mdi-file-tree"></i>
+                                    <span class="text-danger">Logout</span>
+                                </a>
+                            </li>
                             <!-- 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -537,14 +529,9 @@ div.dataTables_processing {
                                     <span>Inventory</span>
                                 </a>
                             </li> -->
-                            <li class="menu-title">Components</li>
+                            <!-- <li class="menu-title">Components</li> -->
 
-                            <li>
-                                <a href="./web/logout.php" class="waves-effect">
-                                    <i class="mdi mdi-file-tree"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </li>
+                            
 
                         </ul>
                     </div>
@@ -587,13 +574,11 @@ div.dataTables_processing {
                     <div class="card">
                         <div class="card-header" style="background: #fff; border-bottom: 1px solid #eee;">
                             <div class="row p-3">
-                                <div class="col-md-6"
-                                    style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                <div class="col-md-6">
                                     <label for="start-date" style="margin: 0;">Start Date</label>
-                                    <input type="date" id="start-date" name="start_date" class="form-control">
+                                    <input type="text" id="start_date" value="<?php echo date('d-m-Y') ?>"  name="start_date" class="form-control">
                                 </div>
-                                <div class="col-md-6"
-                                    style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                <div class="col-md-6">
                                     <label for="end-date" style="margin: 0;">End Date</label>
                                     <input type="date" id="end-date" name="end_date" class="form-control">
                                 </div>
@@ -927,7 +912,7 @@ div.dataTables_processing {
                         <div class="row">
                             <div class="col-sm-6">
                                 <script>
-                                    document.write(new Date().getFullYear())
+                                document.write(new Date().getFullYear())
                                 </script> © AHF NIGERIA
                             </div>
                             <div class="col-sm-6">
@@ -991,296 +976,334 @@ div.dataTables_processing {
     <!-- App js -->
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="codebase/codebase/dhtmlxcalendar.js"></script>
     <script>
-        function openModal(id) {
-            $("#" + id + "").modal("show");
-        }
-        loadStats();
+    doOnLoad();
+    var myCalendar;
 
-        function loadStats() {
-            $.ajax({
-                url: 'controllers/gateway.php', // Your API endpoint
-                type: 'POST',
-                data: {
-                    route: '/dashStats'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    if (response.response_code === 200) {
-                        var data = response.data;
+    function doOnLoad() {
+        myCalendar = new dhtmlXCalendarObject(["start_date"]);
+        // myCalendar2 = new dhtmlXCalendarObject(["end_date"]);
+        // myCalendar.setDate("<?php echo date("Y-m-d"); ?>");
+        myCalendar.setInsensitiveRange("<?php echo date("Y-m-d",strtotime("+1 days")); ?>",null);
 
-                        //Counts
-                        $("#totalPatientsEnrolled").html(data.totalPatientsEnrolled);
-                        $("#totalActivePatients").html(data.totalActivePatients);
-                        $("#missedAppointments").html(data.missedAppointments);
-                        $("#missedReturned").html(data.missedReturned);
-                        $("#lostToFollowup").html(data.lostToFollowup);
-                        $("#ltfuReturned").html(data.ltfuReturned);
-                        $("#newEnrollment").html(data.newEnrollment);
-                        $("#transferedIn").html(data.transferedIn);
-                        $("#deceased").html(data.deceased);
+        // myCalendar.hideTime();
+        // var myEvent = myCalendar.attachEvent("onClick", function(rr) {
+        //     console.log(rr);
+        //     myCalendar2.setInsensitiveRange(null, $("#start_date").val());
+        //     //                myCalendar2.setDate($("#start_date").val());
+        //     $("#end_date").val($("#start_date").val());
+        //     myCalendar2.setDate($("#start_date").val());
+        //     $("#select_dress").empty()
+        //     $("#select_dress").html("<option>Loading..</option>")
+        //     $.post("utilities.php", {
+        //         op: "Dress.getAvailableDress",
+        //         pickup_date: $("#start_date").val()
+        //     }, function(jj) {
+        //         $("#select_dress").empty()
+        //         $("#select_dress").html(jj)
+        //     })
+        // });
+    }
+    </script>
+    <script>
+    function openModal(id) {
+        $("#" + id + "").modal("show");
+    }
+    loadStats();
 
-                        //Demographics
-                        $("#demographic1").html(data.demograpics.paediatric);
-                        $("#demographic2").html(data.demograpics.men);
-                        $("#demographic3").html(data.demograpics.women);
-                        $("#demographic4").html(data.demograpics.pregnantWomen);
+    function loadStats() {
+        $.ajax({
+            url: 'controllers/gateway.php', // Your API endpoint
+            type: 'POST',
+            data: {
+                route: '/dashStats'
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.response_code === 200) {
+                    var data = response.data;
 
-                        const patientDemographics = document.getElementById('patient-demographics');
-                        new Chart(patientDemographics, {
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Pediatric', 'Men', 'Women', 'Pregnant Women'],
-                                datasets: [{
-                                    label: 'Pediatric Demography by Age Group',
-                                    data: [data.demograpics.paediatric, data.demograpics.men, data.demograpics.women, data.demograpics.pregnantWomen],
-                                    backgroundColor: [
-                                        '#FF8686',
-                                        '#991002',
-                                        '#DDAFAB',
-                                        '#ced4da'
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            }
-                        });
+                    //Counts
+                    $("#totalPatientsEnrolled").html(data.totalPatientsEnrolled);
+                    $("#totalActivePatients").html(data.totalActivePatients);
+                    $("#missedAppointments").html(data.missedAppointments);
+                    $("#missedReturned").html(data.missedReturned);
+                    $("#lostToFollowup").html(data.lostToFollowup);
+                    $("#ltfuReturned").html(data.ltfuReturned);
+                    $("#newEnrollment").html(data.newEnrollment);
+                    $("#transferedIn").html(data.transferedIn);
+                    $("#deceased").html(data.deceased);
 
-                        //Patient Appointment
-                        $("#patientAppointment1").html(data.appointments.totalAppointmentScheduled);
-                        $("#patientAppointment2").html(data.appointments.totalAppointmentsAttended);
-                        $("#patientAppointment3").html(data.appointments.totalAppointmentsMissed);
-                        const patientAppointment = document.getElementById('patient-appointment');
-                        new Chart(patientAppointment, {
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Total Appointment Scheduled', 'Total Appointment Attended', 'Total Appointment Missed'],
-                                datasets: [{
-                                    label: 'Appointments of Patients',
-                                    data: [data.appointments.totalAppointmentScheduled, data.appointments.totalAppointmentsAttended, data.appointments.totalAppointmentsMissed],
-                                    backgroundColor: [
-                                        '#FF8686',
-                                        '#991002',
-                                        '#DDAFAB',
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            }
-                        });
+                    //Demographics
+                    $("#demographic1").html(data.demograpics.paediatric);
+                    $("#demographic2").html(data.demograpics.men);
+                    $("#demographic3").html(data.demograpics.women);
+                    $("#demographic4").html(data.demograpics.pregnantWomen);
 
-                        //CD4 Chart
-                        const ctxCD4Chart = document.getElementById('cd4-chart');
-                        new Chart(ctxCD4Chart, {
-                            type: 'bar',
-                            data: {
-                                labels: ['<200 cells/ul', '>=200 cells/ul'],
-                                datasets: [{
-                                    label: 'CD4 Count',
-                                    data: [data.cd4.cd4Lower200, data.cd4.cd4EqualAndAbove200],
-                                    backgroundColor: [
-                                        '#f57878', // Red
-                                        '#991002' // Blue
-                                    ],
-                                    borderWidth: 1,
-                                    barThickness: 70
-                                }]
-                            },
-                            options: {
+                    const patientDemographics = document.getElementById('patient-demographics');
+                    new Chart(patientDemographics, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Pediatric', 'Men', 'Women', 'Pregnant Women'],
+                            datasets: [{
+                                label: 'Pediatric Demography by Age Group',
+                                data: [data.demograpics.paediatric, data.demograpics.men,
+                                    data.demograpics.women, data.demograpics
+                                    .pregnantWomen
+                                ],
+                                backgroundColor: [
+                                    '#FF8686',
+                                    '#991002',
+                                    '#DDAFAB',
+                                    '#ced4da'
+                                ],
+                                borderWidth: 1
+                            }]
+                        }
+                    });
 
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
+                    //Patient Appointment
+                    $("#patientAppointment1").html(data.appointments.totalAppointmentScheduled);
+                    $("#patientAppointment2").html(data.appointments.totalAppointmentsAttended);
+                    $("#patientAppointment3").html(data.appointments.totalAppointmentsMissed);
+                    const patientAppointment = document.getElementById('patient-appointment');
+                    new Chart(patientAppointment, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Total Appointment Scheduled', 'Total Appointment Attended',
+                                'Total Appointment Missed'
+                            ],
+                            datasets: [{
+                                label: 'Appointments of Patients',
+                                data: [data.appointments.totalAppointmentScheduled, data
+                                    .appointments.totalAppointmentsAttended, data
+                                    .appointments.totalAppointmentsMissed
+                                ],
+                                backgroundColor: [
+                                    '#FF8686',
+                                    '#991002',
+                                    '#DDAFAB',
+                                ],
+                                borderWidth: 1
+                            }]
+                        }
+                    });
+
+                    //CD4 Chart
+                    const ctxCD4Chart = document.getElementById('cd4-chart');
+                    new Chart(ctxCD4Chart, {
+                        type: 'bar',
+                        data: {
+                            labels: ['<200 cells/ul', '>=200 cells/ul'],
+                            datasets: [{
+                                label: 'CD4 Count',
+                                data: [data.cd4.cd4Lower200, data.cd4.cd4EqualAndAbove200],
+                                backgroundColor: [
+                                    '#f57878', // Red
+                                    '#991002' // Blue
+                                ],
+                                borderWidth: 1,
+                                barThickness: 70
+                            }]
+                        },
+                        options: {
+
+                            scales: {
+                                y: {
+                                    beginAtZero: true
                                 }
                             }
-                        });
-
-
-                    } else if (response.response_code === 400) {
-                        window.location = 'index.php';
-                    } else {
-                        // alert('Failed to save menus: ' + response.response_message);
-                    }
-                },
-                error: function() {
-                    // alert('An error occurred while saving the menus.');
-
-                }
-            });
-        }
-
-        const ctx = document.getElementById('statistical-chart');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
-                datasets: [{
-                    label: 'Statistical Analysis',
-                    data: [5, 10, 19, 12],
-                    backgroundColor: [
-                        '#f57878', // Red
-                        '#991002', // Blue
-                        '#CC8780',
-                        '#ced4da',
-                    ],
-                    borderWidth: 1,
-                    barThickness: 50 // Set a fixed bar width (reduce value for thinner bars)
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-
-        const ctxViralLoad = document.getElementById('viral-load-chart');
-        new Chart(ctxViralLoad, {
-            type: 'line',
-            data: {
-                labels: ['0', '<=20', '21 - 999', '>=1000'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [0, 500, 999, 800],
-                    backgroundColor: [
-                        '#f5787852',
-                    ],
-                    borderColor: '#991002', // Solid border color
-                    borderWidth: 3,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-
-        const regimenDist = document.getElementById('regimen-dist');
-        new Chart(regimenDist, {
-            type: 'line',
-            data: {
-                labels: ['0', '<=20', '21 - 999', '>=1000'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [0, 500, 999, 800],
-                    backgroundColor: [
-                        '#f5787852',
-                    ],
-                    borderColor: '#991002', // Solid border color
-                    borderWidth: 3,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        const ctxGenderDistribution = document.getElementById('gender-distribution');
-        new Chart(ctxGenderDistribution, {
-            type: 'doughnut',
-            data: {
-                labels: ['Male', 'Female'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [2400, 950],
-                    backgroundColor: [
-                        '#F57878',
-                        '#D6D2C4',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        display: true // Adjust legend visibility as needed
-                    }
-                },
-                elements: {
-                    arc: {
-                        borderWidth: 1, // Thickness of the border
-                        radius: 50, // Outer radius
-                        cutout: '50%', // Inner radius (adjust this value to reduce width)
-                    }
-                },
-                responsive: true
-            }
-        });
-
-
-
-        const ctxActivePatient = document.getElementById('active-patient');
-        new Chart(ctxActivePatient, {
-            type: 'pie',
-            data: {
-                labels: ['In-Active Patients', 'Active Patient'],
-                datasets: [{
-                    label: 'Active Patients',
-                    data: [75, 15],
-                    backgroundColor: [
-                        '#991002',
-                        '#DDAFAB',
-                    ],
-                    borderWidth: 1
-                }]
-            }
-        });
-
-        // const patientAppointment = document.getElementById('patient-appointment');
-        // new Chart(patientAppointment, {
-        //     type: 'pie',
-        //     data: {
-        //         labels: ['Total Appointment Scheduled', 'Total Appointment Attended', 'Total Appointment Missed'],
-        //         datasets: [{
-        //             label: '% of Patients Appointments',
-        //             data: [48, 45, 7],
-        //             backgroundColor: [
-        //                 '#FF8686',
-        //                 '#DDAFAB',
-        //                 '#991002',
-        //             ],
-        //             borderWidth: 1
-        //         }]
-        //     }
-        // });
-
-
-
-
-        $(document).ready(function() {
-            // The loader is already visible due to default CSS.
-            hideLoader();
-            // Simulate a delay for loader (e.g., fetching data)
-            setTimeout(function() {
-                // Start the split animation
-                $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
-                $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
-
-                // After the split animation is done
-                setTimeout(function() {
-                    $('#split-wrapper').fadeOut('slow', function() {
-
-                        // Show the container-fluid content with fade-in
-                        $('#container-fluid').fadeIn('slow').css('opacity', 1);
-
+                        }
                     });
-                }, 800); // Match this timeout to the CSS transition duration (0.8s)
-            }, 2000); // Simulated loader delay (2 seconds)
+
+
+                } else if (response.response_code === 400) {
+                    window.location = 'index.php';
+                } else {
+                    // alert('Failed to save menus: ' + response.response_message);
+                }
+            },
+            error: function() {
+                // alert('An error occurred while saving the menus.');
+
+            }
         });
+    }
+
+    const ctx = document.getElementById('statistical-chart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Deceased Patient', 'Missed Appointment', 'New Enrollment', 'Lost to Follow-Up'],
+            datasets: [{
+                label: 'Statistical Analysis',
+                data: [5, 10, 19, 12],
+                backgroundColor: [
+                    '#f57878', // Red
+                    '#991002', // Blue
+                    '#CC8780',
+                    '#ced4da',
+                ],
+                borderWidth: 1,
+                barThickness: 50 // Set a fixed bar width (reduce value for thinner bars)
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const ctxViralLoad = document.getElementById('viral-load-chart');
+    new Chart(ctxViralLoad, {
+        type: 'line',
+        data: {
+            labels: ['0', '<=20', '21 - 999', '>=1000'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 500, 999, 800],
+                backgroundColor: [
+                    '#f5787852',
+                ],
+                borderColor: '#991002', // Solid border color
+                borderWidth: 3,
+                borderWidth: 1
+            }]
+        },
+        options: {
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const regimenDist = document.getElementById('regimen-dist');
+    new Chart(regimenDist, {
+        type: 'line',
+        data: {
+            labels: ['0', '<=20', '21 - 999', '>=1000'],
+            datasets: [{
+                label: '# of Votes',
+                data: [0, 500, 999, 800],
+                backgroundColor: [
+                    '#f5787852',
+                ],
+                borderColor: '#991002', // Solid border color
+                borderWidth: 3,
+                borderWidth: 1
+            }]
+        },
+        options: {
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxGenderDistribution = document.getElementById('gender-distribution');
+    new Chart(ctxGenderDistribution, {
+        type: 'doughnut',
+        data: {
+            labels: ['Male', 'Female'],
+            datasets: [{
+                label: '# of Votes',
+                data: [2400, 950],
+                backgroundColor: [
+                    '#F57878',
+                    '#D6D2C4',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true // Adjust legend visibility as needed
+                }
+            },
+            elements: {
+                arc: {
+                    borderWidth: 1, // Thickness of the border
+                    radius: 50, // Outer radius
+                    cutout: '50%', // Inner radius (adjust this value to reduce width)
+                }
+            },
+            responsive: true
+        }
+    });
+
+
+
+    const ctxActivePatient = document.getElementById('active-patient');
+    new Chart(ctxActivePatient, {
+        type: 'pie',
+        data: {
+            labels: ['In-Active Patients', 'Active Patient'],
+            datasets: [{
+                label: 'Active Patients',
+                data: [75, 15],
+                backgroundColor: [
+                    '#991002',
+                    '#DDAFAB',
+                ],
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // const patientAppointment = document.getElementById('patient-appointment');
+    // new Chart(patientAppointment, {
+    //     type: 'pie',
+    //     data: {
+    //         labels: ['Total Appointment Scheduled', 'Total Appointment Attended', 'Total Appointment Missed'],
+    //         datasets: [{
+    //             label: '% of Patients Appointments',
+    //             data: [48, 45, 7],
+    //             backgroundColor: [
+    //                 '#FF8686',
+    //                 '#DDAFAB',
+    //                 '#991002',
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     }
+    // });
+
+
+
+
+    $(document).ready(function() {
+        // The loader is already visible due to default CSS.
+        hideLoader();
+        // Simulate a delay for loader (e.g., fetching data)
+        setTimeout(function() {
+            // Start the split animation
+            $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
+            $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
+
+            // After the split animation is done
+            setTimeout(function() {
+                $('#split-wrapper').fadeOut('slow', function() {
+
+                    // Show the container-fluid content with fade-in
+                    $('#container-fluid').fadeIn('slow').css('opacity', 1);
+
+                });
+            }, 800); // Match this timeout to the CSS transition duration (0.8s)
+        }, 2000); // Simulated loader delay (2 seconds)
+    });
     </script>
 
 

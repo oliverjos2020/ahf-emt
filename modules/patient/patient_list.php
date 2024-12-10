@@ -67,11 +67,11 @@ input[type="date"],
                                 aria-label="Search">
                         </div>
                     </div>
-                    <div class="input-group" id="datepicker2">
+                    <!-- <div class="input-group" id="datepicker2">
                         <input type="text" class="form-control" placeholder="mm/dd/yyyy"
                             data-date-container="#datepicker2" data-provide="datepicker" data-date-autoclose="true">
                         <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                    </div>
+                    </div> -->
                 </div>
                 <hr>
 

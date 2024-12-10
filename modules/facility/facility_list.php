@@ -1,17 +1,17 @@
 <style>
-    #page_list_x {
-        border-collapse: collapse; /* Ensure proper cell collapse */
+    /* #page_list_x {
+        border-collapse: collapse;
         border-spacing: 0;
     }
 
     #page_list_x th,
     #page_list_x td {
-        border: 1px solid #dee2e6 !important; /* Visible border for all cells */
+        border: 1px solid #dee2e6 !important;
     }
 
     #page_list_x thead th {
-        background-color: #f8f9fa; /* Light header background */
-    }
+        background-color: #f8f9fa;
+    } */
 </style>
 <div class="row">
     <div class="col-12">
@@ -53,7 +53,7 @@
                 </div>
 
                 <table id="page_list_x" class="table table-bordered table-hover dt-responsive nowrap"
-       style="border-collapse: collapse; border-spacing: 0; width: 100%; border: 1px solid #000;">
+       style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
     <thead class="thead-light">
         <tr>
             <th>Facility Name</th>
