@@ -429,8 +429,8 @@ div.dataTables_processing {
                             foreach ($menu_list as $value) {
                                 if ($value['has_sub_menu'] == false) {
                                     echo '
-                                <li>
-                                    <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="waves-effect">
+                                <li class="parent-menu mt-2">
+                                    <a href="javascript: void(0);" onclick="loadNavPage(\'' . $value['menu_url'] . '\', \'page\')" class="">
                                         <i class="'.$value['icon'].'"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
@@ -438,8 +438,8 @@ div.dataTables_processing {
                             ';
                                 } else if ($value['has_sub_menu'] == true) {
                                     echo '
-                                <li>
-                                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <li class="parent-menu mt-2">
+                                    <a href="javascript: void(0);" class="has-arrow ">
                                         <i class="'.$value['icon'].'"></i>
                                         <span>' . ucfirst($value['menu_name']) . '</span>
                                     </a>
