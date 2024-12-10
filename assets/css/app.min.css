@@ -517,16 +517,38 @@ body[data-layout=horizontal] .footer {
 }
 
 .mm-active {
-    color: var(--bs-sidebar-menu-item-active-color) !important
+    position: relative; /* Position relative to make ::before positionable */
 }
 
-.mm-active>a {
-    /* color: var(--bs-sidebar-menu-item-active-color) !important */
+.parent-menu > a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    width: 10px;
+    height: 100%;
+    background-color: #991002;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.sub-menu a::before {
+    content: none; /* Ensure no pseudo-element for child menus */
+}
+
+.mm-active > a {
     background: #991002;
     color: #fff !important;
     border-radius: 15px;
-    margin: 10px;
+    padding: 5px 15px;
+    display: inline-block;
+    width: 90%;
+    margin-left: 23px;
 }
+
+
+
 
 .mm-active>a i {
     color: var(--bs-sidebar-menu-item-active-color) !important

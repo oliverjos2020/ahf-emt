@@ -91,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-md">
                                         <label>Transferred In:</label>
-                                        <select name="transferredIn" id="transferredIn" onchange="transferredInFunction()" class="form-control">
+                                        <select name="transferredIn" id="transferredIn" onchange="transferredInFunction()" class="form-select">
                                             <option value="Yes">Yes</option>
                                             <option value="No" selected>No</option>
                                         </select>
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="col-md" id="priorArtdiv">
                                         <label>Prior ART:</label>
-                                        <select name="priorArt" id="priorArt" class="form-control">
+                                        <select name="priorArt" id="priorArt" class="form-select">
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
                                         </select>
@@ -121,7 +121,7 @@
                                     </div>
                                     <div class="col-md" id="transferTypediv">
                                         <label>Transfer Type:</label>
-                                        <select name="transferType" id="transferType" class="form-control">
+                                        <select name="transferType" id="transferType" class="form-select">
                                             <option value="" selected>Transfer Type</option>
                                             <option value="Intra">Intra</option>
                                             <option value="Inter">Inter</option>
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="col-md" id="transferWithdiv">
                                         <label>Transfer With:</label>
-                                        <select name="transferWith" id="transferWith" class="form-control">
+                                        <select name="transferWith" id="transferWith" class="form-select">
                                             <option value="">Select Option</option>
                                             <option value="records">Records</option>
                                             <option value="norecords">No records</option>
@@ -193,10 +193,10 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header border-bottom" id="headingOne">
                             <button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
@@ -221,7 +221,7 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Marital Status:</label>
-                                        <select name="maritalStatus" id="maritalStatus" class="form-control">
+                                        <select name="maritalStatus" id="maritalStatus" class="form-select">
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
                                             <option value="Divorced">Divorced</option>
@@ -237,7 +237,13 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Education:</label>
-                                        <input type="text" name="education" id="education" class="form-control">
+                                        <select name="education" id="education" class="form-select">
+                                            <option value="No Education">No Education</option>
+                                            <option value="Primary Education">Primary Education</option>
+                                            <option value="Secondary Education">Secondary Education</option>
+                                            <option value="Tertiary Education">Tertiary Education</option>
+                                            <option value="others">Others</option>
+                                        </select>
                                     </div>
                                     <div class="col-md">
                                         <label>Drug Allergies:</label>
@@ -337,7 +343,16 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Relationship: </label>
-                                        <input type="text" name="nextOfKinRel" id="nextOfKinRel" class="form-control">
+                                        <!-- <input type="text" name="nextOfKinRel" id="nextOfKinRel" class="form-control"> -->
+                                        <select name="nextOfKinRel" id="nextOfKinRel" class="form-select">
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">Sister</option>
+                                            <option value="wife">Wife</option>
+                                            <option value="husband">Husband</option>
+                                            <option value="son">Son</option>
+                                            <option value="daughter">Daughter</option>
+                                            <option value="parent">Parent</option>
+                                        </select>
                                     </div>
                                     <div class="col-md">
                                         <label>Phone Number I:</label>
@@ -386,7 +401,16 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Relationship:</label>
-                                        <input type="text" name="ts_relationship" id="ts_relationship" class="form-control">
+                                        <!-- <input type="text" name="ts_relationship" id="ts_relationship" class="form-control"> -->
+                                        <select name="ts_relationship" id="ts_relationship" class="form-select">
+                                            <option value="brother">Brother</option>
+                                            <option value="sister">Sister</option>
+                                            <option value="wife">Wife</option>
+                                            <option value="husband">Husband</option>
+                                            <option value="son">Son</option>
+                                            <option value="daughter">Daughter</option>
+                                            <option value="parent">Parent</option>
+                                        </select>
 
                                     </div>
                                 </div>
@@ -428,13 +452,21 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Dosage Detailed Explanation: </label>
-                                        <input type="text" name="Dosage_det" id="Dosage_det" class="form-control">
+                                        <!-- <input type="text" name="Dosage_det" id="Dosage_det" class="form-control"> -->
+                                        <select name="Dosage_det" id="Dosage_det" class="form-select">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-md">
                                         <label>Side Effect Strategies:</label>
-                                        <input type="text" name="Side_effect" id="Side_effect" class="form-control">
+                                        <!-- <input type="text" name="Side_effect" id="Side_effect" class="form-control"> -->
+                                        <select name="Side_effect" id="Side_effect" class="form-select">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                     </div>
                                     <div class="col-md">
                                         <label>Adherence Plan:</label>
@@ -442,7 +474,11 @@
                                     </div>
                                     <div class="col-md">
                                         <label>Treatment Supporter Provided:</label>
-                                        <input type="text" name="Treatment_Support" id="Treatment_Support" class="form-control">
+                                        <!-- <input type="text" name="Treatment_Support" id="Treatment_Support" class="form-control"> -->
+                                        <select name="Treatment_Support" id="Treatment_Support" class="form-select">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                     </div>
                                     <div class="col-md">
                                         <label>Indicate Patient ART Start Date: </label>
