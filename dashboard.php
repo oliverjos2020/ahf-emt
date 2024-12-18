@@ -43,6 +43,7 @@ $menu_list = $details['menu'];
     <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2"
         crossorigin="anonymous">
     <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
 
         <!-- DataTables -->
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -64,7 +65,8 @@ $menu_list = $details['menu'];
 
 <!-- Preloading Proxima Nova Regular -->
 <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
     <style>
     .nav-link[aria-expanded="false"] {
         color: #707D8A !important;
@@ -569,7 +571,7 @@ div.dataTables_processing {
                                     <label for="end-date" style="margin: 0;">End Date</label>
                                     <input type="date" id="end-date" name="end_date" class="form-control">
                                 </div>
-
+                            
                             </div>
                         </div>
                         <div class="card-body p-4">
@@ -953,15 +955,20 @@ div.dataTables_processing {
     <!-- Responsive examples -->
     <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
-
-
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+   
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
     <!-- Datatable init js -->
     <script src="assets/js/pages/datatables.init.js"></script>
     <script src="assets/libs/chart.js/Chart.bundle.min.js"></script>
-    <!-- <script src="assets/js/pages/chartjs.init.js"></script> -->
+    <!-- <script src="assets/libs/select2/js/select2.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- <script src="assets/js/pages/form-advanced.init.js"></script> -->
     <!-- App js -->
     <script src="assets/js/toastr.min.js"></script>
+    <script src="assets/js/pages/form-advanced.init.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="codebase/codebase/dhtmlxcalendar.js"></script>
     <script>
@@ -1291,6 +1298,7 @@ div.dataTables_processing {
             }, 800); // Match this timeout to the CSS transition duration (0.8s)
         }, 2000); // Simulated loader delay (2 seconds)
     });
+
     </script>
 
 

@@ -1,6 +1,16 @@
 <?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+// $details = $cookieManager->pickCookie();
+// // print_r($details);exit;
+// if (!isset($details['username'])) {
+//     header('location: web/logout.php');
+// }
 // print_r($_REQUEST);
 $id = $_REQUEST['id'];
+$options = $cookieManager->pickCookieOptions();
+$symptoms = $cookieManager->pickCookieSymptoms();
+
 ?>
 <style>
 .nav-tabs .nav-link.active {
@@ -45,16 +55,16 @@ $id = $_REQUEST['id'];
             <nav class="px-0 bg-white border rounded" style="border: 2px solid #991002 !important;">
                 <div class="nav nav-tabs nav-fill flex-wrap" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active text-black" id="nav-test_result-tab" data-toggle="tab"
-                        href="#nav-test_result" role="tab" aria-controls="nav-test_result" aria-selected="true">Test
-                        Result</a>
+                        href="#nav-test_result" role="tab" aria-controls="nav-test_result"
+                        aria-selected="true">Dashboard</a>
                     <a class="nav-item nav-link text-black" id="nav-patient-tab" data-toggle="tab" href="#nav-patient"
                         role="tab" aria-controls="nav-patient" aria-selected="false">Patient Info</a>
                     <a class="nav-item nav-link text-black" id="nav-visit-tab" data-toggle="tab" href="#nav-visit"
                         role="tab" aria-controls="nav-visit" aria-selected="false">Triage</a>
-                    <a class="nav-item nav-link text-black" id="nav-consult-tab" data-toggle="tab" href="#nav-consult"
-                        role="tab" aria-controls="nav-consult" aria-selected="false">Consult</a>
+                    <a class="nav-item nav-link text-black" id="nav-clinician-tab" data-toggle="tab"
+                        href="#nav-clinician" role="tab" aria-controls="nav-consult" aria-selected="false">Clinician</a>
                     <a class="nav-item nav-link text-black" id="nav-lab-tab" data-toggle="tab" href="#nav-lab"
-                        role="tab" aria-controls="nav-lab" aria-selected="false">Lab</a>
+                        role="tab" aria-controls="nav-lab" aria-selected="false">Laboratory</a>
                     <a class="nav-item nav-link text-black" id="nav-pharmacy-tab" data-toggle="tab" href="#nav-pharmacy"
                         role="tab" aria-controls="nav-pharmacy" aria-selected="false">Pharmacy</a>
                     <a class="nav-item nav-link text-black" id="nav-activity_log-tab" data-toggle="tab"
@@ -66,10 +76,10 @@ $id = $_REQUEST['id'];
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-4 mt-3">
-            <div class="card shadow-sm" style="max-width: 500px;">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start mb-4">
                         <h5 class="card-title mb-0 fw-bolder">Bio Data</h5>
@@ -273,7 +283,7 @@ $id = $_REQUEST['id'];
 
         <div class="col-md-8">
             <section id="tabs">
-                <div class="container">
+                <div class="container-x">
                     <div class="row">
                         <div class="col-xs-12 ">
                             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -586,8 +596,1449 @@ $id = $_REQUEST['id'];
                                     </div>
 
                                 </div>
+                                <div class="tab-pane fade" id="nav-clinician" role="tabpanel"
+                                    aria-labelledby="nav-clinician-tab">
+                                    <div class="card">
+                                        <!-- Ezekiel Tab -->
+
+                                        <ul class="nav nav-pills nav-justified" role="tablist"
+                                            style="border: 2px solid #991002 !important;">
+                                            <li class="nav-item waves-effect waves-light" role="presentation">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#consultation-1"
+                                                    role="tab" aria-selected="true" tabindex="-1">
+                                                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                                    <span class="d-none d-sm-block">Consultation</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light" role="presentation">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#request-test-1"
+                                                    role="tab" aria-selected="false" tabindex="-1">
+                                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                                    <span class="d-none d-sm-block">Request Test</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light" role="presentation">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#diagnosis-1" role="tab"
+                                                    aria-selected="false">
+                                                    <span class="d-block d-sm-none"><i
+                                                            class="far fa-envelope"></i></span>
+                                                    <span class="d-none d-sm-block">Test Result & Diagnosis</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item waves-effect waves-light" role="presentation">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#prescription-1"
+                                                    role="tab" aria-selected="false" tabindex="-1">
+                                                    <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                                    <span class="d-none d-sm-block">Prescription</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content p-0 mt-4 text-muted">
+                                            <div class="tab-pane active show" id="consultation-1" role="tabpanel">
+                                                <div class="card">
+                                                    <div class="card-body p-3">
+                                                        <div class="position-relative">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Vital Records</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingOne">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseOne"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseOne">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseOne"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingOne"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Height(m)</label>
+                                                                                        <input type="text" name="height"
+                                                                                            class="form-control"
+                                                                                            placeholder="0.0m" readonly>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Weight(kg)</label>
+                                                                                        <input type="text" name="weight"
+                                                                                            class="form-control"
+                                                                                            placeholder="0.00kg"
+                                                                                            readonly>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6 mt-3">
+                                                                                    <div class="form-group">
+                                                                                        <label>BMI(kg/m<sup>2</sup>)</label>
+                                                                                        <input type="text" name="height"
+                                                                                            class="form-control"
+                                                                                            placeholder="0.0kg/m2"
+                                                                                            readonly>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6 mt-3">
+                                                                                    <div class="form-group">
+                                                                                        <label>MUAC()</label>
+                                                                                        <input type="text" name="weight"
+                                                                                            class="form-control"
+                                                                                            placeholder="0000" readonly>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body p-0 mt-4">
+                                                            <div class="position-relative">
+                                                                <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                    <p>ART Commencement</p>
+                                                                </div>
+                                                                <div class="accordion" id="accordionExample">
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header border-bottom"
+                                                                            id="headingTwo">
+                                                                            <button class="accordion-button py-4"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#collapseTwo"
+                                                                                aria-expanded="true"
+                                                                                aria-controls="collapseTwo">
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="collapseTwo"
+                                                                            class="accordion-collapse collapse show"
+                                                                            aria-labelledby="headingTwo"
+                                                                            data-bs-parent="#accordionExample">
+                                                                            <div class="accordion-body">
+                                                                                <div class="row p-2">
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>Clinical Stage at the
+                                                                                                start of ART:</label>
+                                                                                            <input type="text"
+                                                                                                name="clinical_stage"
+                                                                                                class="form-control"
+                                                                                                placeholder="Input clinical stage at the start of ART">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>Input CD4 Level at
+                                                                                                start of ART:</label>
+                                                                                            <input type="text"
+                                                                                                name="cd4_level"
+                                                                                                class="form-control"
+                                                                                                placeholder="CD4 level at the start of ART">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>CD4 LFA:</label>
+                                                                                            <input type="text"
+                                                                                                name="cd4_lfa"
+                                                                                                class="form-control"
+                                                                                                placeholder="Below reference">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>Date Initial
+                                                                                                Adherence Counselling
+                                                                                                was Completed:</label>
+                                                                                            <input type="date"
+                                                                                                name="initial_adherence"
+                                                                                                class="form-control"
+                                                                                                placeholder="Input CD4 level at the start of ART"
+                                                                                                value="<?php echo date('d-m-Y') ?>">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>ART Start
+                                                                                                Date:</label>
+                                                                                            <input type="date"
+                                                                                                name="art_start_date"
+                                                                                                class="form-control"
+                                                                                                placeholder="Below reference"
+                                                                                                value="<?php echo date('d-m-Y') ?>">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group">
+                                                                                            <label>First ART
+                                                                                                Regimen:</label>
+                                                                                            <select
+                                                                                                name="first_art_regimen"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select
+                                                                                                    disabled>Select
+                                                                                                    Option</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <button
+                                                                                            class="btn btn-ahf float-end">Save
+                                                                                            Record</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body p-0 mt-4">
+                                                            <div class="position-relative">
+                                                                <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                    <p>Clinical Assessments</p>
+                                                                </div>
+                                                                <div class="accordion" id="accordionExample">
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header border-bottom"
+                                                                            id="headingThree">
+                                                                            <button class="accordion-button py-4"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#collapseThree"
+                                                                                aria-expanded="true"
+                                                                                aria-controls="collapseThree">
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="collapseThree"
+                                                                            class="accordion-collapse collapse show"
+                                                                            aria-labelledby="headingThree"
+                                                                            data-bs-parent="#accordionExample">
+                                                                            <div class="accordion-body">
+                                                                                <div class="row p-2">
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label class="mt-2">Select Patient Symptoms:</label>
+                                                                                            <select
+                                                                                                name="first_art_regimen"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select>
+                                                                                                    Select as many that
+                                                                                                    are applicable
+                                                                                                </option>
+                                                                                                <?php
+                                                                                                    foreach($symptoms['symptoms'] as $sym)
+                                                                                                        {
+                                                                                                            echo "<option value='$sym[option]'>$sym[option]</option>";
+                                                                                                        }
+                                                                                                ?>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <div
+                                                                                            style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                            CD4
+                                                                                            Coughing <span
+                                                                                                class="text-danger fw-bold ms-3"
+                                                                                                style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <div
+                                                                                            style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                            CD4
+                                                                                            Sneezing <span
+                                                                                                class="text-danger fw-bold ms-3"
+                                                                                                style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <div
+                                                                                            style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                            CD4
+                                                                                            Weight Loss <span
+                                                                                                class="text-danger fw-bold ms-3"
+                                                                                                style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label class="mt-2">New
+                                                                                                Opportunistic Infections
+                                                                                                or Other
+                                                                                                Problems:</label>
+                                                                                            <select
+                                                                                                name="first_art_regimen"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select>
+                                                                                                    Select Option
+                                                                                                </option> <?php
+                                                                                                foreach($options['opportunisticInfection'] as $opportunistic)
+                                                                                                {
+                                                                                                    echo "<option value='$opportunistic[option]'>$opportunistic[option]</option>";
+                                                                                                }
+                                                                                                ?>
+
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <div
+                                                                                            style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                            Bleeding <span
+                                                                                                class="text-danger fw-bold ms-3"
+                                                                                                style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <div
+                                                                                            style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                            Lorem Ipsum <span
+                                                                                                class="text-danger fw-bold ms-3"
+                                                                                                style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-6"></div>
+                                                                                    <div class="col-md-2 mt-4">
+                                                                                        <label class="fw-bold mt-3">Is
+                                                                                            Patient</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <label class="mt-3">Pregnant:
+                                                                                            <input type="radio"
+                                                                                                name="is_patient" onclick="is_pregnant()"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4 is_breast_feeding">
+                                                                                        <label class="mt-3">Breast Feeding:
+                                                                                            <input type="radio"
+                                                                                                name="is_patient" onclick="breast_feeding()"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4 is_pregnant">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label
+                                                                                                class="mt-2 fw-bold">Last
+                                                                                                Period Date:</label>
+                                                                                            <input type="date"
+                                                                                                name="last_period"
+                                                                                                class="form-control">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-6 mt-4">
+                                                                                        <label>Family Planning:</label>
+                                                                                        <select name="family_planning" class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                            foreach($options['familyPlanning'] as $familyPlanning)
+                                                                                                {
+                                                                                                    echo "<option value='$familyPlanning[option]'>$familyPlanning[option]</option>";
+                                                                                                }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-md-6 mt-4">
+                                                                                        <label>Functional
+                                                                                            Status:</label>
+                                                                                            <select name="functional_status" class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                            foreach($options['functionalStatus'] as $functionalStatus)
+                                                                                                {
+                                                                                                    echo "<option value='$functionalStatus[option]'>$functionalStatus[option]</option>";
+                                                                                                }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-md-6 mt-4">
+                                                                                        <label>Patient WHO Clinical
+                                                                                            State:</label>
+                                                                                            <input type="text" name="" placeholder="Input Details" class="form-control">
+                                                                                     
+                                                                                    </div>
+                                                                                    <div class="col-md-6 mt-4">
+                                                                                        <label>TB Screening:</label>
+                                                                                        <select name="family_planning"
+                                                                                            class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                            foreach($options['tbScreening'] as $tbScreening)
+                                                                                                {
+                                                                                                    echo "<option value='$tbScreening[option]'>$tbScreening[option]</option>";
+                                                                                                }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label class="mt-2">TB
+                                                                                                Status:</label>
+                                                                                            <select
+                                                                                                name="first_art_regimen"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select>
+                                                                                                    Select option
+                                                                                                </option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label
+                                                                                                class="mt-2">Cryptococcal
+                                                                                                Screening
+                                                                                                Status:</label>
+                                                                                            <select
+                                                                                                name="first_art_regimen"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select> Select option</option>
+                                                                                                <?php
+                                                                                                foreach($options['cryptococcal'] as $cryptococcal)
+                                                                                                {
+                                                                                                    echo "<option value='$cryptococcal[option]'>$cryptococcal[option]</option>";
+                                                                                                }
+                                                                                                ?>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 mt-4">
+                                                                                        <label
+                                                                                            class="fw-bold mt-3">Eligible
+                                                                                            for Cervical Cancer
+                                                                                            Screening?</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-2 mt-4">
+                                                                                        <label class="mt-3">Eligible:
+                                                                                            <input type="radio"
+                                                                                                name="vervical_cncer" onclick="eligible()"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <label class="mt-3">Not
+                                                                                            Eligible: <input
+                                                                                                type="radio"
+                                                                                                name="vervical_cncer" onclick="not_eligible()"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <label class="mt-3">Not
+                                                                                            Applicable: <input
+                                                                                                type="radio"
+                                                                                                name="vervical_cncer" onclick="not_eligible()"></label>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-4 mt-4 is_patient_screened">
+                                                                                        <label class="fw-bold mt-3">Is
+                                                                                            Patient Screened?</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 mt-4 is_patient_screened">
+                                                                                        <label class="mt-3">Yes: <input
+                                                                                                type="radio"
+                                                                                                name="is_patient_screened" onclick="is_patient_screened()"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 mt-4 is_patient_screened">
+                                                                                        <label class="mt-3">No: <input
+                                                                                                type="radio"
+                                                                                                name="is_patient_screened"></label>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-4 mt-4">
+                                                                                        <label
+                                                                                            class="fw-bold mt-3">Cervical
+                                                                                            Cancer Screening
+                                                                                            Result:</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 mt-4">
+                                                                                        <label class="mt-3">Positive:
+                                                                                            <input type="radio"
+                                                                                                name="screening_result"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-4 mt-4">
+                                                                                        <label class="mt-3">Negative:
+                                                                                            <input type="radio"
+                                                                                                name="screening_result"></label>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-4 mt-4">
+                                                                                        <label
+                                                                                            class="fw-bold mt-3">Cervical
+                                                                                            Cancer Screening
+                                                                                            Treatment?</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-2 mt-4">
+                                                                                        <label class="mt-3">Treated:
+                                                                                            <input type="radio"
+                                                                                                name="screening_treatment"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <label class="mt-3">Not Treated:
+                                                                                            <input type="radio"
+                                                                                                name="screening_treatment"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-3 mt-4">
+                                                                                        <label class="mt-3">Referred:
+                                                                                            <input type="radio"
+                                                                                                name="screening_treatment"></label>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label
+                                                                                                class="mt-2">Treatment
+                                                                                                Provided:</label>
+                                                                                            <select
+                                                                                                name="treatment_provided"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select>
+                                                                                                    Select option
+                                                                                                </option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <div class="form-group"
+                                                                                            style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                            <label
+                                                                                                class="mt-2">Hepatitis
+                                                                                                Screening
+                                                                                                Status:</label>
+                                                                                            <select
+                                                                                                name="treatment_provided"
+                                                                                                id=""
+                                                                                                class="form-select">
+                                                                                                <option value="" select> Select option </option>
+                                                                                                <?php
+                                                                                                foreach($options['hepatitis'] as $hepatitis)
+                                                                                                    {
+                                                                                                        echo "<option value='$hepatitis[option]'>$hepatitis[option]</option>";
+                                                                                                    }
+                                                                                                ?>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12 mt-4">
+                                                                                        <button
+                                                                                            class="btn btn-ahf float-end">Save
+                                                                                            Record</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Clinical Note</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingFour">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseFour"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseFour">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseFour"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingFour"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <textarea name="" id=""
+                                                                                            class="form-control"
+                                                                                            placeholder="Write note here ..."></textarea>
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Diagnosis</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingFive">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseFive"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseFive">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseFive"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingFive"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Select
+                                                                                            Diagnosis:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select as many that are
+                                                                                                applicable</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <div
+                                                                                        style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                        Staphyloccus <span
+                                                                                            class="text-danger fw-bold ms-3"
+                                                                                            style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <div
+                                                                                        style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                        AIDS <span
+                                                                                            class="text-danger fw-bold ms-3"
+                                                                                            style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <div
+                                                                                        style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                        Cervical Screening <span
+                                                                                            class="text-danger fw-bold ms-3"
+                                                                                            style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <div
+                                                                                        style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                        Tuberculosis <span
+                                                                                            class="text-danger fw-bold ms-3"
+                                                                                            style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <div
+                                                                                        style="background: #FFE7E7; padding: 10px; text-align: center;">
+                                                                                        Hepatitis <span
+                                                                                            class="text-danger fw-bold ms-3"
+                                                                                            style="color: #991002 !important; font-size: 18px;">x</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Level of Adherence to Treatment</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingSix">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseSix"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseSix">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseSix"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingSix"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <h3>ARV Drugs</h3>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label
+                                                                                            class="mt-2">Indicators:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>Fair
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Reasons for
+                                                                                            Adherence level:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h3 class="mt-4">Cotrimoxazole</h3>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label
+                                                                                            class="mt-2">Indicators:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>Fair
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Reasons for
+                                                                                            Adherence level:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h3 class="mt-4">TPT</h3>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label
+                                                                                            class="mt-2">Indicators:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>Fair
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Reasons for
+                                                                                            Adherence level:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Substitution/Switches Management</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingSeven">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseSeven"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseSeven">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseSeven"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingSeven"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-4">
+                                                                                    <label class="fw-bold">Substitution
+                                                                                        Within:</label>
+                                                                                    <select name="substitution"
+                                                                                        class="form-select">
+                                                                                        <option>1st Line</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <label class="fw-bold">Date of New
+                                                                                        Regimen:</label>
+                                                                                    <input type="date"
+                                                                                        name="date_new_regimen" id=""
+                                                                                        class="form-control">
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <labe class="fw-bold" l>Why?</label>
+                                                                                        <select name="why" class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                                 foreach($options['why'] as $why)
+                                                                                                 {
+                                                                                                     echo "<option value='$why[option]'>$why[option]</option>";
+                                                                                                 }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">Substitution
+                                                                                        Within:</label>
+                                                                                    <select name="substitution"
+                                                                                        class="form-select">
+                                                                                        <option>2nd Line</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">Date of New
+                                                                                        Regimen:</label>
+                                                                                    <input type="date"
+                                                                                        name="date_new_regimen" id=""
+                                                                                        class="form-control">
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <labe class="fw-bold" l>Why?</label>
+                                                                                        <select name="why" class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                                 foreach($options['why'] as $why)
+                                                                                                 {
+                                                                                                     echo "<option value='$why[option]'>$why[option]</option>";
+                                                                                                 }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Discontinuations and Interruptions</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingThirteen">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseThirteen"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseThirteen">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseThirteen"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingThirteen"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">Date of ART
+                                                                                        Interruption:</label>
+                                                                                    <input type="date"
+                                                                                        name="date_of_art"
+                                                                                        class="form-control">
+
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">ART
+                                                                                        Interruptions:</label>
+                                                                                    <select name="substitution"
+                                                                                        class="form-select">
+                                                                                        <option>ART Interruptions
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <labe class="fw-bold" l>Why?</label>
+                                                                                    <select name="why" class="form-select">
+                                                                                            <option value="">Select Option</option>
+                                                                                            <?php
+                                                                                                 foreach($options['why'] as $why)
+                                                                                                 {
+                                                                                                     echo "<option value='$why[option]'>$why[option]</option>";
+                                                                                                 }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">Date of
+                                                                                        Restart:</label>
+                                                                                    <input type="date"
+                                                                                        name="date_of_art"
+                                                                                        class="form-control">
+
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold">Patient
+                                                                                        Outcome:</label>
+                                                                                    <select name="patient_outcome"
+                                                                                        class="form-select">
+                                                                                        <option>Transferred Out</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <labe class="fw-bold" l>Date of
+                                                                                        Transferred Out:</label>
+                                                                                        <select name="substitution"
+                                                                                            class="form-select">
+                                                                                            <option>Toxicity/Side
+                                                                                            </option>
+                                                                                        </select>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <labe class="fw-bold" l>Facility
+                                                                                        Transferred To:</label>
+                                                                                        <select name="substitution"
+                                                                                            class="form-select">
+                                                                                            <option>Self Transferred
+                                                                                            </option>
+                                                                                        </select>
+                                                                                </div>
+
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Differentiated Service Delivery (DSD) Models</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingDSD">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseDSD"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseDSD">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseDSD"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingDSD"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-6 mt-4">
+                                                                                    <label
+                                                                                        class="fw-bold mt-3">Differentiated
+                                                                                        Service Delivery (DSD)
+                                                                                        Models:</label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">Facility-Based:
+                                                                                        <input type="radio"
+                                                                                            name="dsd"></label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">Community-Based:
+                                                                                        <input type="radio"
+                                                                                            name="dsd"></label>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Community
+                                                                                            Based Model Type:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Enhanced Adherence Counselling</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingNine">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseNine"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseNine">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseNine"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingNine"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Viral Load
+                                                                                            Test Result:</label>
+                                                                                        <input type="text"
+                                                                                            name="viral_load"
+                                                                                            value=">1000 cells/ul"
+                                                                                            readonly
+                                                                                            class="form-control">
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Session of
+                                                                                            enhanced adherence
+                                                                                            counselling
+                                                                                            provided:</label>
+                                                                                        <select name="session_provided"
+                                                                                            class="form-select">
+                                                                                            <option>Select option
+                                                                                            </option>
+                                                                                        </select>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6 mt-4">
+                                                                                    <label class="fw-bold mt-3">Status
+                                                                                        of Enhanced Adherence
+                                                                                        Counselling provided:</label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">Completed:
+                                                                                        <input type="radio"
+                                                                                            name="counselling_provided"></label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">Not Completed:
+                                                                                        <input type="radio"
+                                                                                            name="counselling_provided"></label>
+                                                                                </div>
+                                                                                <div class="col-md-6 mt-4">
+                                                                                    <label class="fw-bold mt-3">Refer
+                                                                                        Patient to Laboratory for
+                                                                                        Targeted Viral Load
+                                                                                        Test:</label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">Yes: <input
+                                                                                            type="radio"
+                                                                                            name="vlt"></label>
+                                                                                </div>
+                                                                                <div class="col-md-3 mt-4">
+                                                                                    <label class="mt-3">No: <input
+                                                                                            type="radio"
+                                                                                            name="vlt"></label>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Reason for
+                                                                                            ordering Viral Load
+                                                                                            Test:</label>
+                                                                                        <select name="session_provided"
+                                                                                            class="form-select">
+                                                                                            <option>Select option
+                                                                                            </option>
+                                                                                        </select>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Consult, Hospitalize, or Refer</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingTen">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseTen"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseTen">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseTen"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingTen"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="fw-bold mt-3">Patient
+                                                                                        needs to be:</label>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="mt-3">Hospitalize:
+                                                                                        <input type="radio"
+                                                                                            name="dsd"></label>
+                                                                                </div>
+                                                                                <div class="col-md-4 mt-4">
+                                                                                    <label class="mt-3">Referred to
+                                                                                        another
+                                                                                        facility: <input type="radio"
+                                                                                            name="dsd"></label>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Select
+                                                                                            Facility:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="position-relative mt-4">
+                                                            <div class="fw-bold fs-4 px-3 py-3 position-absolute">
+                                                                <p>Next Appointment</p>
+                                                            </div>
+                                                            <div class="accordion" id="accordionExample">
+                                                                <div class="accordion-item">
+                                                                    <h2 class="accordion-header border-bottom"
+                                                                        id="headingEleven">
+                                                                        <button class="accordion-button py-4"
+                                                                            type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseEleven"
+                                                                            aria-expanded="true"
+                                                                            aria-controls="collapseEleven">
+                                                                        </button>
+                                                                    </h2>
+                                                                    <div id="collapseEleven"
+                                                                        class="accordion-collapse collapse show"
+                                                                        aria-labelledby="headingEleven"
+                                                                        data-bs-parent="#accordionExample">
+                                                                        <div class="accordion-body">
+                                                                            <div class="row p-2">
+
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Next
+                                                                                            Appointment
+                                                                                            Duration:</label>
+                                                                                        <select
+                                                                                            name="treatment_provided"
+                                                                                            id="" class="form-select">
+                                                                                            <option value="" select>
+                                                                                                Select Option</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12 mt-4">
+                                                                                    <div class="form-group"
+                                                                                        style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                                        <label class="mt-2">Next
+                                                                                            Appointment Date:</label>
+                                                                                        <input type="date"
+                                                                                            name="next_appointment"
+                                                                                            class="form-control">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <div class="form-group">
+                                                                                        <div class="col-md-12 mt-4">
+                                                                                            <button
+                                                                                                class="btn btn-ahf float-end">Save
+                                                                                                Record</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
 
+                                                </div>
+
+                                            </div>
+                                            <div class="tab-content p-0 mt-0 text-muted">
+                                                <div class="tab-pane" id="request-test-1" role="tabpanel">
+                                                    <!-- <div class="card"> -->
+                                                    <div class="card-body p-3">
+                                                        <div class="col-md-12 mt-0">
+                                                            <div class="form-group"
+                                                                style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                                                                <label class="mt-0 fw-bold">Select Tests:</label>
+
+                                                                <select style="border: 1px solid gray !important"
+                                                                    class="js-example-basic-multiple form-control"
+                                                                    name="states[]" multiple="multiple">
+                                                                    <option value="AL">Alabama</option>
+                                                                    <option value="WY">Wyoming</option>
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-content p-0 mt-0 text-muted">
+                                                    <div class="tab-pane" id="diagnosis-1" role="tabpanel">
+                                                        <div class="card-body p-3">
+                                                            <table class="table table-bordered table-striped">
+                                                                <tr>
+                                                                    <th>Test Requested</th>
+                                                                    <th>Result</th>
+                                                                    <th>Result Date</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Viral Load Test</td>
+                                                                    <td>850 copies/ml</td>
+                                                                    <td>8th July,2024</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Viral Load Test</td>
+                                                                    <td>850 copies/ml</td>
+                                                                    <td>8th July,2024</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Viral Load Test</td>
+                                                                    <td>850 copies/ml</td>
+                                                                    <td>8th July,2024</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-content p-0 mt-0 text-muted">
+                                                    <div class="tab-pane" id="prescription-1" role="tabpanel">
+                                                        <div class="card-body p-3">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <i class="fa fa-plus float-end text-light p-2 rounded-circle"
+                                                                        style="background:#991002"
+                                                                        onclick="add_row()"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div id="myDiv" class="mt-2 mb-2"></div>
+                                                            <div class="row mb-4 p-2">
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Age Group</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>Adult</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Drug Type</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>ARV Drug</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Drug Name</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>Select Option</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Category</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>Select Category</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Formation</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>Select Option</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Frequency</label>
+                                                                        <select name="age_group" class="form-select">
+                                                                            <option>Select Category</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Quantity</label>
+                                                                        <input type="text" placeholder="00"
+                                                                            class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Duration</label>
+                                                                        <select name="duration" class="form-select">
+                                                                            <option>Twice daily</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-4">
+                                                                    <div class="form-group">
+                                                                        <label class="fw-bold">Illness</label>
+                                                                        <select name="duration" class="form-select">
+                                                                            <option>HIV</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="tab-pane fade" id="nav-patient" role="tabpanel"
                                     aria-labelledby="nav-patient-tab">
                                     <div class="card" style="padding:5px;">
@@ -616,7 +2067,8 @@ $id = $_REQUEST['id'];
                                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                                     <div class="card-body">
                                                         <div class="row">
-                                                            <h5 class="card-title" style="font-weight:bold;">Firstname
+                                                            <h5 class="card-title" style="font-weight:bold;">
+                                                                Firstname
                                                             </h5>
                                                             <p class="card-text" id="nextOfKinFname">N/A</p>
                                                         </div>
@@ -728,16 +2180,19 @@ $id = $_REQUEST['id'];
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Adherence
                                                             Plan Started:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">09-04-2024
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">
+                                                            09-04-2024
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-12 col-md-6 col-sm-12">
                                                     <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Education ART
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Education
+                                                            ART
                                                             Essentials:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem ipsum
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem
+                                                            ipsum
                                                             dolor sit amet consectetur adipisicing elit. </div>
                                                     </div>
                                                 </div>
@@ -746,7 +2201,8 @@ $id = $_REQUEST['id'];
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Complete
                                                             Adherence Needed:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem ipsum
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem
+                                                            ipsum
                                                             dolor sit amet consectetur, adipisicing elit. </div>
                                                     </div>
                                                 </div>
@@ -761,7 +2217,8 @@ $id = $_REQUEST['id'];
 
                                                 <div class="col-lg-12 col-md-6 col-sm-12">
                                                     <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Side Effects
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Side
+                                                            Effects
                                                             Strategies Explained:</div>
                                                         <div class="col-6 text-muted">Yes</div>
                                                     </div>
@@ -771,7 +2228,8 @@ $id = $_REQUEST['id'];
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Adherence
                                                             Plan:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem, ipsum
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Lorem,
+                                                            ipsum
                                                             dolor sit amet consectetur adipisicing elit. </div>
                                                     </div>
                                                 </div>
@@ -780,15 +2238,18 @@ $id = $_REQUEST['id'];
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Treatment
                                                             Supporter Provided:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Yes</div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">Yes
+                                                        </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-12 col-md-6 col-sm-12">
                                                     <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Patient ART
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Patient
+                                                            ART
                                                             Start Date:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">09-04-2024
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">
+                                                            09-04-2024
                                                         </div>
                                                     </div>
                                                 </div>
@@ -797,17 +2258,15 @@ $id = $_REQUEST['id'];
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-12 fw-bolder">Adherence
                                                             Plan Completed:</div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">09-04-2024
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 text-muted">
+                                                            09-04-2024
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
-
                                 <div class="tab-pane fade" id="nav-visit" role="tabpanel"
                                     aria-labelledby="nav-visit-tab">
                                     <div class="card" style="padding:10px;">
@@ -879,7 +2338,8 @@ $id = $_REQUEST['id'];
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="form-group">
-                                                                <label for="pulse_rate">BMI (kg/m<sup>2</sup>):</label>
+                                                                <label for="pulse_rate">BMI
+                                                                    (kg/m<sup>2</sup>):</label>
                                                                 <input type="text" class="form-control" name="bmi"
                                                                     readonly id="bmi" placeholder="0">
                                                             </div>
@@ -909,9 +2369,11 @@ $id = $_REQUEST['id'];
                                                         <div class="row">
                                                             <div class="form-group">
                                                                 <label for="Nutritional Status"
-                                                                    style="text-wrap: nowrap;">Nutritional Status</label>
-                                                                    <input type="text" class="form-control" id="nutritional-status">
-                                                             
+                                                                    style="text-wrap: nowrap;">Nutritional
+                                                                    Status</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="nutritional-status">
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -957,7 +2419,8 @@ $id = $_REQUEST['id'];
                                         <div class="col-md-4 mt-4">
                                             <div style="background: #FFE7E7; padding: 10px; text-align: center;">CD4
                                                 Level Count <span class="text-danger fw-bold ms-3"
-                                                    style="color: #991002 !important; font-size: 15px;">x</span></div>
+                                                    style="color: #991002 !important; font-size: 15px;">x</span>
+                                            </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="card-body">
@@ -1179,7 +2642,8 @@ $id = $_REQUEST['id'];
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-3 col-lg-3 col-sm-12">
-                                                                        <input type="checkbox" name="yes" id="yes"> Yes
+                                                                        <input type="checkbox" name="yes" id="yes">
+                                                                        Yes
 
                                                                     </div>
                                                                     <div class="col-md-3 col-lg-3 col-sm-12">
@@ -1195,7 +2659,8 @@ $id = $_REQUEST['id'];
 
                                                                     </div>
                                                                     <div class="col-md-3 collg-3 col-sm-12">
-                                                                        <input type="checkbox" name="sms" id="sms"> SMS
+                                                                        <input type="checkbox" name="sms" id="sms">
+                                                                        SMS
 
                                                                     </div>
                                                                     <div class="col-md-6 col-lg-6 col-sm-12">
@@ -1249,7 +2714,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;"> TB and other Clinical
+                                                                    <h5 style="font-weight:bold;"> TB and other
+                                                                        Clinical
                                                                         Assessments</h5>
                                                                 </span>
                                                             </button>
@@ -1284,10 +2750,13 @@ $id = $_REQUEST['id'];
                                                                         <select class="form-select"
                                                                             name="cryptococcal_status"
                                                                             id="cryptococcal_status">
-                                                                            <option value="" disabled selected> Select
+                                                                            <option value="" disabled selected>
+                                                                                Select
                                                                                 Option</option>
-                                                                            <option value="option_1">Option 1</option>
-                                                                            <option value="option_2">Option 2</option>
+                                                                            <option value="option_1">Option 1
+                                                                            </option>
+                                                                            <option value="option_2">Option 2
+                                                                            </option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -1429,7 +2898,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;"> Additional Diagnoses
+                                                                    <h5 style="font-weight:bold;"> Additional
+                                                                        Diagnoses
                                                                         & Side Effects </h5>
                                                                 </span>
                                                             </button>
@@ -1446,7 +2916,8 @@ $id = $_REQUEST['id'];
                                                                                 for="new opportunistic or Other problems"
                                                                                 class="me-2"
                                                                                 style="text-wrap: nowrap; font-weight: bold;">New
-                                                                                Opportunistic or Other Problems:</label>
+                                                                                Opportunistic or Other
+                                                                                Problems:</label>
                                                                             <select class="form-select"
                                                                                 name="cryptococcal_status"
                                                                                 id="cryptococcal_status">
@@ -1619,7 +3090,8 @@ $id = $_REQUEST['id'];
                                                                                     name="line_code" id="line_code">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="line code">2nd Line
+                                                                                    <option value="line code">2nd
+                                                                                        Line
                                                                                         code </option>
 
                                                                                 </select>
@@ -1697,7 +3169,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;">Level of Adherence to
+                                                                    <h5 style="font-weight:bold;">Level of Adherence
+                                                                        to
                                                                         Treatment</h5>
                                                                 </span>
                                                             </button>
@@ -1729,7 +3202,8 @@ $id = $_REQUEST['id'];
                                                                                     id="fair">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="fair">Fair </option>
+                                                                                    <option value="fair">Fair
+                                                                                    </option>
 
                                                                                 </select>
                                                                             </div>
@@ -1750,7 +3224,8 @@ $id = $_REQUEST['id'];
                                                                                     id="reasons_of_adherence_level">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="line code">2nd Line
+                                                                                    <option value="line code">2nd
+                                                                                        Line
                                                                                         code </option>
 
                                                                                 </select>
@@ -1787,7 +3262,8 @@ $id = $_REQUEST['id'];
                                                                                     id="fair">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="fair">Fair </option>
+                                                                                    <option value="fair">Fair
+                                                                                    </option>
 
                                                                                 </select>
                                                                             </div>
@@ -1807,7 +3283,8 @@ $id = $_REQUEST['id'];
                                                                                 id="reasons_of_adherence_level">
                                                                                 <option value="" disabled selected>
                                                                                     Select Option</option>
-                                                                                <option value="line code">2nd Line code
+                                                                                <option value="line code">2nd Line
+                                                                                    code
                                                                                 </option>
 
                                                                             </select>
@@ -1842,7 +3319,8 @@ $id = $_REQUEST['id'];
                                                                                     id="tb_indicators">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="poor">Poor </option>
+                                                                                    <option value="poor">Poor
+                                                                                    </option>
 
                                                                                 </select>
                                                                             </div>
@@ -1864,7 +3342,8 @@ $id = $_REQUEST['id'];
                                                                                 id="reasons_of_adherence_level">
                                                                                 <option value="" disabled selected>
                                                                                     Select Option</option>
-                                                                                <option value="line code">2nd Line code
+                                                                                <option value="line code">2nd Line
+                                                                                    code
                                                                                 </option>
 
                                                                             </select>
@@ -1890,7 +3369,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;">Other Tests Done</h5>
+                                                                    <h5 style="font-weight:bold;">Other Tests Done
+                                                                    </h5>
                                                                 </span>
                                                             </button>
                                                         </h2>
@@ -2010,7 +3490,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;">Viral Load Test</h5>
+                                                                    <h5 style="font-weight:bold;">Viral Load Test
+                                                                    </h5>
                                                                 </span>
                                                             </button>
                                                         </h2>
@@ -2052,7 +3533,8 @@ $id = $_REQUEST['id'];
                                                                                     id="reasons_of_adherence_level">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="line code">2nd Line
+                                                                                    <option value="line code">2nd
+                                                                                        Line
                                                                                         code </option>
 
                                                                                 </select>
@@ -2079,14 +3561,16 @@ $id = $_REQUEST['id'];
                                                                                 class="d-flex flex-column flex-md-row align-items-center">
                                                                                 <label for="drug_type" class="me-2"
                                                                                     style="text-wrap: nowrap;font-weight: bold;">Level
-                                                                                    of enhanced adherence counselling
+                                                                                    of enhanced adherence
+                                                                                    counselling
                                                                                     provided:</label>
                                                                                 <select class="form-select"
                                                                                     name="enahnce_adherence"
                                                                                     id="enahnce_adherence">
                                                                                     <option value="" disabled selected>
                                                                                         Select Option</option>
-                                                                                    <option value="line code">2nd Line
+                                                                                    <option value="line code">2nd
+                                                                                        Line
                                                                                         code </option>
 
                                                                                 </select>
@@ -2153,7 +3637,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;">Consult, Hospitalize
+                                                                    <h5 style="font-weight:bold;">Consult,
+                                                                        Hospitalize
                                                                         or Refer</h5>
                                                                 </span>
                                                             </button>
@@ -2199,7 +3684,8 @@ $id = $_REQUEST['id'];
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                                                 aria-expanded="true" aria-controls="collapseOne">
                                                                 <span class="fw-bolder">
-                                                                    <h5 style="font-weight:bold;">Next Appointment</h5>
+                                                                    <h5 style="font-weight:bold;">Next Appointment
+                                                                    </h5>
                                                                 </span>
                                                             </button>
                                                         </h2>
@@ -2226,7 +3712,8 @@ $id = $_REQUEST['id'];
                                                                                 class="d-flex flex-column flex-md-row align-items-center">
                                                                                 <label for="sputum_result" class="me-2"
                                                                                     style="text-wrap: nowrap;font-weight: bold;">
-                                                                                    Next Appointment Duration:</label>
+                                                                                    Next Appointment
+                                                                                    Duration:</label>
                                                                                 <select class="form-select"
                                                                                     name="next_appointment"
                                                                                     id="next_appointment">
@@ -2293,7 +3780,8 @@ $id = $_REQUEST['id'];
                                                                                 <tr>
 
                                                                                     <th scope="col" class="fw-bolder"
-                                                                                        style="text-wrap:nowrap;">Test
+                                                                                        style="text-wrap:nowrap;">
+                                                                                        Test
                                                                                         Requested </th>
                                                                                     <th scope="col" class="fw-bolder">
                                                                                         Sample Required </th>
@@ -2308,12 +3796,14 @@ $id = $_REQUEST['id'];
 
                                                                                     <td>CD4 Test</td>
                                                                                     <td>Lorem ipsum dolor sit amet
-                                                                                        consectetur adipisicing elit.
+                                                                                        consectetur adipisicing
+                                                                                        elit.
                                                                                     </td>
                                                                                     <td><select class="form-select"
                                                                                             name="test_result" id="">
                                                                                             <option value="" disabled
-                                                                                                selected>Select option
+                                                                                                selected>
+                                                                                                Select option
                                                                                             </option>
                                                                                             <option value="nil">Nil
                                                                                             </option>
@@ -2328,12 +3818,14 @@ $id = $_REQUEST['id'];
 
                                                                                     <td>Viral Load Test</td>
                                                                                     <td>Lorem ipsum dolor sit amet
-                                                                                        consectetur adipisicing elit.
+                                                                                        consectetur adipisicing
+                                                                                        elit.
                                                                                     </td>
                                                                                     <td><select class="form-select"
                                                                                             name="test_result" id="">
                                                                                             <option value="" disabled
-                                                                                                selected>Select option
+                                                                                                selected>
+                                                                                                Select option
                                                                                             </option>
                                                                                             <option value="nil">Nil
                                                                                             </option>
@@ -2346,12 +3838,14 @@ $id = $_REQUEST['id'];
 
                                                                                     <td>HB/PCV</td>
                                                                                     <td>Lorem ipsum dolor sit amet
-                                                                                        consectetur adipisicing elit.
+                                                                                        consectetur adipisicing
+                                                                                        elit.
                                                                                     </td>
                                                                                     <td><select class="form-select"
                                                                                             name="test_result" id="">
                                                                                             <option value="" disabled
-                                                                                                selected>Select option
+                                                                                                selected>
+                                                                                                Select option
                                                                                             </option>
                                                                                             <option value="nil">Nil
                                                                                             </option>
@@ -2366,12 +3860,14 @@ $id = $_REQUEST['id'];
 
                                                                                     <td>Sputum AFB</td>
                                                                                     <td>Lorem ipsum dolor sit amet
-                                                                                        consectetur adipisicing elit.
+                                                                                        consectetur adipisicing
+                                                                                        elit.
                                                                                     </td>
                                                                                     <td><select class="form-select"
                                                                                             name="test_result" id="">
                                                                                             <option value="" disabled
-                                                                                                selected>Select option
+                                                                                                selected>
+                                                                                                Select option
                                                                                             </option>
                                                                                             <option value="nil">Nil
                                                                                             </option>
@@ -2431,7 +3927,8 @@ $id = $_REQUEST['id'];
                                                                                         style="text-wrap:nowrap;">
                                                                                         Category </th>
                                                                                     <th scope="col" class="fw-bolder"
-                                                                                        style="text-wrap:nowrap;"> Drug
+                                                                                        style="text-wrap:nowrap;">
+                                                                                        Drug
                                                                                         Name </th>
                                                                                     <th scope="col" class="fw-bolder"
                                                                                         style="text-wrap:nowrap;">
@@ -2453,39 +3950,47 @@ $id = $_REQUEST['id'];
                                                                             <tbody>
                                                                                 <tr>
 
-                                                                                    <td style="text-wrap:nowrap;">ARV
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        ARV
                                                                                         Drug</td>
-                                                                                    <td style="text-wrap:nowrap;">Lorem
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        Lorem
                                                                                     </td>
-                                                                                    <td style="text-wrap:nowrap;">Tablet
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        Tablet
                                                                                     </td>
                                                                                     <td style="text-wrap:nowrap;">00
                                                                                     </td>
-                                                                                    <td style="text-wrap:nowrap;">Thrice
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        Thrice
                                                                                         Daily</td>
                                                                                     <td style="text-wrap:nowrap;">2
                                                                                         months</td>
-                                                                                    <td style="text-wrap:nowrap;"><input
-                                                                                            type="radio"> Yes </td>
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        <input type="radio"> Yes
+                                                                                    </td>
 
                                                                                 </tr>
                                                                                 <tr>
 
                                                                                     <td style="text-wrap:nowrap;">
                                                                                         Anti-biotics</td>
-                                                                                    <td style="text-wrap:nowrap;">Ipsum
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        Ipsum
                                                                                     </td>
                                                                                     <td style="text-wrap:nowrap;">
                                                                                         Injection</td>
                                                                                     <td style="text-wrap:nowrap;">00
                                                                                     </td>
-                                                                                    <td style="text-wrap:nowrap;">Twice
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        Twice
                                                                                         Daily</td>
                                                                                     <td style="text-wrap:nowrap;">6
                                                                                         months</td>
-                                                                                    <td style="text-wrap:nowrap;"><input
-                                                                                            type="radio"
-                                                                                            class="checked"> No </td>
+                                                                                    <td style="text-wrap:nowrap;">
+                                                                                        <input type="radio"
+                                                                                            class="checked"> No
+                                                                                    </td>
 
                                                                                 </tr>
 
@@ -2542,7 +4047,8 @@ $id = $_REQUEST['id'];
                                                                         <div class="card bg-soft-secondary"
                                                                             style="border-radius: 14px;  padding: 15px;">
                                                                             <div class="d-flex justify-content-between">
-                                                                                <span class="fw-bold">Next Appointment:
+                                                                                <span class="fw-bold">Next
+                                                                                    Appointment:
                                                                                     25th October, 2024</span>
                                                                                 <span>
                                                                                     Missed Appointment:
@@ -2569,7 +4075,8 @@ $id = $_REQUEST['id'];
                                                                         <div class="card bg-soft-danger"
                                                                             style="border-radius: 14px; padding: 15px;">
                                                                             <div class="d-flex justify-content-between">
-                                                                                <span class="fw-bold">Next Appointment:
+                                                                                <span class="fw-bold">Next
+                                                                                    Appointment:
                                                                                     25th October, 2024</span>
                                                                                 <span>
                                                                                     Tracked Status:
@@ -2581,7 +4088,8 @@ $id = $_REQUEST['id'];
                                                                             <div class="mt-2">
                                                                                 <span class="d-block">Missed
                                                                                     Appointment: Yes</span>
-                                                                                <span class="d-block">Last Visited: 25th
+                                                                                <span class="d-block">Last Visited:
+                                                                                    25th
                                                                                     July, 2024</span>
                                                                             </div>
                                                                         </div>
@@ -2599,17 +4107,24 @@ $id = $_REQUEST['id'];
                                                                             <div
                                                                                 class="d-flex justify-content-between align-items-start">
                                                                                 <div>
-                                                                                    <p class="mb-2">Date Visited: 25th
+                                                                                    <p class="mb-2">Date Visited:
+                                                                                        25th
                                                                                         July, 2024</p>
-                                                                                    <p class="mb-2">Vitals Taken: Blood
-                                                                                        Pressure, Height, Weight, Pulse
+                                                                                    <p class="mb-2">Vitals Taken:
+                                                                                        Blood
+                                                                                        Pressure, Height, Weight,
+                                                                                        Pulse
                                                                                         Rate</p>
-                                                                                    <p class="mb-2">Tests Carried Out:
-                                                                                        Hepatitis Test, Sputum AFB, TB
+                                                                                    <p class="mb-2">Tests Carried
+                                                                                        Out:
+                                                                                        Hepatitis Test, Sputum AFB,
+                                                                                        TB
                                                                                         Test, Viral Load</p>
-                                                                                    <p class="mb-2">Drugs Received: ARV,
+                                                                                    <p class="mb-2">Drugs Received:
+                                                                                        ARV,
                                                                                         1st Line</p>
-                                                                                    <p class="mb-0">Next Appointment:
+                                                                                    <p class="mb-0">Next
+                                                                                        Appointment:
                                                                                         12th January, 2025</p>
                                                                                 </div>
                                                                                 <span
@@ -2633,17 +4148,24 @@ $id = $_REQUEST['id'];
                                                                             <div
                                                                                 class="d-flex justify-content-between align-items-start">
                                                                                 <div>
-                                                                                    <p class="mb-2">Date Visited: 25th
+                                                                                    <p class="mb-2">Date Visited:
+                                                                                        25th
                                                                                         July, 2024</p>
-                                                                                    <p class="mb-2">Vitals Taken: Blood
-                                                                                        Pressure, Height, Weight, Pulse
+                                                                                    <p class="mb-2">Vitals Taken:
+                                                                                        Blood
+                                                                                        Pressure, Height, Weight,
+                                                                                        Pulse
                                                                                         Rate</p>
-                                                                                    <p class="mb-2">Tests Carried Out:
-                                                                                        Hepatitis Test, Sputum AFB, TB
+                                                                                    <p class="mb-2">Tests Carried
+                                                                                        Out:
+                                                                                        Hepatitis Test, Sputum AFB,
+                                                                                        TB
                                                                                         Test, Viral Load</p>
-                                                                                    <p class="mb-2">Drugs Received: ARV,
+                                                                                    <p class="mb-2">Drugs Received:
+                                                                                        ARV,
                                                                                         1st Line</p>
-                                                                                    <p class="mb-0">Next Appointment:
+                                                                                    <p class="mb-0">Next
+                                                                                        Appointment:
                                                                                         12th January, 2025</p>
                                                                                 </div>
                                                                                 <span
@@ -2669,10 +4191,11 @@ $id = $_REQUEST['id'];
                                     </div>
 
                                 </div>
+
                             </div>
+                        </div>
+                    </div>
             </section>
-
-
         </div>
 
     </div>
@@ -2688,7 +4211,112 @@ $id = $_REQUEST['id'];
 </div>
 
 <script>
+    $('.is_pregnant').hide();
+    $('.is_patient_screened').hide();
+    function is_pregnant(){
+        $('.is_pregnant').show();
+    }
+    function breast_feeding(){
+        $('.is_pregnant').hide();
+    }
+    function eligible(){
+        $('.is_patient_screened').show();
+    }
+    function not_eligible(){
+        $('.is_patient_screened').hide();
+    }
+
+
+$('.js-example-basic-multiple').select2({
+    placeholder: "Select value"
+});
+
+function add_row() {
+    var template = `
+        <div class="row mb-4 p-2">
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Age Group</label>
+                        <select name="age_group" class="form-select">
+                            <option>Adult</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Drug Type</label>
+                        <select name="age_group" class="form-select">
+                            <option>ARV Drug</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Drug Name</label>
+                        <select name="age_group" class="form-select">
+                            <option>Select Option</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Category</label>
+                        <select name="age_group" class="form-select">
+                            <option>Select Category</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Formation</label>
+                        <select name="age_group" class="form-select">
+                            <option>Select Option</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Frequency</label>
+                        <select name="age_group" class="form-select">
+                            <option>Select Category</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Quantity</label>
+                        <input type="text" placeholder="00" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Duration</label>
+                        <select name="duration" class="form-select">
+                            <option>Twice daily</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="form-group">
+                    <label class="fw-bold">Illness</label>
+                        <select name="duration" class="form-select">
+                            <option>HIV</option>
+                        </select>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <i class="fa fa-trash text-danger float-end" onclick='delete_div(this)' style="font-size:22px;margin-top: 40px !important;"></i>
+            </div>
+        </div>
+    `;
+
+    $("#myDiv").append(template);
+}
 viewPatient();
+
+function delete_div(el) {
+    $(el).parents(".row")[0].remove()
+}
 
 function viewPatient() {
     $.ajax({
@@ -2756,44 +4384,53 @@ function viewPatient() {
     });
 }
 
-const heightInput = document.getElementById('height');
-const weightInput = document.getElementById('weight');
-const bmiInput = document.getElementById('bmi');
-const statusInput = document.getElementById('nutritional-status');
+// $(".select2").each(function() {
+//     $(this)
+//         // .wrap("<div class=\"position-relative\"></div>")
+//         .select2({
+//             placeholder: "Select value",
+//             dropdownParent: $(this).parent()
+//         })
+// });
 
-// Function to calculate BMI
-function calculateBMI() {
-    const height = parseFloat(heightInput.value);
-    const weight = parseFloat(weightInput.value);
+// const heightInput = document.getElementById('height');
+// const weightInput = document.getElementById('weight');
+// const bmiInput = document.getElementById('bmi');
+// const statusInput = document.getElementById('nutritional-status');
 
-    // Validate inputs
-    if (!height || !weight || height <= 0 || weight <= 0) {
-        bmiInput.value = '';
-        statusInput.value = '';
-        return;
-    }
+// // Function to calculate BMI
+// function calculateBMI() {
+//     const height = parseFloat(heightInput.value);
+//     const weight = parseFloat(weightInput.value);
 
-    // Calculate BMI
-    const bmi = (weight / (height * height)).toFixed(2);
+//     // Validate inputs
+//     if (!height || !weight || height <= 0 || weight <= 0) {
+//         bmiInput.value = '';
+//         statusInput.value = '';
+//         return;
+//     }
 
-    // Determine nutritional status
-    let status = '';
-    if (bmi < 18.5) {
-        status = 'Underweight';
-    } else if (bmi >= 18.5 && bmi < 24.9) {
-        status = 'Normal weight';
-    } else if (bmi >= 25 && bmi < 29.9) {
-        status = 'Overweight';
-    } else {
-        status = 'Obese';
-    }
+//     // Calculate BMI
+//     const bmi = (weight / (height * height)).toFixed(2);
 
-    // Update the result fields
-    bmiInput.value = bmi;
-    statusInput.value = status;
-}
+//     // Determine nutritional status
+//     let status = '';
+//     if (bmi < 18.5) {
+//         status = 'Underweight';
+//     } else if (bmi >= 18.5 && bmi < 24.9) {
+//         status = 'Normal weight';
+//     } else if (bmi >= 25 && bmi < 29.9) {
+//         status = 'Overweight';
+//     } else {
+//         status = 'Obese';
+//     }
 
-// Add event listeners for input fields
-heightInput.addEventListener('input', calculateBMI);
-weightInput.addEventListener('input', calculateBMI);
+//     // Update the result fields
+//     bmiInput.value = bmi;
+//     statusInput.value = status;
+// }
+
+// // Add event listeners for input fields
+// heightInput.addEventListener('input', calculateBMI);
+// weightInput.addEventListener('input', calculateBMI);
 </script>

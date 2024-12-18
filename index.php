@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
                     <!-- Login Form -->
                     <form id="form1" onsubmit="return false;">
                     <input type="hidden" name="route" value="/login">
-                    <input type="hidden" name="webFlag" value="0">
+                    <input type="hidden" name="webFlag" value="1">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" placeholder="Username" name="username" id="username" required>
 
@@ -207,6 +207,8 @@ h1, h2, h3, h4, h5, h6 {
                     }
                 },
                 error: function() {
+                    $("#LoginBtn").attr("disabled", false);
+                    $('#LoginBtn').text('Login');
                     toastr.error('Unable to process request at the moment!', 'Error', { timeOut: 3000 });
                 }
             });

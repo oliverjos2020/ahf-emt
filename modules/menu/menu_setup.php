@@ -1,5 +1,12 @@
-
-
+<?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
+?>
 <div class="modal-header">
     <h4 class="modal-title" style="font-weight:bold">Menu Setup</h4>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

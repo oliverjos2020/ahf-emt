@@ -1,4 +1,11 @@
 <?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
 
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $username  = $_REQUEST['username'];
