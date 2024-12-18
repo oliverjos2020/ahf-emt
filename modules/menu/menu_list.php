@@ -1,3 +1,12 @@
+<?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
+?>
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">

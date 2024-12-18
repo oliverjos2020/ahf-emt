@@ -1,6 +1,11 @@
 <?php
-include_once("../../libs/dbfunctions.php");
-//var_dump($_SESSION);
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
 ?>
 <div class="row">
     <div class="col-12">

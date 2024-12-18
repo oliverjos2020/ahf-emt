@@ -1,18 +1,12 @@
-<style>
-    /* #page_list_x {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    #page_list_x th,
-    #page_list_x td {
-        border: 1px solid #dee2e6 !important;
-    }
-
-    #page_list_x thead th {
-        background-color: #f8f9fa;
-    } */
-</style>
+<?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
+?>
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">

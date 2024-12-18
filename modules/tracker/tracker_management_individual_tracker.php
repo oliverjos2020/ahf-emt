@@ -1,3 +1,12 @@
+<?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
+?>
 <style>
     .inner-card {
         border: 1px solid pink;

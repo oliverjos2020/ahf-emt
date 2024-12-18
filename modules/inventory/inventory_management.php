@@ -1,3 +1,12 @@
+<?php
+require_once('../../controllers/cookieManager.php');
+$cookieManager = new cookieManager();
+$details = $cookieManager->pickCookie();
+// print_r($details);exit;
+if (!isset($details['username'])) {
+    header('location: ../../web/logout.php');
+}
+?>
 <style>
     /* Make input fields, selects, and textareas have thick borders */
     .form-control,
