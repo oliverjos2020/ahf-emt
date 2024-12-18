@@ -322,10 +322,10 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header border-bottom" id="headingOne">
                             <button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row mt-2">
@@ -376,10 +376,10 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header border-bottom" id="headingOne">
                             <button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">
@@ -431,10 +431,10 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header border-bottom" id="headingOne">
                             <button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row mt-2">
@@ -508,10 +508,10 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header border-bottom" id="headingOne">
                             <button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse6" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row">

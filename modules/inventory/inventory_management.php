@@ -27,6 +27,25 @@
         margin-bottom: 5px;
     }
 
+    table.table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #eee;
+        /* Ensure the border color matches your design */
+    }
+
+    table.table th,
+    table.table td {
+        border: 1px solid #eee;
+        /* Add border to all cells */
+        padding: 8px;
+        /* Adjust padding for better readability */
+    }
+
+    table.table thead th {
+        background-color: #f9f9f9;
+        /* Optional: Add background color to the header */
+    }
 </style>
 
 <div class="row">
@@ -47,16 +66,19 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <h4 class="card-title">Drugs Inventory</h4>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="fw-bold">
+                            Inventory Management
+                        </h3>
+                        <p>Table showing the list of all available drugs.</p>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <a class="btn btn-ahf btn-sm" data-bs-toggle="modal" data-bs-target="#addNewDrug" href="javascript:void(0)">
-                            <i class="fas fa-plus"></i> Add New Drug
-                        </a>
+                    <div class="col-md-4 text-end">
+                        <p class=""><br><a class="btn btn-ahf" data-bs-toggle="modal" data-bs-target="#addNewDrug" href="javascript:void(0)"><i class="fa fa-plus"></i> Add Drug</a>
+                        </p>
                     </div>
                 </div>
+                <hr>
 
                 <table id="page_list" class="table table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -209,9 +231,9 @@
                                             </select>
                                         </td>
                                         <td>
-                                        <button type="button" class="btn btn-danger btn-sm deleteRow" style="margin-top: 5px;">
+                                            <button type="button" class="btn btn-danger btn-sm deleteRow" style="margin-top: 5px;">
                                                 <i class="far fa-trash-alt"></i>
-                                        </button>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -230,9 +252,9 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark waves-effect waves-light btn-lg" data-bs-dismiss="modal">
-                <i class="bx bx-x-circle font-size-16 align-middle me-2"></i>Close</button>
+                    <i class="bx bx-x-circle font-size-16 align-middle me-2"></i>Close</button>
                 <button type="button" class="btn btn-success waves-effect waves-light btn-lg">
-                <i class="bx bxs-check-circle font-size-16 align-middle me-2"></i>Save</button>
+                    <i class="bx bxs-check-circle font-size-16 align-middle me-2"></i>Save</button>
             </div>
         </div>
     </div>
@@ -360,9 +382,9 @@
                                             </select>
                                         </td>
                                         <td>
-                                        <button type="button" class="btn btn-danger btn-sm restockdeleteRow" style="margin-top: 5px;">
+                                            <button type="button" class="btn btn-danger btn-sm restockdeleteRow" style="margin-top: 5px;">
                                                 <i class="far fa-trash-alt"></i>
-                                        </button>
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -381,9 +403,9 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark waves-effect waves-light btn-lg" data-bs-dismiss="modal">
-                <i class="bx bx-x-circle font-size-16 align-middle me-2"></i>Close</button>
+                    <i class="bx bx-x-circle font-size-16 align-middle me-2"></i>Close</button>
                 <button type="button" class="btn btn-success waves-effect waves-light btn-lg">
-                <i class="bx bxs-check-circle font-size-16 align-middle me-2"></i>Save</button>
+                    <i class="bx bxs-check-circle font-size-16 align-middle me-2"></i>Save</button>
             </div>
         </div>
     </div>
@@ -392,7 +414,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#drugcategory').change(function () {
+        $('#drugcategory').change(function() {
             if ($(this).val().toLowerCase() === 'ahx') {
                 $('#regimenSetupSection, #regimenTableSection').show();
             } else {

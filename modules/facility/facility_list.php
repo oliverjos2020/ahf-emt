@@ -96,8 +96,8 @@
                 targets: -1 // Disable ordering on the "Action" column
             }],
             oLanguage: {
-                sEmptyTable: "No record was found, please try another query",
-                sProcessing: "<div class='table-loader'></div>"
+                sEmptyTable: "No record was found, please try another query"
+                // sProcessing: "<div class='table-loader'></div>"
             },
             ajax: {
                 url: "controllers/gateway.php",

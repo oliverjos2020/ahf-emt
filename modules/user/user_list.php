@@ -26,7 +26,7 @@
                         <p>Table showing the list of all available users.</p>
                     </div>
                     <div class="col-md-4 text-end">
-                    <p class=""><br><a class="btn btn-ahf btn-sm"
+                    <p class=""><br><a class="btn btn-ahf"
                                 onclick="myLoadModal('modules/user/user.php','modal_div')"
                                 href="javascript:void(0)"><i class="fa fa-plus"></i> Create User</a>
                         </p>
@@ -44,7 +44,7 @@
 
                 </div> -->
 
-                <table id="page_list" class="table table-bordered dt-responsive nowrap"
+                <table id="page_list" class="table table-bordered table-hover dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                     <thead>
                         <tr>
@@ -102,8 +102,8 @@ $(document).ready(function() {
             targets: -1 // Disable ordering on the "Action" column
         }],
         oLanguage: {
-            sEmptyTable: "No record was found, please try another query",
-            sProcessing: "<div class='table-loader'></div>"
+            sEmptyTable: "No record was found, please try another query"
+            // sProcessing: "<div class='table-loader'></div>"
         },
         ajax: {
             url: "controllers/gateway.php",

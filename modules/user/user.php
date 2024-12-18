@@ -10,7 +10,10 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $operation = 'new';
 }
 ?>
+<!-- Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <style>
+    
     #login_days>label {
         margin-right: 10px;
     }
@@ -117,8 +120,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <div class="row">
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
-                    <label class="form-label">Role<span class="asterik">*</span></label>
-                    <select class="form-control" name="role_id" id="role_id">
+                    <select name="role_id[]" id="role_id" multiple>
                         <option value="">Select Role</option>
                     </select>
                     <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up"
@@ -204,7 +206,19 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <button id="save_facility" onclick="saveRecord()" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+
+<!-- <script src="assets/libs/select2/js/select2.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+    <!-- Sweet Alerts js -->
 <script>
+    //  $(document).ready(function() {
+    //     $('#role_id').select2();
+    // });
+//     $('#role_id').select2({
+//   placeholder: 'Select an option'
+// });
+
     function saveRecord() {
         $("#save_facility").text("Loading......");
         var dd = $("#form1").serialize();
@@ -269,8 +283,11 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                         text: role.role_name // Set role_name as the display text
                     }));
                 });
-            } else {
 
+                        // Reinitialize Select2 after modifying the options
+                $select.select2();
+            } else {
+                console.error('Failed to load roles:', re.message || 'Unknown error');
             }
 
         }, 'json')
@@ -278,34 +295,34 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 
     function getFacility() {
 
-var route = "/fetchCodes";
-var data = {
-    route
-};
+        var route = "/fetchCodes";
+        var data = {
+            route
+        };
 
-$.post("controllers/gateway.php", data, function(re) {
-    console.log(re); // Debug: Log the API response
+        $.post("controllers/gateway.php", data, function(re) {
+            console.log(re); // Debug: Log the API response
 
-    // Ensure re is an array
-    
-        const $select = $('#facility_code');
-        $select.empty(); // Clear existing options
-        $select.append($('<option>', {
-            value: '',
-            text: 'Select Facility'
-        })); // Default option
+            // Ensure re is an array
 
-        // Populate the dropdown
-        $.each(re, function(index, role) {
+            const $select = $('#facility_code');
+            $select.empty(); // Clear existing options
             $select.append($('<option>', {
-                value: role.facility_code, // Set role_id as the value
-                text: role.hospital_name // Set role_name as the display text
-            }));
-        });
+                value: '',
+                text: 'Select Facility'
+            })); // Default option
 
-}, 'json')
-}
-    
+            // Populate the dropdown
+            $.each(re, function(index, role) {
+                $select.append($('<option>', {
+                    value: role.facility_code, // Set role_id as the value
+                    text: role.hospital_name // Set role_name as the display text
+                }));
+            });
+
+        }, 'json')
+    }
+
     getRoles();
     getFacility();
 
@@ -337,5 +354,4 @@ $.post("controllers/gateway.php", data, function(re) {
         }
         // alert(value);
     }
-    
 </script>

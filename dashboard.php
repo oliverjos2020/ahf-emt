@@ -28,6 +28,7 @@ $menu_list = $details['menu'];
     <!-- App favicon -->
     <link rel="shortcut icon" href="logo/logo.png">
 
+
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -64,6 +65,7 @@ $menu_list = $details['menu'];
 
 <!-- Preloading Proxima Nova Regular -->
 <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 
     <style>
     .nav-link[aria-expanded="false"] {
@@ -137,39 +139,58 @@ $menu_list = $details['menu'];
 
   
 
-    /* Split Screen Styles */
-    #split-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9998;
-    }
+ /* Split Screen Styles */
+#split-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+}
 
-    #split-top,
-    #split-bottom {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-color: #991002;
-        /* Adjust to your desired color */
-        transform-origin: center center;
-        transition: transform 0.8s ease-in-out;
-    }
+#split-top,
+#split-bottom {
+    position: absolute;
+    left: 50%;
+    width: 100%;  /* Ensure sections span the full width */
+    height: 50%;
+    background-color: #991002; /* Background color */
+    transform-origin: center center;
+    transition: transform 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+}
 
-    #split-top {
-        top: 0;
-        transform: translateY(0);
-        /* Initially at its default position */
-    }
+#split-top {
+    top: 0;
+    transform: translateX(-50%);  /* Center horizontally */
+    align-items: flex-end;  /* Align to the bottom of the top section */
+}
 
-    #split-bottom {
-        bottom: 0;
-        transform: translateY(0);
-        /* Initially at its default position */
-    }
+#split-bottom {
+    bottom: 0;
+    transform: translateX(-50%);  /* Center horizontally */
+    align-items: flex-start;  /* Align to the top of the bottom section */
+}
+
+#split-top img,
+#split-bottom img {
+    max-width: 10%;  /* Ensure the logo fits */
+    height: auto;     /* Maintain aspect ratio */
+}
+
+/* Optional: Ensure the bottom image fits without stretching */
+#split-top img {
+    object-fit: cover; /* Ensures the top image fits without stretching */
+}
+
+#split-bottom img {
+    object-fit: cover; /* Ensures the bottom image fits without stretching */
+}
+
+
+
 
     #container-fluid {
         display: none;
@@ -281,16 +302,20 @@ div.dataTables_processing {
 
     <!-- Split Screen Animation -->
     <div id="split-wrapper">
-        <div id="split-top"></div>
-        <div id="split-bottom"></div>
+    <div id="split-top">
+        <img src="logo/logo_up.png" alt="Logo Top" />
     </div>
+    <div id="split-bottom">
+        <img src="logo/logo_down.png" alt="Logo Bottom" />
+    </div>
+</div>
 
     <div class="container-fluid">
         <!-- Begin page -->
         <div id="layout-wrapper">
 
             <header id="page-topbar" style="background: transparent">
-                <div class="navbar-header">
+                <div class="navbar-header mt-3">
                     <div class="container-fluid">
                         <div class="float-end">
 
@@ -364,19 +389,19 @@ div.dataTables_processing {
                             <div class="navbar-brand-box" style="text-align:center">
                                 <a href="index.html" class="logo logo-dark">
                                     <span class="logo-sm">
-                                        <img src="logo/logo.png" alt="AHF" height="20">
+                                        <img src="logo/logo_1.png" alt="AHF" height="20">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="logo/logo.png" alt="AHF" height="17">
+                                        <img src="logo/logo_1.png" alt="AHF" height="17">
                                     </span>
                                 </a>
 
                                 <a href="index.html" class="logo logo-light">
                                     <span class="logo-sm">
-                                        <img src="logo/logo.png" alt="AHF" height="20">
+                                        <img src="logo/logo_1.png" alt="AHF" height="20">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="logo/logo.png" alt="AHF" height="60">
+                                        <img src="logo/logo_1.png" alt="AHF" height="60">
                                     </span>
                                 </a>
                             </div>
@@ -420,7 +445,7 @@ div.dataTables_processing {
                             <li>
                                 <a href="javascript:void(0)" onclick="location.reload();" class="waves-effect"
                                     style="color: #707d8a !important">
-                                    <i class="fas fa-th-large" style="color: #991002 !important"></i>
+                                    <i class="mdi mdi-view-dashboard-outline" style="color: #991002 !important"></i>
                                     <span>Dashboard</span>
                                 </a>
 
@@ -429,7 +454,7 @@ div.dataTables_processing {
                             foreach ($menu_list as $value) {
                                 $icon = "";
                                 if($value['menu_name'] == 'Adminstrative Tools'){
-                                    $icon = 'mdi mdi-checkbox-multiple-blank-outline';
+                                    $icon = 'fas fa-users-cog';
                                 }else{
                                     $icon = $value['icon'];
                                 }
@@ -467,7 +492,7 @@ div.dataTables_processing {
                             ?>
                             <li>
                                 <a href="./web/logout.php" class="waves-effect">
-                                    <i class="mdi mdi-file-tree"></i>
+                                    <i class="bx bx-power-off text-danger"></i>
                                     <span class="text-danger">Logout</span>
                                 </a>
                             </li>
@@ -924,6 +949,7 @@ div.dataTables_processing {
     <!-- JAVASCRIPT -->
 
     <!-- JAVASCRIPT -->
+   
     <script src="assets/libs/jquery/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
@@ -933,7 +959,7 @@ div.dataTables_processing {
     <script src="assets/js/jquery.blockUI.js"></script>
     <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- Sweet Alerts js -->
+    
     <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
     <!-- Sweet alert init js-->
@@ -964,6 +990,7 @@ div.dataTables_processing {
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="codebase/codebase/dhtmlxcalendar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
     doOnLoad();
     var myCalendar;
@@ -1272,25 +1299,27 @@ div.dataTables_processing {
 
 
     $(document).ready(function() {
-        // The loader is already visible due to default CSS.
-        hideLoader();
-        // Simulate a delay for loader (e.g., fetching data)
+    // The loader is already visible due to default CSS.
+    hideLoader();
+    // Simulate a delay for loader (e.g., fetching data)
+    setTimeout(function() {
+        // Start the split animation
+        $('#split-top').css('transform', 'translateX(-50%) translateY(-100%)'); // Move the top section upward
+        $('#split-bottom').css('transform', 'translateX(-50%) translateY(100%)'); // Move the bottom section downward
+
+        // After the split animation is done
         setTimeout(function() {
-            // Start the split animation
-            $('#split-top').css('transform', 'translateY(-100%)'); // Move the top section upward
-            $('#split-bottom').css('transform', 'translateY(100%)'); // Move the bottom section downward
+            $('#split-wrapper').fadeOut('slow', function() {
 
-            // After the split animation is done
-            setTimeout(function() {
-                $('#split-wrapper').fadeOut('slow', function() {
+                // Show the container-fluid content with fade-in
+                $('#container-fluid').fadeIn('slow').css('opacity', 1);
 
-                    // Show the container-fluid content with fade-in
-                    $('#container-fluid').fadeIn('slow').css('opacity', 1);
+            });
+        }, 800); // Match this timeout to the CSS transition duration (0.8s)
+    }, 2000); // Simulated loader delay (2 seconds)
+});
 
-                });
-            }, 800); // Match this timeout to the CSS transition duration (0.8s)
-        }, 2000); // Simulated loader delay (2 seconds)
-    });
+
     </script>
 
 

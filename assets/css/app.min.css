@@ -537,6 +537,10 @@ body[data-layout=horizontal] .footer {
     content: none; /* Ensure no pseudo-element for child menus */
 }
 
+.sub-menu .mm-active > a{
+    background: #FFA07A ;/* Ensure no pseudo-element for child menus */
+}
+
 .mm-active > a {
     background: #991002;
     color: #fff !important;

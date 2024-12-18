@@ -34,7 +34,7 @@ input[type="date"],
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="page-title mb-0 font-size-18">Patients List</h4>
+            <h3 class="page-title mb-0">PATIENT MANAGEMENT PAGE</h3>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
@@ -133,7 +133,7 @@ input[type="date"],
                                 aria-label="Search">
                         </div> -->
 
-                    <table id="page_list_x" class="table table-bordered dt-responsive nowrap"
+                    <table id="page_list_x" class="table table-bordered table-hover dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
@@ -184,8 +184,8 @@ input[type="date"],
                 targets: -1 // Disable ordering on the "Action" column
             }],
             oLanguage: {
-                sEmptyTable: "No record was found, please try another query",
-                sProcessing: "<div class='table-loader'></div>"
+                sEmptyTable: "No record was found, please try another query"
+                // sProcessing: "<div class='table-loader'></div>"
             },
             ajax: {
                 url: "controllers/gateway.php",
@@ -233,7 +233,7 @@ input[type="date"],
                                 <i class="bx bx-show"></i> View
                             </button>
                             <button class="btn btn-sm" title="Create Visit" style="background-color: #CDFFE7; border-color: #FFF2F0; color: #02A055;" 
-                                onclick="myLoadModal('modules/facility/facility_setup.php?op=edit&username=${data}&facility_name=${row[1]}&facility_code=${row[2]}&phone=${row[4]}&address=${row[2]}', 'modal_div')">
+                                onclick="">
                                 <i class="bx bx-plus"></i> Create Visit
                             </button>`;
                     }
