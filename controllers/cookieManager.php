@@ -6,24 +6,25 @@ Class cookieManager{
         $arr = [
             "role" => $data['role_id_sess'][0]['role_name'],
             "roleId" => $data['role_id_sess'][0]['role_id'],
+            "user_roles" => $data['role_id_sess'],
             "username" => $data['username_sess'],
             "firstname" => $data['firstname'],
             "lastname" => $data['lastname'],
             "facilityName" => $data['facilityName'],
             "facilityId" => $data['facilityId'],
-            "menu" => $data['menu']
+            "menu" => $data['users_menu']
         ];
         $arrOptions = [
             "opportunisticInfection" => $data['option_opportunistic_infection'],
             "familyPlanning" => $data['option_family_planning'],
             "functionalStatus" => $data['option_functional_status'],
             "tbScreening" => $data['option_tb_screening'],
-            "cryptococcal" => $data['option_cryptococcal_screening'],
-            "hepatitis" => $data['option_hepatitis_screening'],
-            "why" => $data['sel_why']
+            "cryptococcal" => $data['cryptococcal_screening'],
+            "hepatitis" => $data['hepatitis_screening'],
+            "why" => $data['select_why']
         ];
         $arrSymptoms = [
-            "symptoms" => $data['symptoms']
+            "symptoms" => $data['all_symptoms']
         ]; 
         $options = json_encode($arrOptions);
         $symptoms = json_encode($arrSymptoms);

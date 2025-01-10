@@ -7,20 +7,39 @@ if (!isset($details['username'])) {
     header('location: ../../web/logout.php');
 }
 
+// echo $_REQUEST['day_7'];
+
 if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
     $username  = $_REQUEST['username'];
     $firstname  = $_REQUEST['firstname'];
     $lastname  = $_REQUEST['lastname'];
     $phone  = $_REQUEST['phone'];
+    $facility_code  = isset($_REQUEST['facility_code']) ? $_REQUEST['facility_code'] : null;
+    $facility_name  = isset($_REQUEST['facility_name']) ? $_REQUEST['facility_name'] : null;
+    $day_1 = isset($_REQUEST['day_1']) ? $_REQUEST['day_1'] : null;
+    $day_2 = isset($_REQUEST['day_2']) ? $_REQUEST['day_2'] : null;
+    $day_3 = isset($_REQUEST['day_3']) ? $_REQUEST['day_3'] : null;
+    $day_4 = isset($_REQUEST['day_4']) ? $_REQUEST['day_4'] : null;
+    $day_5 = isset($_REQUEST['day_5']) ? $_REQUEST['day_5'] : null;
+    $day_6 = isset($_REQUEST['day_6']) ? $_REQUEST['day_6'] : null;
+    $day_7 = isset($_REQUEST['day_7']) ? $_REQUEST['day_7'] : null;
+    $user_lock = $_REQUEST['user_lock'];
+    $role  = $_REQUEST['role'];
+
+    // Remove the trailing comma (if any)
+    $role = rtrim($role, ',');
+
+    // Convert the string into an array
+    $roleArray = explode(', ', $role);
     $operation = 'edit';
 } else {
     $operation = 'new';
 }
+
+$roleArray = isset($roleArray) ? $roleArray : [];
 ?>
-<!-- Select2 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 <style>
-    
     #login_days>label {
         margin-right: 10px;
     }
@@ -41,12 +60,11 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
 <div class="modal-body m-3 ">
     <form id="form1" onsubmit="return false" autocomplete="off">
         <input type="hidden" name="op" value="gateway.registerUser">
-        <!-- <input type="hidden" name="route" value="registerUser"> -->
-        <!-- <input type="hidden" name="token" value="WWtOVURsQWl0QlcwNzlYeEZoeVk4a2JPcUphVXdPVDVObUV6ckNYZ3FuZEJoYXM3dU95RjJSUG56WGFKYmtOU0Q1N2ZSZnRIME9FUjhSWERvV3VqaFUxYnFkVm5DVDlub0NReE5aa0d2NzVqNkYvQUxENi9RdTgwRTR3VGxvSll4ZGJGZmFpOVJjMzY4S0pnZWVzTm5meU5tL2VmQUNKVXNVUUtLczhpSDU0PTo6xLYp7JuA"> -->
         <input type="hidden" name="reg_status" value="1">
         <input type="hidden" name="reg_type" value="0">
         <input type="hidden" name="route" value="<?php echo $operation === 'new' ? '/registerUser' : '/userEdit'; ?>">
         <input type="hidden" name="operation" value="<?php echo $operation; ?>">
+
         <div class="row" style="<?php echo ($operation == "edit") ? "display:none" : ""; ?>">
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
@@ -65,7 +83,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                     <div class="input-group">
                         <input type="password" <?php echo ($operation == "edit") ? "disabled" : ""; ?> autocomplete="off"
                             name="password"
-                            value="<?php echo ($operation == "edit") ? $church[0]['date_of_inception'] : ""; ?>"
+                            value=""
                             id="password" class="form-control" autocomplete="off" />
                         <div class="input-group-append"
                             style="cursor:pointer; <?php echo ($operation == "edit") ? "display:none" : ""; ?>">
@@ -114,7 +132,7 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
                     <label class="form-label">Gender<span class="asterik">*</span></label>
-                    <select class="form-control" name="sex" id="sex">
+                    <select class="form-select" name="sex" id="sex">
                         <option value="male">
                             Male</option>
                         <option value="female">
@@ -127,8 +145,9 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <div class="row">
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
-                    <select name="role_id[]" id="role_id" multiple>
-                        <option value="">Select Role</option>
+                    <label class="form-label">Role(s)<span class="asterik">*</span></label>
+                    <select name="role_id[]" id="role_id" multiple class="form-select">
+
                     </select>
                     <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up"
                         autocomplete="off">
@@ -137,11 +156,11 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
             <div class="col-sm-6 mt-2">
                 <div class="form-group">
                     <label class="form-label">Facility<span class="asterik">*</span></label>
-                    <select class="form-control" name="facility_code" id="facility_code">
-                        <option value="">Select Facility</option>
+                    <select class="form-select" name="facility_code" id="facility_code">
+                        <?php echo ($operation == "edit") ? "<option selected value='" . $facility_code . "'>" . $facility_name . "</option>" : "<option value=''>Select Facility</option>" ?>
+
                     </select>
-                    <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up"
-                        autocomplete="off">
+                    <input type="hidden" class="form-control" placeholder="web look up" value="none" name="web_look_up" autocomplete="off">
                 </div>
             </div>
         </div>
@@ -158,36 +177,52 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="form-group" id="login_days">
-                    <label class="form-label" id="day1"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_1']) ? $user[0]['day_1'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_1'])) ? ($user[0]['day_1'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_1"> Sunday</label>
-                    <label class="form-label" id="day2"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_2']) ? $user[0]['day_2'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_2'])) ? ($user[0]['day_2'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_2"> Monday</label>
-                    <label class="form-label" id="day3"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_3']) ? $user[0]['day_3'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_3'])) ? ($user[0]['day_3'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_3"> Tuesday</label>
-                    <label class="form-label" id="day4"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_4']) ? $user[0]['day_4'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_4'])) ? ($user[0]['day_4'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_4"> Wednesday</label>
-                    <label class="form-label" id="day5"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_5']) ? $user[0]['day_5'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_5'])) ? ($user[0]['day_5'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_5"> Thursday</label>
-                    <label class="form-label" id="day6"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_6']) ? $user[0]['day_6'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_6'])) ? ($user[0]['day_6'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_6"> Friday</label>
-                    <label class="form-label" id="day7"><input type="checkbox"
-                            value="<?php echo isset($user[0]['day_7']) ? $user[0]['day_7'] : '1'; ?>"
-                            <?php echo (isset($user[0]['day_7'])) ? ($user[0]['day_7'] == 0) ? "" : "checked" : "checked"; ?>
-                            name="day_7"> Saturday</label>
-                </div>
+            <div class="form-group" id="login_days">
+    <label class="form-label" id="day1">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_1) && $day_1 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_1"> Sunday
+    </label>
+    <label class="form-label" id="day2">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_2) && $day_2 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_2"> Monday
+    </label>
+    <label class="form-label" id="day3">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_3) && $day_3 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_3"> Tuesday
+    </label>
+    <label class="form-label" id="day4">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_4) && $day_4 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_4"> Wednesday
+    </label>
+    <label class="form-label" id="day5">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_5) && $day_5 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_5"> Thursday
+    </label>
+    <label class="form-label" id="day6">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_6) && $day_6 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_6"> Friday
+    </label>
+    <label class="form-label" id="day7">
+        <input type="checkbox"
+               value="1"
+               <?php echo (isset($operation) && $operation === 'edit') ? (isset($day_7) && $day_7 == 1 ? "checked" : "") : "checked"; ?>
+               name="day_7"> Saturday
+    </label>
+</div>
+
+
             </div>
         </div>
         <div class="row">
@@ -198,9 +233,19 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         <div class="row">
             <div class="col-sm-12 mt-2">
                 <div class="form-group">
-                    <label class="form-label" id="day1">
-                        <input type="checkbox" value="" name="user_locked" id="day1"> Lock User</label>
-                    <!-- <label class="form-label" id="day1"><input type="checkbox" value="<?php echo isset($user[0]['passchg_logon']) ? $user[0]['passchg_logon'] : '1'; ?><?php echo isset($user[0]['passchg_logon']) ? $user[0]['passchg_logon'] : '1'; ?>" name="passchg_logon" <?php echo (isset($user[0]['passchg_logon'])) ? ($user[0]['passchg_logon'] == 0) ? "" : "checked" : "checked"; ?> id="passchg_logon"> Change password on first login</label> -->
+                <label class="form-label" id="user_locked">
+        <input type="checkbox" value="<?php echo ($operation == 'edit') ? $user_lock : '0'; ?>" name="user_locked" id="user_locked" 
+        <?php 
+            if ($operation == 'edit') {
+                // If the operation is 'edit', check if $user_lock is 1 (checked) or 0 (unchecked)
+                echo ($user_lock == 1) ? 'checked' : '';
+            } else {
+                // If not 'edit', leave it unchecked by default
+                echo '';
+            }
+        ?>>
+        Lock User
+    </label>
                 </div>
             </div>
 
@@ -210,95 +255,222 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
                 <div id="server_mssg"></div>
             </div>
         </div>
-        <button id="save_facility" onclick="saveRecord()" class="btn btn-primary">Submit</button>
+        <button id="save_facility" onclick="saveRecord()" class="btn btn-ahf waves-effect waves-light btn-lg">Add User</button>
     </form>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-
-<!-- <script src="assets/libs/select2/js/select2.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-    <!-- Sweet Alerts js -->
 <script>
-    //  $(document).ready(function() {
-    //     $('#role_id').select2();
-    // });
-//     $('#role_id').select2({
-//   placeholder: 'Select an option'
-// });
-
-    function saveRecord() {
-        $("#save_facility").text("Loading......");
-        var dd = $("#form1").serialize();
-        $.post("controllers/gateway.php", dd, function(re) {
-            console.log(re);
-            $("#save_facility").text("Save");
-            if (re.response_code == 200) {
-                toastr.success(re.response_message, 'Success', {
-                    closeButton: true,
-                    progressBar: true,
-                    positionClass: 'toast-top-right',
-                    timeOut: 3000, // Time in milliseconds
-                    extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                    escapeHtml: true,
-                    tapToDismiss: false, // Prevent dismissing on click
-                });
-                getpage('modules/user/user_list.php', 'page');
-                $("#defaultModal").modal("hide");
-                $('.modal-backdrop').remove();
-                $('body').css('overflow', 'auto');
-
-            } else {
-                regenerateCORS();
-                // $("#server_mssg").text(re.response_message);
-                toastr.error(re.response_message, 'Error', {
-                    closeButton: true,
-                    progressBar: true,
-                    positionClass: 'toast-top-right',
-                    timeOut: 3000, // Time in milliseconds
-                    extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                    escapeHtml: true,
-                    tapToDismiss: false, // Prevent dismissing on click
-                });
-            }
-
-        }, 'json');
-    }
+    var operation = "<?php echo $operation; ?>";
 
     function getRoles() {
-
         var route = "/roleList_simple";
         var data = {
             route
         };
 
+        // Initialize Choices before making the API call
+        const roleSelect = new Choices('#role_id', {
+            removeItemButton: true,
+            placeholder: true // Optional: To display a placeholder
+        });
+
         $.post("controllers/gateway.php", data, function(re) {
             console.log(re); // Debug: Log the API response
 
-            // Ensure re is an array
             if (re.response_code == 200) {
                 const $select = $('#role_id');
                 $select.empty(); // Clear existing options
-                $select.append($('<option>', {
-                    value: '',
-                    text: 'Select Role'
-                })); // Default option
 
                 // Populate the dropdown
                 $.each(re.data, function(index, role) {
                     $select.append($('<option>', {
-                        value: role.role_id, // Set role_id as the value
-                        text: role.role_name // Set role_name as the display text
+                        value: role.role_id,
+                        text: role.role_name
                     }));
                 });
 
-                        // Reinitialize Select2 after modifying the options
-                $select.select2();
+
+                const selectedRoles = <?php echo json_encode($roleArray); ?>;
+
+                // Refresh Choices.js to reflect new options
+                roleSelect.setChoices(
+                    re.data.map(role => ({
+                        value: role.role_id,
+                        label: role.role_name,
+                        selected: operation === "edit" && selectedRoles.includes(role.role_name), // Check if role is in selectedRoles
+                        disabled: false // Ensure options are enabled
+                    })),
+                    'value', // Value field
+                    'label', // Label field
+                    true // Allow duplication of items
+                );
+
+
+
             } else {
                 console.error('Failed to load roles:', re.message || 'Unknown error');
             }
-
-        }, 'json')
+        }, 'json');
     }
+
+    getRoles();
+    function saveRecord() {
+    // Check required fields
+    let isValid = true;
+    const requiredFields = [
+        { selector: "input[name='firstname']", message: "First Name is required." },
+        { selector: "input[name='lastname']", message: "Last Name is required." },
+        { selector: "input[name='mobile_phone']", message: "Phone Number is required." },
+        { selector: "select[name='sex']", message: "Gender is required." },
+        { selector: "select[name='role_id[]']", message: "At least one Role is required." },
+        { selector: "select[name='facility_code']", message: "Facility is required." }
+    ];
+
+    // Loop through fields and validate
+    for (const field of requiredFields) {
+    const element = $(field.selector);
+    const value = element.val(); // Get the field value
+    if (element.length && (!value || (typeof value === "string" && value.trim() === ""))) {
+        toastr.error(field.message, 'Validation Error', {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-right',
+            timeOut: 3000,
+            extendedTimeOut: 3000,
+            escapeHtml: true,
+            tapToDismiss: false,
+        });
+        element.focus(); // Focus on the first invalid field
+        isValid = false;
+        break; // Stop further validation if a field is invalid
+    }
+}
+
+
+    if (!isValid) return; // Prevent submission if validation fails
+
+    // Serialize the form data
+    var formData = $("#form1").serializeArray();
+    var processedData = {};
+
+    // Group multi-select field values as an array
+    $.each(formData, function(_, field) {
+        if (field.name.endsWith('[]')) {
+            // Remove '[]' from the field name
+            var key = field.name.replace('[]', '');
+            if (!processedData[key]) {
+                processedData[key] = [];
+            }
+            processedData[key].push(field.value);
+        } else {
+            // Process normal fields
+            processedData[field.name] = field.value;
+        }
+    });
+
+    console.log("Processed Data:", processedData);
+
+    // Replace button text with loader
+    $('#save_facility').html('<div class="table-loader-btn"></div> Processing...');
+    $('#save_facility').prop('disabled', true); // Disable button
+
+    // Send data to the back-end
+    $.post("controllers/gateway.php", processedData, function(re) {
+        console.log(re);
+
+        if (re.response_code == 200) {
+            // Success handling
+            $("#save_facility").html('Add User').prop('disabled', false); // Reset button
+            toastr.success(re.response_message, 'Success', {
+                closeButton: true,
+                progressBar: true,
+                positionClass: 'toast-top-right',
+                timeOut: 3000,
+                extendedTimeOut: 3000,
+                escapeHtml: true,
+                tapToDismiss: false,
+            });
+            // getpage('modules/user/user_list.php', 'page');
+            $("#defaultModal").modal("hide");
+            $('.modal-backdrop').remove();
+            $('body').css('overflow', 'auto');
+            table.draw();
+        } else {
+            // Error handling
+            $("#save_facility").html('Add User').prop('disabled', false); // Reset button
+            toastr.error(re.response_message, 'Error', {
+                closeButton: true,
+                progressBar: true,
+                positionClass: 'toast-top-right',
+                timeOut: 3000,
+                extendedTimeOut: 3000,
+                escapeHtml: true,
+                tapToDismiss: false,
+            });
+        }
+    }, 'json');
+}
+
+    // function saveRecord() {
+    //     // Serialize the form data
+    //     var formData = $("#form1").serializeArray();
+    //     var processedData = {};
+
+    //     // Group multi-select field values as an array
+    //     $.each(formData, function(_, field) {
+    //         if (field.name.endsWith('[]')) {
+    //             // Remove '[]' from the field name
+    //             var key = field.name.replace('[]', '');
+    //             if (!processedData[key]) {
+    //                 processedData[key] = [];
+    //             }
+    //             processedData[key].push(field.value);
+    //         } else {
+    //             // Process normal fields
+    //             processedData[field.name] = field.value;
+    //         }
+    //     });
+
+    //     console.log("Processed Data:", processedData);
+    //     // Replace button text with loader
+    //     $('#save_facility').html('<div class="table-loader-btn"></div> Processing...');
+    //     $('#save_facility').prop('disabled', true); // Disable button
+    //     // Send data to the back-end
+    //     $.post("controllers/gateway.php", processedData, function(re) {
+    //         console.log(re);
+
+
+
+    //         if (re.response_code == 200) {
+    //             // Success handling
+    //             $("#save_facility").html('Add User').prop('disabled', false); // Reset button
+    //             toastr.success(re.response_message, 'Success', {
+    //                 closeButton: true,
+    //                 progressBar: true,
+    //                 positionClass: 'toast-top-right',
+    //                 timeOut: 3000,
+    //                 extendedTimeOut: 3000,
+    //                 escapeHtml: true,
+    //                 tapToDismiss: false,
+    //             });
+    //             getpage('modules/user/user_list.php', 'page');
+    //             $("#defaultModal").modal("hide");
+    //             $('.modal-backdrop').remove();
+    //             $('body').css('overflow', 'auto');
+    //         } else {
+    //             // Error handling
+    //             $("#save_facility").html('Add User').prop('disabled', false); // Reset button
+    //             toastr.error(re.response_message, 'Error', {
+    //                 closeButton: true,
+    //                 progressBar: true,
+    //                 positionClass: 'toast-top-right',
+    //                 timeOut: 3000,
+    //                 extendedTimeOut: 3000,
+    //                 escapeHtml: true,
+    //                 tapToDismiss: false,
+    //             });
+    //         }
+    //     }, 'json');
+    // }
 
     function getFacility() {
 
@@ -330,8 +502,12 @@ if (isset($_REQUEST['op']) && $_REQUEST['op'] == 'edit') {
         }, 'json')
     }
 
-    getRoles();
-    getFacility();
+   
+
+    if (operation !== 'edit') {
+        getFacility();
+    }
+   
 
     $("#show").click(function() {
         var password = $("#password").attr('type');

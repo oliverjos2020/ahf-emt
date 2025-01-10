@@ -6,6 +6,8 @@ $details = $cookieManager->pickCookie();
 if (!isset($details['username'])) {
     header('location: ../../web/logout.php');
 }
+$roles = $details['user_roles'] ?? '';
+// echo $details['role'];
 ?>
 <style>
     /* Custom styles for the accordion button */
@@ -561,7 +563,7 @@ if (!isset($details['username'])) {
         <!-- end col -->
         <div class="row justify-content-end">
             <div class="col-auto">
-                <button class="btn btn-lg text-white" style="background:#991002 !important;" onclick="getpage('modules/patient/patient_list.php')">Back to Main Page</button>
+                <button class="btn btn-lg text-white" style="background:#991002 !important;" onclick="getpage('modules/patient/patient_list.php', 'page')">Back to Main Page</button>
             </div>
             <div class="col-auto">
                 <button class="btn btn-lg text-white" style="background:#991002 !important;" id="submitPatient" onclick="saveRecord()">Submit Record</button>
@@ -589,26 +591,64 @@ if (!isset($details['username'])) {
         $('#submitPatient').prop('disabled', true);
 
         var dd = $("#form1").serialize();
+        var role = <?php echo json_encode($roles); ?>;
+
         $.post("controllers/gateway.php", dd, function(re) {
             $("#save_facility").text("Save");
-            console.log(re);
+            // console.log(re);
             if (re.response_code == 200) {
 
-                $("#submitPatient").html('Submit'); // Reset button text
-                $("#submitPatient").prop('disabled', false); // Re-enable button
-                toastr.success(re.response_message, 'Success', {
-                    closeButton: true,
-                    progressBar: true,
-                    positionClass: 'toast-top-right',
-                    timeOut: 5000, // Time in milliseconds
-                    extendedTimeOut: 3000, // Additional time for the progress bar to complete
-                    escapeHtml: true,
-                    tapToDismiss: false, // Prevent dismissing on click
-                });
-                getpage('modules/patient/patient_list.php', 'page');
-                $("#defaultModal").modal("hide");
-                $('.modal-backdrop').remove();
-                $('body').css('overflow', 'auto');
+                var id = re.data.patient_id;
+                var isTriage;
+                // Check if the roles array exists and is not empty
+                if (Array.isArray(role) && role.length > 0) {
+                    // Loop through the roles
+                    role.forEach(function(roles) {
+                        if (roles.role_name === "Triage" || roles.role_name === "Super Administrator") {
+                          isTriage = true;
+                        }
+                    });
+                }
+
+                if (isTriage) {
+                    Swal.fire({
+                                title: "",
+                                text: "User Created Successfully",
+                                type: "success",
+                                showCancelButton: !0,
+                                confirmButtonColor: "#991002",
+                                cancelButtonColor: "#8687A7",
+                                confirmButtonText: "Proceed To Triage",
+                                allowOutsideClick: false,
+                                customClass: {
+                                    popup: 'custom-swal-popup', // Add custom class for the modal
+                                    icon: 'custom-swal-icon', // Add custom class for the icon
+                                    title: 'custom-swal-title', // Add custom class for the title
+                                    content: 'custom-swal-text' // Add custom class for the text
+                                }
+                            }).then(function(t) {
+                                if (t.value) {
+                                    // User clicked "Proceed To Triage"
+                                    getpage('modules/patient/view_patient.php?id=' + id + '&triage=yes', 'page');
+                                }
+                            });
+                } else {
+                    $("#submitPatient").html('Submit'); // Reset button text
+                            $("#submitPatient").prop('disabled', false); // Re-enable button
+                            toastr.success(re.response_message, 'Success', {
+                                closeButton: true,
+                                progressBar: true,
+                                positionClass: 'toast-top-right',
+                                timeOut: 5000, // Time in milliseconds
+                                extendedTimeOut: 3000, // Additional time for the progress bar to complete
+                                escapeHtml: true,
+                                tapToDismiss: false, // Prevent dismissing on click
+                            });
+                            getpage('modules/patient/patient_list.php', 'page');
+                            $("#defaultModal").modal("hide");
+                            $('.modal-backdrop').remove();
+                            $('body').css('overflow', 'auto');
+                }
 
             } else {
                 $("#submitPatient").html('Submit'); // Reset button text
@@ -769,98 +809,98 @@ if (!isset($details['username'])) {
 
     function getFacility() {
 
-var route = "/fetchCodes";
-var data = {
-    route
-};
+        var route = "/fetchCodes";
+        var data = {
+            route
+        };
 
-$.post("controllers/gateway.php", data, function(re) {
-    console.log(re); // Debug: Log the API response
+        $.post("controllers/gateway.php", data, function(re) {
+            console.log(re); // Debug: Log the API response
 
-    // Ensure re is an array
-    
-        const $select = $('#facility');
-        $select.empty(); // Clear existing options
-        $select.append($('<option>', {
-            value: '',
-            text: 'Select Facility'
-        })); // Default option
+            // Ensure re is an array
 
-        // Populate the dropdown
-        $.each(re, function(index, role) {
+            const $select = $('#facility');
+            $select.empty(); // Clear existing options
             $select.append($('<option>', {
-                value: role.facility_code, // Set role_id as the value
-                text: role.hospital_name // Set role_name as the display text
-            }));
-        });
+                value: '',
+                text: 'Select Facility'
+            })); // Default option
 
-}, 'json')
-}
-getFacility();
+            // Populate the dropdown
+            $.each(re, function(index, role) {
+                $select.append($('<option>', {
+                    value: role.facility_code, // Set role_id as the value
+                    text: role.hospital_name // Set role_name as the display text
+                }));
+            });
 
-function getStates() {
-            $.ajax({
-                url: "controllers/gateway.php",
-                data: {
-                    route: "/statesData"
-                },
-                type: "post",
-                success: function(response) {
-                    try {
-                        // Parse the response if it's not already a JSON object
-                        const data = typeof response === 'string' ? JSON.parse(response) : response;
+        }, 'json')
+    }
+    getFacility();
 
-                        // Populate the #states dropdown
-                        let stateOptions = '<option value="">Select State</option>';
-                        data.forEach(state => {
-                            stateOptions += `<option value="${state.state_name}">${state.state_name}</option>`;
-                        });
-                        $('#state').html(stateOptions);
+    function getStates() {
+        $.ajax({
+            url: "controllers/gateway.php",
+            data: {
+                route: "/statesData"
+            },
+            type: "post",
+            success: function(response) {
+                try {
+                    // Parse the response if it's not already a JSON object
+                    const data = typeof response === 'string' ? JSON.parse(response) : response;
 
-                        // Add change event listener to populate LGAs
-                        $('#state').on('change', function() {
-                            const selectedStateName = $(this).val();
+                    // Populate the #states dropdown
+                    let stateOptions = '<option value="">Select State</option>';
+                    data.forEach(state => {
+                        stateOptions += `<option value="${state.state_name}">${state.state_name}</option>`;
+                    });
+                    $('#state').html(stateOptions);
 
-                            if (selectedStateName) {
-                                // Find the selected state object
-                                const selectedState = data.find(state => state.state_name === selectedStateName);
+                    // Add change event listener to populate LGAs
+                    $('#state').on('change', function() {
+                        const selectedStateName = $(this).val();
 
-                                if (selectedState && selectedState.lgas) {
-                                    // Populate the #lgas dropdown
-                                    let lgaOptions = '<option value="">Select LGA</option>';
-                                    selectedState.lgas.forEach(lga => {
-                                        lgaOptions += `<option value="${lga.lga_name}">${lga.lga_name}</option>`;
-                                    });
-                                    $('#lga').html(lgaOptions);
-                                } else {
-                                    $('#lga').html('<option value="">No LGAs Found</option>');
-                                }
+                        if (selectedStateName) {
+                            // Find the selected state object
+                            const selectedState = data.find(state => state.state_name === selectedStateName);
+
+                            if (selectedState && selectedState.lgas) {
+                                // Populate the #lgas dropdown
+                                let lgaOptions = '<option value="">Select LGA</option>';
+                                selectedState.lgas.forEach(lga => {
+                                    lgaOptions += `<option value="${lga.lga_name}">${lga.lga_name}</option>`;
+                                });
+                                $('#lga').html(lgaOptions);
                             } else {
-                                // Reset LGAs if no state is selected
-                                $('#lga').html('<option value="">Select LGA</option>');
+                                $('#lga').html('<option value="">No LGAs Found</option>');
                             }
-                        });
-                    } catch (err) {
-                        console.error("Error processing response:", err);
-                        toastr.error("Unable to load states. Please try again.", "Error", {
-                            closeButton: true,
-                            progressBar: true,
-                        });
-                    }
-                },
-                error: function() {
-                    toastr.error("Request could not be processed at the moment!", "Error", {
+                        } else {
+                            // Reset LGAs if no state is selected
+                            $('#lga').html('<option value="">Select LGA</option>');
+                        }
+                    });
+                } catch (err) {
+                    console.error("Error processing response:", err);
+                    toastr.error("Unable to load states. Please try again.", "Error", {
                         closeButton: true,
                         progressBar: true,
-                        positionClass: "toast-top-right",
-                        timeOut: 3000,
-                        extendedTimeOut: 3000,
-                        escapeHtml: true,
-                        tapToDismiss: false,
                     });
-                },
-            });
-        }
+                }
+            },
+            error: function() {
+                toastr.error("Request could not be processed at the moment!", "Error", {
+                    closeButton: true,
+                    progressBar: true,
+                    positionClass: "toast-top-right",
+                    timeOut: 3000,
+                    extendedTimeOut: 3000,
+                    escapeHtml: true,
+                    tapToDismiss: false,
+                });
+            },
+        });
+    }
 
-        getStates();
+    getStates();
 </script>

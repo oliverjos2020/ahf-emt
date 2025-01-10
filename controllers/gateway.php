@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 include 'cookieManager.php';
 define('TECHHOSTURL', 'https://ahf.accessng.com/api/v1/');
+// define('TECHHOSTURL', 'https://gmlfarms.com/EMR_API/api/v1/');
 class gateway extends cookieManager
 {
 

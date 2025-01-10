@@ -35,7 +35,7 @@ if (!isset($details['username'])) {
                     </div>
                     <div class="col-md-4 text-end">
                     <p class=""><br><a class="btn btn-ahf"
-                                onclick="myLoadModal('modules/user/user.php','modal_div')"
+                                onclick="myLoadModal('modules/user/user.php?op=new','modal_div')"
                                 href="javascript:void(0)"><i class="fa fa-plus"></i> Create User</a>
                         </p>
                     </div>
@@ -111,7 +111,6 @@ $(document).ready(function() {
         }],
         oLanguage: {
             sEmptyTable: "No record was found, please try another query"
-            // sProcessing: "<div class='table-loader'></div>"
         },
         ajax: {
             url: "controllers/gateway.php",
@@ -121,15 +120,6 @@ $(document).ready(function() {
                 d.li = Math.random();
                 d.list = "yes";
             },
-            // beforeSend: function() {
-            //     // Show the loader before the request starts
-            //     showLoader();
-            // },
-            // complete: function() {
-            //     // Hide the loader after the request completes
-            //     hideLoader();
-            // },
-
         },
         columns: [{
                 title: "S/N",
@@ -163,18 +153,40 @@ $(document).ready(function() {
                 title: "Created",
                 data: 10
             }, {
-                title: "Edit",
-                data: 3,
-                render: function(data, type, row) {
-                    return '<button class="btn btn-success btn-sm deactivate" style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" title="Edit User" data-userdeactivate-id="' +
-                        data +
-                        '" onclick="myLoadModal(\'modules/user/user.php?op=edit&username=' +
-                        data +
-                        '&firstname=' + row[1] +
-                        '&lastname=' + row[2] +
-                        '&phone=' + row[4] +
-                        '\', \'modal_div\')"><i class="fas fa-pencil-alt"></i></button>';
-                }
+                // Render function
+title: "Edit",
+data: 3,
+render: function(data, type, row) {
+    const params = {
+        op: 'edit',
+        username: data,
+        firstname: row[1],
+        lastname: row[2],
+        phone: row[4],
+        role: row[5],
+        facility_code: row[11],
+        facility_name: row[12],
+        day_1: row[13],
+        day_2: row[14],
+        day_3: row[15],
+        day_4: row[16],
+        day_5: row[17],
+        day_6: row[18],
+        day_7: row[19],
+        user_lock: row[20]
+    };
+
+    const queryString = buildQueryString(params); // Construct the query string
+    return `
+        <button class="btn btn-success btn-sm deactivate" 
+                style="background-color: #FFF2F0; border-color: #FFF2F0; color: #BC9408;" 
+                title="Edit User" 
+                data-userdeactivate-id="${data}" 
+                onclick="myLoadModal('modules/user/user.php?${queryString}', 'modal_div')">
+            <i class="fas fa-pencil-alt"></i>
+        </button>
+    `;
+}
             },
             {
                 title: "Disable",
@@ -201,6 +213,15 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// Helper function to build query string
+function buildQueryString(params) {
+    return Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        .join('&');
+}
+
 
 function do_filter() {
     table.draw();

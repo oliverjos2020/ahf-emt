@@ -10,9 +10,22 @@ if (!isset($details['username'])) {
 $firstname = $details['firstname'] ?? '';
 $lastname = $details['lastname'] ?? '';
 $role_name = $details['role'] ?? '';
+$roles = $details['user_roles'] ?? '';
+// $roles = array(
+//     array(
+//         "role_id" => "001",
+//         "role_name" => "Super Administrator"
+//     ),
+//     array(
+//         "role_id" => "005",
+//         "role_name" => "Triage"
+//     )
+// );
+
 $facility = $details['facilityName'] ?? '';
 // print_r($details['menu']);exit;
 $menu_list = $details['menu'];
+// var_dump($roles); exit;
 
 ?>
 <!doctype html>
@@ -44,7 +57,7 @@ $menu_list = $details['menu'];
     <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2"
         crossorigin="anonymous">
     <link rel="preload" href="assets/fonts/bebas-neue-pro-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <!-- <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
 
         <!-- DataTables -->
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -66,9 +79,9 @@ $menu_list = $details['menu'];
 
 <!-- Preloading Proxima Nova Regular -->
 <link rel="preload" href="assets/fonts/proxima-nova-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     <style>
+    
     .nav-link[aria-expanded="false"] {
         color: #707D8A !important;
     }
@@ -290,9 +303,41 @@ div.dataTables_processing {
         min-height: 200px;
         padding: 10px;
         background-color: #f9f9f9;
+    } 
+    
+    #form1 .choices__item--selectable[aria-selected="true"]{
+        background-color: #991002; /* Green background */
+        color: white; /* White text */
     }
 
-        
+    .dataTables_processing {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Loader text color */
+    font-size: 16px; /* Adjust text size */
+    font-weight: bold; /* Make text bold */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding around text */
+    position: absolute; /* Position to center within the table */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000; /* Ensure it's above all other elements */
+}
+
+/* Custom popup styling */
+.custom-swal-popup {
+    border-radius: 0 !important; /* Remove border radius */
+}
+
+/* Custom icon styling */
+.custom-swal-icon {
+    color: #991002 !important; /* Set icon color */
+}
+
+/* Custom text styling */
+.custom-swal-text {
+    color: #991002 !important; /* Set text color */
+}
     </style>
 </head>
 
@@ -564,7 +609,7 @@ div.dataTables_processing {
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="page-title mb-0 font-size-18">Dashboard</h4>
+                            <h3 class="page-title mb-0">DASHBOARD</h3>
 
                                 <!-- <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -989,14 +1034,16 @@ div.dataTables_processing {
     <script src="assets/js/pages/datatables.init.js"></script>
     <script src="assets/libs/chart.js/Chart.bundle.min.js"></script>
     <!-- <script src="assets/libs/select2/js/select2.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     <!-- <script src="assets/js/pages/form-advanced.init.js"></script> -->
     <!-- App js -->
     <script src="assets/js/toastr.min.js"></script>
     <script src="assets/js/pages/form-advanced.init.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="codebase/codebase/dhtmlxcalendar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+
     <script>
     doOnLoad();
     var myCalendar;

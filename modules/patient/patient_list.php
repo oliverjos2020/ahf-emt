@@ -203,7 +203,11 @@ input[type="date"],
                     d.route = route;
                     d.li = Math.random();
                     d.list = "yes";
-                    d.op = "Patients.fetchPatients"
+                    d.op = "Patients.fetchPatients";
+                    d.start_date = "2023-01-01";
+                    d.end_date = "2025-12-31";
+                    d.searchBy="";
+                    d.searchByValue="";
                 },
             
 
